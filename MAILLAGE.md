@@ -10,7 +10,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 | Page | Liens entrants (total / contextuels) | Liens contextuels sortants | Liens totaux |
 |---|---|---|---|
-| / | 31 / 2 | 24 | 68 |
+| / | 31 / 2 | 24 | 70 |
 | /a-propos/ | 31 / 1 | 10 | 49 |
 | /blog/ | 31 / 2 | 7 | 47 |
 | /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 55 |
