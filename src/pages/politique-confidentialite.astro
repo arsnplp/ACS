@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { entreprise, adresseLigne } from '@/data/entreprise';
+---
+<BaseLayout title="Politique de confidentialité | ACS Multiservices Romainville" description="Comment ACS Multiservices traite les données du formulaire de devis : finalité, conservation, destinataires, droits RGPD, cookies et réclamation auprès de la CNIL." ariane={[{ nom: 'Politique de confidentialité', url: '/politique-confidentialite/' }]} noindex>
+  <section class="section conteneur prose">
+    <h1>Politique de confidentialité</h1>
+    <p class="chapo">Cette page explique quelles données nous collectons sur ce site, pourquoi, combien de temps nous les gardons et quels sont vos droits.</p>
+
+    <h2>Responsable du traitement</h2>
+    <p>{entreprise.denominationSociale}, {entreprise.formeJuridique}, {adresseLigne}. Représentée par {entreprise.president}. Contact : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a>.</p>
+
+    <h2>Données collectées par le formulaire de devis</h2>
+    <p>Lorsque vous remplissez le <a href="/devis/">formulaire de demande de devis</a>, nous collectons : nom et prénom, adresse email, numéro de téléphone (facultatif), ville du chantier, type de prestation, description de votre besoin, photos (facultatives), moyen de recontact préféré, et la date d’envoi.</p>
+
+    <h2>Finalité et base légale</h2>
+    <p>Ces données servent uniquement à répondre à votre demande de devis, à préparer une éventuelle intervention et à assurer le suivi de la relation commerciale. La base légale est l’exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD) et votre consentement pour l’envoi du formulaire.</p>
+
+    <h2>Destinataires</h2>
+    <p>Les données sont reçues par {entreprise.denominationSociale} uniquement. Elles transitent par notre outil d’automatisation de formulaires (n8n, hébergé chez {'{{HÉBERGEUR N8N}}'}) et par notre messagerie. Elles ne sont ni vendues ni transmises à des tiers à des fins commerciales.</p>
+
+    <h2>Durée de conservation</h2>
+    <p>Les données d’une demande de devis sont conservées <strong>3 ans après le dernier contact</strong>. Si un devis est accepté, les données de facturation sont conservées pendant la durée légale (10 ans pour les pièces comptables).</p>
+
+    <h2>Vos droits</h2>
+    <p>Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité de vos données. Vous pouvez retirer votre consentement à tout moment. Pour exercer ces droits, écrivez-nous à <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a> ou par courrier à l’adresse ci-dessus. Nous répondons dans un délai d’un mois.</p>
+    <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL : <a href="https://www.cnil.fr/fr/plaintes">www.cnil.fr/fr/plaintes</a>, ou par courrier à CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris CEDEX 07.</p>
+
+    <h2>Cookies et mesure d’audience</h2>
+    <p>Ce site ne dépose aucun cookie publicitaire ni traceur tiers. La mesure d’audience, si elle est activée, utilise un outil sans cookie et sans donnée personnelle ({'{{OUTIL D’AUDIENCE : Plausible / Umami / aucun}}'}), exempté de bandeau de consentement. Si un outil déposant des cookies (par exemple Google Analytics) devait être ajouté, un bandeau de consentement avec un bouton « Refuser » aussi visible que « Accepter » serait mis en place au préalable.</p>
+
+    <h2>Sécurité</h2>
+    <p>Le site est servi en HTTPS. Les données du formulaire sont transmises de façon chiffrée à notre outil de traitement. L’accès à la messagerie est protégé par mot de passe.</p>
+
+    <h2>Mise à jour</h2>
+    <p>Dernière mise à jour : {'{{DATE DE MISE À JOUR}}'}. Cette politique peut évoluer ; la version en ligne fait foi.</p>
+  </section>
+</BaseLayout>

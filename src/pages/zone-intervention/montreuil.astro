@@ -1,0 +1,52 @@
+---
+import VillePage from '@/layouts/VillePage.astro';
+const faq = [
+  {
+    question: 'Comment gérez-vous le stationnement à Montreuil ?',
+    reponse: 'Nous venons en utilitaire pour transporter meubles et outillage. Dans le Bas-Montreuil et autour de la Croix-de-Chavaux, les places sont rares. Nous convenons avec vous d’un point de déchargement, ou nous demandons un accès à la cour ou au parking de l’immeuble.',
+  },
+  {
+    question: 'Sous quel délai pouvez-vous intervenir à Montreuil ?',
+    reponse: 'Cela dépend de la nature des travaux et de notre planning. Notre atelier de Romainville est limitrophe de Montreuil, ce qui facilite les visites. Écrivez-nous avec des photos et nous vous proposons une date par écrit.',
+  },
+  {
+    question: 'Travaillez-vous dans les lofts et anciens ateliers du Bas-Montreuil ?',
+    reponse: 'Oui. Ces volumes demandent des meubles adaptés à de grandes hauteurs, des verrières ou des mezzanines. Nous prenons les cotes sur place, fabriquons en atelier et posons en modules.',
+  },
+];
+---
+<VillePage
+  slug="montreuil"
+  title="Artisan multiservices Montreuil (93100) | ACS Multiservices"
+  description="Artisan multiservices à Montreuil : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie. Atelier voisin à Romainville. Devis écrit."
+  h1="Artisan multiservices à Montreuil (93100)"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Vous cherchez un artisan multiservices à Montreuil pour un meuble sur mesure, une réparation ou un dépannage ? ACS Multiservices a son atelier à Romainville, commune limitrophe, à quelques minutes du Haut-Montreuil et de la Boissière. Seydou Traoré fabrique, répare, monte et rénove chez les particuliers et les petits professionnels montreuillois.</p>
+  </Fragment>
+
+  <h2>Du Bas-Montreuil aux Murs à pêches : un bâti très contrasté</h2>
+  <p>Montreuil est la plus grande ville de Seine-Saint-Denis, avec plus de 100 000 habitants.</p>
+  <ul class="liste-coches">
+    <li><strong>Anciens ateliers et lofts du Bas-Montreuil</strong> (Robespierre, Croix-de-Chavaux, rue de Paris) : grandes hauteurs sous plafond, verrières, mezzanines, murs en brique. Idéal pour une <a href="/services/meubles-sur-mesure/">bibliothèque ou un dressing sur mesure à Montreuil</a> qui exploite toute la hauteur.</li>
+    <li><strong>Pavillons et maisons de ville en meulière</strong> (Villiers-Barbusse, Bel-Air, Haut-Montreuil, abords des Murs à pêches) : souvent agrandis par une extension ou une véranda. Les raccordements électriques et de plomberie entre l’ancien et le neuf demandent une <a href="/services/electricite/">mise aux normes électrique à Montreuil</a> soignée.</li>
+    <li><strong>Grands ensembles</strong> (La Noue, Bel-Air, Le Morillon, la Boissière) : appartements traversants, cloisons légères, cuisines à moderniser. Le <a href="/services/montage-meubles/">montage de meubles à Montreuil</a> et le remplacement de robinetterie sont les demandes les plus courantes.</li>
+    <li><strong>Immeubles anciens du centre</strong> (Mairie de Montreuil, Croix-de-Chavaux) : parquets à restaurer, portes gauchies, colonnes d’eau vieillissantes. La <a href="/services/renovation-interieure/">rénovation intérieure à Montreuil</a> pièce par pièce y est fréquente.</li>
+  </ul>
+
+  <h2>Une ville de créatifs qui aime les meubles uniques</h2>
+  <p>Montreuil accueille beaucoup d’artistes, d’artisans, de graphistes et d’indépendants. Ils travaillent souvent chez eux et veulent des meubles qui ne ressemblent à aucun autre. Bureau dans une alcôve, table d’atelier, rangement pour le matériel : nous fabriquons ces pièces à vos dimensions.</p>
+  <p>Cette clientèle a aussi le réflexe de réparer plutôt que de jeter. Chaise chinée aux puces de Montreuil, commode héritée, table à rallonges bancale : notre page <a href="/services/reparation-meubles/">réparation de meubles à Montreuil</a> détaille ce que nous savons remettre en état.</p>
+
+  <h2>Menuisier, électricien et plombier à Montreuil : un seul artisan</h2>
+  <p>Beaucoup de chantiers montreuillois mélangent plusieurs corps de métier. Une cuisine dans une maison de ville demande un menuisier pour les meubles, un électricien pour les prises et un plombier pour l’évier. Chez ACS Multiservices, c’est la même personne qui coordonne tout.</p>
+  <p>Pour une fuite ou une panne, nous intervenons aussi seuls : le <a href="/services/plomberie/">plombier à Montreuil</a> pour un ballon d’eau chaude ou une chasse d’eau, l’électricien pour un tableau ou un éclairage.</p>
+
+  <h2>Accès, copropriétés et immeubles sans ascenseur</h2>
+  <p>Les rues du Bas-Montreuil sont étroites et très fréquentées. Nous préparons le stationnement avec vous avant chaque passage. Dans les copropriétés, nous respectons le règlement et les horaires autorisés, et nous protégeons les cages d’escalier.</p>
+  <p>Beaucoup d’immeubles anciens n’ont pas d’ascenseur. Nos meubles sur mesure sont donc conçus en modules qui passent par l’escalier et se montent sur place.</p>
+
+  <h2>Écrivez-nous depuis Montreuil</h2>
+  <p>Formulaire, email : choisissez le canal qui vous convient. C’est pratique si vous travaillez en horaires décalés ou si vous voulez une trace écrite. La page <a href="/devis/">demande de devis</a> explique la marche à suivre.</p>
+</VillePage>

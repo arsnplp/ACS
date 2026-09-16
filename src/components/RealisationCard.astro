@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getService } from '@/data/services';
+import { getVille } from '@/data/villes';
+import ImageSlot from './ImageSlot.astro';
+interface Props { realisation: CollectionEntry<'realisations'>; niveau?: 'h2' | 'h3' }
+const { realisation, niveau = 'h3' } = Astro.props;
+const Titre = niveau;
+const s = getService(realisation.data.service);
+const v = getVille(realisation.data.ville);
+---
+<article class="carte" data-service={realisation.data.service}>
+  <ImageSlot nom={realisation.data.apres.src} dossier="realisations" alt={realisation.data.apres.alt} width={realisation.data.apres.width} height={realisation.data.apres.height} sizes="(min-width: 72rem) 22rem, (min-width: 48rem) 45vw, 100vw" />
+  <div class="carte__corps">
+    {realisation.data.brouillon && <p><span class="badge-brouillon">Exemple — brouillon</span></p>}
+    <Titre><a href={`/realisations/${realisation.id}/`}>{realisation.data.titre}</a></Titre>
+    <p class="meta">{s?.nom} · {v?.nom}</p>
+    <p>{realisation.data.resume}</p>
+  </div>
+</article>
+<style>
+  .carte__corps h2 a, .carte__corps h3 a { text-decoration: none; }
+  .carte__corps h2 a:hover, .carte__corps h3 a:hover { text-decoration: underline; }
+  .carte__corps p:first-child { flex: 0; margin: 0; }
+</style>

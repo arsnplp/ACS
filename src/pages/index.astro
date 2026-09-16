@@ -1,0 +1,217 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import RealisationCard from '@/components/RealisationCard.astro';
+import ContactOptions from '@/components/ContactOptions.astro';
+import { services } from '@/data/services';
+import { villesPrioritaires, villesSecondaires, villeUrl } from '@/data/villes';
+import { entreprise } from '@/data/entreprise';
+
+const realisations = (await getCollection('realisations')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+---
+<BaseLayout
+  title="Artisan multiservices à Romainville (93) | ACS Multiservices"
+  description="Artisan multiservices à Romainville : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie dans le 93. Demandez un devis par écrit."
+  accueil
+  preload="/images/hero-accueil.jpg"
+>
+  <section class="banniere">
+    <div class="banniere__inner">
+      <div class="banniere__texte">
+        <h1 class="banniere__titre">
+          <span class="banniere__ligne1"><span class="banniere__diese" aria-hidden="true">#</span>Artisan</span>
+          <span class="banniere__ligne2">multiservices</span>
+          <span class="banniere__ville"><span class="banniere__ville-texte">à Romainville<span aria-hidden="true"> :</span></span></span>
+        </h1>
+        <ul class="banniere__services" aria-label="Nos quatre grands domaines">
+          <li>
+            <span class="banniere__picto" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M9.5 11v2M14.5 11v2"/></svg></span>
+            <span class="banniere__label">Meubles<br />sur mesure</span>
+          </li>
+          <li>
+            <span class="banniere__picto" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="6" rx="1.5"/><path d="M17 7h3v5h-8v3M12 15v6"/></svg></span>
+            <span class="banniere__label">Rénovation</span>
+          </li>
+          <li>
+            <span class="banniere__picto" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+            <span class="banniere__label">Électricité</span>
+          </li>
+          <li>
+            <span class="banniere__picto" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7c-3 4-6 7.3-6 11a6 6 0 0 0 12 0c0-3.7-3-7-6-11z"/></svg></span>
+            <span class="banniere__label">Plomberie</span>
+          </li>
+        </ul>
+        <p class="banniere__accroche"><span>Un seul artisan pour tous vos projets !</span></p>
+      </div>
+      <ImageSlot nom="hero-accueil" alt="Seydou Traoré, artisan souriant en casque jaune, entouré de ses outils dans un atelier lumineux" width={1672} height={941} lcp variante="hero" sizes="(min-width: 1672px) 1672px, 100vw" />
+    </div>
+  </section>
+
+  <section class="section section--blanc intro">
+    <div class="conteneur">
+      <p class="surtitre">Menuisier · Électricien · Plombier — Romainville et Est parisien</p>
+      <p class="intro__titre">Meubles sur mesure, réparation et montage de meubles, rénovation intérieure, électricité et plomberie en <span class="nowrap">Seine-Saint-Denis</span>.</p>
+      <div class="intro__grille">
+      <div class="intro__texte">
+        <p class="chapo">ACS Multiservices est l’entreprise artisanale de Seydou Traoré, installée avenue Youri Gagarine à Romainville. Nous fabriquons des meubles sur mesure, nous réparons et montons vos meubles, et nous prenons en charge vos travaux de rénovation intérieure, d’électricité et de plomberie dans toute la <span class="nowrap">Seine-Saint-Denis</span>.</p>
+        <p class="chapo">Un seul interlocuteur, des devis détaillés et des échanges par écrit si vous le souhaitez.</p>
+        <div class="hero__actions">
+          <CtaDevis />
+          <a class="btn btn--contour" href="/services/">Découvrir nos services</a>
+        </div>
+      </div>
+      <div class="intro__media">
+        <ImageSlot nom="intro-accueil" alt="Pièce d’appartement ancien avant et après rénovation : murs bruts et bâche à gauche, parquet et murs blancs à droite" width={1024} height={647} sizes="(min-width: 64rem) 30rem, 100vw" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services-titre">
+    <div class="conteneur">
+      <p class="surtitre">Nos prestations</p>
+      <h2 id="services-titre">Six services pour votre logement, un seul artisan</h2>
+      <p class="chapo">Du meuble dessiné pour votre pièce jusqu’à la prise électrique qui manque, nous intervenons sur l’ensemble des petits et moyens travaux d’un appartement ou d’une maison. La création de meubles sur mesure est notre activité principale.</p>
+      <div class="grille">{services.map((s) => <ServiceCard service={s} niveau="h3" />)}</div>
+    </div>
+  </section>
+
+  <section class="section section--bleu fond-bleu" aria-labelledby="contact-titre">
+    <div class="conteneur">
+      <h2 id="contact-titre">Deux façons simples de nous joindre</h2>
+      <p class="chapo">Par email pour garder une trace écrite, ou par téléphone pour en parler de vive voix. À vous de choisir.</p>
+      <ContactOptions />
+      <p style="margin-top:1.5rem"><a href="/devis/">Tous les détails sur la page demande de devis</a></p>
+    </div>
+  </section>
+
+  <section class="section section--blanc" aria-labelledby="deroulement-titre">
+    <div class="conteneur prose">
+      <h2 id="deroulement-titre">Comment se passe une demande de devis</h2>
+      <ol class="etapes">
+        <li><div><h3>Vous décrivez votre besoin par écrit</h3><p>Quelques phrases, des photos et vos mesures approximatives suffisent. Vous indiquez comment vous préférez être recontacté.</p></div></li>
+        <li><div><h3>Nous vous répondons par le canal choisi</h3><p>Email ou appel téléphonique. Nous posons nos questions et, si nécessaire, nous convenons d’une visite.</p></div></li>
+        <li><div><h3>Vous recevez un devis détaillé</h3><p>Chaque poste est écrit noir sur blanc. Vous prenez le temps de comparer. Rien ne démarre sans votre accord.</p></div></li>
+        <li><div><h3>Nous intervenons et nous laissons propre</h3><p>Protection des sols, évacuation des déchets, vérification avec vous en fin de chantier.</p></div></li>
+      </ol>
+      <p><CtaDevis /></p>
+    </div>
+  </section>
+
+  <section class="section pourquoi" aria-labelledby="pourquoi-titre">
+    <div class="conteneur">
+      <h2 id="pourquoi-titre">Pourquoi faire appel à un artisan multiservices de Romainville</h2>
+      <p class="chapo">Pour une bibliothèque sur mesure, une fuite sous l’évier ou un tableau électrique à remplacer, vous n’avez pas envie de chercher trois entreprises différentes. Un artisan multiservices règle ces questions dans un même rendez-vous, avec un devis clair pour chaque poste.</p>
+      <ul class="liste-coches">
+        <li><strong>Un artisan immatriculé.</strong> ACS MULTISERVICES est inscrite au Registre national des entreprises (activité artisanale, SIREN {entreprise.siren}). Les informations légales sont visibles sur nos <a href="/mentions-legales/">mentions légales</a>.</li>
+        <li><strong>Un atelier local.</strong> Nous sommes à Romainville, à quelques minutes de Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin. Prise de cotes, pose et retouches se calent facilement.</li>
+        <li><strong>Des devis écrits et détaillés.</strong> Matériaux, quincaillerie, main-d’œuvre et délai sont listés poste par poste avant tout démarrage.</li>
+        <li><strong>Du sur-mesure pour de vrai.</strong> Nous prenons les cotes chez vous, nous fabriquons en atelier et nous posons dans votre logement, même sans ascenseur. Voir la page <a href="/services/meubles-sur-mesure/">création de meubles sur mesure en Seine-Saint-Denis</a>.</li>
+        <li><strong>Réparer avant de remplacer.</strong> Une chaise qui bouge, une porte de placard décrochée, une commode ancienne à restaurer : notre service de <a href="/services/reparation-meubles/">réparation de meubles à Romainville</a> prolonge la vie de ce que vous avez déjà.</li>
+        <li><strong>Des normes respectées.</strong> La norme NF C 15-100 pour l’<a href="/services/electricite/">électricité</a>, les règles de l’art pour la <a href="/services/plomberie/">plomberie</a>. Si votre projet mêle plusieurs métiers, comme une cuisine à <a href="/services/montage-meubles/">monter</a> avec des prises à déplacer, nous coordonnons tout.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--clair" aria-labelledby="realisations-titre">
+    <div class="conteneur">
+      <p class="surtitre">Avant / après</p>
+      <h2 id="realisations-titre">Nos dernières réalisations en Seine-Saint-Denis</h2>
+      <p class="chapo">Chaque fiche montre l’état avant, l’état après et le détail des travaux.</p>
+      <div class="grille">{realisations.map((r) => <RealisationCard realisation={r} />)}</div>
+      <p style="margin-top:1.5rem"><a class="btn btn--bleu" href="/realisations/">Voir toutes les réalisations</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="zone-titre">
+    <div class="conteneur prose">
+      <h2 id="zone-titre">Zone d’intervention : Romainville, Seine-Saint-Denis et Est parisien</h2>
+      <p>Depuis notre atelier de Romainville, nous nous déplaçons dans les communes voisines de Seine-Saint-Denis et dans l’Est de Paris. Chaque ville a ses logements et ses contraintes : pavillons en meulière, immeubles des années 1970, programmes neufs livrés nus. Nos pages locales détaillent ce que nous y faisons le plus souvent.</p>
+      <ul class="chips">
+        {villesPrioritaires.map((v) => <li><a href={villeUrl(v.slug)}>Artisan {v.prep}</a></li>)}
+      </ul>
+      <p>Nous intervenons aussi {villesSecondaires.map((v) => v.prep).join(', ')}. Consultez la <a href="/zone-intervention/">carte complète de notre zone d’intervention</a> pour vérifier votre commune.</p>
+    </div>
+  </section>
+
+  {articles.length > 0 && (
+    <section class="section" aria-labelledby="blog-titre">
+      <div class="conteneur">
+        <p class="surtitre">Conseils</p>
+        <h2 id="blog-titre">Nos guides pour préparer vos travaux</h2>
+        <div class="grille">
+          {articles.map((a) => (
+            <article class="carte"><div class="carte__corps">
+              <h3><a href={`/blog/${a.id}/`}>{a.data.titre}</a></h3>
+              <p>{a.data.description}</p>
+            </div></article>
+          ))}
+        </div>
+        <p style="margin-top:1.5rem"><a href="/blog/">Tous nos conseils et guides pratiques</a></p>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+<style>
+  /* ---- Bannière : image + texte HTML superposé (à gauche) ---- */
+  .banniere { background: #f6f3ee; border-bottom: 4px solid var(--jaune); --u: clamp(0.5rem, 1vw, 1rem); }
+  .banniere__inner { max-width: 1672px; margin-inline: auto; position: relative; }
+  .banniere img, .banniere .img-slot { width: 100%; height: auto; display: block; }
+  .banniere__texte { position: absolute; inset: 0 auto 0 0; width: 48%; display: flex; flex-direction: column; justify-content: flex-start; padding: 5% 2% 3% 4.5%; z-index: 2; }
+  .banniere__titre { margin: 0; line-height: 0.92; color: #0d1b2e; font-family: var(--police-titre); font-weight: 800; letter-spacing: -0.03em; display: grid; }
+  .banniere__ligne1, .banniere__ligne2 { font-size: clamp(2.2rem, 6.2vw, 6.6rem); display: block; }
+  .banniere__ligne1 { transform: rotate(-3deg); transform-origin: left bottom; }
+  .banniere__ligne2 { transform: rotate(-3deg) translateX(6%); transform-origin: left bottom; }
+  .banniere__diese { color: var(--jaune); margin-right: 0.08em; }
+  .banniere__ville { display: block; margin: 0.25em 0 0 4%; transform: rotate(-4deg); transform-origin: left center; }
+  .banniere__ville-texte { display: inline-block; font-family: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive; font-weight: 700; font-size: clamp(2rem, 5.6vw, 6rem); line-height: 1; letter-spacing: 0; padding: 0.12em 0.55em 0.1em 0.5em; color: #0d1b2e;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath fill='%23F5B800' d='M10 22C40 12 90 17 150 11 220 4 290 13 372 9l14 3 10 6-8 8 9 7-7 8 10 7-8 8 9 9-13 9c-50 6-110 0-180 6-70 5-130-2-186 4l-12-6 4-9-9-7 7-9-8-9 8-8-7-7 9-7z'/%3E%3Cpath fill='%23F5B800' d='M392 2l5 4-3 6-6-2zM4 84l6 2-1 7-6-1zM386 90l7 1 1 6-6 1z'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+  .banniere__services { list-style: none; padding: 0; margin: clamp(0.8rem, 2vw, 1.8rem) 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.4rem, 1vw, 1rem); }
+  .banniere__services li { margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.35em; }
+  .banniere__picto { width: clamp(2.6rem, 6vw, 6.4rem); height: clamp(2.6rem, 6vw, 6.4rem); border-radius: 50%; background: var(--jaune); color: #0d1b2e; display: grid; place-items: center; }
+  .banniere__picto svg { width: 58%; height: 58%; }
+  .banniere__label { font-family: var(--police-titre); font-weight: 800; text-transform: uppercase; font-size: clamp(0.55rem, 1.15vw, 1.2rem); line-height: 1.15; color: #0d1b2e; letter-spacing: 0.01em; }
+  .banniere__accroche { margin: clamp(0.8rem, 2vw, 1.6rem) 0 0 3%; font-family: 'Caveat', cursive; font-weight: 700; font-size: clamp(1.4rem, 3vw, 3.2rem); line-height: 1; color: #0d1b2e; transform: rotate(-3.5deg); transform-origin: left center; }
+  .banniere__accroche span { display: inline-block; position: relative; padding-bottom: 0.3em; }
+  .banniere__accroche span::after { content: ''; position: absolute; left: 3%; right: 2%; bottom: 0; height: 0.4em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40' preserveAspectRatio='none'%3E%3Cpath d='M8 30Q200 4 392 24' fill='none' stroke='%23F5B800' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; z-index: -1; }
+
+  /* Sur écran étroit : le texte passe au-dessus de l'image, en bloc plein */
+  @media (max-width: 47.99rem) {
+    .banniere__texte { position: static; width: auto; padding: 1.5rem 1rem 1.25rem; align-items: center; text-align: center; background: linear-gradient(#fff, #f6f3ee); }
+    .banniere__titre { justify-items: center; }
+    .banniere__ligne1, .banniere__ligne2 { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+    .banniere__ligne2 { transform: rotate(-3deg); }
+    .banniere__ville { margin-left: 0; }
+    .banniere__ville-texte { font-size: clamp(2.2rem, 10vw, 3.4rem); }
+    .banniere__services { width: 100%; max-width: 26rem; gap: 0.5rem; }
+    .banniere__picto { width: 3.2rem; height: 3.2rem; }
+    .banniere__label { font-size: 0.72rem; }
+    .banniere__accroche { margin-left: 0; font-size: clamp(1.35rem, 6vw, 2rem); text-wrap: balance; }
+  }
+  @media (prefers-reduced-motion: reduce) { .banniere__ligne1, .banniere__ligne2, .banniere__ville, .banniere__accroche { transform: none; } }
+
+  .intro { padding-block: clamp(3rem, 7vw, 5.5rem); }
+  .intro .surtitre { margin-bottom: 0.9rem; }
+  .intro__titre { font-family: var(--police-titre); font-weight: 700; font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.3rem); color: var(--bleu); line-height: 1.3; margin: 0 0 2.75rem; max-width: none; text-wrap: pretty; }
+  .intro__grille { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 64rem) { .intro__grille { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); } }
+  .nowrap { white-space: nowrap; }
+  .intro__texte .chapo { max-width: 34rem; text-wrap: pretty; margin-bottom: 1.4em; }
+  .intro__texte .hero__actions { margin-top: 2rem; }
+  .intro__media { border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); }
+  /* Pourquoi nous : cartes sur toute la largeur */
+  .pourquoi > .conteneur > * { max-width: none; }
+  .pourquoi .chapo { max-width: 52rem; }
+  .pourquoi .liste-coches { display: grid; grid-template-columns: 1fr; gap: 1rem 1.5rem; margin: 1.5rem 0; }
+  .pourquoi .liste-coches li { margin: 0; background: var(--blanc); border: 1px solid var(--bordure); border-top: 4px solid var(--jaune); border-radius: var(--rayon); box-shadow: var(--ombre); padding: 1.1rem 1.25rem 1.1rem 3rem; }
+  .pourquoi .liste-coches li::before { left: 1rem; top: 1.4rem; }
+  .pourquoi .liste-coches li strong { display: block; font-family: var(--police-titre); color: var(--bleu); font-size: 1.1rem; margin-bottom: 0.25rem; }
+  @media (min-width: 48rem) { .pourquoi .liste-coches { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 64rem) { .pourquoi .liste-coches { grid-template-columns: repeat(3, 1fr); } }
+  .carte__corps h3 a { text-decoration: none; }
+  .carte__corps h3 a:hover { text-decoration: underline; }
+</style>

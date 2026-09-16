@@ -1,0 +1,54 @@
+---
+/**
+ * Emplacement image nommé. Si /public/images/{nom}.jpg existe, rend un <picture>
+ * AVIF/WebP/JPG (fichiers à générer avec `npm run images`, voir README).
+ * Sinon, affiche un placeholder visible avec le nom de fichier, les dimensions
+ * et l'alt attendu, pour que le client sache exactement quoi fournir.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+interface Props {
+  nom: string;           // ex. "hero-accueil" (sans extension)
+  alt: string;
+  width: number;
+  height: number;
+  sizes?: string;
+  lcp?: boolean;         // image LCP : pas de lazy, fetchpriority=high
+  class?: string;
+  dossier?: string;      // sous-dossier de /images/ (ex. "realisations")
+  variante?: 'hero' | 'standard';
+}
+const { nom, alt, width, height, sizes = '(min-width: 72rem) 36rem, (min-width: 48rem) 50vw, 100vw', lcp = false, class: cls, dossier = '', variante = 'standard' } = Astro.props;
+const base = dossier ? `/images/${dossier}/${nom}` : `/images/${nom}`;
+const disque = path.join(process.cwd(), 'public', base);
+const existe = fs.existsSync(`${disque}.jpg`) || fs.existsSync(`${disque}.jpeg`) || fs.existsSync(`${disque}.png`);
+const ext = fs.existsSync(`${disque}.png`) ? 'png' : fs.existsSync(`${disque}.jpeg`) ? 'jpeg' : 'jpg';
+const aAvif = fs.existsSync(`${disque}.avif`);
+const aWebp = fs.existsSync(`${disque}.webp`);
+const aPetite = fs.existsSync(`${disque}-800.${ext}`);
+---
+{existe ? (
+  <picture class={cls}>
+    {aAvif && <source type="image/avif" srcset={`${base}.avif`} />}
+    {aWebp && <source type="image/webp" srcset={`${base}.webp`} />}
+    <img
+      src={`${base}.${ext}`}
+      srcset={aPetite ? `${base}-800.${ext} 800w, ${base}.${ext} ${width}w` : undefined}
+      sizes={aPetite ? sizes : undefined}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={lcp ? 'eager' : 'lazy'}
+      decoding={lcp ? 'sync' : 'async'}
+      fetchpriority={lcp ? 'high' : undefined}
+    />
+  </picture>
+) : (
+  <div class:list={['img-slot', cls, { 'img-slot--hero': variante === 'hero' }]} role="img" aria-label={alt} style={`aspect-ratio:${width}/${height}`}>
+    <div aria-hidden="true">
+      <strong>{'{{PHOTO À FOURNIR}}'}</strong>
+      <code>{base}.jpg — {width}×{height}</code>
+      <span>Alt : {alt}</span>
+    </div>
+  </div>
+)}

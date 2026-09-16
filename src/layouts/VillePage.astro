@@ -1,0 +1,100 @@
+---
+/**
+ * Gabarit de page ville. Slots :
+ *  - "chapo" : accroche avec « artisan multiservices {Ville} »
+ *  - défaut  : 4–6 H2 de contenu réellement local (logements, contraintes, services demandés, repères)
+ * Le gabarit ajoute : H1, CTA, liste des 6 services avec ancres « {service} à {Ville} », villes voisines, FAQ, CTA final.
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import Faq from '@/components/Faq.astro';
+import RealisationCard from '@/components/RealisationCard.astro';
+import Icon from '@/components/Icon.astro';
+import { services, serviceUrl } from '@/data/services';
+import { getVille, villeUrl } from '@/data/villes';
+import type { FaqItem } from '@/lib/seo';
+
+interface Props { slug: string; title: string; description: string; h1: string; faq: FaqItem[] }
+const { slug, title, description, h1, faq } = Astro.props;
+const ville = getVille(slug)!;
+const voisines = ville.voisines.map((v) => getVille(v)!).filter((v) => v.page).slice(0, 2);
+const realisations = (await getCollection('realisations', (r) => r.data.ville === slug)).slice(0, 3);
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ariane={[{ nom: 'Zone d’intervention', url: '/zone-intervention/' }, { nom: ville.nom, url: villeUrl(slug) }]}
+  faq={faq}
+>
+  <section class="section section--bleu fond-bleu">
+    <div class="conteneur">
+      <p class="surtitre">{ville.nom} ({ville.codePostal}) · Seine-Saint-Denis</p>
+      <h1>{h1}</h1>
+      <div class="chapo"><slot name="chapo" /></div>
+      <div class="hero__actions">
+        <CtaDevis />
+        <a class="btn btn--contour" href="/services/">Tous nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services-ville">
+    <div class="conteneur">
+      <h2 id="services-ville">Nos services {ville.prep}</h2>
+      <ul class="services-ville">
+        {services.map((s) => (
+          <li>
+            <div class="picto"><Icon path={s.icone} /></div>
+            <div>
+              <a href={serviceUrl(s.slug)}>{s.ancreVille} {ville.prep}</a>
+              <p>{s.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <div class="conteneur prose section" style="padding-top:0">
+    <slot />
+  </div>
+
+  {realisations.length > 0 && (
+    <section class="section section--clair" aria-labelledby="realisations-ville">
+      <div class="conteneur">
+        <h2 id="realisations-ville">Chantiers réalisés {ville.prep}</h2>
+        <div class="grille">{realisations.map((r) => <RealisationCard realisation={r} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <div class="conteneur">
+    <Faq items={faq} />
+  </div>
+
+  <section class="section" aria-labelledby="voisines">
+    <div class="conteneur prose">
+      <h2 id="voisines">Nous intervenons aussi autour de {ville.nom}</h2>
+      <p>ACS Multiservices se déplace dans toute la Seine-Saint-Denis et l’Est parisien. Villes voisines les plus proches :</p>
+      <ul class="chips">
+        {voisines.map((v) => <li><a href={villeUrl(v.slug)}>Artisan multiservices {v.prep}</a></li>)}
+        <li><a href="/zone-intervention/">Voir toute la zone d’intervention</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--bleu fond-bleu" aria-labelledby="cta-ville">
+    <div class="conteneur">
+      <h2 id="cta-ville">Un projet {ville.prep} ?</h2>
+      <p class="chapo">Décrivez votre besoin par écrit. Nous vous répondons par email ou par téléphone, selon votre préférence.</p>
+      <CtaDevis />
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .services-ville { list-style: none; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+  .services-ville li { display: flex; gap: 1rem; margin: 0; }
+  .services-ville a { font-family: var(--police-titre); font-weight: 700; font-size: 1.15rem; }
+  .services-ville p { margin: 0.25rem 0 0; font-size: 1rem; }
+</style>

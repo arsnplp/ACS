@@ -1,0 +1,57 @@
+---
+import VillePage from '@/layouts/VillePage.astro';
+const faq = [
+  {
+    question: 'Intervenez-vous dans tous les quartiers de Romainville ?',
+    reponse: 'Oui. Notre atelier est situé avenue Youri Gagarine. Nous intervenons dans tout Romainville : centre-ville, Bas-Pays, quartier Gagarine, Marcel Cachin, Trois Communes, Youri Gagarine, Vassou, secteur des Bruyères et abords de la Corniche des Forts.',
+  },
+  {
+    question: 'Quel est le délai pour un dépannage à Romainville ?',
+    reponse: 'Le délai dépend de la nature de l’intervention et de notre planning. Pour une fuite ou une panne électrique, écrivez-nous par email avec une photo. Nous vous indiquons par écrit quand nous pouvons passer.',
+  },
+  {
+    question: 'Faut-il être présent pendant les travaux ?',
+    reponse: 'Votre présence est nécessaire au premier rendez-vous pour valider les besoins et les mesures. Pour la suite, nous nous adaptons : remise de clés, présence d’un proche ou d’un gardien. Tout est convenu par écrit à l’avance.',
+  },
+];
+---
+<VillePage
+  slug="romainville"
+  title="Artisan multiservices Romainville 93230 | ACS Multiservices"
+  description="Artisan multiservices à Romainville : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie. Atelier avenue Youri Gagarine. Devis."
+  h1="Artisan multiservices à Romainville (93230)"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>ACS Multiservices est un artisan multiservices installé à Romainville, avenue Youri Gagarine. Menuisier, électricien et plombier, Seydou Traoré intervient chez les particuliers et les petits professionnels de la commune pour fabriquer, réparer, monter et rénover.</p>
+  </Fragment>
+
+  <h2>Un artisan basé à Romainville, pas seulement de passage</h2>
+  <p>Notre atelier se trouve dans le quartier Gagarine, à deux pas du centre-ville et de la mairie. Cette proximité change tout au quotidien : une prise de cotes se cale rapidement, une retouche après pose ne demande pas de déplacement lointain, et une fuite peut être vue le jour même selon le planning.</p>
+  <p>Romainville compte environ 30 000 habitants et se transforme vite. Entre les nouveaux immeubles du secteur Bas-Pays et Gagarine, les pavillons des Bruyères et les logements anciens du centre, les besoins en travaux sont très variés. Nous les connaissons parce que nous y habitons.</p>
+
+  <h2>Les logements de Romainville et leurs contraintes</h2>
+  <p>Le bâti romainvillois mélange trois grandes familles de logements, chacune avec ses particularités techniques.</p>
+  <ul class="liste-coches">
+    <li><strong>Pavillons de l’entre-deux-guerres</strong> (Bruyères, Trois Communes, secteur de la Corniche des Forts) : murs en meulière ou en brique, combles à aménager, escaliers étroits. Les <a href="/services/meubles-sur-mesure/">meubles sur mesure</a> sous rampant et les placards sous escalier y sont très demandés.</li>
+    <li><strong>Immeubles collectifs des années 1960–1980</strong> (Marcel Cachin, Youri Gagarine, Vassou) : cloisons en plâtre et béton, tableaux électriques anciens à fusibles, colonnes d’eau vieillissantes. La <a href="/services/electricite/">mise aux normes électriques</a> et le remplacement de robinetterie sont fréquents.</li>
+    <li><strong>Programmes neufs</strong> (Bas-Pays, abords de la station de métro Romainville – Carnot de la ligne 11, ZAC de l’Horloge) : logements livrés nus, surfaces optimisées. Le <a href="/services/montage-meubles/">montage de meubles</a>, les dressings d’angle et les rangements gain de place sont les demandes les plus courantes.</li>
+  </ul>
+
+  <h2>Les travaux les plus demandés par les Romainvillois</h2>
+  <p>Depuis la création de l’entreprise, les demandes reçues depuis Romainville portent surtout sur cinq sujets.</p>
+  <ol>
+    <li><strong>Rangements sur mesure</strong> dans les petites surfaces : dressing dans une alcôve, bibliothèque autour d’une porte, meuble d’entrée.</li>
+    <li><strong>Réparation de meubles</strong> : chaises branlantes, tiroirs sans coulisses, portes de cuisine décrochées. Voir notre page <a href="/services/reparation-meubles/">réparation de meubles à Romainville</a>.</li>
+    <li><strong>Petits dépannages de plomberie</strong> : fuite sous l’évier, chasse d’eau qui coule, mitigeur à remplacer.</li>
+    <li><strong>Électricité</strong> : ajout de prises dans un salon, remplacement d’un vieux tableau, éclairage d’une cuisine.</li>
+    <li><strong>Rafraîchissement</strong> avant location ou emménagement : peinture, sol, petites réparations. Voir la <a href="/services/renovation-interieure/">rénovation intérieure</a>.</li>
+  </ol>
+
+  <h2>Accès, stationnement et copropriétés</h2>
+  <p>Nous nous déplaçons en utilitaire. Dans les rues étroites du centre, nous prévoyons le stationnement avec vous. En copropriété, nous respectons les horaires du règlement et protégeons les parties communes.</p>
+  <p>Pour les immeubles sans ascenseur, les meubles sur mesure sont fabriqués en modules qui passent par l’escalier. Nous évacuons les emballages et les déchets de chantier.</p>
+
+  <h2>Un contact simple, par écrit si vous préférez</h2>
+  <p>Vous pouvez nous joindre par formulaire ou email. C’est utile si vous travaillez en horaires décalés ou si vous préférez garder une trace écrite. Nous répondons par le canal que vous indiquez. La page <a href="/devis/">demande de devis</a> précise tous les moyens de contact.</p>
+</VillePage>

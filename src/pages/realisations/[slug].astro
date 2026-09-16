@@ -1,0 +1,56 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BeforeAfter from '@/components/BeforeAfter.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import { getService, serviceUrl } from '@/data/services';
+import { getVille, villeUrl } from '@/data/villes';
+
+export async function getStaticPaths() {
+  const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return toutes.map((r, i) => ({
+    params: { slug: r.id },
+    props: { realisation: r, precedente: toutes[i + 1] ?? toutes[0], suivante: toutes[i - 1] ?? toutes[toutes.length - 1] },
+  }));
+}
+const { realisation, precedente, suivante } = Astro.props;
+const { Content } = await render(realisation);
+const d = realisation.data;
+const service = getService(d.service)!;
+const ville = getVille(d.ville)!;
+const dateTexte = d.date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+---
+<BaseLayout
+  title={d.titreSeo ?? (d.titre.length <= 40 ? `${d.titre} | ACS Multiservices` : d.titre)}
+  description={d.resume}
+  ariane={[{ nom: 'Réalisations', url: '/realisations/' }, { nom: d.titre, url: `/realisations/${realisation.id}/` }]}
+  noindex={d.brouillon}
+  ogImage={`/images/realisations/${d.apres.src}.jpg`}
+>
+  <article class="conteneur section">
+    {d.brouillon && (
+      <div class="encadre encadre--jaune" role="note">
+        <p><strong>Exemple fictif (brouillon, non indexé)</strong> — à remplacer par un vrai chantier.</p>
+      </div>
+    )}
+    <p class="surtitre"><a href={serviceUrl(service.slug)}>{service.nomLong}</a> · <a href={villeUrl(ville.slug)}>{ville.nom}</a> · <time datetime={d.date.toISOString().slice(0, 7)}>{dateTexte}</time></p>
+    <h1>{d.titre}</h1>
+    <p class="chapo">{d.resume}</p>
+    <BeforeAfter avant={d.avant} apres={d.apres} descriptionAvant={d.descriptionAvant} descriptionApres={d.descriptionApres} />
+    <div class="prose" style="margin-top:2rem">
+      <Content />
+    </div>
+    <div class="encadre">
+      <p>Un projet similaire {ville.prep} ? Voir <a href={serviceUrl(service.slug)}>{service.nomLong.toLowerCase()}</a> ou <a href={`/devis/?service=${service.slug}`}>demander un devis</a>.</p>
+    </div>
+    <nav aria-label="Autres réalisations" class="pagination">
+      <a href={`/realisations/${precedente.id}/`} rel="prev">← Précédente : {precedente.data.titre}</a>
+      <a href={`/realisations/${suivante.id}/`} rel="next">Suivante : {suivante.data.titre} →</a>
+    </nav>
+    <p style="margin-top:2rem"><CtaDevis service={service.slug} /></p>
+  </article>
+</BaseLayout>
+<style>
+  .pagination { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 2rem; border-top: 1px solid var(--bordure); padding-top: 1rem; }
+  .pagination a { min-height: 44px; display: inline-flex; align-items: center; }
+</style>

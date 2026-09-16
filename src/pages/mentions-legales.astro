@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { entreprise, adresseLigne } from '@/data/entreprise';
+---
+<BaseLayout title="Mentions légales du site | ACS Multiservices, Romainville" description="Mentions légales du site ACS Multiservices : identification de l’entreprise, directeur de publication, hébergeur, assurance professionnelle et médiateur." ariane={[{ nom: 'Mentions légales', url: '/mentions-legales/' }]} noindex>
+  <section class="section conteneur prose">
+    <h1>Mentions légales</h1>
+    <h2>Éditeur du site</h2>
+    <table class="table-scroll">
+      <tbody>
+        <tr><th scope="row">Dénomination sociale</th><td>{entreprise.denominationSociale}</td></tr>
+        <tr><th scope="row">Nom commercial</th><td>{entreprise.nomCommercial}</td></tr>
+        <tr><th scope="row">Forme juridique</th><td>{entreprise.formeJuridique}</td></tr>
+        <tr><th scope="row">Siège social</th><td>{adresseLigne}</td></tr>
+        <tr><th scope="row">SIREN</th><td>{entreprise.siren}</td></tr>
+        <tr><th scope="row">N° TVA intracommunautaire</th><td>{entreprise.tva}</td></tr>
+        <tr><th scope="row">Immatriculation</th><td>{entreprise.immatriculation}</td></tr>
+        <tr><th scope="row">Code NAF</th><td>{entreprise.naf}</td></tr>
+        <tr><th scope="row">Date de création</th><td>{entreprise.dateCreationTexte}</td></tr>
+        <tr><th scope="row">Président et directeur de la publication</th><td>{entreprise.president}</td></tr>
+        <tr><th scope="row">Email</th><td><a href={`mailto:${entreprise.email}`}>{entreprise.email}</a></td></tr>
+        <tr><th scope="row">Téléphone</th><td>{entreprise.telephone}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Hébergeur</h2>
+    <p>{entreprise.hebergeur.nom}<br />{entreprise.hebergeur.adresse}<br />Téléphone : {entreprise.hebergeur.telephone}</p>
+
+    <h2>Assurance professionnelle</h2>
+    <p>Assureur : {entreprise.assurance.assureur}<br />N° de police : {entreprise.assurance.police}<br />Couverture géographique : {entreprise.assurance.zone}</p>
+
+    <h2>Médiateur de la consommation</h2>
+    <p>Conformément aux articles L.611-1 et suivants du Code de la consommation, tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d’un litige avec un professionnel. Après démarche écrite préalable auprès de {entreprise.denominationSociale}, vous pouvez saisir :</p>
+    <p>{entreprise.mediateur.nom}<br />{entreprise.mediateur.coordonnees}</p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>L’ensemble du site (textes, photographies, illustrations, logo, structure) est la propriété de {entreprise.denominationSociale} ou de ses partenaires, et protégé par le Code de la propriété intellectuelle. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.</p>
+
+    <h2>Crédits</h2>
+    <p>Conception et développement du site : {'{{CRÉDIT CONCEPTION}}'}. Photographies : {'{{CRÉDIT PHOTOS}}'}. Polices : Archivo et Source Sans 3 (licence SIL Open Font License), hébergées sur ce site.</p>
+
+    <h2>Données personnelles et cookies</h2>
+    <p>Le traitement des données du formulaire et l’absence de cookies de suivi sont décrits dans la <a href="/politique-confidentialite/">politique de confidentialité</a>.</p>
+  </section>
+</BaseLayout>

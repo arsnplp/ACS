@@ -1,0 +1,79 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { abs, organisationNode, websiteNode, breadcrumbNode, faqNode, type Crumb, type FaqItem } from '@/lib/seo';
+
+interface Props {
+  title: string;              // 50–60 caractères
+  description: string;        // 140–155 caractères
+  ariane?: Crumb[];           // vide sur l'accueil
+  noindex?: boolean;
+  ogImage?: string;           // chemin absolu depuis /public
+  ogType?: 'website' | 'article';
+  jsonLd?: Record<string, unknown>[]; // nœuds supplémentaires (@graph)
+  faq?: FaqItem[];            // génère FAQPage
+  preload?: string;           // image LCP à précharger
+  accueil?: boolean;
+}
+const { title, description, ariane = [], noindex = false, ogImage = '/images/og-default.jpg', ogType = 'website', jsonLd = [], faq, preload, accueil = false } = Astro.props;
+const canonical = abs(Astro.url.pathname);
+// Précharge l'image LCP seulement si le fichier existe (évite un 404 tant que la photo n'est pas fournie)
+const preloadHref = preload && fs.existsSync(path.join(process.cwd(), 'public', preload)) ? preload : undefined;
+// <picture> sert l'AVIF en priorité : on précharge la même variante pour que le preload soit utile
+const preloadAvif = preloadHref && fs.existsSync(path.join(process.cwd(), 'public', preloadHref.replace(/\.(jpe?g|png)$/, '.avif')));
+const preloadFinal = preloadAvif ? preloadHref!.replace(/\.(jpe?g|png)$/, '.avif') : preloadHref;
+const preloadType = preloadAvif ? 'image/avif' : undefined;
+const graph: Record<string, unknown>[] = [organisationNode()];
+if (accueil) graph.push(websiteNode());
+if (ariane.length) graph.push(breadcrumbNode([{ nom: 'Accueil', url: '/' }, ...ariane]));
+if (faq?.length) graph.push(faqNode(faq));
+graph.push(...jsonLd);
+const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#0f3d6e" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {accueil && <link rel="preload" href="/fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin />}
+    {preloadFinal && <link rel="preload" as="image" href={preloadFinal} type={preloadType} fetchpriority="high" />}
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="ACS Multiservices" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={abs(ogImage)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={abs(ogImage)} />
+    <script type="application/ld+json" set:html={ld} />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <Header />
+    {ariane.length > 0 && <Breadcrumb items={ariane} />}
+    <main id="contenu" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  main:focus { outline: none; }
+</style>

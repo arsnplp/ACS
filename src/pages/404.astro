@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { services, serviceUrl } from '@/data/services';
+---
+<BaseLayout title="Page introuvable | ACS Multiservices" description="La page demandée n’existe pas ou a été déplacée. Retrouvez nos services d’artisan à Romainville : meubles sur mesure, rénovation, électricité, plomberie." noindex ariane={[{ nom: 'Page introuvable', url: '/404/' }]}>
+  <section class="section conteneur prose">
+    <p class="surtitre">Erreur 404</p>
+    <h1>Cette page n’existe pas</h1>
+    <p class="chapo">L’adresse est peut-être erronée ou la page a été déplacée. Voici où aller.</p>
+    <h2>Nos services</h2>
+    <ul class="chips">{services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a></li>)}</ul>
+    <h2>Autres pages utiles</h2>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/realisations/">Nos réalisations</a></li>
+      <li><a href="/zone-intervention/">Zone d’intervention</a></li>
+      <li><a href="/devis/">Demander un devis</a></li>
+      <li><a href="/plan-du-site/">Plan du site</a></li>
+    </ul>
+  </section>
+</BaseLayout>

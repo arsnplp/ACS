@@ -1,0 +1,89 @@
+---
+import ServicePage from '@/layouts/ServicePage.astro';
+const faq = [
+  {
+    question: 'Combien coûte la réparation d’un meuble ?',
+    reponse: 'Le prix dépend du type de dégât, du temps de travail, des pièces à remplacer (charnières, coulisses, poignées) et de la finition demandée. Un recollage de pied coûte moins cher qu’une restauration complète avec décapage et vernis.\n\nNous établissons un devis détaillé à partir de vos photos, ou après un passage chez vous. Aucun montant n’est annoncé sans avoir vu le meuble.',
+  },
+  {
+    question: 'Vaut-il mieux réparer ou remplacer un meuble abîmé ?',
+    reponse: 'Un meuble en bois massif ou en contreplaqué se répare presque toujours. Un meuble en panneau de particules très gonflé par l’eau est parfois trop fragile pour être sauvé.\n\nNous vous donnons un avis honnête après examen. Si la réparation n’a pas de sens, nous vous orientons vers un meuble neuf sur mesure ou un montage de meuble en kit.',
+  },
+  {
+    question: 'Pouvez-vous réparer un tiroir bloqué ou qui sort de ses rails ?',
+    reponse: 'Oui. Un tiroir bloqué vient souvent d’une coulisse déformée, d’un fond décollé ou d’un bois qui a gonflé. Nous remplaçons les coulisses, recollons le fond ou rabotons légèrement les côtés. Le tiroir retrouve un mouvement fluide.',
+  },
+  {
+    question: 'Restaurez-vous les meubles anciens et le cannage ?',
+    reponse: 'Oui. Nous remettons en état commodes, buffets, chaises et tables anciennes : recollage des assemblages, remplacement de placage, ponçage doux et nouvelle finition (cire, vernis, huile). Pour un cannage de chaise, nous étudions chaque cas selon l’état du cadre.',
+  },
+  {
+    question: 'Faut-il apporter le meuble à l’atelier ?',
+    reponse: 'Pas toujours. Beaucoup de réparations se font chez vous : charnière, poignée, pied, porte qui frotte. Les restaurations lourdes (décapage, vernis, placage) se font en atelier à Romainville. Nous organisons le transport avec vous.',
+  },
+  {
+    question: 'Quels dégâts ne pouvez-vous pas réparer ?',
+    reponse: 'Nous n’intervenons pas sur les meubles en plastique moulé ni sur les meubles rembourrés (canapés, fauteuils en tissu). Pour tout ce qui est en bois, en panneau ou en placage, envoyez-nous des photos : nous vous disons rapidement ce qui est possible.',
+  },
+];
+---
+<ServicePage
+  slug="reparation-meubles"
+  title="Réparation de meuble à Romainville (93) | ACS Multiservices"
+  description="Charnière cassée, tiroir bloqué, meuble ancien à restaurer : ACS Multiservices répare vos meubles à Romainville et dans le 93. Envoyez vos photos."
+  h1="Réparation de meuble à Romainville : réparer plutôt que jeter"
+  faq={faq}
+  articles={[{ slug: 'reparer-ou-remplacer-meuble-abime', titre: 'Réparer ou remplacer un meuble abîmé : comment décider' }]}
+>
+  <Fragment slot="chapo">
+    <p>Vous cherchez un artisan pour une réparation de meuble à Romainville ou en Seine-Saint-Denis ? ACS Multiservices remet en état vos meubles en bois : charnière cassée, tiroir bloqué, pied desserré, placage décollé, vernis usé. Nous réparons aussi les meubles anciens que vous voulez garder.</p>
+    <p>Seydou Traoré, ébéniste et artisan fondateur, examine le meuble, vous explique ce qui est possible et intervient chez vous ou en atelier.</p>
+  </Fragment>
+
+  <h2>Ce que comprend la réparation de meubles</h2>
+  <p>Un meuble abîmé n’est pas un meuble perdu. Une commode héritée, une table de famille ou une armoire de qualité méritent souvent une seconde vie. Voici les réparations que nous faisons le plus souvent à Romainville, Montreuil, Bagnolet et dans les villes voisines.</p>
+  <ul class="liste-coches">
+    <li><strong>Remplacement de charnière</strong> : porte qui pend, qui ferme mal ou qui claque. Nous posons une charnière neuve adaptée à l’épaisseur du panneau.</li>
+    <li><strong>Tiroir bloqué ou cassé</strong> : coulisses à changer, fond décollé, façade fendue. Le tiroir coulisse à nouveau sans forcer.</li>
+    <li><strong>Recollage et renfort</strong> : pied de chaise ou de table qui bouge, assemblage ouvert, étagère qui s’affaisse.</li>
+    <li><strong>Placage décollé ou manquant</strong> : nous recollons les cloques et remplaçons les morceaux manquants avec un placage assorti.</li>
+    <li><strong>Rénovation de meuble bois</strong> : ponçage, rebouchage des rayures, nouvelle finition en vernis, cire ou huile.</li>
+    <li><strong>Restauration de meuble ancien</strong> : buffet, commode, chaise cannée. Nous respectons le style d’origine et les assemblages traditionnels.</li>
+  </ul>
+  <p>Chaque intervention commence par un diagnostic. Vous savez avant les travaux ce qui sera réparé, avec quelles pièces et quelle finition. Si le meuble est trop abîmé, nous vous le disons et nous proposons une <a href="/services/meubles-sur-mesure/">création de meuble sur mesure</a> à la place.</p>
+
+  <h2>Comment se déroule une réparation de meuble</h2>
+  <p>Le déroulement est simple et se fait par écrit si vous le préférez. Vous gardez une trace de chaque échange.</p>
+  <ol class="etapes">
+    <li><div><h3>Vous envoyez des photos</h3><p>Par le <a href="/devis/?service=reparation-meubles">formulaire de devis</a>, par email. Photographiez le dégât de près et le meuble en entier. Précisez si le meuble est en bois massif, en placage ou en panneau.</p></div></li>
+    <li><div><h3>Diagnostic et devis</h3><p>Nous identifions la cause du problème : humidité, usure, choc, mauvaise fixation. Vous recevez un devis qui indique les pièces, la finition et le lieu d’intervention (chez vous ou en atelier).</p></div></li>
+    <li><div><h3>Réparation</h3><p>Démontage des parties concernées, recollage sous serre-joints, remplacement des pièces, ponçage. Pour un vernis ou une teinte, nous faisons un essai sur une zone cachée.</p></div></li>
+    <li><div><h3>Finition et remise en place</h3><p>Application de la finition, réglage des portes et des tiroirs, remontage. Nous vous expliquons comment entretenir le meuble pour éviter que le problème revienne.</p></div></li>
+  </ol>
+
+  <h2>Pourquoi confier la réparation de vos meubles à ACS Multiservices</h2>
+  <p>ACS Multiservices est une entreprise artisanale immatriculée au Registre national des entreprises, installée avenue Youri Gagarine à Romainville. La menuiserie est notre cœur de métier.</p>
+  <ul class="liste-coches">
+    <li><strong>Un ébéniste dans le 93</strong> : Seydou Traoré fabrique des meubles sur mesure au quotidien. Il connaît les assemblages, les essences de bois et les finitions.</li>
+    <li><strong>Un seul interlocuteur</strong> : la personne qui établit le devis est celle qui répare votre meuble. Pas d’intermédiaire.</li>
+    <li><strong>Des échanges par écrit</strong> : photos, diagnostic, devis et suivi passent par email si vous le souhaitez.</li>
+    <li><strong>Un atelier proche</strong> : nous sommes à quelques minutes de Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin. Les allers-retours d’un meuble sont faciles.</li>
+  </ul>
+  <p>Votre meuble en kit s’est cassé pendant l’assemblage ? Notre service de <a href="/services/montage-meubles/">montage de meubles</a> reprend le travail proprement. Et si la réparation s’inscrit dans un projet plus large, nous assurons aussi la <a href="/services/renovation-interieure/">rénovation intérieure</a> de la pièce.</p>
+
+  <h2>Charnières, coulisses, placage : ce que nous réparons</h2>
+  <p>Le vocabulaire de l’ébénisterie peut sembler compliqué. Voici les mots que vous verrez sur nos devis, expliqués simplement.</p>
+  <ul>
+    <li><strong>Charnière invisible</strong> : la pièce métallique cachée à l’intérieur d’une porte de placard. Elle se règle sur trois axes et se remplace sans changer la porte.</li>
+    <li><strong>Coulisse</strong> : le rail qui guide un tiroir. Une coulisse à billes remplace avantageusement un vieux rail en plastique.</li>
+    <li><strong>Placage</strong> : une fine feuille de bois collée sur un panneau. On le recolle à chaud ou on le remplace par morceaux.</li>
+    <li><strong>Vernis, cire, huile</strong> : trois finitions. Le vernis protège fort, la cire donne un aspect ancien, l’huile nourrit le bois et se retouche facilement.</li>
+    <li><strong>Cannage</strong> : le tressage en rotin d’une assise de chaise. Il se refait avec du rotin neuf tendu sur le cadre.</li>
+    <li><strong>Tenon et mortaise</strong> : l’assemblage traditionnel d’une chaise ou d’une table. Quand il joue, on le décolle, on le nettoie et on le recolle.</li>
+  </ul>
+  <p>Vous hésitez encore ? Notre article <a href="/blog/reparer-ou-remplacer-meuble-abime/">« Réparer ou remplacer un meuble abîmé : comment décider »</a> vous aide à faire le bon choix avant de demander un devis.</p>
+
+  <Fragment slot="villes">
+    <p>Nous réparons vos meubles à domicile ou dans notre atelier de Romainville, et nous nous déplaçons dans toute la Seine-Saint-Denis et l’Est parisien : Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec, Pantin, ainsi que Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais et les 19e et 20e arrondissements de Paris. Pour les meubles lourds, nous convenons ensemble du transport.</p>
+  </Fragment>
+</ServicePage>

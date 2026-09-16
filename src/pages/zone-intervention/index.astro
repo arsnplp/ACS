@@ -1,0 +1,101 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import { villesPrioritaires, villesSecondaires, villeUrl } from '@/data/villes';
+import { services, serviceUrl } from '@/data/services';
+const textes: Record<string, string> = {
+  romainville: 'Notre commune d’implantation. Atelier avenue Youri Gagarine, interventions dans tous les quartiers, du centre aux Bruyères en passant par le Bas-Pays.',
+  montreuil: 'Ville voisine immédiate. Ateliers et lofts du Bas-Montreuil, pavillons en meulière, grands ensembles : des besoins très variés en menuiserie et en rénovation.',
+  bagnolet: 'À quelques minutes par la rue de Noisy-le-Sec. Beaucoup de copropriétés et de logements à rafraîchir, ainsi que des pavillons anciens dans les Coutures.',
+  'les-lilas': 'Commune résidentielle limitrophe. Petits immeubles des années 1930 à 1970 et pavillons où les rangements sur mesure et la mise aux normes électriques sont fréquents.',
+  'noisy-le-sec': 'Ville reconstruite après 1944, avec des maisons de la reconstruction et des cités à moderniser. Plomberie, électricité et montage de meubles y sont très demandés.',
+  pantin: 'Le long du canal de l’Ourcq. Immeubles haussmanniens, lofts dans d’anciennes usines, programmes neufs : dressings, bibliothèques et rénovations avant location.',
+};
+---
+<BaseLayout
+  title="Zone d’intervention : Romainville et Seine-Saint-Denis | ACS"
+  description="ACS Multiservices intervient à Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec, Pantin, Paris Est : meubles, rénovation, électricité, plomberie."
+  ariane={[{ nom: 'Zone d’intervention', url: '/zone-intervention/' }]}
+  ogImage="/images/carte-zone-intervention.jpg"
+  preload="/images/carte-zone-intervention.jpg"
+>
+  <section class="section section--blanc zone-hero-section">
+    <div class="conteneur zone-hero">
+      <div class="zone-hero__texte">
+      <p class="surtitre">Où nous intervenons</p>
+      <h1><span class="nowrap">Zone d’intervention :</span> Romainville, <span class="nowrap">Seine-Saint-Denis</span> et Est parisien</h1>
+      <p class="chapo">ACS Multiservices est basée à Romainville (93230). Nous nous déplaçons chez les particuliers et les petits professionnels des communes voisines de Seine-Saint-Denis et de l’Est de Paris, pour la fabrication de meubles sur mesure comme pour les travaux d’électricité, de plomberie et de rénovation.</p>
+      <p>Les villes ci-dessous ont une page dédiée qui décrit les logements du secteur, les travaux les plus demandés et les contraintes d’accès. Votre commune n’y figure pas ? <a href="/devis/">Écrivez-nous</a> avec votre adresse : nous vous répondons rapidement, par écrit si vous préférez.</p>
+      </div>
+      <div class="zone-hero__perso">
+        <ImageSlot nom="personnage-zone" alt="Artisan souriant en casque jaune montrant du doigt une carte de Romainville et des villes voisines : Pantin, Bobigny, Les Lilas, Noisy-le-Sec, Bagnolet, Montreuil" width={1312} height={1199} sizes="(min-width: 64rem) 26rem, 70vw" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="carte-titre">
+    <div class="conteneur">
+      <h2 id="carte-titre">Carte de la zone d’intervention</h2>
+      <p class="chapo">Romainville est au centre. Le cercle jaune couvre les communes limitrophes où nous intervenons le plus souvent : Pantin, Les Lilas, Bagnolet, Montreuil et Noisy-le-Sec. Autour, les repères bleus signalent les villes voisines que nous desservons aussi, jusqu’aux 19e et 20e arrondissements de Paris. Cliquez sur une ville dans la liste ci-dessous pour découvrir les logements du secteur et les travaux que nous y réalisons.</p>
+      <figure class="carte-zone">
+        <ImageSlot nom="carte-zone-intervention" alt="Carte de la zone d’intervention : Romainville au centre d’un cercle jaune couvrant Pantin, Les Lilas, Bagnolet, Montreuil et Noisy-le-Sec (villes avec page dédiée). À proximité : Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais, Paris 19e et 20e." width={1536} height={1024} lcp sizes="(min-width: 72rem) 68rem, 100vw" />
+        <figcaption>Carte schématique, sans échelle. Repères jaunes : villes avec page dédiée. Repères bleus : villes également desservies.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--clair" aria-labelledby="villes-titre">
+    <div class="conteneur">
+      <p class="surtitre">Villes desservies</p>
+      <h2 id="villes-titre">Nous nous déplaçons dans ces villes</h2>
+      <p class="chapo">Six communes voisines de Romainville ont leur page dédiée. Cliquez sur une ville pour découvrir les logements du secteur et les travaux que nous y réalisons le plus souvent.</p>
+      <div class="grille grille--villes">
+        {villesPrioritaires.map((v) => (
+          <article class="carte ville-carte">
+            <div class="carte__corps">
+              <p class="ville-carte__cp">{v.codePostal}</p>
+              <h3><a href={villeUrl(v.slug)}>Artisan multiservices {v.prep}</a></h3>
+              <p>{textes[v.slug]}</p>
+              <a class="carte__lien" href={villeUrl(v.slug)}>Nos services {v.prep} →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="secondaires-titre">
+    <div class="conteneur prose">
+      <h2 id="secondaires-titre">Autres communes desservies</h2>
+      <p>Nous intervenons aussi {villesSecondaires.map((v) => `${v.nom} (${v.codePostal})`).join(', ')}. Ces communes sont accessibles en moins d’une demi-heure depuis notre atelier selon la circulation. Les mêmes services y sont proposés :</p>
+      <ul class="chips">{services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a></li>)}</ul>
+      <h2>Déplacement, accès et stationnement</h2>
+      <p>Le déplacement fait partie du travail d’un artisan de proximité. Nous regroupons les visites par secteur pour limiter les trajets et proposer des créneaux cohérents aux habitants d’une même commune.</p>
+      <p>Nous nous déplaçons en utilitaire pour transporter meubles et matériel. Indiquez dans votre demande si le stationnement est difficile, si l’immeuble n’a pas d’ascenseur ou si un badge est nécessaire : nous organisons l’intervention en conséquence. Les conditions de déplacement sont précisées sur chaque devis.</p>
+      <p><CtaDevis /></p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .zone-hero { display: grid; gap: 2rem; align-items: end; grid-template-columns: 1fr; }
+  @media (min-width: 64rem) { .zone-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; } }
+  .nowrap { white-space: nowrap; }
+  .zone-hero__texte { align-self: center; padding-bottom: 2rem; }
+  .zone-hero__texte > * { max-width: var(--largeur-texte); }
+  /* Le personnage est collé au bas de la section : on annule le padding bas de .section */
+  .zone-hero-section { padding-block: clamp(1.5rem, 3vw, 2.5rem) 0; }
+  .zone-hero__perso { max-width: 40rem; width: 100%; margin-inline: auto 0; align-self: end; }
+  @media (min-width: 64rem) { .zone-hero__perso { margin-right: -2rem; } }
+  .zone-hero__perso img { display: block; width: 100%; }
+  .zone-hero__perso img { filter: drop-shadow(0 12px 24px rgb(15 61 110 / 0.18)); }
+  .carte-zone { max-width: 68rem; border-radius: var(--rayon); overflow: hidden; }
+  .carte-zone img, .carte-zone .img-slot { border-radius: var(--rayon); }
+  figcaption { font-size: 0.95rem; color: var(--texte-doux); margin-top: 0.5rem; }
+  .grille--villes { margin-top: 0.5rem; }
+  @media (min-width: 64rem) { .grille--villes { grid-template-columns: repeat(3, 1fr); } }
+  .ville-carte { border-top: 4px solid var(--jaune); }
+  .ville-carte__cp { flex: 0 !important; margin: 0; font-family: var(--police-titre); font-weight: 700; font-size: 0.85rem; color: var(--texte-doux); letter-spacing: 0.08em; }
+  .ville-carte h3 a { text-decoration: none; }
+  .ville-carte h3 a:hover { text-decoration: underline; }
+</style>

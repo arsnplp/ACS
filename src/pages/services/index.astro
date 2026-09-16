@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import Icon from '@/components/Icon.astro';
+import { services, serviceUrl } from '@/data/services';
+---
+<BaseLayout
+  title="Services d’artisan à Romainville (93) | ACS Multiservices"
+  description="Meubles sur mesure, réparation et montage de meubles, rénovation, électricité, plomberie : les 6 services d’ACS Multiservices à Romainville et dans le 93."
+  ariane={[{ nom: 'Services', url: '/services/' }]}
+>
+  <section class="section section--blanc">
+    <div class="conteneur prose">
+      <p class="surtitre">Services</p>
+      <h1>Nos services d’artisan multiservices à Romainville et en Seine-Saint-Denis</h1>
+      <p class="chapo">ACS Multiservices regroupe six prestations pour votre logement : la création de meubles sur mesure, notre activité principale, la réparation et le montage de meubles, la rénovation intérieure, l’électricité et la plomberie. Toutes sont assurées par Seydou Traoré, artisan basé à Romainville.</p>
+      <p>Chaque page détaille ce que comprend la prestation, comment se déroule l’intervention, les questions fréquentes et les villes couvertes. Vous pouvez aussi <a href="/devis/">décrire directement votre besoin</a> : nous vous orientons vers la bonne prestation.</p>
+    </div>
+  </section>
+
+  {services.map((s, i) => (
+    <section class:list={['section', { 'section--clair': i % 2 === 1 }]} aria-labelledby={`s-${s.slug}`}>
+      <div class="conteneur hub-service">
+        <div class="hub-service__media">
+          <ImageSlot nom={s.image} alt={s.imageAlt} width={1200} height={800} sizes="(min-width: 64rem) 28rem, 100vw" />
+        </div>
+        <div>
+          <div class="picto"><Icon path={s.icone} /></div>
+          <h2 id={`s-${s.slug}`}><a href={serviceUrl(s.slug)}>{s.nomLong}{s.phare ? ' — notre spécialité' : ''}</a></h2>
+          <p>{s.description}</p>
+          {s.slug === 'meubles-sur-mesure' && <p>Dressing, bibliothèque, placard sous escalier, meuble d’entrée, bureau intégré : chaque meuble est dessiné à vos cotes, fabriqué en atelier à Romainville et posé chez vous. C’est la solution quand un meuble standard ne rentre pas ou gaspille de la place.</p>}
+          {s.slug === 'reparation-meubles' && <p>Avant de jeter un meuble, faites-le expertiser. Charnières, coulisses, pieds, placage, vernis, cannage : beaucoup de dégâts se réparent pour une fraction du prix d’un meuble neuf, et les meubles anciens en bois massif le méritent presque toujours.</p>}
+          {s.slug === 'montage-meubles' && <p>Un montage propre et une fixation murale adaptée au support (plâtre, brique, béton) évitent les portes qui frottent et les armoires qui basculent. Nous montons aussi les cuisines en kit et nous ajustons les façades.</p>}
+          {s.slug === 'renovation-interieure' && <p>Peinture, pose de parquet, rebouchage, plinthes, petites démolitions : nous remettons une pièce ou un logement en état, par exemple avant une location ou après un achat. Si des travaux d’électricité ou de plomberie sont nécessaires, nous les intégrons au même devis.</p>}
+          {s.slug === 'electricite' && <p>Ajout de prises, remplacement d’un tableau à fusibles par un tableau avec disjoncteurs et différentiels, éclairage, dépannage : nos travaux respectent la norme NF C 15-100. Nous expliquons chaque intervention en termes simples.</p>}
+          {s.slug === 'plomberie' && <p>Fuite sous l’évier, chasse d’eau qui coule, mitigeur à remplacer, siphon bouché, chauffe-eau : nous intervenons pour les dépannages et les petits travaux de plomberie sanitaire, avec des pièces adaptées à votre installation.</p>}
+          <p><a class="btn btn--bleu" href={serviceUrl(s.slug)}>{s.nomLong} : détails et FAQ</a></p>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section section--bleu fond-bleu">
+    <div class="conteneur">
+      <h2>Vous ne savez pas quel service choisir ?</h2>
+      <p class="chapo">Décrivez simplement votre situation par écrit, avec une photo si possible. Nous vous répondons par email ou téléphone et nous vous proposons la bonne prestation.</p>
+      <CtaDevis />
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .hub-service { display: grid; gap: 2rem; align-items: center; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+  .hub-service__media { border-radius: var(--rayon); overflow: hidden; }
+  .hub-service h2 { margin-top: 0.75rem; }
+  .hub-service h2 a { text-decoration: none; }
+  .hub-service h2 a:hover { text-decoration: underline; }
+</style>

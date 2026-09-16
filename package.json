@@ -1,0 +1,23 @@
+{
+  "name": "acs-multiservices-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "node scripts/check-site.mjs",
+    "docs": "node scripts/generate-docs.mjs",
+    "postbuild": "node scripts/check-site.mjs && node scripts/generate-docs.mjs",
+    "images": "node scripts/images.mjs",
+    "prebuild": "node scripts/images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.0",
+    "astro": "^5.13.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

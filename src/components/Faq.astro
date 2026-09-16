@@ -1,0 +1,15 @@
+---
+/** FAQ accessible (details/summary natifs). Le JSON-LD FAQPage est injecté par le layout via la prop `faq`. */
+import type { FaqItem } from '@/lib/seo';
+interface Props { items: FaqItem[]; titre?: string }
+const { items, titre = 'Questions fréquentes' } = Astro.props;
+---
+<section class="faq" aria-labelledby="faq-titre">
+  <h2 id="faq-titre">{titre}</h2>
+  {items.map((f) => (
+    <details>
+      <summary>{f.question}</summary>
+      <div set:html={f.reponse.split(/\n\n+/).map((p) => `<p>${p}</p>`).join('')} />
+    </details>
+  ))}
+</section>

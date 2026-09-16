@@ -1,0 +1,89 @@
+---
+import ServicePage from '@/layouts/ServicePage.astro';
+const faq = [
+  {
+    question: 'Combien coûte un meuble sur mesure ?',
+    reponse: 'Le prix dépend de quatre facteurs principaux : les dimensions, le matériau choisi (panneau mélaminé, contreplaqué, bois massif), le niveau de finition et la complexité du montage. Un dressing simple en mélaminé coûte moins cher qu’une bibliothèque en chêne massif avec portes vitrées.\n\nNous établissons un devis détaillé après visite ou sur la base de vos photos et cotes. Les montants ne sont annoncés qu’après étude de votre projet.',
+  },
+  {
+    question: 'Quel délai entre le devis et la pose ?',
+    reponse: 'Le délai dépend de la charge de l’atelier et de la disponibilité des matériaux. Il est indiqué sur le devis avant votre accord. Vous êtes tenu informé par écrit de chaque étape : validation des plans, début de fabrication, date de pose.',
+  },
+  {
+    question: 'Faut-il prendre les mesures moi-même ?',
+    reponse: 'Non. Pour un meuble sur mesure, nous prenons les cotes sur place. Des murs rarement droits, une plinthe, un radiateur ou une prise mal placée peuvent changer la conception. Vous pouvez néanmoins envoyer des mesures approximatives et des photos pour une première estimation.',
+  },
+  {
+    question: 'Quels matériaux utilisez-vous ?',
+    reponse: 'Nous travaillons le panneau de particules mélaminé, le MDF à peindre, le contreplaqué (bouleau, peuplier) et le bois massif (chêne, hêtre, frêne, pin) selon votre budget et l’usage. La quincaillerie (charnières à fermeture amortie, coulisses de tiroirs, poignées) est choisie avec vous.',
+  },
+  {
+    question: 'Intervenez-vous dans une copropriété ou un immeuble ancien ?',
+    reponse: 'Oui. La plupart de nos chantiers en Seine-Saint-Denis se font en appartement, souvent sans ascenseur. Les meubles sont fabriqués en modules transportables puis assemblés sur place. Nous protégeons les parties communes et évacuons nos déchets.',
+  },
+  {
+    question: 'Pouvez-vous refaire un meuble à partir d’une photo ou d’un croquis ?',
+    reponse: 'Oui. Un croquis à la main, une photo d’inspiration ou un lien vers un modèle suffisent pour commencer. Nous adaptons ensuite les dimensions et les matériaux à votre pièce et à votre budget.',
+  },
+];
+---
+<ServicePage
+  slug="meubles-sur-mesure"
+  title="Meuble sur mesure en Seine-Saint-Denis | ACS Multiservices"
+  description="Dressing, bibliothèque, placard sous escalier : ACS Multiservices conçoit vos meubles sur mesure en Seine-Saint-Denis depuis Romainville. Devis par écrit."
+  h1="Meuble sur mesure en Seine-Saint-Denis : conception, fabrication et pose"
+  faq={faq}
+  articles={[{ slug: 'meuble-sur-mesure-prix-devis', titre: 'Meuble sur mesure : ce qui fait varier le prix d’un devis' }]}
+>
+  <Fragment slot="chapo">
+    <p>Vous cherchez un menuisier à Romainville pour un meuble sur mesure en Seine-Saint-Denis ? ACS Multiservices conçoit, fabrique et pose des meubles adaptés à votre logement : dressing, bibliothèque, placard sous escalier, meuble TV, banquette avec rangement. Chaque pièce est dessinée pour vos dimensions, vos usages et votre budget.</p>
+    <p>Seydou Traoré, artisan fondateur, prend les mesures chez vous, fabrique en atelier et installe le meuble dans votre appartement ou votre maison.</p>
+  </Fragment>
+
+  <h2>Ce que comprend la création de meubles sur mesure</h2>
+  <p>Un meuble sur mesure remplace un meuble standard qui ne rentre pas, gaspille de la place ou ne correspond pas à votre intérieur. Voici les demandes les plus fréquentes que nous traitons à Romainville, Montreuil, Bagnolet et dans les villes voisines.</p>
+  <ul class="liste-coches">
+    <li><strong>Dressing sur mesure</strong> : penderies, étagères et tiroirs dans une chambre, une alcôve ou un couloir, avec ou sans portes.</li>
+    <li><strong>Bibliothèque sur mesure</strong> : du sol au plafond, autour d’une porte ou d’une fenêtre, avec niches pour la télévision ou le bureau.</li>
+    <li><strong>Placard sous escalier</strong> : tiroirs coulissants ou portes battantes qui exploitent chaque centimètre d’un volume irrégulier.</li>
+    <li><strong>Agencement intérieur</strong> : meuble d’entrée avec banc et patères, cloison-rangement, tête de lit avec chevets intégrés.</li>
+    <li><strong>Meuble de salle de bains ou de cuisine</strong> : meuble vasque, colonne de rangement, îlot ou façades adaptées à un plan existant.</li>
+    <li><strong>Bureau et coin travail</strong> : plan de travail intégré, rangements fermés pour les câbles, étagères au-dessus.</li>
+  </ul>
+  <p>Chaque projet inclut la prise de cotes, la proposition de plan, le choix des matériaux et de la quincaillerie, la fabrication, la livraison et la pose. Les finitions (peinture, vernis, huile, chants plaqués) sont définies avec vous avant fabrication.</p>
+
+  <h2>Comment se déroule la fabrication d’un meuble sur mesure</h2>
+  <p>Un projet de menuiserie sur mesure suit toujours les mêmes étapes. Vous savez à chaque moment où en est votre meuble.</p>
+  <ol class="etapes">
+    <li><div><h3>Vous décrivez votre besoin</h3><p>Par formulaire ou par email. Envoyez des photos de l’emplacement et, si possible, des mesures approximatives. Pas besoin de plan technique.</p></div></li>
+    <li><div><h3>Visite et prise de cotes</h3><p>Nous venons chez vous mesurer l’emplacement : hauteur sous plafond, plinthes, radiateurs, prises, faux aplombs. Nous discutons des usages : que rangez-vous, à quelle hauteur, avec quelle fréquence ?</p></div></li>
+    <li><div><h3>Plan et devis détaillé</h3><p>Vous recevez un plan coté et un devis qui liste les matériaux, la quincaillerie, la finition, la pose et le délai. Rien n’est lancé sans votre accord écrit.</p></div></li>
+    <li><div><h3>Fabrication en atelier</h3><p>Découpe des panneaux, usinage, assemblage des caissons, plaquage des chants, ponçage et finition. Les grands meubles sont conçus en modules pour passer par l’escalier.</p></div></li>
+    <li><div><h3>Pose et réglages</h3><p>Livraison, mise à niveau, fixation au mur avec des chevilles adaptées (plâtre, brique, béton), réglage des portes et tiroirs. Nous laissons la pièce propre.</p></div></li>
+  </ol>
+
+  <h2>Pourquoi confier votre meuble sur mesure à ACS Multiservices</h2>
+  <p>ACS Multiservices est une entreprise artisanale immatriculée au Registre national des entreprises, basée avenue Youri Gagarine à Romainville. La création de meubles sur mesure est notre activité principale.</p>
+  <ul class="liste-coches">
+    <li><strong>Un seul interlocuteur</strong> : Seydou Traoré vous reçoit, dessine, fabrique et pose. Aucune sous-traitance sur la menuiserie.</li>
+    <li><strong>Un atelier local</strong> : nous sommes à Romainville, à quelques minutes de Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin. Les visites et les retouches sont simples à organiser.</li>
+    <li><strong>Des échanges par écrit</strong> : plans, devis et suivi vous sont envoyés par email ou par message. Vous gardez une trace de chaque décision.</li>
+    <li><strong>Du polyvalent utile</strong> : si votre meuble demande une prise électrique intégrée ou une arrivée d’eau, nous gérons aussi <a href="/services/electricite/">l’électricité</a> et <a href="/services/plomberie/">la plomberie</a>.</li>
+  </ul>
+  <p>Vous hésitez entre créer un meuble neuf et sauver un meuble existant ? Notre service de <a href="/services/reparation-meubles/">réparation et restauration de meubles</a> peut être une alternative moins coûteuse. Et pour un meuble en kit déjà acheté, voyez notre prestation de <a href="/services/montage-meubles/">montage de meubles</a>.</p>
+
+  <h2>Essences de bois, panneaux et quincaillerie : nos choix</h2>
+  <p>Le matériau conditionne le prix, le poids, l’aspect et la durée de vie du meuble. Nous vous conseillons selon l’usage et la pièce.</p>
+  <ul>
+    <li><strong>Mélaminé</strong> : économique, résistant aux rayures, large choix de décors. Idéal pour l’intérieur d’un dressing.</li>
+    <li><strong>MDF à peindre</strong> : surface lisse, parfaite pour une bibliothèque laquée dans la couleur de vos murs.</li>
+    <li><strong>Contreplaqué bouleau</strong> : chants visibles décoratifs, bonne tenue, aspect scandinave.</li>
+    <li><strong>Bois massif</strong> (chêne, hêtre, frêne) : pour un plateau de bureau, une table ou des façades qui vieillissent bien.</li>
+  </ul>
+  <p>Côté quincaillerie, nous posons des charnières à fermeture amortie, des coulisses à sortie totale pour les tiroirs et des systèmes de portes coulissantes de marques reconnues. Dans une salle de bains, nous privilégions les panneaux hydrofuges.</p>
+  <p>Vous voulez comprendre ce qui fait varier un devis ? Lisez notre guide <a href="/blog/meuble-sur-mesure-prix-devis/">« Meuble sur mesure : ce qui fait varier le prix d’un devis »</a>.</p>
+
+  <Fragment slot="villes">
+    <p>Nous fabriquons vos meubles dans notre atelier de Romainville et nous les posons dans toute la Seine-Saint-Denis et l’Est parisien : Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec, Pantin, mais aussi Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais et les 19e et 20e arrondissements de Paris.</p>
+  </Fragment>
+</ServicePage>

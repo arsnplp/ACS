@@ -1,0 +1,85 @@
+---
+import ServicePage from '@/layouts/ServicePage.astro';
+const faq = [
+  {
+    question: 'Combien coûte la rénovation d’un appartement ?',
+    reponse: 'Le prix dépend de la surface, de l’état des supports (murs fissurés, sol irrégulier), des matériaux choisis (peinture, parquet stratifié ou flottant) et des travaux annexes en électricité ou plomberie. Un simple rafraîchissement coûte moins cher qu’une remise en état complète.\n\nNous établissons un devis par poste après visite. Vous voyez exactement ce que couvre chaque ligne.',
+  },
+  {
+    question: 'Faut-il quitter le logement pendant les travaux ?',
+    reponse: 'Pas toujours. Pour une peinture ou un parquet dans une seule pièce, vous pouvez rester chez vous. Nous protégeons le mobilier et fermons la zone de travail. Pour une rénovation complète avec électricité et plomberie, il est plus confortable de libérer le logement quelques jours.',
+  },
+  {
+    question: 'Parquet flottant ou stratifié : quelle différence ?',
+    reponse: 'Le parquet flottant contient une couche de bois véritable en surface. Le stratifié imite le bois avec une photo protégée par une résine. Le stratifié résiste bien aux rayures et coûte moins cher ; le parquet contrecollé peut être poncé et donne un aspect plus chaleureux. Nous vous conseillons selon la pièce et l’usage.',
+  },
+  {
+    question: 'Pouvez-vous remettre un logement en état avant une location ?',
+    reponse: 'Oui. Nous intervenons pour les propriétaires bailleurs entre deux locataires : rebouchage des trous, peinture des murs et plafonds, remplacement de plinthes, petites réparations électriques et de plomberie. Vous recevez un devis unique pour l’ensemble.',
+  },
+  {
+    question: 'Fournissez-vous la peinture et les matériaux ?',
+    reponse: 'Oui, nous pouvons tout fournir : peinture, enduit, parquet, plinthes, sous-couche. Vous pouvez aussi acheter vous-même les matériaux si vous préférez. Dans ce cas, nous vous indiquons les quantités et les références adaptées.',
+  },
+];
+---
+<ServicePage
+  slug="renovation-interieure"
+  title="Rénovation d’appartement dans le 93 | ACS Multiservices"
+  description="Peinture, parquet, enduit, plinthes : ACS Multiservices rénove votre appartement dans le 93, depuis Romainville, avec un seul artisan. Demandez un devis."
+  h1="Rénovation d’appartement dans le 93 : peinture, parquet et remise en état"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Vous préparez une rénovation d’appartement dans le 93 ? ACS Multiservices assure la rénovation intérieure de votre logement à Romainville et en Seine-Saint-Denis : peinture des murs et plafonds, pose de parquet, enduit, plinthes, remise en état avant location. Une pièce ou tout l’appartement, avec un seul artisan.</p>
+    <p>Seydou Traoré coordonne les travaux, du rebouchage des murs jusqu’à la dernière plinthe, et gère aussi l’électricité et la plomberie si besoin.</p>
+  </Fragment>
+
+  <h2>Ce que comprend la rénovation intérieure</h2>
+  <p>Rénover, c’est remettre un logement propre, sain et agréable, sans forcément tout casser. Voici les travaux que nous réalisons le plus souvent à Romainville, Montreuil, Noisy-le-Sec et dans les villes voisines.</p>
+  <ul class="liste-coches">
+    <li><strong>Peinture intérieure</strong> : murs, plafonds, boiseries, radiateurs. Préparation des supports, sous-couche et deux couches de finition.</li>
+    <li><strong>Pose de parquet</strong> : parquet flottant contrecollé ou stratifié, sous-couche acoustique, barres de seuil et plinthes assorties.</li>
+    <li><strong>Enduit et rebouchage</strong> : fissures, trous de chevilles, angles abîmés, lissage d’un mur irrégulier avant peinture.</li>
+    <li><strong>Plinthes et finitions</strong> : dépose des anciennes plinthes, pose de plinthes bois ou MDF, joints acryliques propres.</li>
+    <li><strong>Rafraîchissement de logement</strong> : remise en état rapide d’un studio ou d’un T2 entre deux occupants.</li>
+    <li><strong>Rénovation d’une pièce complète</strong> : chambre, salon ou entrée, du sol au plafond, avec ajout de prises ou d’éclairage.</li>
+  </ul>
+  <p>Chaque chantier comprend la protection des sols et des meubles, la préparation des supports, les travaux, le nettoyage et l’évacuation des déchets. Pour les rangements, nous pouvons intégrer un <a href="/services/meubles-sur-mesure/">meuble sur mesure</a> au projet.</p>
+
+  <h2>Comment se déroule une rénovation d’appartement</h2>
+  <p>Un chantier réussi commence par une bonne préparation. Voici les étapes, de votre demande jusqu’à la réception.</p>
+  <ol class="etapes">
+    <li><div><h3>Vous décrivez le projet</h3><p>Photos des pièces, surface approximative, liste des travaux souhaités. Utilisez le <a href="/devis/?service=renovation-interieure">formulaire de devis</a> ou l’email.</p></div></li>
+    <li><div><h3>Visite et devis par poste</h3><p>Nous mesurons les surfaces, vérifions l’état des murs et des sols, et repérons les points électriques et de plomberie. Le devis détaille chaque poste : préparation, peinture, parquet, plinthes.</p></div></li>
+    <li><div><h3>Préparation des supports</h3><p>Protection, dépose des éléments gênants, rebouchage, enduit, ponçage. C’est l’étape qui fait la qualité du résultat final.</p></div></li>
+    <li><div><h3>Travaux de finition</h3><p>Peinture en deux couches, pose du parquet dans le sens de la lumière, plinthes et barres de seuil. Les travaux d’<a href="/services/electricite/">électricité</a> et de <a href="/services/plomberie/">plomberie</a> sont faits avant les finitions.</p></div></li>
+    <li><div><h3>Nettoyage et réception</h3><p>Nous nettoyons, remontons ce qui a été déposé et faisons le tour du logement avec vous. Les retouches éventuelles sont notées et traitées.</p></div></li>
+  </ol>
+
+  <h2>Pourquoi confier votre rénovation intérieure à ACS Multiservices</h2>
+  <p>ACS Multiservices est une entreprise artisanale immatriculée au Registre national des entreprises, basée avenue Youri Gagarine à Romainville.</p>
+  <ul class="liste-coches">
+    <li><strong>Un seul interlocuteur</strong> : Seydou Traoré établit le devis, réalise les travaux et répond à vos questions. Pas de chef de chantier absent.</li>
+    <li><strong>Plusieurs métiers en un</strong> : peinture, parquet, menuiserie, électricité et plomberie. Vous n’avez pas à coordonner plusieurs entreprises.</li>
+    <li><strong>Des échanges par écrit</strong> : devis, planning et photos d’avancement vous sont envoyés par email.</li>
+    <li><strong>Une entreprise du 93</strong> : nous connaissons les immeubles anciens de Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin, leurs murs irréguliers et leurs escaliers étroits.</li>
+  </ul>
+  <p>Après les travaux, nous pouvons aussi assurer le <a href="/services/montage-meubles/">montage de vos meubles</a> pour que le logement soit prêt à vivre.</p>
+
+  <h2>Enduit, sous-couche, plinthe : les mots de la rénovation</h2>
+  <p>Un devis de rénovation contient des termes techniques. Voici ce qu’ils veulent dire concrètement.</p>
+  <ul>
+    <li><strong>Enduit de rebouchage</strong> : pâte épaisse pour combler trous et fissures. L’enduit de lissage, plus fin, rend le mur uniforme.</li>
+    <li><strong>Sous-couche</strong> : première couche qui bloque le fond et fait accrocher la peinture. Indispensable sur un mur neuf ou réparé.</li>
+    <li><strong>Peinture mate, satinée, velours</strong> : la mate cache les défauts, la satinée se lave bien (cuisine, couloir), le velours est entre les deux.</li>
+    <li><strong>Parquet flottant</strong> : lames posées sans colle ni clou, clipsées entre elles sur une sous-couche. Rapide à poser et à remplacer.</li>
+    <li><strong>Barre de seuil</strong> : profilé qui fait la jonction entre deux sols, par exemple entre parquet et carrelage.</li>
+    <li><strong>Plinthe</strong> : baguette au bas du mur qui cache le joint de dilatation du parquet et protège la peinture.</li>
+  </ul>
+  <p>Vous voulez savoir si votre projet est réalisable et dans quel ordre ? Envoyez-nous vos photos par le <a href="/devis/?service=renovation-interieure">formulaire de devis</a>. Nous vous répondons par écrit.</p>
+
+  <Fragment slot="villes">
+    <p>Nous rénovons appartements et maisons à Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin, et nous intervenons aussi à Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais et dans les 19e et 20e arrondissements de Paris. Logements anciens, immeubles sans ascenseur, studios étudiants ou biens à remettre en location : nous adaptons l’organisation du chantier au lieu.</p>
+  </Fragment>
+</ServicePage>

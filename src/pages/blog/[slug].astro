@@ -1,0 +1,74 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import { getService, serviceUrl } from '@/data/services';
+import { abs, ORG_ID } from '@/lib/seo';
+import { entreprise } from '@/data/entreprise';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('blog', (a) => !a.data.brouillon);
+  return articles.map((a) => ({ params: { slug: a.id }, props: { article: a, autres: articles.filter((x) => x.id !== a.id) } }));
+}
+const { article, autres } = Astro.props;
+const { Content, headings } = await render(article);
+const d = article.data;
+const service = getService(d.service)!;
+const connexe = autres.find((a) => a.id === d.articleConnexe) ?? autres[0];
+const h2 = headings.filter((h) => h.depth === 2);
+const url = `/blog/${article.id}/`;
+const dateTexte = d.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+const articleNode = {
+  '@type': 'Article',
+  headline: d.titre,
+  description: d.description,
+  datePublished: d.date.toISOString(),
+  dateModified: (d.miseAJour ?? d.date).toISOString(),
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: abs(url),
+  image: abs(d.image ? `/images/blog/${d.image}.jpg` : '/images/og-default.jpg'),
+  author: { '@type': 'Person', name: entreprise.president, worksFor: { '@id': ORG_ID } },
+  publisher: { '@id': ORG_ID },
+  about: { '@id': `${abs(serviceUrl(service.slug))}#service` },
+};
+---
+<BaseLayout
+  title={d.titreSeo ?? (d.titre.length <= 40 ? `${d.titre} | ACS Multiservices` : d.titre)}
+  description={d.description}
+  ariane={[{ nom: 'Conseils', url: '/blog/' }, { nom: d.titre, url }]}
+  ogType="article"
+  ogImage={d.image ? `/images/blog/${d.image}.jpg` : '/images/og-default.jpg'}
+  jsonLd={[articleNode]}
+>
+  <article class="conteneur section">
+    <p class="surtitre">Conseils · <a href={serviceUrl(service.slug)}>{service.nomLong}</a></p>
+    <h1>{d.titre}</h1>
+    <p class="meta">Par {entreprise.president} · Publié le <time datetime={d.date.toISOString().slice(0, 10)}>{dateTexte}</time></p>
+    <p class="chapo">{d.description}</p>
+    {d.image && <ImageSlot nom={d.image} dossier="blog" alt={d.imageAlt ?? ''} width={1200} height={630} lcp />}
+    {h2.length > 0 && (
+      <nav class="sommaire" aria-labelledby="sommaire-titre">
+        <h2 id="sommaire-titre">Sommaire</h2>
+        <ol>{h2.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+      </nav>
+    )}
+    <div class="prose article-corps">
+      <Content />
+    </div>
+    <div class="encadre">
+      <p><strong>Besoin d’un avis sur votre situation ?</strong> Décrivez-la par écrit sur notre page <a href={`/devis/?service=${service.slug}`}>demande de devis</a>. Nous répondons par email ou téléphone.</p>
+    </div>
+    <p><CtaDevis service={service.slug} /></p>
+    {connexe && (
+      <aside aria-labelledby="connexe-titre" style="margin-top:2.5rem">
+        <h2 id="connexe-titre">À lire aussi</h2>
+        <p><a href={`/blog/${connexe.id}/`}>{connexe.data.titre}</a> — {connexe.data.description}</p>
+      </aside>
+    )}
+  </article>
+</BaseLayout>
+<style is:global>
+  .article-corps h2 { scroll-margin-top: 5rem; }
+  .article-corps img { border-radius: var(--rayon); }
+</style>

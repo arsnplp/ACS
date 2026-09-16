@@ -1,0 +1,51 @@
+---
+import VillePage from '@/layouts/VillePage.astro';
+const faq = [
+  {
+    question: 'Pouvez-vous intervenir dans les logements sociaux de Bagnolet ?',
+    reponse: 'Oui, à la demande du locataire pour ce qui relève de son usage : meubles, montage, petites réparations. Les travaux qui touchent aux parties communes ou à la structure dépendent du bailleur. Nous vous aidons à faire la distinction avant de commencer.',
+  },
+  {
+    question: 'Comment accédez-vous aux tours de la Capsulerie ou de La Noue ?',
+    reponse: 'Nous déchargeons au plus près de l’entrée puis utilisons l’ascenseur avec des protections. Pour les meubles longs, nous fabriquons en modules adaptés à la cabine. Prévenez le gardien si le règlement l’exige.',
+  },
+  {
+    question: 'Quel délai pour un dépannage à Bagnolet ?',
+    reponse: 'Bagnolet est limitrophe de Romainville, où se trouve notre atelier. Le délai dépend surtout de la nature du problème et de notre planning. Envoyez une photo par email et nous vous répondons par écrit.',
+  },
+];
+---
+<VillePage
+  slug="bagnolet"
+  title="Artisan multiservices à Bagnolet (93170) | ACS Multiservices"
+  description="Artisan multiservices à Bagnolet : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie. Atelier à Romainville. Écrivez-nous."
+  h1="Artisan multiservices à Bagnolet (93170)"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>ACS Multiservices est un artisan multiservices à Bagnolet et dans les communes voisines. Notre atelier se trouve à Romainville, juste au nord, à quelques minutes du Plateau et des Malassis. Seydou Traoré y fabrique vos meubles sur mesure, puis vient les poser, réparer ou rénover chez vous.</p>
+  </Fragment>
+
+  <h2>Bagnolet, une ville dense aux portes de Paris</h2>
+  <p>Coincée entre le périphérique, l’échangeur de l’A3 et le 20e arrondissement, Bagnolet compte environ 35 000 habitants sur un petit territoire. Les logements y sont souvent compacts. Chaque mètre carré doit être utile.</p>
+  <p>C’est pour cela que nos <a href="/services/meubles-sur-mesure/">meubles sur mesure à Bagnolet</a> sont surtout des rangements : placard dans un renfoncement, meuble sous fenêtre, tête de lit avec niches, bureau escamotable. Nous prenons les cotes chez vous et fabriquons à Romainville.</p>
+
+  <h2>Les types de logements que nous rencontrons à Bagnolet</h2>
+  <ul class="liste-coches">
+    <li><strong>Tours et barres des années 1960–1970</strong> (La Capsulerie, La Noue, Les Malassis) : béton banché difficile à percer, gaines techniques communes, tableaux électriques d’origine. Le <a href="/services/montage-meubles/">montage de meubles à Bagnolet</a> avec fixation murale adaptée au béton est une demande courante.</li>
+    <li><strong>Pavillons anciens</strong> (rue Sadi-Carnot, Les Coutures, Le Plateau) : maisons de faubourg en brique et meulière, planchers bois, installations électriques modifiées au fil des décennies. Un <a href="/services/electricite/">électricien à Bagnolet</a> y remet souvent de l’ordre avant une rénovation.</li>
+    <li><strong>Logements sociaux à rafraîchir</strong> : cuisine et salle de bains fatiguées, sols abîmés, portes à régler. La <a href="/services/renovation-interieure/">rénovation intérieure à Bagnolet</a> se fait pièce par pièce, dans le respect du bail.</li>
+    <li><strong>Immeubles récents du centre</strong> (abords de la mairie et du métro Gallieni) : petites surfaces livrées nues. Placards, dressings et meubles d’entrée sont les premiers besoins.</li>
+  </ul>
+
+  <h2>Plomberie et électricité : les urgences du quotidien</h2>
+  <p>Dans les immeubles anciens de Bagnolet, les colonnes d’eau et les branchements datent. Un joint qui lâche sous l’évier, un flexible de douche percé, une chasse d’eau qui coule sans arrêt : notre <a href="/services/plomberie/">plombier à Bagnolet</a> intervient pour ces pannes courantes et remplace les pièces défaillantes.</p>
+  <p>Côté électricité, les demandes portent sur l’ajout de prises dans un salon, le remplacement d’un tableau à fusibles ou l’installation d’un éclairage de cuisine.</p>
+
+  <h2>Réparer un meuble plutôt que le remplacer</h2>
+  <p>Beaucoup d’habitants de Bagnolet gardent des meubles de famille ou chinés dans le quartier. Une chaise dont le pied bouge, une porte de placard qui ne ferme plus, un tiroir sans glissière : ces défauts se réparent. Notre page <a href="/services/reparation-meubles/">réparation de meubles à Bagnolet</a> décrit les cas les plus fréquents.</p>
+
+  <h2>Circulation, stationnement et prise de contact</h2>
+  <p>Le secteur de Gallieni et de l’échangeur est très chargé aux heures de pointe. Nous planifions nos passages en conséquence et nous convenons avec vous d’un point de déchargement.</p>
+  <p>Vous pouvez nous contacter uniquement par écrit si vous le souhaitez : formulaire ou email. Nous répondons par le même canal. Tout est détaillé sur la page <a href="/devis/">demande de devis</a>.</p>
+</VillePage>

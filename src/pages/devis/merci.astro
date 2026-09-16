@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContactOptions from '@/components/ContactOptions.astro';
+import { entreprise } from '@/data/entreprise';
+---
+<BaseLayout title="Demande de devis envoyée | ACS Multiservices Romainville" description="Votre demande de devis a bien été envoyée à ACS Multiservices. Nous vous répondons par le moyen de contact que vous avez choisi : email ou appel téléphonique." ariane={[{ nom: 'Demande de devis', url: '/devis/' }, { nom: 'Demande envoyée', url: '/devis/merci/' }]} noindex>
+  <section class="section conteneur prose">
+    <h1>Votre demande a bien été envoyée</h1>
+    <p class="chapo">Merci. Nous vous répondons par le moyen que vous avez choisi (email ou appel téléphonique), sous {entreprise.delaiReponse}.</p>
+    <h2>Et ensuite ?</h2>
+    <ol>
+      <li>Nous lisons votre demande et vos photos.</li>
+      <li>Nous vous posons nos questions par écrit, ou nous convenons d’une visite.</li>
+      <li>Vous recevez un devis détaillé, poste par poste.</li>
+    </ol>
+    <h2>Pas de réponse passé ce délai ?</h2>
+    <p>Vérifiez vos courriers indésirables, puis contactez-nous directement :</p>
+    <ContactOptions />
+    <p style="margin-top:1.5rem"><a href="/">Retour à l’accueil</a> · <a href="/services/">Voir nos services</a></p>
+  </section>
+</BaseLayout>

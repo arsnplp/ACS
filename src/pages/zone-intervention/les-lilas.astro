@@ -1,0 +1,51 @@
+---
+import VillePage from '@/layouts/VillePage.astro';
+const faq = [
+  {
+    question: 'Intervenez-vous dans les copropriétés anciennes des Lilas ?',
+    reponse: 'Oui. Beaucoup d’immeubles des Lilas datent des années 1930 à 1970 et ont un règlement de copropriété précis. Nous respectons les horaires de travaux, protégeons les parties communes et prévenons le gardien ou le syndic si nécessaire.',
+  },
+  {
+    question: 'Où stationnez-vous aux Lilas pour livrer un meuble ?',
+    reponse: 'La rue de Paris et les abords de la mairie sont très commerçants et peu adaptés au déchargement. Nous convenons d’un créneau et d’un point d’arrêt avec vous, ou nous utilisons une rue adjacente plus calme des Sentes ou des Bruyères.',
+  },
+  {
+    question: 'En combien de temps pouvez-vous passer aux Lilas ?',
+    reponse: 'Les Lilas sont limitrophes de Romainville, où se trouve notre atelier. Le délai dépend de la nature du travail et de notre planning. Décrivez votre besoin par écrit avec des photos et nous vous proposons une date.',
+  },
+];
+---
+<VillePage
+  slug="les-lilas"
+  title="Artisan multiservices aux Lilas (93260) | ACS Multiservices"
+  description="Artisan multiservices aux Lilas : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie. Atelier voisin à Romainville. Devis écrit."
+  h1="Artisan multiservices aux Lilas (93260)"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>ACS Multiservices est votre artisan multiservices aux Lilas : menuiserie sur mesure, réparation et montage de meubles, rénovation, électricité et plomberie. Notre atelier est à Romainville, commune voisine qui partage avec les Lilas le fort de Romainville. Seydou Traoré se déplace en quelques minutes dans tous les quartiers lilasiens.</p>
+  </Fragment>
+
+  <h2>Une commune résidentielle où l’ancien domine</h2>
+  <p>Les Lilas comptent un peu plus de 20 000 habitants, sur un territoire réduit adossé au 19e et au 20e arrondissement de Paris. La ville s’est construite tôt et a peu changé depuis. Le bâti est donc ancien, souvent bien entretenu, mais il vieillit.</p>
+  <p>Cette situation crée des besoins précis : remettre aux normes une installation électrique des années 1960, remplacer une robinetterie d’origine, intégrer des rangements dans des pièces aux angles irréguliers. Nous connaissons ces logements parce que nous en voyons beaucoup à Romainville.</p>
+
+  <h2>Les logements des Lilas et ce qu’ils demandent</h2>
+  <ul class="liste-coches">
+    <li><strong>Pavillons en meulière</strong> (secteur des Sentes, des Bruyères, abords du fort) : cheminées, combles, escaliers tournants. Une <a href="/services/meubles-sur-mesure/">bibliothèque ou un placard sur mesure aux Lilas</a> épouse ces volumes que les meubles standard ignorent.</li>
+    <li><strong>Copropriétés des années 1930</strong> (rue de Paris, autour de la mairie) : parquets massifs, portes moulurées, plomberie en plomb ou en acier remplacée par morceaux. Le <a href="/services/plomberie/">plombier aux Lilas</a> traite fuites, chasses d’eau et remplacements de mitigeurs.</li>
+    <li><strong>Immeubles des années 1950 à 1970</strong> : cloisons fines, tableaux à fusibles, cuisines fermées à ouvrir. Un <a href="/services/electricite/">électricien aux Lilas</a> intervient pour ajouter des circuits et remplacer le tableau.</li>
+    <li><strong>Petits immeubles récents ou divisés</strong> : surfaces optimisées, souvent louées. Le <a href="/services/montage-meubles/">montage de meubles en kit aux Lilas</a> avec fixation au mur est une demande courante à chaque emménagement.</li>
+  </ul>
+
+  <h2>Menuisier aux Lilas : sur mesure et réparation</h2>
+  <p>La menuiserie est notre activité principale. Dressing dans une chambre mansardée, meuble TV avec rangements fermés, banquette sous fenêtre : tout est dessiné à partir de vos cotes et fabriqué dans notre atelier de Romainville. La pose se fait ensuite chez vous, en modules qui passent par l’escalier.</p>
+  <p>Nous réparons aussi les meubles existants. Un fauteuil de famille, une armoire dont la porte frotte, une table de salle à manger fendue méritent mieux que la déchetterie. Voir la page <a href="/services/reparation-meubles/">réparation de meubles aux Lilas</a>.</p>
+
+  <h2>Rénover un appartement ancien sans tout casser</h2>
+  <p>Beaucoup de Lilasiens souhaitent rafraîchir un appartement avant d’y vivre ou de le louer. Peinture, changement d’un sol, réglage des portes, remplacement des prises et des interrupteurs : la <a href="/services/renovation-interieure/">rénovation intérieure aux Lilas</a> se fait pièce par pièce, avec un seul interlocuteur qui coordonne électricité et plomberie.</p>
+
+  <h2>Accès depuis Romainville et contact par écrit</h2>
+  <p>Depuis l’atelier, nous rejoignons les Lilas par la rue de Romainville ou l’avenue Pasteur en quelques minutes. Cela facilite les visites de prise de cotes et les petites retouches après pose.</p>
+  <p>Pour nous joindre, choisissez l’écrit si vous préférez : formulaire ou email. Nous répondons par le même moyen. Toutes les options figurent sur la page <a href="/devis/">demande de devis</a>.</p>
+</VillePage>

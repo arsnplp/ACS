@@ -1,0 +1,52 @@
+---
+import VillePage from '@/layouts/VillePage.astro';
+const faq = [
+  {
+    question: 'Connaissez-vous les maisons de la reconstruction du quartier de Merlan ?',
+    reponse: 'Oui. Ces maisons expérimentales construites après 1945 utilisent des matériaux et des procédés inhabituels : panneaux préfabriqués, ossatures métalliques ou bois. Nous vérifions la nature des murs avant toute fixation ou tout percement, et nous adaptons les meubles en conséquence.',
+  },
+  {
+    question: 'Quel délai pour une intervention à Noisy-le-Sec ?',
+    reponse: 'Noisy-le-Sec est limitrophe de Romainville, où se trouve notre atelier. Le délai dépend du type de travaux et de notre planning. Envoyez-nous une description avec photos par écrit et nous vous indiquons quand nous pouvons passer.',
+  },
+  {
+    question: 'Comment se passe le stationnement près de la gare de Noisy-le-Sec ?',
+    reponse: 'Le secteur de la gare et du tram T1 est chargé. Nous prévoyons un point de déchargement avec vous et nous adaptons l’horaire. Dans les quartiers pavillonnaires, nous stationnons généralement devant chez vous.',
+  },
+];
+---
+<VillePage
+  slug="noisy-le-sec"
+  title="Artisan multiservices à Noisy-le-Sec | ACS Multiservices"
+  description="Artisan multiservices à Noisy-le-Sec : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie. Atelier à Romainville. Devis par écrit."
+  h1="Artisan multiservices à Noisy-le-Sec (93130)"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Artisan multiservices à Noisy-le-Sec, ACS Multiservices fabrique des meubles sur mesure, répare, monte et rénove chez les particuliers et les petits professionnels. Notre atelier de Romainville est juste de l’autre côté de la limite communale, à quelques minutes du centre-ville et de la Boissière.</p>
+  </Fragment>
+
+  <h2>Noisy-le-Sec, une ville reconstruite après 1944</h2>
+  <p>Noisy-le-Sec a été très bombardée en 1944 à cause de sa gare de triage. Une grande partie de la commune a été rebâtie après la guerre, et le quartier de Merlan a accueilli des maisons expérimentales.</p>
+  <p>Cette histoire se retrouve dans les logements d’aujourd’hui. Avec environ 45 000 habitants, la ville mêle pavillons de la reconstruction, cités des années 1960 et immeubles récents autour de la gare RER E et du tram T1.</p>
+
+  <h2>Quels travaux selon votre type de logement ?</h2>
+  <ul class="liste-coches">
+    <li><strong>Maisons de la reconstruction</strong> (Merlan, Petit-Noisy) : murs en panneaux préfabriqués ou en parpaings, planchers légers, installations électriques d’origine. Un <a href="/services/electricite/">électricien à Noisy-le-Sec</a> est souvent nécessaire avant tout aménagement ; nous adaptons aussi les fixations des meubles à ces supports.</li>
+    <li><strong>Pavillons plus anciens</strong> (la Boissière, secteur du canal de l’Ourcq au nord) : meulière, combles, sous-sols. Un <a href="/services/meubles-sur-mesure/">meuble sur mesure à Noisy-le-Sec</a> sous rampant ou sous escalier y apporte du rangement.</li>
+    <li><strong>Cité du Londeau et grands ensembles</strong> : béton, gaines techniques communes, cuisines à moderniser. Le <a href="/services/montage-meubles/">montage de meubles à Noisy-le-Sec</a> et le remplacement de robinetterie sont fréquents.</li>
+    <li><strong>Immeubles récents du centre et des abords de la gare</strong> : logements neufs livrés nus. Dressings, placards d’entrée et meubles TV sont les premiers besoins.</li>
+  </ul>
+
+  <h2>Un seul interlocuteur pour la menuiserie, l’électricité et la plomberie</h2>
+  <p>À Noisy-le-Sec, beaucoup de propriétaires rénovent une maison achetée pour son jardin. Ces chantiers mêlent souvent trois métiers : le menuisier pour les rangements, l’électricien pour les prises et l’éclairage, le plombier pour la cuisine ou la salle d’eau. ACS Multiservices réunit ces compétences en une seule personne.</p>
+  <p>Pour un dépannage isolé, nous venons aussi. Notre <a href="/services/plomberie/">plombier à Noisy-le-Sec</a> remplace un mitigeur, répare une chasse d’eau ou un ballon qui goutte. L’électricien ajoute un circuit ou remplace un tableau vétuste selon la norme NF C 15-100.</p>
+
+  <h2>Réparer, rénover, rafraîchir</h2>
+  <p>Réparer un meuble coûte souvent moins cher que le remplacer et conserve un objet qui vous plaît. Charnière arrachée, tiroir bloqué, pied recollé : voyez la page <a href="/services/reparation-meubles/">réparation de meubles à Noisy-le-Sec</a>.</p>
+  <p>Pour un logement mis en location ou repris après un déménagement, la <a href="/services/renovation-interieure/">rénovation intérieure à Noisy-le-Sec</a> couvre peinture, sols et petites réparations.</p>
+
+  <h2>Accès et contact</h2>
+  <p>Depuis Romainville, nous rejoignons Noisy-le-Sec par la route de Noisy ou l’avenue Gabriel-Péri en quelques minutes. Pour les copropriétés, nous respectons le règlement et nous protégeons les parties communes. Les meubles sont montés en modules quand il n’y a pas d’ascenseur.</p>
+  <p>Écrivez-nous par formulaire ou email. C’est utile si vous préférez garder une trace, ou si vous travaillez en décalé. La page <a href="/devis/">demande de devis</a> réunit tous les moyens de contact.</p>
+</VillePage>

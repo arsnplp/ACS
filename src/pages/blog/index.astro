@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import { getService, serviceUrl } from '@/data/services';
+const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout
+  title="Conseils travaux et meubles dans le 93 | ACS Multiservices"
+  description="Guides pratiques d’un artisan de Romainville : prix d’un meuble sur mesure, réparer ou remplacer un meuble, fuite sous l’évier. Préparez vos travaux."
+  ariane={[{ nom: 'Conseils', url: '/blog/' }]}
+  preload="/images/hero-blog.jpg"
+  ogImage="/images/hero-blog.jpg"
+>
+  <div class="banniere-blog banniere-page">
+    <h1 class="banniere-page__titre">Conseils et guides pratiques pour vos meubles et vos travaux</h1>
+    <div class="banniere-blog__inner">
+      <ImageSlot nom="hero-blog" alt="Blog : conseils, astuces, inspirations. Des idées pour vos projets de demain. Un artisan souriant en casque jaune, accoudé à un établi avec des livres sur la rénovation et un carnet." width={2048} height={768} lcp variante="hero" sizes="(min-width: 2048px) 2048px, 100vw" />
+    </div>
+  </div>
+  <section class="section" aria-labelledby="liste-titre">
+    <div class="conteneur">
+      <h2 id="liste-titre">Tous les articles</h2>
+      <div class="grille grille--blog">
+        {articles.map((a) => { const s = getService(a.data.service)!; return (
+          <article class="carte">
+            <div class="carte__corps">
+              <p class="meta"><time datetime={a.data.date.toISOString().slice(0, 10)}>{a.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</time> · <a href={serviceUrl(s.slug)}>{s.nom}</a></p>
+              <h3><a href={`/blog/${a.id}/`}>{a.data.titre}</a></h3>
+              <p>{a.data.description}</p>
+            </div>
+          </article>
+        ); })}
+        {Array.from({ length: Math.max(0, 6 - articles.length) }).map((_, i) => (
+          <article class="carte carte--a-venir" aria-label="Article à venir">
+            <div class="carte__corps">
+              <p class="meta">Prochainement</p>
+              <h3>{'{{TITRE DU PROCHAIN ARTICLE}}'}</h3>
+              <p>Un nouveau guide pratique est en préparation. Revenez bientôt, ou <a href="/devis/">posez-nous directement votre question</a>.</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section section--bleu fond-bleu">
+    <div class="conteneur">
+      <h2>Une question sur votre situation ?</h2>
+      <p class="chapo">Décrivez-la par écrit avec une photo. Nous répondons par email ou téléphone.</p>
+      <CtaDevis />
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .banniere-blog { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  .banniere-blog__inner { max-width: 2048px; margin-inline: auto; }
+  .banniere-blog img, .banniere-blog .img-slot { width: 100%; height: auto; display: block; }
+  .grille--blog { grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+  @media (min-width: 64rem) { .grille--blog { grid-template-columns: repeat(3, 1fr); } }
+  .carte--a-venir { border-style: dashed; opacity: 0.85; }
+  .carte--a-venir h3 { color: var(--texte-doux); }
+  .carte__corps h3 a { text-decoration: none; }
+  .carte__corps h3 a:hover { text-decoration: underline; }
+  .carte__corps .meta { flex: 0; margin: 0; }
+</style>

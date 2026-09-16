@@ -1,0 +1,58 @@
+---
+import Logo from './Logo.astro';
+import { entreprise, adresseLigne } from '@/data/entreprise';
+import { services, serviceUrl } from '@/data/services';
+import { villesPrioritaires, villeUrl } from '@/data/villes';
+---
+<footer class="pied fond-bleu">
+  <div class="conteneur">
+    <div class="pied__grille">
+      <div>
+        <Logo surBleu />
+        <address class="pied__nap">
+          <p><strong>{entreprise.denominationSociale}</strong><br />{adresseLigne}</p>
+          <p>Téléphone : {entreprise.telephoneHref ? <a href={`tel:${entreprise.telephoneHref}`}>{entreprise.telephone}</a> : entreprise.telephone}<br />
+            Email : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a></p>
+          <p>Horaires : {entreprise.horaires}</p>
+        </address>
+      </div>
+      <nav aria-label="Services (pied de page)">
+        <h2>Services</h2>
+        <ul>{services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a></li>)}</ul>
+      </nav>
+      <nav aria-label="Zone d’intervention (pied de page)">
+        <h2>Zone d’intervention</h2>
+        <ul>
+          {villesPrioritaires.map((v) => <li><a href={villeUrl(v.slug)}>Artisan {v.prep}</a></li>)}
+          <li><a href="/zone-intervention/">Toutes les villes desservies</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informations (pied de page)">
+        <h2>Informations</h2>
+        <ul>
+          <li><a href="/a-propos/">À propos de Seydou Traoré</a></li>
+          <li><a href="/realisations/">Nos réalisations</a></li>
+          <li><a href="/blog/">Conseils et guides</a></li>
+          <li><a href="/devis/">Demande de devis</a></li>
+          <li><a href="/plan-du-site/">Plan du site</a></li>
+          <li><a href="/mentions-legales/">Mentions légales</a></li>
+          <li><a href="/politique-confidentialite/">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="pied__bas">© {new Date().getFullYear()} {entreprise.denominationSociale} — SIREN {entreprise.siren} — {entreprise.formeJuridique}. Artisan immatriculé au RNE.</p>
+  </div>
+</footer>
+<style>
+  .pied { background: var(--bleu); color: var(--blanc); padding-block: 3rem 1.5rem; margin-top: 3rem; border-top: 4px solid var(--jaune); }
+  .pied a { color: var(--blanc); }
+  .pied a:hover { color: var(--jaune); }
+  .pied h2 { color: var(--jaune); font-size: 1.05rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .pied__grille { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  .pied ul { list-style: none; padding: 0; margin: 0; }
+  .pied li { margin: 0; }
+  .pied li a { display: inline-block; padding: 0.3rem 0; min-height: 44px; line-height: 1.4; display: flex; align-items: center; }
+  .pied__nap p { margin-bottom: 0.75rem; }
+  .pied__note { background: rgb(255 255 255 / 0.1); padding: 0.75rem 1rem; border-radius: var(--rayon); border-left: 4px solid var(--jaune); font-size: 1rem; }
+  .pied__bas { margin: 2.5rem 0 0; font-size: 0.95rem; color: #d6e2f0; border-top: 1px solid rgb(255 255 255 / 0.2); padding-top: 1rem; }
+</style>

@@ -1,0 +1,99 @@
+---
+import Logo from './Logo.astro';
+import { services, serviceUrl } from '@/data/services';
+import { libelleDevis } from '@/data/entreprise';
+const path = Astro.url.pathname;
+const actif = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
+---
+<header class="entete">
+  <div class="conteneur entete__inner">
+    <a class="entete__logo" href="/" aria-label="ACS Multiservices — accueil"><Logo /></a>
+    <button class="entete__burger" type="button" aria-expanded="false" aria-controls="menu-principal" data-burger>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path class="burger-ouvrir" d="M4 6h16M4 12h16M4 18h16"/><path class="burger-fermer" d="M6 6l12 12M18 6L6 18"/></svg>
+      <span>Menu</span>
+    </button>
+    <nav id="menu-principal" class="entete__nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/" aria-current={actif('/') ? 'page' : undefined}>Accueil</a></li>
+        <li class="a-sous-menu">
+          <a href="/services/" aria-current={actif('/services/') ? 'page' : undefined}>Services</a>
+          <button type="button" aria-expanded="false" aria-controls="sous-menu-services" data-sous-menu>
+            <span class="visually-hidden">Afficher les services</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul id="sous-menu-services" class="sous-menu">
+            {services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a></li>)}
+          </ul>
+        </li>
+        <li><a href="/realisations/" aria-current={actif('/realisations/') ? 'page' : undefined}>Réalisations</a></li>
+        <li><a href="/zone-intervention/" aria-current={actif('/zone-intervention/') ? 'page' : undefined}>Zone d’intervention</a></li>
+        <li><a href="/a-propos/" aria-current={actif('/a-propos/') ? 'page' : undefined}>À propos</a></li>
+        <li><a href="/blog/" aria-current={actif('/blog/') ? 'page' : undefined}>Conseils</a></li>
+        <li class="entete__cta"><a class="btn btn--jaune" href="/devis/">{libelleDevis}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<script>
+  const burger = document.querySelector<HTMLButtonElement>('[data-burger]');
+  const nav = document.getElementById('menu-principal');
+  burger?.addEventListener('click', () => {
+    const ouvert = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!ouvert));
+    nav?.classList.toggle('est-ouvert', !ouvert);
+    document.body.classList.toggle('menu-ouvert', !ouvert);
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-sous-menu]').forEach((btn) => {
+    const parent = btn.closest('.a-sous-menu');
+    btn.addEventListener('click', () => {
+      const ouvert = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!ouvert));
+      parent?.classList.toggle('est-ouvert', !ouvert);
+    });
+    parent?.addEventListener('focusout', (e) => {
+      if (!parent.contains(e.relatedTarget as Node)) { btn.setAttribute('aria-expanded', 'false'); parent.classList.remove('est-ouvert'); }
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll<HTMLButtonElement>('[aria-expanded="true"]').forEach((b) => { b.setAttribute('aria-expanded', 'false'); b.closest('.a-sous-menu')?.classList.remove('est-ouvert'); });
+    if (nav?.classList.contains('est-ouvert')) { nav.classList.remove('est-ouvert'); document.body.classList.remove('menu-ouvert'); burger?.focus(); }
+  });
+</script>
+<style>
+  .entete { background: var(--blanc); border-bottom: 3px solid var(--jaune); position: sticky; top: 0; z-index: 100; }
+  .entete__inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem 1rem; min-height: 4.25rem; flex-wrap: wrap; padding-block: 0.75rem; }
+  .entete__logo { text-decoration: none; padding: 0.5rem 0; display: inline-flex; min-height: 44px; align-items: center; }
+  .entete__burger { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; min-width: 44px; padding: 0.4rem 0.75rem; background: var(--bleu); color: var(--blanc); border: 0; border-radius: var(--rayon); font: inherit; font-weight: 700; cursor: pointer; }
+  .entete__burger svg { width: 1.5rem; height: 1.5rem; }
+  .burger-fermer { display: none; }
+  .entete__burger[aria-expanded='true'] .burger-ouvrir { display: none; }
+  .entete__burger[aria-expanded='true'] .burger-fermer { display: block; }
+  .entete__nav { display: none; width: 100%; padding-bottom: 0.5rem; }
+  .entete__nav.est-ouvert { display: block; }
+  .entete__nav > ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  .entete__nav li { margin: 0; }
+  .entete__nav a:not(.btn) { display: flex; align-items: center; min-height: 44px; padding: 0.5rem 0.65rem; font-size: 1.02rem; text-decoration: none; font-family: var(--police-titre); font-weight: 600; border-radius: var(--rayon); }
+  .entete__nav a:not(.btn):hover, .entete__nav a[aria-current='page']:not(.btn) { background: var(--bleu-clair); }
+  .entete__nav a[aria-current='page']:not(.btn) { box-shadow: inset 0 -3px 0 var(--jaune); }
+  .a-sous-menu { position: relative; display: flex; flex-wrap: wrap; align-items: center; }
+  .a-sous-menu > a { flex: 1; }
+  .a-sous-menu > button { min-width: 44px; min-height: 44px; background: transparent; border: 0; color: var(--bleu); cursor: pointer; border-radius: var(--rayon); display: grid; place-items: center; }
+  .a-sous-menu > button svg { width: 1.25rem; height: 1.25rem; transition: transform var(--transition); }
+  .a-sous-menu > button[aria-expanded='true'] svg { transform: rotate(180deg); }
+  .sous-menu { list-style: none; margin: 0; padding: 0.25rem 0 0.25rem 1rem; width: 100%; display: none; }
+  .a-sous-menu.est-ouvert .sous-menu { display: block; }
+  .entete__cta { margin-top: 0.5rem; }
+  .entete__cta .btn { width: 100%; }
+  @media (min-width: 64rem) {
+    .entete__burger { display: none; }
+    .entete__nav { display: block; width: auto; padding: 0; margin-left: auto; }
+    .entete__nav > ul { flex-direction: row; align-items: center; gap: 0.6rem; }
+    .sous-menu { position: absolute; top: 100%; left: 0; min-width: 18rem; background: var(--blanc); border: 1px solid var(--bordure); border-top: 3px solid var(--jaune); box-shadow: var(--ombre); padding: 0.5rem; z-index: 50; }
+    .a-sous-menu:hover .sous-menu, .a-sous-menu:focus-within .sous-menu { display: block; }
+    .entete__cta { margin: 0 0 0 0.75rem; }
+    .entete__cta .btn { width: auto; }
+  }
+  body.menu-ouvert { overflow: hidden; }
+  @media (min-width: 64rem) { body.menu-ouvert { overflow: auto; } }
+</style>

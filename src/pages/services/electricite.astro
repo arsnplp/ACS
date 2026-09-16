@@ -1,0 +1,89 @@
+---
+import ServicePage from '@/layouts/ServicePage.astro';
+const faq = [
+  {
+    question: 'Faut-il remplacer un tableau électrique ancien ?',
+    reponse: 'Un tableau à fusibles en porcelaine ou sans disjoncteur différentiel ne protège plus correctement les personnes. Il est conseillé de le remplacer par un tableau moderne avec interrupteurs différentiels 30 mA et disjoncteurs par circuit.\n\nNous examinons votre installation et vous disons ce qui doit changer en priorité. Le remplacement se fait dans le respect de la norme NF C 15-100.',
+  },
+  {
+    question: 'Combien coûte une mise aux normes électriques ?',
+    reponse: 'Le prix dépend de la taille du logement, du nombre de circuits à créer ou à reprendre, de l’état du câblage existant et de la nécessité de refaire des saignées. Un tableau seul coûte moins cher qu’une rénovation complète avec nouvelles prises dans chaque pièce.\n\nNous établissons un devis détaillé après visite. Aucun prix n’est donné sans avoir vu l’installation.',
+  },
+  {
+    question: 'Mon disjoncteur saute souvent : que faire ?',
+    reponse: 'Un disjoncteur qui saute signale une surcharge (trop d’appareils sur un même circuit), un court-circuit ou un défaut d’isolement sur un appareil. Débranchez les appareils un par un pour repérer le coupable. Si le problème persiste, contactez-nous : nous cherchons la cause avec un appareil de mesure.',
+  },
+  {
+    question: 'Pouvez-vous ajouter des prises sans casser les murs ?',
+    reponse: 'Souvent, oui. Nous pouvons passer les câbles dans des moulures ou des plinthes techniques, ou tirer un nouveau circuit depuis une boîte de dérivation existante. Si vous rénovez la pièce, nous encastrons les gaines avant la peinture.',
+  },
+  {
+    question: 'Intervenez-vous pour un dépannage électrique urgent ?',
+    reponse: 'Oui, pour les pannes courantes : coupure partielle, prise qui a chauffé, interrupteur qui ne répond plus, luminaire en panne. Décrivez le problème par email avec une photo du tableau. Nous vous indiquons quand nous pouvons passer et ce qu’il faut couper en attendant.',
+  },
+  {
+    question: 'Une prise de terre est-elle obligatoire dans un logement ancien ?',
+    reponse: 'La terre protège des électrocutions en cas de défaut sur un appareil. Dans un logement ancien, elle manque souvent dans les chambres et le salon. Nous vérifions la présence et la valeur de la terre, puis nous la raccordons aux prises et aux pièces d’eau.',
+  },
+];
+---
+<ServicePage
+  slug="electricite"
+  title="Électricien à Romainville (93) | ACS Multiservices"
+  description="Tableau électrique, mise aux normes, prises, dépannage : ACS Multiservices, électricien à Romainville et en Seine-Saint-Denis. Demandez votre devis."
+  h1="Électricien à Romainville : mise aux normes, tableau, prises et dépannage"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Vous cherchez un électricien à Romainville ou en Seine-Saint-Denis ? ACS Multiservices réalise vos travaux d’électricité : remplacement de tableau électrique, mise aux normes, installation de prises et d’interrupteurs, pose de luminaires, dépannage électrique dans le 93. Les travaux respectent la norme NF C 15-100.</p>
+    <p>Seydou Traoré, artisan fondateur, examine votre installation, vous explique ce qui doit être fait et réalise les travaux proprement.</p>
+  </Fragment>
+
+  <h2>Ce que comprennent nos travaux d’électricité</h2>
+  <p>Une installation électrique sûre protège les personnes et les appareils. Voici les interventions que nous réalisons le plus souvent dans les logements de Romainville, Montreuil, Bagnolet et des villes voisines.</p>
+  <ul class="liste-coches">
+    <li><strong>Remplacement de tableau électrique</strong> : tableau moderne avec interrupteurs différentiels 30 mA, disjoncteurs par circuit et étiquetage clair.</li>
+    <li><strong>Mise aux normes électriques</strong> : ajout de la terre, séparation des circuits, protection des pièces d’eau, remplacement des fils anciens.</li>
+    <li><strong>Installation de prises et interrupteurs</strong> : prises supplémentaires dans une chambre, prise pour le lave-linge, va-et-vient dans un couloir.</li>
+    <li><strong>Circuit spécialisé</strong> : ligne dédiée pour le four, la plaque de cuisson, le lave-vaisselle ou le chauffe-eau.</li>
+    <li><strong>Pose de luminaires</strong> : plafonnier, spots encastrés, appliques, éclairage de plan de travail, raccordement sécurisé.</li>
+    <li><strong>Dépannage électrique</strong> : panne partielle, disjoncteur qui saute, prise qui chauffe, court-circuit. Recherche de la cause et réparation.</li>
+  </ul>
+  <p>Ces travaux s’intègrent souvent dans un projet plus large. Nous les coordonnons avec la <a href="/services/renovation-interieure/">rénovation intérieure</a> pour encastrer les câbles avant la peinture.</p>
+
+  <h2>Comment se déroule une intervention électrique</h2>
+  <p>Chaque intervention suit un ordre précis, pour votre sécurité et pour un résultat propre.</p>
+  <ol class="etapes">
+    <li><div><h3>Vous décrivez le besoin</h3><p>Panne, projet de tableau, prises à ajouter : expliquez-nous par le <a href="/devis/?service=electricite">formulaire de devis</a>, par email. Une photo du tableau et des pièces concernées nous aide beaucoup.</p></div></li>
+    <li><div><h3>Diagnostic sur place</h3><p>Nous vérifions le tableau, la terre, l’état des câbles et des boîtes de dérivation. Nous repérons ce qui est dangereux et ce qui peut attendre.</p></div></li>
+    <li><div><h3>Devis détaillé</h3><p>Le devis liste le matériel (tableau, disjoncteurs, prises, câbles), la main-d’œuvre et les éventuelles saignées ou moulures. Rien ne commence sans votre accord écrit.</p></div></li>
+    <li><div><h3>Travaux hors tension</h3><p>Coupure de l’alimentation, passage des câbles, câblage du tableau, pose des appareillages. Nous respectons les sections de câble et les protections de la norme NF C 15-100.</p></div></li>
+    <li><div><h3>Tests et explications</h3><p>Remise sous tension, test de chaque circuit et du différentiel, étiquetage du tableau. Nous vous montrons comment réarmer un disjoncteur.</p></div></li>
+  </ol>
+
+  <h2>Pourquoi confier vos travaux d’électricité à ACS Multiservices</h2>
+  <p>ACS Multiservices est une entreprise artisanale immatriculée au Registre national des entreprises, installée avenue Youri Gagarine à Romainville.</p>
+  <ul class="liste-coches">
+    <li><strong>Un seul interlocuteur</strong> : Seydou Traoré fait le diagnostic, le devis et les travaux. Vous parlez toujours à la même personne.</li>
+    <li><strong>Des travaux conformes</strong> : nous appliquons la norme NF C 15-100 pour les protections, les sections de câble et les volumes de la salle de bains.</li>
+    <li><strong>Des échanges par écrit</strong> : photos, devis, date d’intervention et compte rendu passent par email si vous le souhaitez.</li>
+    <li><strong>Un artisan polyvalent</strong> : un chauffe-eau à raccorder, une cuisine à installer ? Nous gérons aussi la <a href="/services/plomberie/">plomberie</a> et le <a href="/services/montage-meubles/">montage de meubles</a>.</li>
+  </ul>
+  <p>Nous sommes à quelques minutes de Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin. Pour un dépannage, cette proximité compte.</p>
+
+  <h2>Tableau, différentiel, prises : le vocabulaire de votre installation</h2>
+  <p>Quelques mots reviennent sur chaque devis d’électricité. Voici leur sens, expliqué simplement.</p>
+  <ul>
+    <li><strong>Tableau électrique</strong> : le coffret qui reçoit l’arrivée du courant et le répartit dans le logement. C’est là que se trouvent les protections.</li>
+    <li><strong>Disjoncteur</strong> : protège un circuit contre la surcharge et le court-circuit. Un par circuit : éclairage, prises, four, lave-linge.</li>
+    <li><strong>Interrupteur différentiel 30 mA</strong> : détecte une fuite de courant vers la terre et coupe en une fraction de seconde. Il protège les personnes.</li>
+    <li><strong>Prise de terre</strong> : liaison entre l’installation et le sol. Sans elle, le différentiel ne peut pas jouer son rôle.</li>
+    <li><strong>Circuit spécialisé</strong> : ligne réservée à un gros appareil, avec son propre disjoncteur et un câble plus épais.</li>
+    <li><strong>Norme NF C 15-100</strong> : le texte qui fixe les règles des installations électriques en France : nombre de prises par pièce, protections, distances dans la salle de bains.</li>
+  </ul>
+  <p>Un doute sur l’état de votre installation ? Envoyez une photo de votre tableau par le <a href="/devis/?service=electricite">formulaire de devis</a>. Nous vous disons ce que nous voyons.</p>
+
+  <Fragment slot="villes">
+    <p>Nous intervenons en électricité à Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin, ainsi qu’à Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais et dans les 19e et 20e arrondissements de Paris. Appartements anciens à mettre aux normes, pavillons, locaux commerciaux : nous nous déplaçons dans toute la Seine-Saint-Denis et l’Est parisien.</p>
+  </Fragment>
+</ServicePage>

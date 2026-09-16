@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import RealisationCard from '@/components/RealisationCard.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import { services, serviceUrl } from '@/data/services';
+const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const parService = services.map((s) => ({ service: s, items: toutes.filter((r) => r.data.service === s.slug) }));
+---
+<BaseLayout
+  title="Réalisations artisan à Romainville (93) | ACS Multiservices"
+  description="Avant / après de nos chantiers : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie à Romainville et dans le 93. Filtre service."
+  ariane={[{ nom: 'Réalisations', url: '/realisations/' }]}
+  preload="/images/hero-realisations.jpg"
+  ogImage="/images/hero-realisations.jpg"
+>
+  <div class="banniere-realisations banniere-page">
+    <h1 class="banniere-page__titre">Réalisations d’artisan à Romainville et en Seine-Saint-Denis</h1>
+    <div class="banniere-realisations__inner">
+      <ImageSlot nom="hero-realisations" alt="Réalisations d’artisan à Romainville et en Seine-Saint-Denis : cuisine, salle de bain, rénovation complète, aménagement extérieur, façade. Un artisan souriant en casque jaune, bras croisés, et une carte de la Seine-Saint-Denis centrée sur Romainville." width={2048} height={768} lcp variante="hero" sizes="(min-width: 2048px) 2048px, 100vw" />
+    </div>
+  </div>
+  <section class="section" aria-labelledby="galerie-titre">
+    <div class="conteneur">
+      <h2 id="galerie-titre" class="visually-hidden">Galerie filtrable</h2>
+      <div class="filtres" role="group" aria-label="Filtrer par service" data-filtres hidden>
+        <button type="button" aria-pressed="true" data-filtre="tous">Tous les chantiers</button>
+        {services.map((s) => <button type="button" aria-pressed="false" data-filtre={s.slug}>{s.nom}</button>)}
+      </div>
+      <p class="visually-hidden" aria-live="polite" data-filtre-statut></p>
+      {parService.map(({ service, items }) => (
+        <section class="groupe" data-groupe={service.slug} aria-labelledby={`g-${service.slug}`}>
+          <h2 id={`g-${service.slug}`}><a href={serviceUrl(service.slug)}>{service.nomLong}</a></h2>
+          {items.length ? <div class="grille">{items.map((r) => <RealisationCard realisation={r} />)}</div> : <p>Aucune réalisation publiée pour ce service pour le moment. <a href={`/devis/?service=${service.slug}`}>Décrivez votre projet</a>, il pourrait être le prochain.</p>}
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--bleu fond-bleu">
+    <div class="conteneur">
+      <h2>Un projet du même type ?</h2>
+      <p class="chapo">Envoyez-nous des photos de votre pièce et quelques mesures. Nous vous répondons par écrit ou par téléphone, selon votre choix.</p>
+      <CtaDevis />
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  const filtres = document.querySelector<HTMLElement>('[data-filtres]');
+  const statut = document.querySelector<HTMLElement>('[data-filtre-statut]');
+  const groupes = document.querySelectorAll<HTMLElement>('[data-groupe]');
+  if (filtres) {
+    filtres.hidden = false;
+    const boutons = filtres.querySelectorAll<HTMLButtonElement>('button');
+    const appliquer = (slug: string) => {
+      boutons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filtre === slug)));
+      let n = 0;
+      groupes.forEach((g) => { const visible = slug === 'tous' || g.dataset.groupe === slug; g.hidden = !visible; if (visible) n += g.querySelectorAll('article').length; });
+      if (statut) statut.textContent = slug === 'tous' ? `Tous les chantiers affichés (${n}).` : `${n} chantier(s) affiché(s) pour ce service.`;
+    };
+    boutons.forEach((b) => b.addEventListener('click', () => { appliquer(b.dataset.filtre!); history.replaceState(null, '', b.dataset.filtre === 'tous' ? location.pathname : `?service=${b.dataset.filtre}`); }));
+    const initial = new URLSearchParams(location.search).get('service');
+    if (initial && [...boutons].some((b) => b.dataset.filtre === initial)) appliquer(initial);
+  }
+</script>
+<style>
+  .banniere-realisations { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  .banniere-realisations__inner { max-width: 2048px; margin-inline: auto; }
+  .banniere-realisations img, .banniere-realisations .img-slot { width: 100%; height: auto; display: block; }
+  .groupe { margin-bottom: 2.5rem; }
+  .groupe h2 a { text-decoration: none; }
+  .groupe h2 a:hover { text-decoration: underline; }
+</style>

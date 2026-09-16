@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { services, serviceUrl } from '@/data/services';
+import { villesPrioritaires, villeUrl } from '@/data/villes';
+const realisations = await getCollection('realisations');
+const articles = await getCollection('blog', (a) => !a.data.brouillon);
+---
+<BaseLayout title="Plan du site ACS Multiservices, artisan à Romainville" description="Toutes les pages du site ACS Multiservices : services d’artisan, réalisations, zone d’intervention dans le 93, conseils, devis, mentions légales." ariane={[{ nom: 'Plan du site', url: '/plan-du-site/' }]}>
+  <section class="section conteneur prose">
+    <h1>Plan du site</h1>
+    <p class="chapo">Toutes les pages du site, regroupées par rubrique. Ce plan est un second moyen de navigation, en complément du menu.</p>
+    <h2>Pages principales</h2>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/a-propos/">À propos de Seydou Traoré</a></li>
+      <li><a href="/devis/">Demande de devis et contact</a></li>
+    </ul>
+    <h2>Services</h2>
+    <ul>
+      <li><a href="/services/">Tous nos services</a></li>
+      {services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a></li>)}
+    </ul>
+    <h2>Zone d’intervention</h2>
+    <ul>
+      <li><a href="/zone-intervention/">Toutes les villes desservies</a></li>
+      {villesPrioritaires.map((v) => <li><a href={villeUrl(v.slug)}>Artisan multiservices {v.prep}</a></li>)}
+    </ul>
+    <h2>Réalisations</h2>
+    <ul>
+      <li><a href="/realisations/">Galerie des réalisations</a></li>
+      {realisations.map((r) => <li><a href={`/realisations/${r.id}/`}>{r.data.titre}</a>{r.data.brouillon && ' (exemple)'}</li>)}
+    </ul>
+    <h2>Conseils</h2>
+    <ul>
+      <li><a href="/blog/">Tous les articles</a></li>
+      {articles.map((a) => <li><a href={`/blog/${a.id}/`}>{a.data.titre}</a></li>)}
+    </ul>
+    <h2>Informations</h2>
+    <ul>
+      <li><a href="/mentions-legales/">Mentions légales</a></li>
+      <li><a href="/politique-confidentialite/">Politique de confidentialité</a></li>
+    </ul>
+  </section>
+</BaseLayout>

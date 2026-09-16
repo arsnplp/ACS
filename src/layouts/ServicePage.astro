@@ -1,0 +1,127 @@
+---
+/**
+ * Gabarit de page service. Le contenu rédactionnel vient des slots :
+ *  - slot "chapo"   : (non affiché depuis la mise en place des bannières)
+ *  - slot par défaut : sections « Ce que comprend », « Déroulement », « Pourquoi ACS » (H2)
+ *  - slot "villes"  : paragraphe d'intro de la zone d'intervention pour ce service
+ * Le gabarit ajoute : H1, CTA, réalisations liées, villes, FAQ, services complémentaires, CTA final.
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import Faq from '@/components/Faq.astro';
+import RealisationCard from '@/components/RealisationCard.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import { getService, serviceUrl, type ServiceSlug } from '@/data/services';
+import { villesPrioritaires, villeUrl } from '@/data/villes';
+import { serviceNode, type FaqItem } from '@/lib/seo';
+
+interface Props {
+  slug: ServiceSlug;
+  title: string;
+  description: string;
+  h1: string;
+  faq: FaqItem[];
+  /** slugs des articles de blog liés */
+  articles?: { slug: string; titre: string }[];
+}
+const { slug, title, description, h1, faq, articles = [] } = Astro.props;
+const service = getService(slug)!;
+const complementaires = service.complementaires.map((s) => getService(s)!);
+const realisations = (await getCollection('realisations', (r) => r.data.service === slug)).slice(0, 3);
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ariane={[{ nom: 'Services', url: '/services/' }, { nom: service.nomLong, url: serviceUrl(slug) }]}
+  ogImage={`/images/hero-${slug}.jpg`}
+  preload={`/images/hero-${slug}.jpg`}
+  faq={faq}
+  jsonLd={[serviceNode({ nom: service.nomLong, serviceType: service.serviceType, url: serviceUrl(slug), description })]}
+>
+  <div class="banniere-service banniere-page">
+    <h1 class="banniere-page__titre">{h1}</h1>
+    <div class="banniere-service__inner">
+      <ImageSlot nom={`hero-${slug}`} alt={`${h1}. ${service.imageAlt}.`} width={2048} height={768} lcp variante="hero" sizes="(min-width: 2048px) 2048px, 100vw" />
+    </div>
+  </div>
+
+  <div class="conteneur section contenu-service">
+    <slot />
+  </div>
+
+  <section class="section section--clair" aria-labelledby="realisations-titre">
+    <div class="conteneur">
+      <h2 id="realisations-titre">Réalisations en {service.nom.toLowerCase()}</h2>
+      {realisations.length ? (
+        <div class="grille">{realisations.map((r) => <RealisationCard realisation={r} />)}</div>
+      ) : (
+        <p>Les photos de chantier arrivent bientôt.</p>
+      )}
+      <p style="margin-top:1.5rem"><a href={`/realisations/?service=${slug}`}>Toutes nos réalisations en {service.nom.toLowerCase()}</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="complementaires-titre">
+    <div class="conteneur">
+      <h2 id="complementaires-titre">Services complémentaires</h2>
+      <div class="grille">{complementaires.map((s) => <ServiceCard service={s} />)}</div>
+      {articles.length > 0 && (
+        <>
+          <h3>Pour aller plus loin</h3>
+          <ul>{articles.map((a) => <li><a href={`/blog/${a.slug}/`}>{a.titre}</a></li>)}</ul>
+        </>
+      )}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="zone-titre">
+    <div class="conteneur contenu-service">
+      <h2 id="zone-titre">Où intervenons-nous pour ce service ?</h2>
+      <slot name="villes" />
+      <ul class="chips">
+        {villesPrioritaires.map((v) => <li><a href={villeUrl(v.slug)}>{service.ancreVille} {v.prep}</a></li>)}
+        <li><a href="/zone-intervention/">Toute la zone d’intervention</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="conteneur">
+    <Faq items={faq} />
+  </div>
+
+  <section class="section section--bleu fond-bleu" aria-labelledby="cta-final">
+    <div class="conteneur">
+      <h2 id="cta-final">Parlez-nous de votre projet</h2>
+      <p class="chapo">Décrivez votre besoin par écrit, joignez des photos si vous le souhaitez. Nous vous répondons par le canal de votre choix : email ou téléphone.</p>
+      <CtaDevis service={slug} />
+    </div>
+  </section>
+</BaseLayout>
+<style is:global>
+  .banniere-service { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  .banniere-service__inner { max-width: 2048px; margin-inline: auto; }
+  .banniere-service img, .banniere-service .img-slot { width: 100%; height: auto; display: block; }
+  /* Contenu des pages service : toute la largeur, listes sur deux colonnes */
+  .contenu-service > * { max-width: none; }
+  /* Chaque H2 ouvre une sous-section : filet de séparation + accent jaune */
+  .contenu-service h2 { margin-top: 0; padding-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--bordure); position: relative; padding-bottom: 0.75rem; margin-bottom: 1.25rem; }
+  .contenu-service h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 4.5rem; height: 5px; background: var(--jaune); border-radius: 999px; }
+  .contenu-service > h2:first-child { padding-top: 0; border-top: 0; }
+  .contenu-service > h2:not(:first-child) { margin-top: clamp(2rem, 4vw, 3rem); }
+  .contenu-service .liste-coches { display: grid; grid-template-columns: 1fr; gap: 0.9rem 2.5rem; margin: 1.25rem 0 1.5rem; }
+  .contenu-service .liste-coches li { margin: 0; background: var(--blanc); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 1rem 1.25rem 1rem 3rem; }
+  .contenu-service .liste-coches li::before { left: 1rem; top: 1.25rem; }
+  .contenu-service ul:not(.liste-coches):not(.chips) { display: grid; grid-template-columns: 1fr; gap: 0.6rem 2.5rem; padding-left: 1.25rem; }
+  .contenu-service ul:not(.liste-coches):not(.chips) li { margin: 0; }
+  @media (min-width: 48rem) {
+    .contenu-service .liste-coches { grid-template-columns: repeat(2, 1fr); }
+    .contenu-service ul:not(.liste-coches):not(.chips) { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 64rem) {
+    .contenu-service .liste-coches { grid-template-columns: repeat(3, 1fr); }
+    /* 4 éléments : 2 × 2 plutôt que 3 + 1 */
+    .contenu-service .liste-coches:has(li:nth-child(4):last-child) { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

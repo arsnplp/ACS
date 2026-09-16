@@ -1,0 +1,204 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContactOptions from '@/components/ContactOptions.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import { entreprise, adresseLigne } from '@/data/entreprise';
+import { services } from '@/data/services';
+import { villes } from '@/data/villes';
+const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
+---
+<BaseLayout
+  title="Devis artisan à Romainville (93) | ACS Multiservices"
+  description="Demandez un devis à ACS Multiservices, artisan à Romainville : meubles, rénovation, électricité, plomberie. Réponse par email ou appel téléphonique."
+  ariane={[{ nom: 'Demande de devis', url: '/devis/' }]}
+  preload="/images/hero-devis.jpg"
+  ogImage="/images/hero-devis.jpg"
+>
+  <div class="banniere-devis banniere-page">
+    <h1 class="banniere-page__titre">Demande de devis et contact : artisan à Romainville et en Seine-Saint-Denis</h1>
+    <div class="banniere-devis__inner">
+      <ImageSlot nom="hero-devis" alt="Demande de devis et contact : artisan à Romainville. Un artisan souriant en casque jaune montre un bloc-notes avec une liste cochée." width={1983} height={793} lcp variante="hero" sizes="(min-width: 1983px) 1983px, 100vw" />
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="canaux-titre">
+    <div class="conteneur">
+      <h2 id="canaux-titre">Deux façons de nous joindre</h2>
+      <ContactOptions />
+      <p class="meta" style="margin-top:1rem">Atelier : {adresseLigne}. Délai de réponse habituel : {entreprise.delaiReponse}.</p>
+    </div>
+  </section>
+
+  <section class="section section--blanc" aria-labelledby="formulaire-titre">
+    <div class="conteneur conteneur--texte">
+      <h2 id="formulaire-titre">Formulaire de demande de devis</h2>
+      <p>Les champs marqués « obligatoire » doivent être remplis. Vos données servent uniquement à répondre à votre demande (voir notre <a href="/politique-confidentialite/">politique de confidentialité</a>).</p>
+
+      <div id="message-form" class="message-form" role="status" aria-live="polite" aria-atomic="true"></div>
+
+      <form id="formulaire" class="form-devis" method="post" action={webhook || '#'} enctype="multipart/form-data" novalidate data-webhook={webhook} data-delai={entreprise.delaiReponse}>
+        <div class="champ">
+          <label for="nom">Nom et prénom <span class="obligatoire">(obligatoire)</span></label>
+          <input id="nom" name="nom" type="text" required autocomplete="name" aria-describedby="err-nom" />
+          <p class="erreur" id="err-nom">Indiquez votre nom pour que nous puissions vous répondre.</p>
+        </div>
+        <div class="champ">
+          <label for="email">Email <span class="obligatoire">(obligatoire)</span></label>
+          <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" aria-describedby="err-email" />
+          <p class="erreur" id="err-email">Indiquez une adresse email valide, par exemple prenom@exemple.fr.</p>
+        </div>
+        <div class="champ">
+          <label for="telephone">Téléphone <span class="facultatif">(facultatif)</span></label>
+          <span class="aide" id="aide-tel">Nécessaire seulement si vous souhaitez être rappelé.</span>
+          <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="aide-tel err-telephone" />
+          <p class="erreur" id="err-telephone">Un numéro de téléphone est nécessaire pour être rappelé.</p>
+        </div>
+        <div class="champ">
+          <label for="ville">Ville du chantier <span class="obligatoire">(obligatoire)</span></label>
+          <select id="ville" name="ville" required autocomplete="address-level2" aria-describedby="err-ville">
+            <option value="">Choisissez une ville</option>
+            {villes.map((v) => <option value={v.nom}>{v.nom} ({v.codePostal})</option>)}
+            <option value="Autre">Autre ville</option>
+          </select>
+          <p class="erreur" id="err-ville">Choisissez la ville du chantier, ou « Autre ville ».</p>
+        </div>
+        <div class="champ" id="champ-autre-ville" hidden>
+          <label for="autre-ville">Précisez la ville</label>
+          <input id="autre-ville" name="autre_ville" type="text" autocomplete="off" />
+        </div>
+        <div class="champ">
+          <label for="service">Type de prestation <span class="obligatoire">(obligatoire)</span></label>
+          <select id="service" name="service" required aria-describedby="err-service">
+            <option value="">Choisissez une prestation</option>
+            {services.map((s) => <option value={s.slug}>{s.nomLong}</option>)}
+            <option value="autre">Je ne sais pas / plusieurs prestations</option>
+          </select>
+          <p class="erreur" id="err-service">Choisissez le type de prestation. En cas de doute, choisissez « Je ne sais pas ».</p>
+        </div>
+        <div class="champ">
+          <label for="description">Description du besoin <span class="obligatoire">(obligatoire)</span></label>
+          <span class="aide" id="aide-desc">Que voulez-vous faire ? Dans quelle pièce ? Avec quelles dimensions approximatives ? Y a-t-il un ascenseur ?</span>
+          <textarea id="description" name="description" required minlength="20" aria-describedby="aide-desc err-description"></textarea>
+          <p class="erreur" id="err-description">Décrivez votre besoin en quelques phrases (20 caractères minimum).</p>
+        </div>
+        <div class="champ">
+          <label for="photos">Photos <span class="facultatif">(facultatif)</span></label>
+          <span class="aide" id="aide-photos">5 photos maximum, 10 Mo au total. Formats JPG, PNG, HEIC ou WebP.</span>
+          <input id="photos" name="photos" type="file" accept="image/*" multiple aria-describedby="aide-photos err-photos" />
+          <p class="erreur" id="err-photos">5 photos maximum et 10 Mo au total. Retirez une photo ou réduisez sa taille.</p>
+        </div>
+        <div class="champ">
+          <fieldset aria-describedby="err-recontact">
+            <legend>Comment préférez-vous être recontacté ? <span class="obligatoire">(obligatoire)</span></legend>
+            <div class="choix">
+              <label><input type="radio" name="recontact" value="email" required /> Par email (réponse écrite)</label>
+              <label><input type="radio" name="recontact" value="appel" /> Par téléphone (nous vous rappelons)</label>
+            </div>
+          </fieldset>
+          <p class="erreur" id="err-recontact">Choisissez un moyen de recontact.</p>
+        </div>
+        <div class="champ">
+          <label class="consentement" for="consentement">
+            <input id="consentement" name="consentement" type="checkbox" required value="oui" aria-describedby="err-consentement" />
+            <span>J’accepte que mes informations soient utilisées pour répondre à ma demande de devis, conformément à la <a href="/politique-confidentialite/">politique de confidentialité</a>. <span class="obligatoire">(obligatoire)</span></span>
+          </label>
+          <p class="erreur" id="err-consentement">Cochez la case de consentement pour envoyer le formulaire.</p>
+        </div>
+        <!-- Anti-spam : champ piège invisible + horodatage (délai minimal) -->
+        <div class="hp" aria-hidden="true">
+          <label for="site_web">Ne pas remplir</label>
+          <input id="site_web" name="site_web" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+        <input type="hidden" name="horodatage" id="horodatage" value="" />
+        <input type="hidden" name="page" value="/devis/" />
+        <button class="btn btn--jaune" type="submit">Envoyer ma demande</button>
+        <p class="meta" style="margin-top:1rem">Après envoi, vous verrez un message de confirmation sur cette page. Nous vous répondons ensuite par le canal choisi, sous {entreprise.delaiReponse}.</p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  const form = document.getElementById('formulaire') as HTMLFormElement | null;
+  const message = document.getElementById('message-form')!;
+  const horodatage = document.getElementById('horodatage') as HTMLInputElement;
+  const DELAI_MIN_MS = 4000;
+  const t0 = Date.now();
+  horodatage.value = String(t0);
+
+  // Présélection via ?service=...
+  const params = new URLSearchParams(location.search);
+  const serviceParam = params.get('service');
+  const selectService = document.getElementById('service') as HTMLSelectElement;
+  if (serviceParam && [...selectService.options].some((o) => o.value === serviceParam)) selectService.value = serviceParam;
+
+  // Champ « Autre ville »
+  const selectVille = document.getElementById('ville') as HTMLSelectElement;
+  const champAutre = document.getElementById('champ-autre-ville') as HTMLElement;
+  const majAutre = () => { champAutre.hidden = selectVille.value !== 'Autre'; };
+  selectVille.addEventListener('change', majAutre); majAutre();
+
+  const afficher = (texte: string, type: 'succes' | 'erreur') => {
+    message.className = `message-form message-form--${type}`;
+    message.textContent = texte;
+    if (type === 'succes') { message.setAttribute('tabindex', '-1'); message.focus(); }
+  };
+  const marquer = (champ: HTMLElement, enErreur: boolean) => {
+    const bloc = champ.closest('.champ');
+    bloc?.classList.toggle('champ--erreur', enErreur);
+    if (champ.tagName !== 'FIELDSET') champ.setAttribute('aria-invalid', String(enErreur));
+  };
+
+  const valider = () => {
+    if (!form) return false;
+    let premier: HTMLElement | null = null;
+    const check = (id: string, ok: boolean) => { const el = document.getElementById(id) as HTMLElement; marquer(el, !ok); if (!ok && !premier) premier = el; };
+    const val = (id: string) => (document.getElementById(id) as HTMLInputElement).value.trim();
+    check('nom', val('nom').length > 1);
+    check('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email')));
+    check('ville', val('ville') !== '');
+    check('service', val('service') !== '');
+    check('description', val('description').length >= 20);
+    const recontact = (form.querySelector('input[name="recontact"]:checked') as HTMLInputElement | null)?.value;
+    const fieldset = form.querySelector('fieldset') as HTMLElement;
+    marquer(fieldset, !recontact); if (!recontact && !premier) premier = fieldset.querySelector('input')!;
+    const telRequis = recontact && recontact !== 'email';
+    check('telephone', !telRequis || val('telephone').length >= 6);
+    const photos = (document.getElementById('photos') as HTMLInputElement).files;
+    let taille = 0; if (photos) for (const f of photos) taille += f.size;
+    check('photos', !photos || (photos.length <= 5 && taille <= 10 * 1024 * 1024));
+    check('consentement', (document.getElementById('consentement') as HTMLInputElement).checked);
+    if (premier) { afficher('Le formulaire contient des erreurs. Corrigez les champs signalés en rouge, puis renvoyez.', 'erreur'); (premier as HTMLElement).focus(); return false; }
+    return true;
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!valider()) return;
+    if ((document.getElementById('site_web') as HTMLInputElement).value) { afficher('Votre demande a bien été envoyée.', 'succes'); return; } // piège anti-spam : on simule un succès
+    if (Date.now() - t0 < DELAI_MIN_MS) { afficher('Merci de relire votre demande quelques secondes avant de l’envoyer, puis cliquez à nouveau sur « Envoyer ».', 'erreur'); return; }
+    const webhook = form.dataset.webhook;
+    const bouton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    bouton.disabled = true; bouton.textContent = 'Envoi en cours…';
+    try {
+      if (!webhook) throw new Error('Webhook non configuré');
+      const data = new FormData(form);
+      data.set('duree_remplissage_s', String(Math.round((Date.now() - t0) / 1000)));
+      const res = await fetch(webhook, { method: 'POST', body: data });
+      if (!res.ok) throw new Error(String(res.status));
+      form.hidden = true;
+      afficher(`Votre demande a bien été envoyée. Merci ! Nous vous répondons ${data.get('recontact') === 'appel' ? 'par téléphone' : 'par email'} sous ${form.dataset.delai ?? '{{DÉLAI DE RÉPONSE}}'}. Si vous n’avez pas de nouvelles passé ce délai, vérifiez vos courriers indésirables ou écrivez-nous directement par email.`, 'succes');
+      history.replaceState(null, '', '/devis/merci/');
+    } catch {
+      afficher('L’envoi a échoué. Vous pouvez réessayer, ou nous écrire directement par email (voir les moyens de contact plus haut). Vos réponses sont conservées dans le formulaire.', 'erreur');
+      bouton.disabled = false; bouton.textContent = 'Envoyer ma demande';
+    }
+  });
+</script>
+<style>
+  .banniere-devis { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  .banniere-devis__inner { max-width: 1983px; margin-inline: auto; }
+  .banniere-devis img, .banniere-devis .img-slot { width: 100%; height: auto; display: block; }
+  .obligatoire { font-weight: 400; color: var(--texte-doux); font-size: 0.95rem; }
+  .facultatif { font-weight: 400; color: var(--texte-doux); font-size: 0.95rem; }
+  .form-devis { max-width: var(--largeur-texte); }
+</style>

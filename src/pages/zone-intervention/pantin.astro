@@ -1,0 +1,51 @@
+---
+import VillePage from '@/layouts/VillePage.astro';
+const faq = [
+  {
+    question: 'Intervenez-vous dans les immeubles haussmanniens de la rue de Paris et de l’avenue Jean-Lolive ?',
+    reponse: 'Oui. Ces immeubles ont des hauteurs sous plafond importantes, des moulures et des parquets anciens. Nous concevons des meubles qui exploitent la hauteur et nous protégeons sols et parties communes pendant les travaux.',
+  },
+  {
+    question: 'Sous quel délai pouvez-vous venir à Pantin ?',
+    reponse: 'Romainville, où se trouve notre atelier, est limitrophe de Pantin. Le délai dépend du type de travaux et de notre planning. Décrivez votre besoin par écrit avec des photos et nous vous proposons une date.',
+  },
+  {
+    question: 'Comment gérez-vous le stationnement à Pantin ?',
+    reponse: 'Les Quatre-Chemins et l’avenue Jean-Lolive sont difficiles en journée. Nous fixons avec vous un créneau et un point de déchargement, ou nous accédons à la cour de l’immeuble. Aux Courtillières et au Petit-Pantin, le stationnement est plus simple.',
+  },
+];
+---
+<VillePage
+  slug="pantin"
+  title="Artisan multiservices à Pantin (93500) | ACS Multiservices"
+  description="Artisan multiservices à Pantin : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie. Atelier voisin à Romainville. Écrivez-nous."
+  h1="Artisan multiservices à Pantin (93500)"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Besoin d’un artisan multiservices à Pantin ? ACS Multiservices fabrique des meubles sur mesure dans son atelier de Romainville, commune limitrophe située juste au sud-est, et se déplace chez vous en quelques minutes. Seydou Traoré assure aussi la réparation et le montage de meubles, la rénovation intérieure, l’électricité et la plomberie.</p>
+  </Fragment>
+
+  <h2>Pantin, entre canal, anciennes usines et immeubles anciens</h2>
+  <p>Pantin compte environ 60 000 habitants et se transforme depuis les années 2010. Les Grands Moulins, les Magasins généraux et d’autres bâtiments industriels ont été reconvertis en bureaux, en logements ou en ateliers. La pression immobilière a fait grimper le prix des surfaces.</p>
+  <p>Conséquence directe : les habitants veulent tirer parti de chaque mètre carré, sans dénaturer un cachet ancien ou industriel. C’est exactement le travail d’un menuisier sur mesure.</p>
+
+  <h2>Les logements pantinois et leurs particularités</h2>
+  <ul class="liste-coches">
+    <li><strong>Immeubles haussmanniens et de faubourg</strong> (rue de Paris, avenue Jean-Lolive, Église de Pantin, Hoche) : plafonds hauts, moulures, cheminées, parquets à restaurer. Une <a href="/services/meubles-sur-mesure/">bibliothèque toute hauteur ou un dressing sur mesure à Pantin</a> valorise ces volumes.</li>
+    <li><strong>Lofts et ateliers d’artistes</strong> (abords du canal, anciennes usines) : grands plateaux, murs en brique ou en béton, mezzanines. Le mobilier doit être conçu à l’échelle du lieu, et l’installation électrique souvent complétée par un <a href="/services/electricite/">électricien à Pantin</a>.</li>
+    <li><strong>Cité du Serpentin et grands ensembles</strong> (Courtillières, Sept-Arpents) : béton, cloisons légères, réseaux d’eau communs. Le <a href="/services/plomberie/">plombier à Pantin</a> traite fuites, robinetterie et chasses d’eau ; le <a href="/services/montage-meubles/">montage de meubles à Pantin</a> avec fixation adaptée au béton est très demandé.</li>
+    <li><strong>Immeubles ouvriers et copropriétés</strong> (Quatre-Chemins, Mairie de Pantin, Bobigny–Pantin–Raymond Queneau) : petites surfaces, cuisines fermées, tableaux électriques anciens. La <a href="/services/renovation-interieure/">rénovation intérieure à Pantin</a> y est courante avant une location ou un emménagement.</li>
+  </ul>
+
+  <h2>Meubles sur mesure pour lofts et appartements de caractère</h2>
+  <p>Dans un loft, un meuble standard paraît minuscule et laisse des espaces perdus. Nous dessinons des rangements à la taille du plateau : cloison-bibliothèque pour séparer un coin nuit, verrière intérieure avec meuble bas, escalier de mezzanine avec tiroirs intégrés.</p>
+  <p>Dans un appartement ancien, l’enjeu est inverse : intégrer sans écraser. Placard dans l’épaisseur d’un mur, meuble d’angle autour d’une cheminée, portes assorties aux moulures existantes. Ce qui a du caractère se répare aussi : voir la page <a href="/services/reparation-meubles/">réparation de meubles à Pantin</a>.</p>
+
+  <h2>Menuisier, électricien et plombier à Pantin : un seul artisan</h2>
+  <p>Une cuisine dans un ancien atelier ou une salle de bains dans un immeuble de la rue de Paris mobilise plusieurs métiers. Chez ACS Multiservices, la même personne prend les mesures, fabrique les meubles, tire les circuits et raccorde l’eau.</p>
+
+  <h2>Accès, copropriétés et contact depuis Pantin</h2>
+  <p>Nous rejoignons Pantin depuis Romainville en quelques minutes. Dans les copropriétés anciennes, nous respectons le règlement et les horaires de travaux, et nous protégeons escaliers et parquets. Les meubles sont fabriqués en modules pour passer par des escaliers étroits.</p>
+  <p>Écrivez-nous par formulaire ou email, avec des photos. Nous répondons par le canal que vous choisissez. La page <a href="/devis/">demande de devis</a> détaille chaque étape.</p>
+</VillePage>

@@ -1,0 +1,23 @@
+---
+import type { Service } from '@/data/services';
+import { serviceUrl } from '@/data/services';
+import Icon from './Icon.astro';
+import ImageSlot from './ImageSlot.astro';
+interface Props { service: Service; niveau?: 'h2' | 'h3'; ancre?: string; avecImage?: boolean }
+const { service, niveau = 'h3', ancre, avecImage = false } = Astro.props;
+const Titre = niveau;
+---
+<article class:list={['carte', { 'carte--phare': service.phare }]}>
+  {avecImage && <ImageSlot nom={service.image} alt={service.imageAlt} width={1200} height={800} sizes="(min-width: 72rem) 22rem, (min-width: 48rem) 45vw, 100vw" />}
+  <div class="carte__corps">
+    <div class="picto"><Icon path={service.icone} /></div>
+    <Titre><a href={serviceUrl(service.slug)}>{ancre ?? service.nomLong}</a></Titre>
+    {service.phare && <p class="badge-phare"><span class="badge-brouillon" style="background:var(--bleu);color:var(--blanc)">Activité principale</span></p>}
+    <p>{service.description}</p>
+  </div>
+</article>
+<style>
+  .carte__corps h2 a, .carte__corps h3 a { text-decoration: none; }
+  .carte__corps h2 a:hover, .carte__corps h3 a:hover { text-decoration: underline; }
+  .badge-phare { flex: 0 !important; margin: 0; }
+</style>

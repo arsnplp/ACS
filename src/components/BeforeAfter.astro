@@ -1,0 +1,51 @@
+---
+/**
+ * Comparateur avant/après accessible :
+ * - un <input type="range"> pilote la ligne de séparation (clavier : flèches)
+ * - les deux photos sont aussi affichées côte à côte pour les lecteurs sans JS
+ * - une description textuelle des deux états est toujours présente
+ */
+import ImageSlot from './ImageSlot.astro';
+interface Photo { src: string; alt: string; width: number; height: number }
+interface Props { avant: Photo; apres: Photo; descriptionAvant: string; descriptionApres: string; id?: string }
+const { avant, apres, descriptionAvant, descriptionApres, id = 'comparateur' } = Astro.props;
+---
+<div class="avant-apres" data-avant-apres>
+  <div class="avant-apres__cadre" aria-hidden="true">
+    <div class="avant-apres__avant"><ImageSlot nom={avant.src} dossier="realisations" alt="" width={avant.width} height={avant.height} /></div>
+    <div class="avant-apres__apres"><ImageSlot nom={apres.src} dossier="realisations" alt="" width={apres.width} height={apres.height} /></div>
+    <div class="avant-apres__ligne"></div>
+    <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+    <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+  </div>
+  <label for={id}>Curseur avant / après</label>
+  <input type="range" id={id} min="0" max="100" value="50" step="1" aria-valuetext="50 % avant, 50 % après" />
+  <div class="avant-apres__paire">
+    <figure>
+      <ImageSlot nom={avant.src} dossier="realisations" alt={avant.alt} width={avant.width} height={avant.height} />
+      <figcaption><strong>Avant.</strong> {descriptionAvant}</figcaption>
+    </figure>
+    <figure>
+      <ImageSlot nom={apres.src} dossier="realisations" alt={apres.alt} width={apres.width} height={apres.height} />
+      <figcaption><strong>Après.</strong> {descriptionApres}</figcaption>
+    </figure>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-avant-apres]').forEach((bloc) => {
+    const range = bloc.querySelector<HTMLInputElement>('input[type="range"]');
+    const cadre = bloc.querySelector<HTMLElement>('.avant-apres__cadre');
+    if (!range || !cadre) return;
+    const maj = () => {
+      const v = Number(range.value);
+      cadre.style.setProperty('--pos', `${v}%`);
+      range.setAttribute('aria-valuetext', `${v} % avant, ${100 - v} % après`);
+    };
+    range.addEventListener('input', maj);
+    maj();
+  });
+</script>
+<style>
+  figcaption { margin-top: 0.5rem; font-size: 0.95rem; }
+  label { display: block; font-size: 0.95rem; color: var(--texte-doux); }
+</style>

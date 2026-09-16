@@ -1,0 +1,63 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ImageSlot from '@/components/ImageSlot.astro';
+import CtaDevis from '@/components/CtaDevis.astro';
+import ContactOptions from '@/components/ContactOptions.astro';
+import { entreprise, adresseLigne } from '@/data/entreprise';
+import { services, serviceUrl } from '@/data/services';
+---
+<BaseLayout
+  title="Seydou Traoré, artisan à Romainville | ACS Multiservices"
+  description="Seydou Traoré et ACS Multiservices, entreprise artisanale créée en 2026 à Romainville : meubles sur mesure, rénovation, électricité, plomberie dans le 93."
+  ariane={[{ nom: 'À propos', url: '/a-propos/' }]}
+  ogImage="/images/romainville-a-propos.jpg"
+  preload="/images/romainville-a-propos.jpg"
+>
+  <section class="section section--blanc">
+    <div class="conteneur hero">
+      <div>
+        <p class="surtitre">À propos</p>
+        <h1>Seydou Traoré, artisan multiservices à Romainville</h1>
+        <p class="chapo">ACS Multiservices est l’entreprise de Seydou Traoré, artisan installé avenue Youri Gagarine à Romainville. Menuisier de cœur, électricien et plombier par nécessité de terrain, il a créé la société pour proposer un seul interlocuteur aux habitants de Seine-Saint-Denis.</p>
+      </div>
+      <div class="vue-ville">
+        <ImageSlot nom="romainville-a-propos" alt="Vue aérienne de Romainville : pavillons aux toits rouges, immeubles collectifs et la tour hertzienne, avec Paris à l’horizon" width={1000} height={750} lcp sizes="(min-width: 64rem) 34rem, 100vw" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur prose">
+      <h2>L’entreprise en quelques faits</h2>
+      <p>ACS MULTISERVICES est une société par actions simplifiée créée le {entreprise.dateCreationTexte}. Elle est immatriculée au Registre national des entreprises au titre de l’activité artisanale, sous le code NAF 95.24Z (réparation de meubles et d’équipements du foyer). Son siège est situé {adresseLigne}.</p>
+      <p>Les informations d’immatriculation, d’assurance et de médiation sont publiées sur la page <a href="/mentions-legales/">mentions légales</a>. Nous préférons les rendre visibles plutôt que d’aligner des promesses : vous savez à qui vous confiez votre logement.</p>
+
+      <h2>Ce que nous faisons, et comment</h2>
+      <p>La création de meubles sur mesure est le cœur du métier : prise de cotes chez vous, conception, fabrication en atelier, pose. Autour, cinq services qui répondent aux besoins concrets d’un logement.</p>
+      <ul class="liste-coches">
+        {services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a> : {s.description.charAt(0).toLowerCase() + s.description.slice(1)}</li>)}
+      </ul>
+      <p>Chaque demande commence par une écoute : nous cherchons à comprendre l’usage avant de proposer une solution. Trois principes guident ensuite le chantier. D’abord, expliquer : un tableau électrique, un siphon ou une charnière à fermeture amortie se décrivent en mots simples. Ensuite, écrire : le devis liste chaque poste, et les échanges peuvent se faire entièrement par message. Enfin, réparer quand c’est possible : un meuble bien fait mérite d’être restauré avant d’être remplacé.</p>
+
+      <h2>Un artisan joignable par écrit</h2>
+      <p>Beaucoup d’artisans ne répondent qu’au téléphone, et il faut souvent rappeler plusieurs fois avant d’obtenir un devis. Nous faisons le choix inverse : le formulaire et l’email sont des canaux à part entière, au même niveau que l’appel. Si vous travaillez de nuit ou si vous voulez simplement garder une trace écrite, vous êtes au bon endroit.</p>
+      <ContactOptions />
+
+      <h2>Où nous trouver</h2>
+      <div class="portrait">
+        <ImageSlot nom="portrait-seydou" alt="Portrait de Seydou Traoré, fondateur d’ACS Multiservices" width={800} height={1000} sizes="(min-width: 48rem) 16rem, 60vw" />
+      </div>
+      <address>
+        <p><strong>{entreprise.denominationSociale}</strong><br />{adresseLigne}<br />Email : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a><br />Téléphone : {entreprise.telephone}<br />Horaires : {entreprise.horaires}</p>
+      </address>
+      <p>Nous intervenons dans toute la <a href="/zone-intervention/">zone Romainville, Seine-Saint-Denis et Est parisien</a>. Voir aussi <a href="/realisations/">nos réalisations</a>.</p>
+      <p><CtaDevis /></p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .vue-ville { border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); }
+  .portrait { max-width: 16rem; border-radius: var(--rayon); overflow: hidden; margin-bottom: 1.25rem; }
+  details { border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 0.5rem 1rem; max-width: var(--largeur-texte); margin-bottom: 1.5rem; }
+  summary { cursor: pointer; font-weight: 700; color: var(--bleu); min-height: 44px; display: flex; align-items: center; }
+</style>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /devis/merci/
+
+Sitemap: https://acs.nairox.fr/sitemap-index.xml

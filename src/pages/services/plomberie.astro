@@ -1,0 +1,88 @@
+---
+import ServicePage from '@/layouts/ServicePage.astro';
+const faq = [
+  {
+    question: 'Que faire en cas de fuite sous l’évier ?',
+    reponse: 'Fermez d’abord le robinet d’arrêt sous l’évier ou l’arrivée d’eau générale. Placez une bassine et épongez pour éviter que l’eau abîme le meuble. Photographiez la zone qui goutte : siphon, flexible, raccord ou vanne.\n\nEnvoyez-nous la photo par email. Nous vous disons si vous pouvez attendre ou s’il faut intervenir vite.',
+  },
+  {
+    question: 'Combien coûte une intervention de plomberie ?',
+    reponse: 'Le prix dépend du type de panne, du temps d’intervention, des pièces à fournir (robinet, mécanisme de chasse, flexible, groupe de sécurité) et de l’accessibilité des tuyaux. Un joint à changer coûte moins cher qu’un chauffe-eau à remplacer.\n\nNous vous indiquons le prix avant de commencer, par écrit. Pas de montant annoncé sans avoir vu le problème.',
+  },
+  {
+    question: 'Mes WC fuient en permanence : quelle est la cause ?',
+    reponse: 'Un filet d’eau qui coule dans la cuvette vient presque toujours du mécanisme de chasse d’eau : joint de cloche usé, flotteur mal réglé ou robinet flotteur qui ne ferme plus. Nous remplaçons le mécanisme complet ou le joint défectueux. La fuite s’arrête et votre facture d’eau baisse.',
+  },
+  {
+    question: 'Remplacez-vous les chauffe-eau ?',
+    reponse: 'Oui. Nous remplaçons les chauffe-eau électriques (ballons) de toutes capacités, avec le groupe de sécurité neuf et le raccordement électrique. Nous démontons et évacuons l’ancien appareil. Si le ballon goutte par le groupe de sécurité, c’est souvent cette pièce seule qui est à changer.',
+  },
+  {
+    question: 'Pouvez-vous déboucher un évier ou une douche ?',
+    reponse: 'Oui. Nous démontons et nettoyons le siphon, puis nous utilisons un furet manuel ou une pompe adaptée. Évitez les produits chimiques : ils abîment les joints et les canalisations. Si le bouchon est plus loin dans la colonne, nous vous le disons clairement.',
+  },
+  {
+    question: 'Intervenez-vous dans un immeuble ancien avec de vieux tuyaux ?',
+    reponse: 'Oui. Les immeubles anciens de Seine-Saint-Denis ont souvent des canalisations en plomb, en acier ou en cuivre vieilli. Nous savons raccorder du neuf sur de l’ancien avec les bons raccords. Nous vous prévenons si une partie de la tuyauterie doit être remplacée.',
+  },
+];
+---
+<ServicePage
+  slug="plomberie"
+  title="Plombier à Romainville (93) : fuite, WC | ACS Multiservices"
+  description="Fuite d’eau, robinet, WC qui fuit, chauffe-eau, débouchage : ACS Multiservices, plombier à Romainville et dans le 93. Décrivez votre panne par écrit."
+  h1="Plombier à Romainville : fuite, robinet, WC, chauffe-eau et débouchage"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Vous avez besoin d’un plombier à Romainville ou en Seine-Saint-Denis ? ACS Multiservices intervient pour une fuite d’eau, un robinet ou un mitigeur à remplacer, des WC qui fuient, une chasse d’eau en panne, un chauffe-eau ou un débouchage. Vous décrivez le problème, nous venons avec les bonnes pièces.</p>
+    <p>Seydou Traoré, artisan fondateur, se déplace, répare proprement et vous explique la cause de la panne.</p>
+  </Fragment>
+
+  <h2>Ce que comprennent nos interventions de plomberie</h2>
+  <p>La plomberie du quotidien, c’est surtout des petites pannes qui gênent beaucoup. Voici les demandes que nous traitons le plus souvent à Romainville, Montreuil, Les Lilas et dans les villes voisines.</p>
+  <ul class="liste-coches">
+    <li><strong>Recherche et réparation de fuite d’eau</strong> : sous l’évier, derrière les WC, au niveau d’un raccord ou d’un flexible. Nous trouvons la cause et nous réparons.</li>
+    <li><strong>Remplacement de robinet ou de mitigeur</strong> : cuisine, lavabo, douche, baignoire. Robinet qui goutte, poignée dure, cartouche usée.</li>
+    <li><strong>WC qui fuit et chasse d’eau</strong> : mécanisme, flotteur, joint de cloche, pipe d’évacuation. Remplacement complet d’un WC si nécessaire.</li>
+    <li><strong>Chauffe-eau électrique</strong> : remplacement du ballon, du groupe de sécurité, du thermostat ou de la résistance.</li>
+    <li><strong>Débouchage</strong> : évier, lavabo, douche, WC. Nettoyage du siphon, furet, remplacement d’un siphon fendu.</li>
+    <li><strong>Raccordement d’appareils</strong> : lave-linge, lave-vaisselle, évier neuf lors d’un montage de cuisine, avec flexibles et joints neufs.</li>
+  </ul>
+  <p>Chaque intervention comprend la protection du sol, la réparation, le test d’étanchéité et le nettoyage. Vous recevez un compte rendu écrit si vous le souhaitez.</p>
+
+  <h2>Comment se déroule une intervention de plomberie</h2>
+  <p>Nous préférons comprendre la panne avant de venir. Cela évite un deuxième déplacement pour une pièce manquante.</p>
+  <ol class="etapes">
+    <li><div><h3>Vous décrivez la panne</h3><p>Photo ou courte vidéo de la fuite, du robinet ou du WC, via le <a href="/devis/?service=plomberie">formulaire de devis</a>, par email. Indiquez si l’eau est coupée et depuis quand le problème existe.</p></div></li>
+    <li><div><h3>Premier avis et prix</h3><p>Nous identifions la cause probable et la pièce à prévoir. Vous recevez un prix ou un devis par écrit avant toute intervention.</p></div></li>
+    <li><div><h3>Intervention</h3><p>Coupure de l’eau, démontage, remplacement de la pièce (joint, cartouche, mécanisme, flexible, groupe de sécurité), remontage avec du matériel de qualité.</p></div></li>
+    <li><div><h3>Test et conseils</h3><p>Remise en eau, contrôle de l’étanchéité de chaque raccord, nettoyage. Nous vous montrons où se trouve le robinet d’arrêt et comment réagir la prochaine fois.</p></div></li>
+  </ol>
+
+  <h2>Pourquoi confier votre plomberie à ACS Multiservices</h2>
+  <p>ACS Multiservices est une entreprise artisanale immatriculée au Registre national des entreprises, basée avenue Youri Gagarine à Romainville.</p>
+  <ul class="liste-coches">
+    <li><strong>Un seul interlocuteur</strong> : Seydou Traoré répond à votre message, se déplace et fait la réparation lui-même.</li>
+    <li><strong>Des échanges par écrit</strong> : vous pouvez tout gérer par email, de la photo de la fuite jusqu’au compte rendu.</li>
+    <li><strong>Un artisan polyvalent</strong> : un chauffe-eau à raccorder ou une salle de bains à rafraîchir ? Nous assurons aussi l’<a href="/services/electricite/">électricité</a> et la <a href="/services/renovation-interieure/">rénovation intérieure</a>.</li>
+    <li><strong>Une entreprise de proximité</strong> : depuis Romainville, nous sommes en quelques minutes à Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec ou Pantin.</li>
+  </ul>
+  <p>Un meuble sous évier gonflé par une fuite ? Notre service de <a href="/services/reparation-meubles/">réparation de meubles</a> peut le remettre en état une fois la fuite réparée.</p>
+
+  <h2>Siphon, flexible, groupe de sécurité : les pièces qui lâchent</h2>
+  <p>La plupart des fuites viennent de quelques pièces d’usure. Les connaître vous aide à décrire la panne et à comprendre le devis.</p>
+  <ul>
+    <li><strong>Siphon</strong> : le coude en plastique sous l’évier qui retient l’eau et bloque les odeurs. Il se fend, se dévisse ou se bouche.</li>
+    <li><strong>Flexible</strong> : tuyau souple tressé qui relie le robinet à l’arrivée d’eau. Il gonfle ou se fissure avec le temps.</li>
+    <li><strong>Joint</strong> : rondelle en caoutchouc ou en fibre qui assure l’étanchéité d’un raccord. Une fuite goutte à goutte vient souvent d’un joint sec.</li>
+    <li><strong>Raccord</strong> : la pièce qui relie deux tuyaux ou un tuyau à un appareil. Bicône, à compression ou à visser selon les cas.</li>
+    <li><strong>Cartouche de mitigeur</strong> : le cœur du mitigeur qui mélange chaud et froid. Elle s’use et le robinet goutte.</li>
+    <li><strong>Groupe de sécurité</strong> : la soupape du chauffe-eau qui évacue la surpression. Elle doit goutter un peu à la chauffe, mais pas en continu.</li>
+  </ul>
+  <p>Pour savoir quoi faire avant notre arrivée, lisez notre article <a href="/blog/fuite-sous-evier-bons-reflexes/">« Fuite sous l’évier : les bons réflexes avant l’arrivée du plombier »</a>.</p>
+
+  <Fragment slot="villes">
+    <p>Nous intervenons en plomberie à Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin, mais aussi à Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais et dans les 19e et 20e arrondissements de Paris. Appartements en étage, pavillons ou commerces : nous couvrons toute la Seine-Saint-Denis et l’Est parisien.</p>
+  </Fragment>
+</ServicePage>

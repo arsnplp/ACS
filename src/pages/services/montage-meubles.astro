@@ -1,0 +1,87 @@
+---
+import ServicePage from '@/layouts/ServicePage.astro';
+const faq = [
+  {
+    question: 'Combien coûte le montage d’un meuble ?',
+    reponse: 'Le prix dépend du nombre de meubles, de leur taille, du temps de montage indiqué par le fabricant et de la fixation au mur. Une table basse se monte vite ; un dressing PAX de trois mètres avec portes coulissantes demande plusieurs heures.\n\nEnvoyez-nous la liste des meubles et les références : nous vous répondons avec un devis clair, sans surprise à la fin.',
+  },
+  {
+    question: 'Montez-vous les meubles IKEA et ceux des autres enseignes ?',
+    reponse: 'Oui. Nous montons les meubles IKEA (PAX, BESTÅ, KALLAX, MALM, METOD), mais aussi ceux de Leroy Merlin, Castorama, Conforama, But, Maisons du Monde ou achetés en ligne. Une notice et toutes les pièces suffisent.',
+  },
+  {
+    question: 'Faut-il fixer une armoire ou une bibliothèque au mur ?',
+    reponse: 'Oui, dès qu’un meuble est haut et étroit. Une armoire, une bibliothèque ou une commode peuvent basculer, surtout avec des enfants. Nous fixons le meuble avec des chevilles adaptées à votre mur : placo, brique creuse ou béton.',
+  },
+  {
+    question: 'Que se passe-t-il s’il manque une pièce dans le carton ?',
+    reponse: 'Nous vérifions les pièces au début du montage. Si une vis ou un panneau manque, nous le signalons tout de suite. Nous avons un stock de visserie courante pour dépanner. Pour un panneau manquant, nous montons ce qui est possible et revenons finir après réception de la pièce.',
+  },
+  {
+    question: 'Pouvez-vous monter une cuisine en kit ?',
+    reponse: 'Oui. Le montage d’une cuisine comprend l’assemblage des caissons, la mise à niveau, la fixation des meubles hauts, la découpe du plan de travail et la pose des façades. Si un raccordement d’évier ou de prise est nécessaire, nous gérons aussi la plomberie et l’électricité.',
+  },
+  {
+    question: 'Emportez-vous les cartons et l’emballage ?',
+    reponse: 'Nous plions les cartons et rassemblons les emballages pour faciliter le tri. Nous pouvons les descendre au local poubelle de l’immeuble. Le meuble est remis propre et prêt à l’usage.',
+  },
+];
+---
+<ServicePage
+  slug="montage-meubles"
+  title="Montage de meuble en Seine-Saint-Denis | ACS Multiservices"
+  description="Armoire, dressing PAX, cuisine, lit : ACS Multiservices monte vos meubles en kit en Seine-Saint-Denis avec fixation murale sûre. Demandez un devis."
+  h1="Montage de meuble en Seine-Saint-Denis : assemblage propre et fixation sûre"
+  faq={faq}
+>
+  <Fragment slot="chapo">
+    <p>Vous avez besoin d’un monteur de meuble en Seine-Saint-Denis ? ACS Multiservices assemble vos meubles en kit à Romainville et dans les villes voisines : armoire, dressing PAX, lit, bibliothèque, cuisine, meuble TV. Le montage de meuble est fait avec les bons outils, dans l’ordre de la notice, sans pièce oubliée.</p>
+    <p>Seydou Traoré, artisan menuisier, monte le meuble, le règle et le fixe au mur si nécessaire. Vous n’avez rien à préparer.</p>
+  </Fragment>
+
+  <h2>Ce que comprend le montage de meubles</h2>
+  <p>Monter un meuble en kit prend du temps, demande de la place et souvent deux personnes. Une erreur au début oblige à tout démonter. Voici les montages que nous faisons le plus souvent à Romainville, Montreuil, Pantin et alentour.</p>
+  <ul class="liste-coches">
+    <li><strong>Montage armoire et dressing PAX</strong> : caissons, portes battantes ou coulissantes, aménagement intérieur, réglage des portes et fixation au mur.</li>
+    <li><strong>Montage de lit</strong> : lit simple, lit double, lit coffre avec vérins, lit mezzanine ou lit enfant, avec sommier et tête de lit.</li>
+    <li><strong>Montage cuisine en kit</strong> : caissons bas et hauts, plan de travail, façades, plinthes, découpe pour l’évier et la plaque.</li>
+    <li><strong>Bibliothèque et étagères</strong> : KALLAX, BILLY, étagères murales, avec fixation anti-basculement.</li>
+    <li><strong>Meuble TV et rangement salon</strong> : BESTÅ, buffet, vitrine, avec passage des câbles.</li>
+    <li><strong>Bureau et mobilier professionnel</strong> : bureau réglable, caisson, rayonnage pour un cabinet ou une boutique.</li>
+  </ul>
+  <p>Nous intervenons aussi pour un meuble déjà commencé que vous n’arrivez pas à finir. Si une pièce s’est cassée en cours de route, notre service de <a href="/services/reparation-meubles/">réparation de meubles</a> la remet en état.</p>
+
+  <h2>Comment se déroule le montage d’un meuble</h2>
+  <p>Un montage bien préparé se passe sans stress. Voici ce qui se passe de votre demande jusqu’au meuble fini.</p>
+  <ol class="etapes">
+    <li><div><h3>Vous décrivez les meubles à monter</h3><p>Envoyez la liste des meubles, les références ou une photo des cartons via le <a href="/devis/?service=montage-meubles">formulaire de devis</a>, par email. Dites-nous aussi l’étage et s’il y a un ascenseur.</p></div></li>
+    <li><div><h3>Devis et prise de rendez-vous</h3><p>Nous vous envoyons un devis avec le temps estimé et le prix de chaque montage. Vous choisissez un créneau. Nous confirmons par écrit.</p></div></li>
+    <li><div><h3>Vérification et assemblage</h3><p>Nous déballons, comptons les pièces et suivons la notice. Nous utilisons des outils adaptés (visseuse à couple réglé, niveau, équerre) pour ne pas abîmer les panneaux.</p></div></li>
+    <li><div><h3>Mise à niveau et fixation murale</h3><p>Le meuble est mis d’aplomb sur un sol rarement plat. Les meubles hauts sont fixés au mur avec des chevilles adaptées au support.</p></div></li>
+    <li><div><h3>Réglages et nettoyage</h3><p>Portes alignées, tiroirs réglés, poignées posées. Nous plions les cartons et laissons la pièce propre.</p></div></li>
+  </ol>
+
+  <h2>Pourquoi confier le montage de vos meubles à ACS Multiservices</h2>
+  <p>ACS Multiservices est une entreprise artisanale immatriculée au Registre national des entreprises, basée avenue Youri Gagarine à Romainville. Le montage de meuble s’appuie sur notre expérience quotidienne de la menuiserie.</p>
+  <ul class="liste-coches">
+    <li><strong>Un menuisier, pas seulement un monteur</strong> : nous fabriquons des <a href="/services/meubles-sur-mesure/">meubles sur mesure</a>. Nous savons lire un plan, ajuster une pièce et rattraper un défaut de fabrication.</li>
+    <li><strong>Un seul interlocuteur</strong> : Seydou Traoré vous répond, se déplace et monte le meuble lui-même.</li>
+    <li><strong>Des échanges par écrit</strong> : liste des meubles, devis, créneau et suivi passent par email.</li>
+    <li><strong>Une entreprise locale</strong> : Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec et Pantin sont à quelques minutes de notre atelier.</li>
+  </ul>
+  <p>Vous emménagez et le logement a besoin d’un coup de frais ? Nous pouvons enchaîner peinture ou parquet avec notre service de <a href="/services/renovation-interieure/">rénovation intérieure</a>, puis monter les meubles une fois les murs secs.</p>
+
+  <h2>Chevilles, placo, béton : bien fixer un meuble au mur</h2>
+  <p>La fixation murale est l’étape la plus importante pour la sécurité. Le bon accessoire dépend de votre mur. Voici comment nous choisissons.</p>
+  <ul>
+    <li><strong>Placo (plaque de plâtre)</strong> : mur creux et léger. Nous utilisons des chevilles à expansion type Molly, qui s’ouvrent derrière la plaque.</li>
+    <li><strong>Brique creuse ou parpaing</strong> : mur avec des alvéoles. Il faut des chevilles longues à ailettes ou un scellement chimique pour les charges lourdes.</li>
+    <li><strong>Béton ou pierre</strong> : mur plein et solide. Une cheville à frapper ou une cheville nylon classique avec un perçage à percussion suffit.</li>
+    <li><strong>Notice et équerres anti-basculement</strong> : les fabricants livrent une équerre et parfois une sangle. Nous les posons systématiquement sur les meubles hauts.</li>
+  </ul>
+  <p>Nous repérons le type de mur en le sondant avant de percer et nous vérifions l’absence de câble ou de canalisation. Une fixation réussie ne se voit pas, mais elle tient.</p>
+
+  <Fragment slot="villes">
+    <p>Nous montons vos meubles à domicile dans toute la Seine-Saint-Denis et l’Est parisien : Romainville, Montreuil, Bagnolet, Les Lilas, Noisy-le-Sec, Pantin, et aussi Bobigny, Bondy, Rosny-sous-Bois, Le Pré-Saint-Gervais ainsi que les 19e et 20e arrondissements de Paris. Étage sans ascenseur, studio étroit ou maison : nous nous adaptons au lieu.</p>
+  </Fragment>
+</ServicePage>
