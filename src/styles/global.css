@@ -285,18 +285,20 @@ th { font-family: var(--police-titre); color: var(--bleu); }
 
 /* Comparateur avant/après */
 .avant-apres { display: grid; gap: 1rem; }
-.avant-apres__cadre { position: relative; overflow: hidden; border-radius: var(--rayon); aspect-ratio: 3 / 2; background: var(--bleu-clair); }
+.avant-apres__cadre { position: relative; overflow: hidden; border-radius: var(--rayon); aspect-ratio: 3 / 2; background: var(--bleu-clair); cursor: ew-resize; touch-action: pan-y; user-select: none; -webkit-user-select: none; box-shadow: var(--ombre); }
+.avant-apres__cadre img { pointer-events: none; -webkit-user-drag: none; }
 .avant-apres__cadre > * { position: absolute; inset: 0; width: 100%; height: 100%; }
 .avant-apres__cadre img, .avant-apres__cadre .img-slot { width: 100%; height: 100%; object-fit: cover; }
 .avant-apres__apres { clip-path: inset(0 0 0 var(--pos, 50%)); }
 .avant-apres__ligne { position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 3px; background: var(--jaune); transform: translateX(-50%); pointer-events: none; }
-.avant-apres__ligne::after { content: '⇔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--jaune); color: var(--bleu-fonce); display: grid; place-items: center; font-weight: 800; font-size: 1.2rem; }
+.avant-apres__ligne::after { content: '◀ ▶'; letter-spacing: -0.05em; box-shadow: 0 2px 8px rgb(0 0 0 / 0.3); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--jaune); color: var(--bleu-fonce); display: grid; place-items: center; font-weight: 800; font-size: 0.75rem; }
 .avant-apres__etiquette { position: absolute; top: 0.75rem; background: var(--bleu); color: var(--blanc); font-family: var(--police-titre); font-weight: 700; font-size: 0.85rem; padding: 0.25rem 0.6rem; border-radius: var(--rayon); width: auto; height: auto; inset: auto; }
 .avant-apres__etiquette--avant { left: 0.75rem; }
 .avant-apres__etiquette--apres { right: 0.75rem; }
 .avant-apres input[type='range'] { width: 100%; accent-color: var(--bleu); min-height: 44px; }
 .avant-apres__textes { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .avant-apres__textes h3 { margin-top: 0; font-size: 1.1rem; }
+.avant-apres--service .avant-apres__paire { display: none; }
 .avant-apres__paire { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 
 /* Filtres réalisations */

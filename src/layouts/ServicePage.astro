@@ -12,6 +12,7 @@ import ImageSlot from '@/components/ImageSlot.astro';
 import CtaDevis from '@/components/CtaDevis.astro';
 import Faq from '@/components/Faq.astro';
 import RealisationCard from '@/components/RealisationCard.astro';
+import BeforeAfter from '@/components/BeforeAfter.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import { getService, serviceUrl, type ServiceSlug } from '@/data/services';
 import { villesPrioritaires, villeUrl } from '@/data/villes';
@@ -50,6 +51,29 @@ const realisations = (await getCollection('realisations', (r) => r.data.service 
   <div class="conteneur section contenu-service">
     <slot />
   </div>
+
+  {service.avantApres && (
+    <section class="section section--blanc" aria-labelledby="avant-apres-titre">
+      <div class="conteneur">
+        <p class="surtitre">Avant / après</p>
+        <h2 id="avant-apres-titre">{service.avantApres.titre}</h2>
+        <p class="chapo">Faites glisser le curseur sur la photo pour passer de l’avant à l’après.</p>
+        <div class="avant-apres--service">
+          <BeforeAfter
+            dossier="avant-apres"
+            avant={{ src: `${slug}-avant`, alt: service.avantApres.altAvant, width: service.avantApres.width, height: service.avantApres.height }}
+            apres={{ src: `${slug}-apres`, alt: service.avantApres.altApres, width: service.avantApres.width, height: service.avantApres.height }}
+            descriptionAvant={service.avantApres.descriptionAvant}
+            descriptionApres={service.avantApres.descriptionApres}
+          />
+          <div class="avant-apres__textes">
+            <div><h3>Avant</h3><p>{service.avantApres.descriptionAvant}</p></div>
+            <div><h3>Après</h3><p>{service.avantApres.descriptionApres}</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section section--clair" aria-labelledby="realisations-titre">
     <div class="conteneur">

@@ -45,7 +45,7 @@ for (const p of pages) {
     catch (e) { erreurs.push(`${p.url} : JSON-LD invalide (${e.message})`); }
   }
   for (const img of p.images) {
-    if (!/\salt=/.test(img)) erreurs.push(`${p.url} : image sans alt`);
+    if (!/\salt(=|\s|>)/.test(img)) erreurs.push(`${p.url} : image sans alt`); // `alt` nu = alt="" (image décorative)
     if (!/\swidth=/.test(img) || !/\sheight=/.test(img)) erreurs.push(`${p.url} : image sans width/height`);
   }
   const cible = cibles.find(([re]) => re.test(p.url));
