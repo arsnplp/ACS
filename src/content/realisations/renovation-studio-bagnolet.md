@@ -6,12 +6,16 @@ date: 2026-06-20
 resume: "Un studio défraîchi remis à neuf entre deux locataires : sol stratifié, peinture, cuisine compacte, salle d’eau rafraîchie et rangements sur mesure."
 avant:
   src: studio-bagnolet-avant
-  alt: "Studio vide avec moquette usée, papier peint jauni et kitchenette d’origine aux portes déformées"
+  alt: "Pièce principale en chantier : murs décroûtés, saignées ouvertes, escabeau, plaques de plâtre et seaux au sol"
+  width: 1536
+  height: 1024
 apres:
   src: studio-bagnolet-apres
-  alt: "Studio rénové avec sol stratifié clair, murs blancs, kitchenette neuve et placard toute hauteur"
-descriptionAvant: "Un studio d’une trentaine de mètres carrés dans un immeuble des années soixante-dix. Moquette tachée, papier peint décollé aux angles, kitchenette d’origine avec des portes gonflées. La salle d’eau a un carrelage fissuré et une robinetterie entartrée."
-descriptionApres: "Un sol stratifié chêne clair d’un seul tenant. Murs et plafond repeints en blanc mat. Une kitchenette compacte avec un plan de travail et une crédence neuve. Un placard sur mesure occupe le renfoncement de l’entrée. La salle d’eau a un receveur neuf et des murs enduits hydrofuges."
+  alt: "Même pièce rénovée : mur vert sauge, plafond lisse avec spots encastrés, parquet neuf et portes blanches"
+  width: 1536
+  height: 1024
+descriptionAvant: "La pièce principale d’un studio d’une trentaine de mètres carrés, une fois les revêtements déposés : enduits arrachés, saignées ouvertes pour l’électricité, plafond à reprendre, plaques de plâtre en attente."
+descriptionApres: "Murs lissés, un mur d’accent vert sauge, plafond neuf avec spots encastrés, parquet stratifié chêne clair d’un seul tenant, plinthes et portes repeintes en blanc. La kitchenette et la salle d’eau ont été refaites dans la foulée."
 brouillon: true
 ---
 ## Contexte

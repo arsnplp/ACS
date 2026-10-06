@@ -6,12 +6,16 @@ date: 2026-08-05
 resume: "Un tableau à fusibles à porcelaine remplacé par un tableau modulaire aux normes, avec différentiels 30 mA, disjoncteurs et repérage des circuits."
 avant:
   src: tableau-les-lilas-avant
-  alt: "Ancien tableau électrique avec fusibles à cartouche, fils vieillis et dominos apparents sur un mur d’entrée"
+  alt: "Mur en chantier avec anciens câbles apparents qui pendent, boîtiers hors d’usage et vieux tableau électrique ouvert"
+  width: 1448
+  height: 1086
 apres:
   src: tableau-les-lilas-apres
-  alt: "Tableau électrique modulaire neuf avec disjoncteurs alignés, interrupteurs différentiels et étiquettes des circuits"
-descriptionAvant: "Un tableau à fusibles à cartouche fixé sur une planche en bois dans l’entrée. Les fils sont raidis par l’âge, plusieurs dominos sont visibles et aucun circuit n’est repéré. Il n’y a pas de protection différentielle."
-descriptionApres: "Un coffret modulaire à deux rangées, capot fermé. Chaque circuit a son disjoncteur étiqueté, protégé par deux interrupteurs différentiels 30 mA. Le bornier de terre est raccordé et une gaine technique regroupe les arrivées."
+  alt: "Même mur avec gaines neuves alignées dans des saignées, boîtiers d’encastrement bleus posés et tableau électrique neuf"
+  width: 1448
+  height: 1086
+descriptionAvant: "Un mur d’entrée décroûté où les anciens câbles pendent hors des boîtiers. Le tableau d’origine est vétuste, sans protection différentielle, et aucun circuit n’est repéré."
+descriptionApres: "Des gaines neuves tirées dans des saignées rectilignes jusqu’aux boîtiers d’encastrement. Un coffret modulaire neuf avec disjoncteurs étiquetés et deux interrupteurs différentiels 30 mA, prêt pour le rebouchage et la peinture."
 brouillon: true
 ---
 ## Contexte

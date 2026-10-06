@@ -66,6 +66,8 @@ const parService = services.map((s) => ({ service: s, items: toutes.filter((r) =
 </script>
 <style>
   .banniere-realisations { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  /* auto-fill : une carte seule garde sa largeur normale au lieu de s'étirer */
+  .groupe .grille { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
   .banniere-realisations__inner { max-width: 2048px; margin-inline: auto; }
   .banniere-realisations img, .banniere-realisations .img-slot { width: 100%; height: auto; display: block; }
   .groupe { margin-bottom: 2.5rem; }

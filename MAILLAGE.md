@@ -22,12 +22,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 | /plan-du-site/ | 31 / 0 | 30 | 67 |
 | /politique-confidentialite/ | 31 / 3 | 1 | 41 |
 | /realisations/ | 31 / 9 | 13 | 50 |
-| /realisations/dressing-sur-mesure-romainville/ | 6 / 6 | 5 | 46 |
-| /realisations/montage-cuisine-kit-pantin/ | 7 / 7 | 5 | 46 |
+| /realisations/meuble-tv-sur-mesure-romainville/ | 6 / 6 | 5 | 46 |
+| /realisations/montage-armoire-kit-pantin/ | 7 / 7 | 5 | 46 |
 | /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ | 7 / 7 | 5 | 46 |
 | /realisations/remplacement-tableau-electrique-les-lilas/ | 7 / 7 | 5 | 46 |
 | /realisations/renovation-studio-bagnolet/ | 6 / 6 | 5 | 46 |
-| /realisations/restauration-commode-ancienne-montreuil/ | 6 / 6 | 5 | 46 |
+| /realisations/restauration-buffet-chene-montreuil/ | 6 / 6 | 5 | 46 |
 | /services/ | 31 / 9 | 7 | 51 |
 | /services/electricite/ | 31 / 17 | 13 | 55 |
 | /services/meubles-sur-mesure/ | 31 / 19 | 16 | 57 |
@@ -59,7 +59,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /mentions-legales/ — « mentions légales »
 - → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 - → /realisations/remplacement-tableau-electrique-les-lilas/ — « Remplacement d’un tableau électrique vétuste aux Lilas »
-- → /realisations/montage-cuisine-kit-pantin/ — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
+- → /realisations/montage-armoire-kit-pantin/ — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
 - → /realisations/ — « Voir toutes les réalisations »
 - → /zone-intervention/romainville/ — « Artisan à Romainville »
 - → /zone-intervention/montreuil/ — « Artisan à Montreuil »
@@ -85,12 +85,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « ACS ACS Multiservices »
 - ← /politique-confidentialite/ — « ACS ACS Multiservices »
 - ← /realisations/ — « ACS ACS Multiservices »
-- ← /realisations/dressing-sur-mesure-romainville/ — « ACS ACS Multiservices »
-- ← /realisations/montage-cuisine-kit-pantin/ — « ACS ACS Multiservices »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « ACS ACS Multiservices »
+- ← /realisations/montage-armoire-kit-pantin/ — « ACS ACS Multiservices »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « ACS ACS Multiservices »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « ACS ACS Multiservices »
 - ← /realisations/renovation-studio-bagnolet/ — « ACS ACS Multiservices »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « ACS ACS Multiservices »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « ACS ACS Multiservices »
 - ← /services/ — « ACS ACS Multiservices »
 - ← /services/electricite/ — « ACS ACS Multiservices »
 - ← /services/meubles-sur-mesure/ — « ACS ACS Multiservices »
@@ -132,12 +132,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « À propos »
 - ← /politique-confidentialite/ — « À propos »
 - ← /realisations/ — « À propos »
-- ← /realisations/dressing-sur-mesure-romainville/ — « À propos »
-- ← /realisations/montage-cuisine-kit-pantin/ — « À propos »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « À propos »
+- ← /realisations/montage-armoire-kit-pantin/ — « À propos »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « À propos »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « À propos »
 - ← /realisations/renovation-studio-bagnolet/ — « À propos »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « À propos »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « À propos »
 - ← /services/ — « À propos »
 - ← /services/electricite/ — « À propos »
 - ← /services/meubles-sur-mesure/ — « À propos »
@@ -176,12 +176,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Conseils »
 - ← /politique-confidentialite/ — « Conseils »
 - ← /realisations/ — « Conseils »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Conseils »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Conseils »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Conseils »
+- ← /realisations/montage-armoire-kit-pantin/ — « Conseils »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Conseils »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Conseils »
 - ← /realisations/renovation-studio-bagnolet/ — « Conseils »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Conseils »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Conseils »
 - ← /services/ — « Conseils »
 - ← /services/electricite/ — « Conseils »
 - ← /services/meubles-sur-mesure/ — « Conseils »
@@ -260,12 +260,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Demander un devis »
 - ← /politique-confidentialite/ (contextuel) — « Demander un devis »
 - ← /realisations/ (contextuel) — « Demander un devis »
-- ← /realisations/dressing-sur-mesure-romainville/ (contextuel) — « Demander un devis »
-- ← /realisations/montage-cuisine-kit-pantin/ (contextuel) — « Demander un devis »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ (contextuel) — « Demander un devis »
+- ← /realisations/montage-armoire-kit-pantin/ (contextuel) — « Demander un devis »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ (contextuel) — « Demander un devis »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ (contextuel) — « Demander un devis »
 - ← /realisations/renovation-studio-bagnolet/ (contextuel) — « Demander un devis »
-- ← /realisations/restauration-commode-ancienne-montreuil/ (contextuel) — « Demander un devis »
+- ← /realisations/restauration-buffet-chene-montreuil/ (contextuel) — « Demander un devis »
 - ← /services/ (contextuel) — « Demander un devis »
 - ← /services/electricite/ (contextuel) — « Demander un devis »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Demander un devis »
@@ -306,12 +306,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Mentions légales »
 - ← /politique-confidentialite/ — « Mentions légales »
 - ← /realisations/ — « Mentions légales »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Mentions légales »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Mentions légales »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Mentions légales »
+- ← /realisations/montage-armoire-kit-pantin/ — « Mentions légales »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Mentions légales »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Mentions légales »
 - ← /realisations/renovation-studio-bagnolet/ — « Mentions légales »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Mentions légales »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Mentions légales »
 - ← /services/ — « Mentions légales »
 - ← /services/electricite/ — « Mentions légales »
 - ← /services/meubles-sur-mesure/ — « Mentions légales »
@@ -348,12 +348,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/noisy-le-sec/ — « Artisan multiservices à Noisy-le-Sec »
 - → /zone-intervention/pantin/ — « Artisan multiservices à Pantin »
 - → /realisations/ — « Galerie des réalisations »
-- → /realisations/dressing-sur-mesure-romainville/ — « Dressing sur mesure dans une chambre sous combles à Romainville »
-- → /realisations/montage-cuisine-kit-pantin/ — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
 - → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
-- → /realisations/restauration-commode-ancienne-montreuil/ — « Restauration d’une commode ancienne en noyer à Montreuil »
 - → /realisations/renovation-studio-bagnolet/ — « Rénovation complète d’un studio en location à Bagnolet »
 - → /realisations/remplacement-tableau-electrique-les-lilas/ — « Remplacement d’un tableau électrique vétuste aux Lilas »
+- → /realisations/meuble-tv-sur-mesure-romainville/ — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
+- → /realisations/montage-armoire-kit-pantin/ — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
+- → /realisations/restauration-buffet-chene-montreuil/ — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
 - → /blog/ — « Tous les articles »
 - → /blog/fuite-sous-evier-bons-reflexes/ — « Fuite sous l’évier : les bons réflexes avant l’arrivée du plombier »
 - → /blog/reparer-ou-remplacer-meuble-abime/ — « Réparer ou remplacer un meuble abîmé : comment décider »
@@ -373,12 +373,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /mentions-legales/ — « Plan du site »
 - ← /politique-confidentialite/ — « Plan du site »
 - ← /realisations/ — « Plan du site »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Plan du site »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Plan du site »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Plan du site »
+- ← /realisations/montage-armoire-kit-pantin/ — « Plan du site »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Plan du site »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Plan du site »
 - ← /realisations/renovation-studio-bagnolet/ — « Plan du site »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Plan du site »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Plan du site »
 - ← /services/ — « Plan du site »
 - ← /services/electricite/ — « Plan du site »
 - ← /services/meubles-sur-mesure/ — « Plan du site »
@@ -411,12 +411,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /mentions-legales/ (contextuel) — « politique de confidentialité »
 - ← /plan-du-site/ (contextuel) — « Politique de confidentialité »
 - ← /realisations/ — « Politique de confidentialité »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Politique de confidentialité »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Politique de confidentialité »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Politique de confidentialité »
+- ← /realisations/montage-armoire-kit-pantin/ — « Politique de confidentialité »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Politique de confidentialité »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Politique de confidentialité »
 - ← /realisations/renovation-studio-bagnolet/ — « Politique de confidentialité »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Politique de confidentialité »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Politique de confidentialité »
 - ← /services/ — « Politique de confidentialité »
 - ← /services/electricite/ — « Politique de confidentialité »
 - ← /services/meubles-sur-mesure/ — « Politique de confidentialité »
@@ -436,11 +436,11 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 **Sortants contextuels (13)** :
 - → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
-- → /realisations/dressing-sur-mesure-romainville/ — « Dressing sur mesure dans une chambre sous combles à Romainville »
+- → /realisations/meuble-tv-sur-mesure-romainville/ — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
-- → /realisations/restauration-commode-ancienne-montreuil/ — « Restauration d’une commode ancienne en noyer à Montreuil »
+- → /realisations/restauration-buffet-chene-montreuil/ — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
 - → /services/montage-meubles/ — « Montage de meubles »
-- → /realisations/montage-cuisine-kit-pantin/ — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
+- → /realisations/montage-armoire-kit-pantin/ — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /realisations/renovation-studio-bagnolet/ — « Rénovation complète d’un studio en location à Bagnolet »
 - → /services/electricite/ — « Électricité »
@@ -461,12 +461,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /mentions-legales/ — « Réalisations »
 - ← /plan-du-site/ (contextuel) — « Réalisations »
 - ← /politique-confidentialite/ — « Réalisations »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Réalisations »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Réalisations »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Réalisations »
+- ← /realisations/montage-armoire-kit-pantin/ — « Réalisations »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Réalisations »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Réalisations »
 - ← /realisations/renovation-studio-bagnolet/ — « Réalisations »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Réalisations »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Réalisations »
 - ← /services/ — « Réalisations »
 - ← /services/electricite/ (contextuel) — « Réalisations »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Réalisations »
@@ -482,24 +482,24 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /zone-intervention/pantin/ — « Réalisations »
 - ← /zone-intervention/romainville/ — « Réalisations »
 
-### /realisations/dressing-sur-mesure-romainville/
+### /realisations/meuble-tv-sur-mesure-romainville/
 
 **Sortants contextuels (5)** :
 - → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
 - → /zone-intervention/romainville/ — « Romainville »
 - → /devis/ — « demander un devis »
-- → /realisations/restauration-commode-ancienne-montreuil/ — « ← Précédente : Restauration d’une commode ancienne en noyer à Montreui »
+- → /realisations/restauration-buffet-chene-montreuil/ — « ← Précédente : Restauration d’un buffet en chêne au vernis écaillé à M »
 - → /realisations/renovation-studio-bagnolet/ — « Suivante : Rénovation complète d’un studio en location à Bagnolet → »
 
 **Entrants (6)** :
-- ← /plan-du-site/ (contextuel) — « Dressing sur mesure dans une chambre sous combles à Romainville »
-- ← /realisations/ (contextuel) — « Dressing sur mesure dans une chambre sous combles à Romainville »
-- ← /realisations/renovation-studio-bagnolet/ (contextuel) — « ← Précédente : Dressing sur mesure dans une chambre sous combles à Rom »
-- ← /realisations/restauration-commode-ancienne-montreuil/ (contextuel) — « Suivante : Dressing sur mesure dans une chambre sous combles à Romainv »
-- ← /services/meubles-sur-mesure/ (contextuel) — « Dressing sur mesure dans une chambre sous combles à Romainville »
-- ← /zone-intervention/romainville/ (contextuel) — « Dressing sur mesure dans une chambre sous combles à Romainville »
+- ← /plan-du-site/ (contextuel) — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
+- ← /realisations/ (contextuel) — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
+- ← /realisations/renovation-studio-bagnolet/ (contextuel) — « ← Précédente : Meuble TV sur mesure sur toute la largeur d’un salon à  »
+- ← /realisations/restauration-buffet-chene-montreuil/ (contextuel) — « Suivante : Meuble TV sur mesure sur toute la largeur d’un salon à Roma »
+- ← /services/meubles-sur-mesure/ (contextuel) — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
+- ← /zone-intervention/romainville/ (contextuel) — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
 
-### /realisations/montage-cuisine-kit-pantin/
+### /realisations/montage-armoire-kit-pantin/
 
 **Sortants contextuels (5)** :
 - → /services/montage-meubles/ — « Montage de meubles »
@@ -509,13 +509,13 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /realisations/remplacement-tableau-electrique-les-lilas/ — « Suivante : Remplacement d’un tableau électrique vétuste aux Lilas → »
 
 **Entrants (7)** :
-- ← / (contextuel) — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
-- ← /plan-du-site/ (contextuel) — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
-- ← /realisations/ (contextuel) — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
-- ← /realisations/remplacement-tableau-electrique-les-lilas/ (contextuel) — « ← Précédente : Montage d’une cuisine en kit dans un appartement neuf à »
-- ← /realisations/renovation-studio-bagnolet/ (contextuel) — « Suivante : Montage d’une cuisine en kit dans un appartement neuf à Pan »
-- ← /services/montage-meubles/ (contextuel) — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
-- ← /zone-intervention/pantin/ (contextuel) — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
+- ← / (contextuel) — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
+- ← /plan-du-site/ (contextuel) — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
+- ← /realisations/ (contextuel) — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
+- ← /realisations/remplacement-tableau-electrique-les-lilas/ (contextuel) — « ← Précédente : Montage d’une armoire en kit à miroir dans une chambre  »
+- ← /realisations/renovation-studio-bagnolet/ (contextuel) — « Suivante : Montage d’une armoire en kit à miroir dans une chambre à Pa »
+- ← /services/montage-meubles/ (contextuel) — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
+- ← /zone-intervention/pantin/ (contextuel) — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
 
 ### /realisations/remplacement-mitigeur-fuite-noisy-le-sec/
 
@@ -524,14 +524,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/noisy-le-sec/ — « Noisy-le-Sec »
 - → /devis/ — « demander un devis »
 - → /realisations/remplacement-tableau-electrique-les-lilas/ — « ← Précédente : Remplacement d’un tableau électrique vétuste aux Lilas »
-- → /realisations/restauration-commode-ancienne-montreuil/ — « Suivante : Restauration d’une commode ancienne en noyer à Montreuil → »
+- → /realisations/restauration-buffet-chene-montreuil/ — « Suivante : Restauration d’un buffet en chêne au vernis écaillé à Montr »
 
 **Entrants (7)** :
 - ← / (contextuel) — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 - ← /plan-du-site/ (contextuel) — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 - ← /realisations/ (contextuel) — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ (contextuel) — « Suivante : Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy- »
-- ← /realisations/restauration-commode-ancienne-montreuil/ (contextuel) — « ← Précédente : Remplacement d’un mitigeur qui fuyait sous l’évier à No »
+- ← /realisations/restauration-buffet-chene-montreuil/ (contextuel) — « ← Précédente : Remplacement d’un mitigeur qui fuyait sous l’évier à No »
 - ← /services/plomberie/ (contextuel) — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 - ← /zone-intervention/noisy-le-sec/ (contextuel) — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 
@@ -541,14 +541,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/electricite/ — « Électricité »
 - → /zone-intervention/les-lilas/ — « Les Lilas »
 - → /devis/ — « demander un devis »
-- → /realisations/montage-cuisine-kit-pantin/ — « ← Précédente : Montage d’une cuisine en kit dans un appartement neuf à »
+- → /realisations/montage-armoire-kit-pantin/ — « ← Précédente : Montage d’une armoire en kit à miroir dans une chambre  »
 - → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Suivante : Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy- »
 
 **Entrants (7)** :
 - ← / (contextuel) — « Remplacement d’un tableau électrique vétuste aux Lilas »
 - ← /plan-du-site/ (contextuel) — « Remplacement d’un tableau électrique vétuste aux Lilas »
 - ← /realisations/ (contextuel) — « Remplacement d’un tableau électrique vétuste aux Lilas »
-- ← /realisations/montage-cuisine-kit-pantin/ (contextuel) — « Suivante : Remplacement d’un tableau électrique vétuste aux Lilas → »
+- ← /realisations/montage-armoire-kit-pantin/ (contextuel) — « Suivante : Remplacement d’un tableau électrique vétuste aux Lilas → »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ (contextuel) — « ← Précédente : Remplacement d’un tableau électrique vétuste aux Lilas »
 - ← /services/electricite/ (contextuel) — « Remplacement d’un tableau électrique vétuste aux Lilas »
 - ← /zone-intervention/les-lilas/ (contextuel) — « Remplacement d’un tableau électrique vétuste aux Lilas »
@@ -559,33 +559,33 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /zone-intervention/bagnolet/ — « Bagnolet »
 - → /devis/ — « demander un devis »
-- → /realisations/dressing-sur-mesure-romainville/ — « ← Précédente : Dressing sur mesure dans une chambre sous combles à Rom »
-- → /realisations/montage-cuisine-kit-pantin/ — « Suivante : Montage d’une cuisine en kit dans un appartement neuf à Pan »
+- → /realisations/meuble-tv-sur-mesure-romainville/ — « ← Précédente : Meuble TV sur mesure sur toute la largeur d’un salon à  »
+- → /realisations/montage-armoire-kit-pantin/ — « Suivante : Montage d’une armoire en kit à miroir dans une chambre à Pa »
 
 **Entrants (6)** :
 - ← /plan-du-site/ (contextuel) — « Rénovation complète d’un studio en location à Bagnolet »
 - ← /realisations/ (contextuel) — « Rénovation complète d’un studio en location à Bagnolet »
-- ← /realisations/dressing-sur-mesure-romainville/ (contextuel) — « Suivante : Rénovation complète d’un studio en location à Bagnolet → »
-- ← /realisations/montage-cuisine-kit-pantin/ (contextuel) — « ← Précédente : Rénovation complète d’un studio en location à Bagnolet »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ (contextuel) — « Suivante : Rénovation complète d’un studio en location à Bagnolet → »
+- ← /realisations/montage-armoire-kit-pantin/ (contextuel) — « ← Précédente : Rénovation complète d’un studio en location à Bagnolet »
 - ← /services/renovation-interieure/ (contextuel) — « Rénovation complète d’un studio en location à Bagnolet »
 - ← /zone-intervention/bagnolet/ (contextuel) — « Rénovation complète d’un studio en location à Bagnolet »
 
-### /realisations/restauration-commode-ancienne-montreuil/
+### /realisations/restauration-buffet-chene-montreuil/
 
 **Sortants contextuels (5)** :
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
 - → /zone-intervention/montreuil/ — « Montreuil »
 - → /devis/ — « demander un devis »
 - → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « ← Précédente : Remplacement d’un mitigeur qui fuyait sous l’évier à No »
-- → /realisations/dressing-sur-mesure-romainville/ — « Suivante : Dressing sur mesure dans une chambre sous combles à Romainv »
+- → /realisations/meuble-tv-sur-mesure-romainville/ — « Suivante : Meuble TV sur mesure sur toute la largeur d’un salon à Roma »
 
 **Entrants (6)** :
-- ← /plan-du-site/ (contextuel) — « Restauration d’une commode ancienne en noyer à Montreuil »
-- ← /realisations/ (contextuel) — « Restauration d’une commode ancienne en noyer à Montreuil »
-- ← /realisations/dressing-sur-mesure-romainville/ (contextuel) — « ← Précédente : Restauration d’une commode ancienne en noyer à Montreui »
-- ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ (contextuel) — « Suivante : Restauration d’une commode ancienne en noyer à Montreuil → »
-- ← /services/reparation-meubles/ (contextuel) — « Restauration d’une commode ancienne en noyer à Montreuil »
-- ← /zone-intervention/montreuil/ (contextuel) — « Restauration d’une commode ancienne en noyer à Montreuil »
+- ← /plan-du-site/ (contextuel) — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
+- ← /realisations/ (contextuel) — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ (contextuel) — « ← Précédente : Restauration d’un buffet en chêne au vernis écaillé à M »
+- ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ (contextuel) — « Suivante : Restauration d’un buffet en chêne au vernis écaillé à Montr »
+- ← /services/reparation-meubles/ (contextuel) — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
+- ← /zone-intervention/montreuil/ (contextuel) — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
 
 ### /services/
 
@@ -611,12 +611,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Services »
 - ← /politique-confidentialite/ — « Services »
 - ← /realisations/ — « Services »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Services »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Services »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Services »
+- ← /realisations/montage-armoire-kit-pantin/ — « Services »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Services »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Services »
 - ← /realisations/renovation-studio-bagnolet/ — « Services »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Services »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Services »
 - ← /services/electricite/ — « Services »
 - ← /services/meubles-sur-mesure/ — « Services »
 - ← /services/montage-meubles/ — « Services »
@@ -661,12 +661,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Électricité »
 - ← /politique-confidentialite/ — « Électricité »
 - ← /realisations/ (contextuel) — « Électricité »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Électricité »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Électricité »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Électricité »
+- ← /realisations/montage-armoire-kit-pantin/ — « Électricité »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Électricité »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ (contextuel) — « Électricité »
 - ← /realisations/renovation-studio-bagnolet/ — « Électricité »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Électricité »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Électricité »
 - ← /services/ (contextuel) — « Électricité »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Électricité »
 - ← /services/montage-meubles/ — « Électricité »
@@ -689,7 +689,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/reparation-meubles/ — « réparation et restauration de meubles »
 - → /services/montage-meubles/ — « montage de meubles »
 - → /blog/meuble-sur-mesure-prix-devis/ — « « Meuble sur mesure : ce qui fait varier le prix d’un devis » »
-- → /realisations/dressing-sur-mesure-romainville/ — « Dressing sur mesure dans une chambre sous combles à Romainville »
+- → /realisations/meuble-tv-sur-mesure-romainville/ — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
 - → /realisations/ — « Toutes nos réalisations en meubles sur mesure »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /zone-intervention/romainville/ — « Meuble sur mesure à Romainville »
@@ -714,12 +714,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Création de meubles sur mesure »
 - ← /politique-confidentialite/ — « Création de meubles sur mesure »
 - ← /realisations/ (contextuel) — « Création de meubles sur mesure »
-- ← /realisations/dressing-sur-mesure-romainville/ (contextuel) — « Création de meubles sur mesure »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Création de meubles sur mesure »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ (contextuel) — « Création de meubles sur mesure »
+- ← /realisations/montage-armoire-kit-pantin/ — « Création de meubles sur mesure »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Création de meubles sur mesure »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Création de meubles sur mesure »
 - ← /realisations/renovation-studio-bagnolet/ — « Création de meubles sur mesure »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Création de meubles sur mesure »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Création de meubles sur mesure »
 - ← /services/ (contextuel) — « Création de meubles sur mesure »
 - ← /services/electricite/ — « Création de meubles sur mesure »
 - ← /services/montage-meubles/ (contextuel) — « Création de meubles sur mesure »
@@ -741,7 +741,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /devis/ — « formulaire de devis »
 - → /services/meubles-sur-mesure/ — « meubles sur mesure »
 - → /services/renovation-interieure/ — « rénovation intérieure »
-- → /realisations/montage-cuisine-kit-pantin/ — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
+- → /realisations/montage-armoire-kit-pantin/ — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
 - → /realisations/ — « Toutes nos réalisations en montage de meubles »
 - → /zone-intervention/romainville/ — « Montage de meubles à Romainville »
 - → /zone-intervention/montreuil/ — « Montage de meubles à Montreuil »
@@ -764,12 +764,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Montage de meubles »
 - ← /politique-confidentialite/ — « Montage de meubles »
 - ← /realisations/ (contextuel) — « Montage de meubles »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Montage de meubles »
-- ← /realisations/montage-cuisine-kit-pantin/ (contextuel) — « Montage de meubles »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Montage de meubles »
+- ← /realisations/montage-armoire-kit-pantin/ (contextuel) — « Montage de meubles »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Montage de meubles »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Montage de meubles »
 - ← /realisations/renovation-studio-bagnolet/ — « Montage de meubles »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Montage de meubles »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Montage de meubles »
 - ← /services/ (contextuel) — « Montage de meubles »
 - ← /services/electricite/ (contextuel) — « Montage de meubles »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Montage de meubles »
@@ -815,12 +815,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Plomberie »
 - ← /politique-confidentialite/ — « Plomberie »
 - ← /realisations/ (contextuel) — « Plomberie »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Plomberie »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Plomberie »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Plomberie »
+- ← /realisations/montage-armoire-kit-pantin/ — « Plomberie »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ (contextuel) — « Plomberie »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Plomberie »
 - ← /realisations/renovation-studio-bagnolet/ — « Plomberie »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Plomberie »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Plomberie »
 - ← /services/ (contextuel) — « Plomberie »
 - ← /services/electricite/ (contextuel) — « Plomberie »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Plomberie »
@@ -866,12 +866,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Rénovation intérieure »
 - ← /politique-confidentialite/ — « Rénovation intérieure »
 - ← /realisations/ (contextuel) — « Rénovation intérieure »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Rénovation intérieure »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Rénovation intérieure »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Rénovation intérieure »
+- ← /realisations/montage-armoire-kit-pantin/ — « Rénovation intérieure »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Rénovation intérieure »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Rénovation intérieure »
 - ← /realisations/renovation-studio-bagnolet/ (contextuel) — « Rénovation intérieure »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Rénovation intérieure »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Rénovation intérieure »
 - ← /services/ (contextuel) — « Rénovation intérieure »
 - ← /services/electricite/ (contextuel) — « Rénovation intérieure »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Rénovation intérieure »
@@ -894,7 +894,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/montage-meubles/ — « montage de meubles »
 - → /services/renovation-interieure/ — « rénovation intérieure »
 - → /blog/reparer-ou-remplacer-meuble-abime/ — « « Réparer ou remplacer un meuble abîmé : comment décider » »
-- → /realisations/restauration-commode-ancienne-montreuil/ — « Restauration d’une commode ancienne en noyer à Montreuil »
+- → /realisations/restauration-buffet-chene-montreuil/ — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
 - → /realisations/ — « Toutes nos réalisations en réparation de meubles »
 - → /zone-intervention/romainville/ — « Réparation de meubles à Romainville »
 - → /zone-intervention/montreuil/ — « Réparation de meubles à Montreuil »
@@ -917,12 +917,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Réparation et restauration de meubles »
 - ← /politique-confidentialite/ — « Réparation et restauration de meubles »
 - ← /realisations/ (contextuel) — « Réparation et restauration de meubles »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Réparation et restauration de meubles »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Réparation et restauration de meubles »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Réparation et restauration de meubles »
+- ← /realisations/montage-armoire-kit-pantin/ — « Réparation et restauration de meubles »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Réparation et restauration de meubles »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Réparation et restauration de meubles »
 - ← /realisations/renovation-studio-bagnolet/ — « Réparation et restauration de meubles »
-- ← /realisations/restauration-commode-ancienne-montreuil/ (contextuel) — « Réparation et restauration de meubles »
+- ← /realisations/restauration-buffet-chene-montreuil/ (contextuel) — « Réparation et restauration de meubles »
 - ← /services/ (contextuel) — « Réparation et restauration de meubles »
 - ← /services/electricite/ — « Réparation et restauration de meubles »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Réparation et restauration de meubles »
@@ -967,12 +967,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Zone d’intervention »
 - ← /politique-confidentialite/ — « Zone d’intervention »
 - ← /realisations/ — « Zone d’intervention »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Zone d’intervention »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Zone d’intervention »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Zone d’intervention »
+- ← /realisations/montage-armoire-kit-pantin/ — « Zone d’intervention »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Zone d’intervention »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Zone d’intervention »
 - ← /realisations/renovation-studio-bagnolet/ — « Zone d’intervention »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Zone d’intervention »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Zone d’intervention »
 - ← /services/ — « Zone d’intervention »
 - ← /services/electricite/ (contextuel) — « Zone d’intervention »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Zone d’intervention »
@@ -1016,12 +1016,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Artisan multiservices à Bagnolet »
 - ← /politique-confidentialite/ — « Artisan à Bagnolet »
 - ← /realisations/ — « Artisan à Bagnolet »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Artisan à Bagnolet »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Artisan à Bagnolet »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Artisan à Bagnolet »
+- ← /realisations/montage-armoire-kit-pantin/ — « Artisan à Bagnolet »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Artisan à Bagnolet »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Artisan à Bagnolet »
 - ← /realisations/renovation-studio-bagnolet/ (contextuel) — « Bagnolet »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Artisan à Bagnolet »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Artisan à Bagnolet »
 - ← /services/ — « Artisan à Bagnolet »
 - ← /services/electricite/ (contextuel) — « Électricien à Bagnolet »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Meuble sur mesure à Bagnolet »
@@ -1065,12 +1065,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Artisan multiservices aux Lilas »
 - ← /politique-confidentialite/ — « Artisan aux Lilas »
 - ← /realisations/ — « Artisan aux Lilas »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Artisan aux Lilas »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Artisan aux Lilas »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Artisan aux Lilas »
+- ← /realisations/montage-armoire-kit-pantin/ — « Artisan aux Lilas »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Artisan aux Lilas »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ (contextuel) — « Les Lilas »
 - ← /realisations/renovation-studio-bagnolet/ — « Artisan aux Lilas »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Artisan aux Lilas »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Artisan aux Lilas »
 - ← /services/ — « Artisan aux Lilas »
 - ← /services/electricite/ (contextuel) — « Électricien aux Lilas »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Meuble sur mesure aux Lilas »
@@ -1096,7 +1096,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/renovation-interieure/ — « Rénovation intérieure à Montreuil »
 - → /services/electricite/ — « Électricien à Montreuil »
 - → /services/plomberie/ — « Plombier à Montreuil »
-- → /realisations/restauration-commode-ancienne-montreuil/ — « Restauration d’une commode ancienne en noyer à Montreuil »
+- → /realisations/restauration-buffet-chene-montreuil/ — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
 - → /zone-intervention/bagnolet/ — « Artisan multiservices à Bagnolet »
 - → /zone-intervention/romainville/ — « Artisan multiservices à Romainville »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
@@ -1114,12 +1114,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Artisan multiservices à Montreuil »
 - ← /politique-confidentialite/ — « Artisan à Montreuil »
 - ← /realisations/ — « Artisan à Montreuil »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Artisan à Montreuil »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Artisan à Montreuil »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Artisan à Montreuil »
+- ← /realisations/montage-armoire-kit-pantin/ — « Artisan à Montreuil »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Artisan à Montreuil »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Artisan à Montreuil »
 - ← /realisations/renovation-studio-bagnolet/ — « Artisan à Montreuil »
-- ← /realisations/restauration-commode-ancienne-montreuil/ (contextuel) — « Montreuil »
+- ← /realisations/restauration-buffet-chene-montreuil/ (contextuel) — « Montreuil »
 - ← /services/ — « Artisan à Montreuil »
 - ← /services/electricite/ (contextuel) — « Électricien à Montreuil »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Meuble sur mesure à Montreuil »
@@ -1163,12 +1163,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Artisan multiservices à Noisy-le-Sec »
 - ← /politique-confidentialite/ — « Artisan à Noisy-le-Sec »
 - ← /realisations/ — « Artisan à Noisy-le-Sec »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Artisan à Noisy-le-Sec »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Artisan à Noisy-le-Sec »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Artisan à Noisy-le-Sec »
+- ← /realisations/montage-armoire-kit-pantin/ — « Artisan à Noisy-le-Sec »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ (contextuel) — « Noisy-le-Sec »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Artisan à Noisy-le-Sec »
 - ← /realisations/renovation-studio-bagnolet/ — « Artisan à Noisy-le-Sec »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Artisan à Noisy-le-Sec »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Artisan à Noisy-le-Sec »
 - ← /services/ — « Artisan à Noisy-le-Sec »
 - ← /services/electricite/ (contextuel) — « Électricien à Noisy-le-Sec »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Meuble sur mesure à Noisy-le-Sec »
@@ -1194,7 +1194,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/renovation-interieure/ — « Rénovation intérieure à Pantin »
 - → /services/electricite/ — « Électricien à Pantin »
 - → /services/plomberie/ — « Plombier à Pantin »
-- → /realisations/montage-cuisine-kit-pantin/ — « Montage d’une cuisine en kit dans un appartement neuf à Pantin »
+- → /realisations/montage-armoire-kit-pantin/ — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
 - → /zone-intervention/les-lilas/ — « Artisan multiservices aux Lilas »
 - → /zone-intervention/romainville/ — « Artisan multiservices à Romainville »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
@@ -1212,12 +1212,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Artisan multiservices à Pantin »
 - ← /politique-confidentialite/ — « Artisan à Pantin »
 - ← /realisations/ — « Artisan à Pantin »
-- ← /realisations/dressing-sur-mesure-romainville/ — « Artisan à Pantin »
-- ← /realisations/montage-cuisine-kit-pantin/ (contextuel) — « Pantin »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Artisan à Pantin »
+- ← /realisations/montage-armoire-kit-pantin/ (contextuel) — « Pantin »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Artisan à Pantin »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Artisan à Pantin »
 - ← /realisations/renovation-studio-bagnolet/ — « Artisan à Pantin »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Artisan à Pantin »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Artisan à Pantin »
 - ← /services/ — « Artisan à Pantin »
 - ← /services/electricite/ (contextuel) — « Électricien à Pantin »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Meuble sur mesure à Pantin »
@@ -1243,7 +1243,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/renovation-interieure/ — « Rénovation intérieure à Romainville »
 - → /services/electricite/ — « Électricien à Romainville »
 - → /services/plomberie/ — « Plombier à Romainville »
-- → /realisations/dressing-sur-mesure-romainville/ — « Dressing sur mesure dans une chambre sous combles à Romainville »
+- → /realisations/meuble-tv-sur-mesure-romainville/ — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
 - → /zone-intervention/montreuil/ — « Artisan multiservices à Montreuil »
 - → /zone-intervention/noisy-le-sec/ — « Artisan multiservices à Noisy-le-Sec »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
@@ -1261,12 +1261,12 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Artisan multiservices à Romainville »
 - ← /politique-confidentialite/ — « Artisan à Romainville »
 - ← /realisations/ — « Artisan à Romainville »
-- ← /realisations/dressing-sur-mesure-romainville/ (contextuel) — « Romainville »
-- ← /realisations/montage-cuisine-kit-pantin/ — « Artisan à Romainville »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ (contextuel) — « Romainville »
+- ← /realisations/montage-armoire-kit-pantin/ — « Artisan à Romainville »
 - ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Artisan à Romainville »
 - ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Artisan à Romainville »
 - ← /realisations/renovation-studio-bagnolet/ — « Artisan à Romainville »
-- ← /realisations/restauration-commode-ancienne-montreuil/ — « Artisan à Romainville »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Artisan à Romainville »
 - ← /services/ — « Artisan à Romainville »
 - ← /services/electricite/ (contextuel) — « Électricien à Romainville »
 - ← /services/meubles-sur-mesure/ (contextuel) — « Meuble sur mesure à Romainville »

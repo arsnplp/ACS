@@ -298,7 +298,6 @@ th { font-family: var(--police-titre); color: var(--bleu); }
 .avant-apres input[type='range'] { width: 100%; accent-color: var(--bleu); min-height: 44px; }
 .avant-apres__textes { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .avant-apres__textes h3 { margin-top: 0; font-size: 1.1rem; }
-.avant-apres--service .avant-apres__paire { display: none; }
 .avant-apres__paire { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 
 /* Filtres réalisations */

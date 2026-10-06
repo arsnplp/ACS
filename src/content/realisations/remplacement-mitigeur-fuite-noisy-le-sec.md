@@ -6,12 +6,16 @@ date: 2026-08-20
 resume: "Un mitigeur de cuisine qui fuyait par sa base, des flexibles fatigués et un siphon fendu : remplacement complet et remise en état du meuble sous évier."
 avant:
   src: mitigeur-noisy-le-sec-avant
-  alt: "Dessous d’évier avec un mitigeur entartré, deux flexibles tressés noircis et un fond de meuble gonflé par l’eau"
+  alt: "Dessous d’un double évier inox encrassé, siphon et flexibles anciens, fond de meuble taché et gonflé par l’humidité"
+  width: 1448
+  height: 1086
 apres:
   src: mitigeur-noisy-le-sec-apres
-  alt: "Mitigeur chromé neuf sur un évier inox, flexibles et siphon neufs visibles dans un meuble au fond remplacé"
-descriptionAvant: "Un mitigeur de cuisine dont la base laisse suinter l’eau sur le plan de travail à chaque utilisation. Sous l’évier, les flexibles sont noircis, le siphon en plastique est fendu au niveau du culot et le fond du meuble a gonflé."
-descriptionApres: "Un mitigeur neuf à bec orientable, fixé et étanche. Des flexibles neufs vissés sur des vannes d’arrêt remplacées. Un siphon neuf raccordé à l’évacuation. Le fond du meuble a été remplacé par un panneau hydrofuge."
+  alt: "Dessous d’évier remis en état : évacuations et siphon neufs en PVC blanc, arrivées d’eau repérées rouge et bleu, meuble propre"
+  width: 1448
+  height: 1086
+descriptionAvant: "Un double évier inox vieillissant dont le mitigeur fuit par la base. Sous l’évier, des raccords de fortune, un siphon fendu, des traces d’humidité et un fond de meuble gonflé par les fuites."
+descriptionApres: "Un mitigeur neuf, étanche. Sous l’évier, des évacuations et un siphon neufs en PVC, des flexibles neufs sur des vannes d’arrêt remplacées, les arrivées repérées en rouge et bleu. Le meuble est nettoyé et son fond remplacé par un panneau hydrofuge."
 brouillon: true
 ---
 ## Contexte
