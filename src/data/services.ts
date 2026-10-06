@@ -172,9 +172,9 @@ export const services: Service[] = [
     serviceType: 'Travaux de plomberie',
     avantApres: {
       titre: 'Un dessous d’évier remis en ordre',
-      altAvant: 'Dessous d’évier avant intervention',
+      altAvant: 'Dessous d’évier de cuisine encrassé, siphon et flexibles anciens, fond de meuble gonflé par l’humidité',
       altApres: 'Dessous d’évier de cuisine avec siphon et évacuations neuves, arrivées d’eau repérées',
-      descriptionAvant: 'Photo du dessous d’évier avant intervention à fournir.',
+      descriptionAvant: 'Un double évier inox vieillissant, des raccords de fortune, des traces d’humidité et un fond de meuble abîmé par les fuites.',
       descriptionApres: 'Évacuations neuves en PVC blanc, siphon remplacé, raccords eau chaude et eau froide repérés en rouge et bleu.',
       width: 1448,
       height: 1086,
