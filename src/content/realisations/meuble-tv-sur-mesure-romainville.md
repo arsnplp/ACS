@@ -1,5 +1,6 @@
 ---
 titre: "Meuble TV sur mesure sur toute la largeur d’un salon à Romainville"
+titreCourt: "Meuble TV sur mesure à Romainville"
 service: meubles-sur-mesure
 ville: romainville
 date: 2026-06-01

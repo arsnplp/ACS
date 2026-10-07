@@ -21,6 +21,7 @@ const realisations = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/realisations' }),
   schema: z.object({
     titre: z.string(),
+    titreCourt: z.string().max(45).optional(), // titre des cartes (listes) ; sinon le titre complet
     titreSeo: z.string().max(60).optional(), // <title> court (50–60 car.) ; sinon dérivé du titre
     service: z.enum(serviceSlugs),
     ville: z.string(), // slug de ville

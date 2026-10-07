@@ -1,5 +1,6 @@
 ---
 titre: "Montage d’une armoire en kit à miroir dans une chambre à Pantin"
+titreCourt: "Armoire en kit montée à Pantin"
 service: montage-meubles
 ville: pantin
 date: 2026-07-02

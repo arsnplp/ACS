@@ -1,5 +1,6 @@
 ---
 titre: "Rénovation complète d’un studio en location à Bagnolet"
+titreCourt: "Studio rénové à Bagnolet"
 service: renovation-interieure
 ville: bagnolet
 date: 2026-06-20

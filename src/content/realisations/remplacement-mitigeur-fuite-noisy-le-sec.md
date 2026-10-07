@@ -1,5 +1,6 @@
 ---
 titre: "Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec"
+titreCourt: "Fuite sous évier réparée à Noisy-le-Sec"
 service: plomberie
 ville: noisy-le-sec
 date: 2026-08-20

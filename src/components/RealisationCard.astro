@@ -13,7 +13,7 @@ const v = getVille(realisation.data.ville);
   <ImageSlot nom={realisation.data.apres.src} dossier="realisations" alt={realisation.data.apres.alt} width={realisation.data.apres.width} height={realisation.data.apres.height} sizes="(min-width: 72rem) 22rem, (min-width: 48rem) 45vw, 100vw" />
   <div class="carte__corps">
     {realisation.data.brouillon && <p><span class="badge-brouillon">Exemple — brouillon</span></p>}
-    <Titre><a href={`/realisations/${realisation.id}/`}>{realisation.data.titre}</a></Titre>
+    <Titre><a href={`/realisations/${realisation.id}/`}>{realisation.data.titreCourt ?? realisation.data.titre}</a></Titre>
     <p class="meta">{s?.nom} · {v?.nom}</p>
     <p>{realisation.data.resume}</p>
   </div>

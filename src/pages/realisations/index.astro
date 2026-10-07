@@ -4,9 +4,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import RealisationCard from '@/components/RealisationCard.astro';
 import CtaDevis from '@/components/CtaDevis.astro';
 import ImageSlot from '@/components/ImageSlot.astro';
-import { services, serviceUrl } from '@/data/services';
+import { services } from '@/data/services';
 const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-const parService = services.map((s) => ({ service: s, items: toutes.filter((r) => r.data.service === s.slug) }));
 ---
 <BaseLayout
   title="Réalisations artisan à Romainville (93) | ACS Multiservices"
@@ -29,12 +28,10 @@ const parService = services.map((s) => ({ service: s, items: toutes.filter((r) =
         {services.map((s) => <button type="button" aria-pressed="false" data-filtre={s.slug}>{s.nom}</button>)}
       </div>
       <p class="visually-hidden" aria-live="polite" data-filtre-statut></p>
-      {parService.map(({ service, items }) => (
-        <section class="groupe" data-groupe={service.slug} aria-labelledby={`g-${service.slug}`}>
-          <h2 id={`g-${service.slug}`}><a href={serviceUrl(service.slug)}>{service.nomLong}</a></h2>
-          {items.length ? <div class="grille">{items.map((r) => <RealisationCard realisation={r} />)}</div> : <p>Aucune réalisation publiée pour ce service pour le moment. <a href={`/devis/?service=${service.slug}`}>Décrivez votre projet</a>, il pourrait être le prochain.</p>}
-        </section>
-      ))}
+      <div class="grille grille--realisations" data-galerie>
+        {toutes.map((r) => <RealisationCard realisation={r} />)}
+      </div>
+      <p class="galerie-vide" data-galerie-vide hidden>Aucune réalisation publiée pour ce service pour le moment. <a href="/devis/">Décrivez votre projet</a>, il pourrait être le prochain.</p>
     </div>
   </section>
 
@@ -49,14 +46,16 @@ const parService = services.map((s) => ({ service: s, items: toutes.filter((r) =
 <script>
   const filtres = document.querySelector<HTMLElement>('[data-filtres]');
   const statut = document.querySelector<HTMLElement>('[data-filtre-statut]');
-  const groupes = document.querySelectorAll<HTMLElement>('[data-groupe]');
+  const cartes = document.querySelectorAll<HTMLElement>('[data-galerie] article[data-service]');
+  const vide = document.querySelector<HTMLElement>('[data-galerie-vide]');
   if (filtres) {
     filtres.hidden = false;
     const boutons = filtres.querySelectorAll<HTMLButtonElement>('button');
     const appliquer = (slug: string) => {
       boutons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filtre === slug)));
       let n = 0;
-      groupes.forEach((g) => { const visible = slug === 'tous' || g.dataset.groupe === slug; g.hidden = !visible; if (visible) n += g.querySelectorAll('article').length; });
+      cartes.forEach((c) => { const visible = slug === 'tous' || c.dataset.service === slug; c.hidden = !visible; if (visible) n++; });
+      if (vide) vide.hidden = n > 0;
       if (statut) statut.textContent = slug === 'tous' ? `Tous les chantiers affichés (${n}).` : `${n} chantier(s) affiché(s) pour ce service.`;
     };
     boutons.forEach((b) => b.addEventListener('click', () => { appliquer(b.dataset.filtre!); history.replaceState(null, '', b.dataset.filtre === 'tous' ? location.pathname : `?service=${b.dataset.filtre}`); }));
@@ -66,8 +65,13 @@ const parService = services.map((s) => ({ service: s, items: toutes.filter((r) =
 </script>
 <style>
   .banniere-realisations { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
-  /* auto-fill : une carte seule garde sa largeur normale au lieu de s'étirer */
-  .groupe .grille { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+  .filtres { margin-bottom: 2rem; }
+  .grille--realisations { grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+  @media (min-width: 64rem) { .grille--realisations { grid-template-columns: repeat(3, 1fr); } }
+  .grille--realisations :global(.carte__corps h3) { font-size: 1.15rem; line-height: 1.3; }
+  .grille--realisations :global(.carte__corps .meta) { order: -1; margin: 0; }
+  .grille--realisations :global(article[hidden]) { display: none; }
+  .grille--realisations :global(.carte > picture img), .grille--realisations :global(.carte > .img-slot) { aspect-ratio: 3 / 2; width: 100%; height: auto; object-fit: cover; }
   .banniere-realisations__inner { max-width: 2048px; margin-inline: auto; }
   .banniere-realisations img, .banniere-realisations .img-slot { width: 100%; height: auto; display: block; }
   .groupe { margin-bottom: 2.5rem; }

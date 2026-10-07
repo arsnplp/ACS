@@ -1,5 +1,6 @@
 ---
 titre: "Restauration d’un buffet en chêne au vernis écaillé à Montreuil"
+titreCourt: "Buffet en chêne restauré à Montreuil"
 service: reparation-meubles
 ville: montreuil
 date: 2026-05-15

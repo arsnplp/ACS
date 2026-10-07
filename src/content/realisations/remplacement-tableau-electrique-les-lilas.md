@@ -1,5 +1,6 @@
 ---
 titre: "Remplacement d’un tableau électrique vétuste aux Lilas"
+titreCourt: "Tableau électrique remplacé aux Lilas"
 service: electricite
 ville: les-lilas
 date: 2026-08-05
