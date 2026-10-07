@@ -33,7 +33,7 @@ import { services, serviceUrl } from '@/data/services';
       <p>Les informations d’immatriculation, d’assurance et de médiation sont publiées sur la page <a href="/mentions-legales/">mentions légales</a>. Nous préférons les rendre visibles plutôt que d’aligner des promesses : vous savez à qui vous confiez votre logement.</p>
 
       <h2>Ce que nous faisons, et comment</h2>
-      <p>La création de meubles sur mesure est le cœur du métier : prise de cotes chez vous, conception, fabrication en atelier, pose. Autour, cinq services qui répondent aux besoins concrets d’un logement.</p>
+      <p>Le montage de meubles est le cœur du métier : cuisines, armoires, dressings et lits en kit, assemblés d’équerre et fixés au mur. Autour, cinq services qui répondent aux besoins concrets d’un logement.</p>
       <ul class="liste-coches">
         {services.map((s) => <li><a href={serviceUrl(s.slug)}>{s.nomLong}</a> : {s.description.charAt(0).toLowerCase() + s.description.slice(1)}</li>)}
       </ul>

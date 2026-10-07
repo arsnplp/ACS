@@ -30,6 +30,21 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    slug: 'montage-meubles',
+    nom: 'Montage de meubles',
+    nomLong: 'Montage de meubles',
+    ancreVille: 'Montage de meubles',
+    motCle: 'montage meuble Seine-Saint-Denis',
+    description:
+      'Montage de meubles en kit (IKEA et autres), cuisines, armoires, lits : assemblage propre et fixation murale sécurisée.',
+    image: 'service-montage',
+    imageAlt: 'Montage d’une armoire dans un appartement',
+    complementaires: ['meubles-sur-mesure', 'reparation-meubles', 'renovation-interieure'],
+    icone: 'M4 4h16v16H4zM4 12h16M12 4v16',
+    phare: true,
+    serviceType: 'Montage de meubles',
+  },
+  {
     slug: 'meubles-sur-mesure',
     nom: 'Meubles sur mesure',
     nomLong: 'Création de meubles sur mesure',
@@ -41,7 +56,6 @@ export const services: Service[] = [
     imageAlt: 'Dressing sur mesure installé dans une chambre',
     complementaires: ['reparation-meubles', 'montage-meubles', 'renovation-interieure'],
     icone: 'M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h6',
-    phare: true,
     serviceType: 'Fabrication de meubles sur mesure',
   },
   {
@@ -57,20 +71,6 @@ export const services: Service[] = [
     complementaires: ['meubles-sur-mesure', 'montage-meubles', 'renovation-interieure'],
     icone: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z',
     serviceType: 'Réparation et restauration de meubles',
-  },
-  {
-    slug: 'montage-meubles',
-    nom: 'Montage de meubles',
-    nomLong: 'Montage de meubles',
-    ancreVille: 'Montage de meubles',
-    motCle: 'montage meuble Seine-Saint-Denis',
-    description:
-      'Montage de meubles en kit (IKEA et autres), cuisines, armoires, lits : assemblage propre et fixation murale sécurisée.',
-    image: 'service-montage',
-    imageAlt: 'Montage d’une armoire dans un appartement',
-    complementaires: ['meubles-sur-mesure', 'reparation-meubles', 'renovation-interieure'],
-    icone: 'M4 4h16v16H4zM4 12h16M12 4v16',
-    serviceType: 'Montage de meubles',
   },
   {
     slug: 'renovation-interieure',

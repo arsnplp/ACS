@@ -50,9 +50,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (24)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Découvrir nos services »
+- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
-- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
@@ -110,9 +110,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 **Sortants contextuels (10)** :
 - → /mentions-legales/ — « mentions légales »
+- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
-- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
@@ -334,9 +334,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /a-propos/ — « À propos de Seydou Traoré »
 - → /devis/ — « Demande de devis et contact »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
-- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
@@ -585,9 +585,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 **Sortants contextuels (7)** :
 - → /devis/ — « décrire directement votre besoin »
-- → /services/meubles-sur-mesure/ — « Création de meubles sur mesure — notre spécialité »
+- → /services/montage-meubles/ — « Montage de meubles — notre spécialité »
+- → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
-- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
@@ -941,9 +941,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/les-lilas/ — « Artisan multiservices aux Lilas »
 - → /zone-intervention/noisy-le-sec/ — « Artisan multiservices à Noisy-le-Sec »
 - → /zone-intervention/pantin/ — « Artisan multiservices à Pantin »
+- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
 - → /services/reparation-meubles/ — « Réparation et restauration de meubles »
-- → /services/montage-meubles/ — « Montage de meubles »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
@@ -986,9 +986,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (12)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles à Bagnolet »
 - → /services/meubles-sur-mesure/ — « Meuble sur mesure à Bagnolet »
 - → /services/reparation-meubles/ — « Réparation de meubles à Bagnolet »
-- → /services/montage-meubles/ — « Montage de meubles à Bagnolet »
 - → /services/renovation-interieure/ — « Rénovation intérieure à Bagnolet »
 - → /services/electricite/ — « Électricien à Bagnolet »
 - → /services/plomberie/ — « Plombier à Bagnolet »
@@ -1035,9 +1035,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (12)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles aux Lilas »
 - → /services/meubles-sur-mesure/ — « Meuble sur mesure aux Lilas »
 - → /services/reparation-meubles/ — « Réparation de meubles aux Lilas »
-- → /services/montage-meubles/ — « Montage de meubles aux Lilas »
 - → /services/renovation-interieure/ — « Rénovation intérieure aux Lilas »
 - → /services/electricite/ — « Électricien aux Lilas »
 - → /services/plomberie/ — « Plombier aux Lilas »
@@ -1084,9 +1084,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (12)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles à Montreuil »
 - → /services/meubles-sur-mesure/ — « Meuble sur mesure à Montreuil »
 - → /services/reparation-meubles/ — « Réparation de meubles à Montreuil »
-- → /services/montage-meubles/ — « Montage de meubles à Montreuil »
 - → /services/renovation-interieure/ — « Rénovation intérieure à Montreuil »
 - → /services/electricite/ — « Électricien à Montreuil »
 - → /services/plomberie/ — « Plombier à Montreuil »
@@ -1133,9 +1133,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (12)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles à Noisy-le-Sec »
 - → /services/meubles-sur-mesure/ — « Meuble sur mesure à Noisy-le-Sec »
 - → /services/reparation-meubles/ — « Réparation de meubles à Noisy-le-Sec »
-- → /services/montage-meubles/ — « Montage de meubles à Noisy-le-Sec »
 - → /services/renovation-interieure/ — « Rénovation intérieure à Noisy-le-Sec »
 - → /services/electricite/ — « Électricien à Noisy-le-Sec »
 - → /services/plomberie/ — « Plombier à Noisy-le-Sec »
@@ -1182,9 +1182,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (12)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles à Pantin »
 - → /services/meubles-sur-mesure/ — « Meuble sur mesure à Pantin »
 - → /services/reparation-meubles/ — « Réparation de meubles à Pantin »
-- → /services/montage-meubles/ — « Montage de meubles à Pantin »
 - → /services/renovation-interieure/ — « Rénovation intérieure à Pantin »
 - → /services/electricite/ — « Électricien à Pantin »
 - → /services/plomberie/ — « Plombier à Pantin »
@@ -1231,9 +1231,9 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (12)** :
 - → /devis/ — « Demander un devis »
 - → /services/ — « Tous nos services »
+- → /services/montage-meubles/ — « Montage de meubles à Romainville »
 - → /services/meubles-sur-mesure/ — « Meuble sur mesure à Romainville »
 - → /services/reparation-meubles/ — « Réparation de meubles à Romainville »
-- → /services/montage-meubles/ — « Montage de meubles à Romainville »
 - → /services/renovation-interieure/ — « Rénovation intérieure à Romainville »
 - → /services/electricite/ — « Électricien à Romainville »
 - → /services/plomberie/ — « Plombier à Romainville »
