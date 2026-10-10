@@ -366,5 +366,5 @@ pre { overflow-x: auto; }
   .banniere-page { background: var(--blanc); }
   .banniere-page__titre { position: static !important; width: auto; height: auto; margin: 0; padding: 1.25rem 1rem 0.9rem; overflow: visible; clip: auto; white-space: normal; text-align: center; font-size: clamp(1.45rem, 6.2vw, 1.9rem); line-height: 1.2; text-wrap: balance; }
   .banniere-page__titre::after { content: ''; display: block; width: 4rem; height: 5px; background: var(--jaune); border-radius: 999px; margin: 0.6rem auto 0; }
-  .banniere-page img { aspect-ratio: 4 / 5; height: auto; width: 100%; object-fit: cover; object-position: 0% 35%; }
+  .banniere-page img { aspect-ratio: 4 / 5; height: auto; width: 100%; object-fit: cover; object-position: 50% 15%; }
 }

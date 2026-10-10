@@ -26,9 +26,15 @@ const ext = fs.existsSync(`${disque}.png`) ? 'png' : fs.existsSync(`${disque}.jp
 const aAvif = fs.existsSync(`${disque}.avif`);
 const aWebp = fs.existsSync(`${disque}.webp`);
 const aPetite = fs.existsSync(`${disque}-800.${ext}`);
+// Recadrage mobile optionnel : {nom}-mobile.jpg (généré à la main, centré sur le sujet)
+const aMobile = fs.existsSync(`${disque}-mobile.${ext}`);
+const mobileMedia = '(max-width: 47.99rem)';
 ---
 {existe ? (
   <picture class={cls}>
+    {aMobile && fs.existsSync(`${disque}-mobile.avif`) && <source media={mobileMedia} type="image/avif" srcset={`${base}-mobile.avif`} />}
+    {aMobile && fs.existsSync(`${disque}-mobile.webp`) && <source media={mobileMedia} type="image/webp" srcset={`${base}-mobile.webp`} />}
+    {aMobile && <source media={mobileMedia} srcset={`${base}-mobile.${ext}`} />}
     {aAvif && <source type="image/avif" srcset={`${base}.avif`} />}
     {aWebp && <source type="image/webp" srcset={`${base}.webp`} />}
     <img

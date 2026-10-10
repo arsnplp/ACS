@@ -164,10 +164,13 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   .hero-pro__preuves li { margin: 0; position: relative; padding-left: 1.6rem; font-family: var(--police-titre); font-weight: 600; font-size: 0.98rem; color: var(--blanc); }
   .hero-pro__preuves li::before { content: ''; position: absolute; left: 0; top: 0.2em; width: 1.05rem; height: 1.05rem; border-radius: 50%; background: var(--jaune); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 70% no-repeat, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 70% no-repeat, linear-gradient(#000 0 0); mask-composite: exclude; }
   @media (max-width: 47.99rem) {
-    .hero-pro { min-height: auto; }
-    .hero-pro__media img, .hero-pro__media .img-slot { object-position: 60% 30%; }
-    .hero-pro__voile { background: linear-gradient(180deg, rgb(10 42 77 / 0.9) 0%, rgb(10 42 77 / 0.86) 100%); }
-    .hero-pro__contenu { padding-block: 2.5rem 2.25rem; }
+    /* Mobile : photo nette en haut, texte sur fond bleu en dessous */
+    .hero-pro { min-height: auto; display: block; }
+    .hero-pro__media { position: static; aspect-ratio: 1 / 1; background: var(--bleu-fonce); }
+    .hero-pro__media picture { display: block; height: 100%; }
+    .hero-pro__media img, .hero-pro__media .img-slot { object-position: 50% 20%; }
+    .hero-pro__voile { display: none; }
+    .hero-pro__contenu { padding-block: 2rem 2.25rem; }
     .hero-pro .hero__actions .btn { width: 100%; }
   }
   @media (prefers-reduced-motion: no-preference) {
