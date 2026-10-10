@@ -1,6 +1,7 @@
 ---
 titre: "Montage d’une armoire en kit à miroir dans une chambre à Pantin"
 titreCourt: "Armoire en kit montée à Pantin"
+titreSeo: "Montage d’armoire en kit à Pantin | ACS Multiservices"
 service: montage-meubles
 ville: pantin
 date: 2026-07-02
@@ -17,7 +18,7 @@ apres:
   height: 1024
 descriptionAvant: "Une chambre où les panneaux d’une armoire de 2,40 m sont appuyés contre le mur, avec les sachets de quincaillerie, la notice et les premières pièces étalées sur le tapis."
 descriptionApres: "L’armoire assemblée occupe le mur entre la fenêtre et la table de chevet : quatre portes blanches alignées, un miroir au centre, trois tiroirs en bas. Elle est fixée au mur pour éviter tout basculement."
-brouillon: true
+brouillon: false
 ---
 ## Contexte
 

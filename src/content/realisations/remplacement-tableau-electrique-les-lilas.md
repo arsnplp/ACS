@@ -1,6 +1,7 @@
 ---
 titre: "Remplacement d’un tableau électrique vétuste aux Lilas"
 titreCourt: "Tableau électrique remplacé aux Lilas"
+titreSeo: "Tableau électrique remplacé aux Lilas | ACS Multiservices"
 service: electricite
 ville: les-lilas
 date: 2026-08-05
@@ -17,7 +18,7 @@ apres:
   height: 1086
 descriptionAvant: "Un mur d’entrée décroûté où les anciens câbles pendent hors des boîtiers. Le tableau d’origine est vétuste, sans protection différentielle, et aucun circuit n’est repéré."
 descriptionApres: "Des gaines neuves tirées dans des saignées rectilignes jusqu’aux boîtiers d’encastrement. Un coffret modulaire neuf avec disjoncteurs étiquetés et deux interrupteurs différentiels 30 mA, prêt pour le rebouchage et la peinture."
-brouillon: true
+brouillon: false
 ---
 ## Contexte
 

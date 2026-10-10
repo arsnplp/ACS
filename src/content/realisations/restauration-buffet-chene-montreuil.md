@@ -1,6 +1,7 @@
 ---
 titre: "Restauration d’un buffet en chêne au vernis écaillé à Montreuil"
 titreCourt: "Buffet en chêne restauré à Montreuil"
+titreSeo: "Buffet en chêne restauré à Montreuil | ACS Multiservices"
 service: reparation-meubles
 ville: montreuil
 date: 2026-05-15
@@ -17,7 +18,7 @@ apres:
   height: 1024
 descriptionAvant: "Un buffet trois portes et trois tiroirs en chêne, hérité et beaucoup utilisé. Le vernis s’écaille par plaques sur les portes, les angles bas sont éclatés, la teinte est irrégulière et les poignées coquille ont perdu leur noir."
 descriptionApres: "Le bois est poncé à nu, les éclats sont rebouchés dans le fil, la finition huilée est uniforme et satinée. Les poignées ont été décapées et refaites en noir mat. Le buffet a retrouvé sa place sous le miroir du salon."
-brouillon: true
+brouillon: false
 ---
 ## Contexte
 

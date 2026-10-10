@@ -1,6 +1,7 @@
 ---
 titre: "Rénovation complète d’un studio en location à Bagnolet"
 titreCourt: "Studio rénové à Bagnolet"
+titreSeo: "Rénovation d’un studio à Bagnolet | ACS Multiservices"
 service: renovation-interieure
 ville: bagnolet
 date: 2026-06-20
@@ -17,7 +18,7 @@ apres:
   height: 1024
 descriptionAvant: "La pièce principale d’un studio d’une trentaine de mètres carrés, une fois les revêtements déposés : enduits arrachés, saignées ouvertes pour l’électricité, plafond à reprendre, plaques de plâtre en attente."
 descriptionApres: "Murs lissés, un mur d’accent vert sauge, plafond neuf avec spots encastrés, parquet stratifié chêne clair d’un seul tenant, plinthes et portes repeintes en blanc. La kitchenette et la salle d’eau ont été refaites dans la foulée."
-brouillon: true
+brouillon: false
 ---
 ## Contexte
 

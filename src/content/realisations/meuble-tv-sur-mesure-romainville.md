@@ -1,6 +1,7 @@
 ---
 titre: "Meuble TV sur mesure sur toute la largeur d’un salon à Romainville"
 titreCourt: "Meuble TV sur mesure à Romainville"
+titreSeo: "Meuble TV sur mesure à Romainville | ACS Multiservices"
 service: meubles-sur-mesure
 ville: romainville
 date: 2026-06-01
@@ -17,7 +18,7 @@ apres:
   height: 1024
 descriptionAvant: "Un mur nu d’environ 3,5 m entre la baie vitrée et la porte, avec deux prises au ras du sol. Aucun rangement, un téléviseur posé sur une table basse et des câbles au sol."
 descriptionApres: "Un ensemble bas à portes blanches sans poignée, surmonté d’un plan en chêne. Au-dessus, des étagères murales rétroéclairées encadrent l’écran et un panneau à tasseaux habille l’angle droit."
-brouillon: true
+brouillon: false
 ---
 ## Contexte
 

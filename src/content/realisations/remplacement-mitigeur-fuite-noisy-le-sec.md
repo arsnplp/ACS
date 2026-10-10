@@ -1,6 +1,7 @@
 ---
 titre: "Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec"
 titreCourt: "Fuite sous évier réparée à Noisy-le-Sec"
+titreSeo: "Fuite sous évier réparée à Noisy-le-Sec | ACS Multiservices"
 service: plomberie
 ville: noisy-le-sec
 date: 2026-08-20
@@ -17,7 +18,7 @@ apres:
   height: 1086
 descriptionAvant: "Un double évier inox vieillissant dont le mitigeur fuit par la base. Sous l’évier, des raccords de fortune, un siphon fendu, des traces d’humidité et un fond de meuble gonflé par les fuites."
 descriptionApres: "Un mitigeur neuf, étanche. Sous l’évier, des évacuations et un siphon neufs en PVC, des flexibles neufs sur des vannes d’arrêt remplacées, les arrivées repérées en rouge et bleu. Le meuble est nettoyé et son fond remplacé par un panneau hydrofuge."
-brouillon: true
+brouillon: false
 ---
 ## Contexte
 
