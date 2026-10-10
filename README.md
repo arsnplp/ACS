@@ -29,6 +29,13 @@ Commandes séparées : `npm run check`, `npm run docs`, `npm run images`, `npm r
 
 ## Déploiement sur le VPS (acsms.fr)
 
+### Bascule acs.nairox.fr → acsms.fr (à faire une fois, dans l'ordre)
+1. Chez le registrar d'acsms.fr : enregistrement **A `acsms.fr` → 217.65.144.174** et **A `www` → 217.65.144.174** (supprimer l'A actuel vers 2.57.91.91). Vérifier : `dig +short acsms.fr @1.1.1.1`.
+2. Sur le VPS, en root : `cd /opt/acs && git pull && bash deploy/migrer-vers-acsms.sh` (dossier web, Nginx, HTTPS www + sans www, HTTP/2, redirection 301 de l'ancienne adresse, rebuild).
+3. Tant que l'étape 2 n'est pas faite, **le déploiement GitHub Actions échoue** (il envoie vers `/var/www/acsms.fr/html`, qui n'existe pas encore) : relancer le dernier workflow après la bascule (onglet Actions → Re-run).
+4. Google Search Console : ajouter la propriété `https://acsms.fr/`, soumettre `https://acsms.fr/sitemap-index.xml`. Fiche Google Business Profile : mettre à jour l'URL du site.
+
+
 Le site est hébergé sur le VPS `217.65.144.174` et servi par Nginx depuis `/var/www/acsms.fr/html` (l'ancienne adresse acs.nairox.fr redirige en 301).
 
 - **Installation initiale** : `deploy/vps-setup.sh` (à lancer en root sur le VPS) installe Nginx, Certbot, Node.js, crée l'utilisateur `deploy` et sa clé SSH, clone le dépôt, construit le site, configure Nginx (`deploy/nginx-acs.nairox.fr.conf`), le pare-feu et le certificat HTTPS.
