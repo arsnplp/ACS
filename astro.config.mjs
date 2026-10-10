@@ -8,7 +8,7 @@ const brouillons = fs.readdirSync('./src/content/realisations')
   .map((f) => `/realisations/${f.replace(/\.md$/, '')}/`);
 
 // Domaine de production : à remplacer par le vrai domaine (voir TODO-CLIENT.md)
-const SITE = process.env.PUBLIC_SITE_URL || 'https://acs.nairox.fr';
+const SITE = process.env.PUBLIC_SITE_URL || 'https://acsms.fr';
 
 export default defineConfig({
   site: SITE,

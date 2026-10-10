@@ -1,7 +1,7 @@
 import { entreprise, adresseLigne, estPlaceholder, ou } from '@/data/entreprise';
 import { villes } from '@/data/villes';
 
-export const SITE_URL = (import.meta.env.SITE || 'https://acs.nairox.fr').replace(/\/$/, '');
+export const SITE_URL = (import.meta.env.SITE || 'https://acsms.fr').replace(/\/$/, '');
 export const abs = (path: string) => `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 export const ORG_ID = `${SITE_URL}/#organisation`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;

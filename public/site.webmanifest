@@ -1,0 +1,14 @@
+{
+  "name": "ACS Multiservices",
+  "short_name": "ACS",
+  "description": "Artisan multiservices à Romainville (93) : montage de meubles, sur mesure, réparation, rénovation, électricité, plomberie.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0f3d6e",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

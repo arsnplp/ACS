@@ -5,7 +5,7 @@
 #   VPS_USER      deploy
 #   VPS_SSH_KEY   clé privée du compte deploy (générée sur le VPS, voir README)
 #   PUBLIC_FORM_WEBHOOK   (facultatif) URL du webhook n8n
-name: Déployer acs.nairox.fr
+name: Déployer acsms.fr
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
 
       - name: Build
         env:
-          PUBLIC_SITE_URL: https://acs.nairox.fr
+          PUBLIC_SITE_URL: https://acsms.fr
           PUBLIC_FORM_WEBHOOK: ${{ secrets.PUBLIC_FORM_WEBHOOK }}
         run: npm run build
 
@@ -46,4 +46,4 @@ jobs:
         run: |
           rsync -az --delete \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
-            dist/ "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/acs.nairox.fr/html/"
+            dist/ "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/acsms.fr/html/"

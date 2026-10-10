@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /devis/merci/
 
-Sitemap: https://acs.nairox.fr/sitemap-index.xml
+Sitemap: https://acsms.fr/sitemap-index.xml

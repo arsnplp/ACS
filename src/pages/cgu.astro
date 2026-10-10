@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { entreprise, adresseLigne } from '@/data/entreprise';
+import { SITE_URL } from '@/lib/seo';
+const domaine = SITE_URL.replace(/^https?:\/\//, '');
+---
+<BaseLayout title="Conditions générales d’utilisation | ACS Multiservices" description="Conditions d’utilisation du site ACS Multiservices : accès, formulaire de devis, contenus, propriété intellectuelle, responsabilité et droit applicable." ariane={[{ nom: 'Conditions d’utilisation', url: '/cgu/' }]}>
+  <section class="section conteneur prose">
+    <h1>Conditions générales d’utilisation</h1>
+    <p class="chapo">Les présentes conditions encadrent l’accès et l’utilisation du site <strong>{domaine}</strong>, édité par {entreprise.denominationSociale}. En naviguant sur le site, vous les acceptez.</p>
+
+    <h2>1. Éditeur du site</h2>
+    <p>Le site est édité par {entreprise.denominationSociale} ({entreprise.formeJuridique}), {adresseLigne}, SIREN {entreprise.siren}. Le directeur de la publication est {entreprise.president}. Les informations complètes figurent sur la page <a href="/mentions-legales/">mentions légales</a>.</p>
+
+    <h2>2. Objet du site</h2>
+    <p>Le site présente les prestations d’artisanat proposées par {entreprise.nomCommercial} (montage de meubles, création de meubles sur mesure, réparation de meubles, rénovation intérieure, électricité et plomberie), sa zone d’intervention, des exemples de réalisations et des articles de conseils. Il permet de nous adresser une demande de devis par formulaire. Le site ne vend rien en ligne : aucune commande ni aucun paiement n’y est réalisé.</p>
+
+    <h2>3. Accès au site</h2>
+    <p>Le site est accessible gratuitement à toute personne disposant d’un accès à Internet. Les frais de connexion restent à votre charge. Nous nous efforçons de maintenir le site accessible en permanence, mais nous pouvons l’interrompre pour maintenance, mise à jour ou pour toute raison technique, sans préavis ni indemnité.</p>
+
+    <h2>4. Demandes de devis</h2>
+    <p>Le formulaire de demande de devis permet de décrire votre projet. Une demande n’engage ni vous ni nous : elle donne lieu à une réponse écrite ou à un appel, selon le choix que vous indiquez. Seul un devis signé constitue un engagement contractuel. Les informations que vous saisissez doivent être exactes ; nous ne pourrions pas répondre à une demande incomplète ou erronée.</p>
+    <p>Il est interdit d’utiliser le formulaire pour envoyer des messages publicitaires, injurieux, illicites ou sans rapport avec une demande de prestation.</p>
+
+    <h2>5. Contenus et informations</h2>
+    <p>Les textes du site, notamment les articles de conseils, sont fournis à titre d’information générale. Ils ne remplacent pas un diagnostic sur place : chaque logement et chaque installation sont différents. Les interventions sur une installation électrique ou de plomberie présentent des risques ; en cas de doute, faites appel à un professionnel. Nous ne pouvons être tenus responsables d’un dommage résultant d’une intervention réalisée par vous-même à partir des informations du site.</p>
+    <p>Les photos de réalisations illustrent des chantiers ; les résultats obtenus dépendent des conditions propres à chaque projet.</p>
+
+    <h2>6. Propriété intellectuelle</h2>
+    <p>L’ensemble du site (textes, photographies, illustrations, logo, charte graphique, structure, code) est protégé par le Code de la propriété intellectuelle. Il est la propriété de {entreprise.denominationSociale} ou de ses partenaires. Toute reproduction, représentation, modification ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite. Les liens vers les pages du site sont autorisés dès lors qu’ils ne portent pas atteinte à l’image de l’entreprise.</p>
+
+    <h2>7. Liens vers d’autres sites</h2>
+    <p>Le site peut contenir des liens vers des sites tiers. Nous n’exerçons aucun contrôle sur leur contenu et déclinons toute responsabilité à leur égard.</p>
+
+    <h2>8. Données personnelles et cookies</h2>
+    <p>Le traitement des données transmises par le formulaire, vos droits et les cookies utilisés sont décrits dans la <a href="/politique-confidentialite/">politique de confidentialité</a>. Le site ne dépose aucun cookie publicitaire ni traceur tiers.</p>
+
+    <h2>9. Responsabilité</h2>
+    <p>Nous mettons tout en œuvre pour que les informations publiées soient exactes et à jour, sans pouvoir garantir l’absence d’erreur ou d’omission. Nous ne pouvons être tenus responsables des dommages indirects liés à l’utilisation du site, ni des interruptions d’accès, ni des dysfonctionnements liés à votre équipement ou à votre connexion.</p>
+
+    <h2>10. Modification des conditions</h2>
+    <p>Nous pouvons modifier les présentes conditions à tout moment. La version en ligne au moment de votre navigation fait foi.</p>
+
+    <h2>11. Droit applicable</h2>
+    <p>Les présentes conditions sont soumises au droit français. En cas de litige et à défaut de solution amiable, les tribunaux français sont compétents. Pour un litige de consommation, vous pouvez recourir gratuitement à un médiateur de la consommation (voir la page <a href="/mentions-legales/">mentions légales</a>).</p>
+  </section>
+</BaseLayout>

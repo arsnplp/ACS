@@ -19,7 +19,7 @@ Tout ce qui apparaît entre `{{ }}` sur le site est un **placeholder visible** q
 | Fourchette de prix (facultatif, pour le JSON-LD `priceRange`, ex. « €€ ») | `{{FOURCHETTE DE PRIX}}` | `src/lib/seo.ts` |
 | URL fiche Google Business Profile, réseaux sociaux | `{{URL FICHE GOOGLE…}}` | `entreprise.sameAs` |
 | Coordonnées GPS exactes de l'atelier | approximatives (centre de Romainville) | `entreprise.geo` |
-| Nom de domaine définitif (actuellement acs.nairox.fr) | `https://acs.nairox.fr` | `.env` → `PUBLIC_SITE_URL` + `public/robots.txt` (ligne Sitemap) |
+| Nom de domaine définitif | `https://acsms.fr` (fait le 10/10/2026) | `.env` → `PUBLIC_SITE_URL` + `public/robots.txt` (ligne Sitemap) |
 | URL du webhook n8n | — | `.env` → `PUBLIC_FORM_WEBHOOK` |
 
 ## 2. Pages légales

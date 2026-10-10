@@ -4,44 +4,45 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 ## Synthèse
 
-- Pages : 32
+- Pages : 33
 - Pages orphelines : aucune
 - Pages avec moins de 3 liens entrants : aucune
 
 | Page | Liens entrants (total / contextuels) | Liens contextuels sortants | Liens totaux |
 |---|---|---|---|
-| / | 31 / 2 | 24 | 70 |
-| /a-propos/ | 31 / 1 | 10 | 49 |
-| /blog/ | 31 / 2 | 7 | 44 |
-| /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 55 |
-| /blog/meuble-sur-mesure-prix-devis/ | 5 / 5 | 5 | 56 |
-| /blog/reparer-ou-remplacer-meuble-abime/ | 6 / 6 | 4 | 55 |
-| /devis/ | 31 / 29 | 1 | 40 |
-| /devis/merci/ | 0 / 0 | 2 | 41 |
-| /mentions-legales/ | 31 / 4 | 1 | 39 |
-| /plan-du-site/ | 31 / 0 | 30 | 67 |
-| /politique-confidentialite/ | 31 / 3 | 1 | 41 |
-| /realisations/ | 31 / 9 | 7 | 45 |
-| /realisations/meuble-tv-sur-mesure-romainville/ | 6 / 6 | 5 | 46 |
-| /realisations/montage-armoire-kit-pantin/ | 7 / 7 | 5 | 46 |
-| /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ | 7 / 7 | 5 | 46 |
-| /realisations/remplacement-tableau-electrique-les-lilas/ | 7 / 7 | 5 | 46 |
-| /realisations/renovation-studio-bagnolet/ | 6 / 6 | 5 | 46 |
-| /realisations/restauration-buffet-chene-montreuil/ | 6 / 6 | 5 | 46 |
-| /services/ | 31 / 9 | 7 | 51 |
-| /services/electricite/ | 31 / 16 | 13 | 55 |
-| /services/meubles-sur-mesure/ | 31 / 18 | 16 | 57 |
-| /services/montage-meubles/ | 31 / 16 | 13 | 55 |
-| /services/plomberie/ | 31 / 17 | 14 | 55 |
-| /services/renovation-interieure/ | 31 / 18 | 14 | 57 |
-| /services/reparation-meubles/ | 31 / 17 | 14 | 57 |
-| /zone-intervention/ | 31 / 15 | 13 | 57 |
-| /zone-intervention/bagnolet/ | 31 / 12 | 12 | 58 |
-| /zone-intervention/les-lilas/ | 31 / 12 | 12 | 58 |
-| /zone-intervention/montreuil/ | 31 / 13 | 12 | 58 |
-| /zone-intervention/noisy-le-sec/ | 31 / 11 | 12 | 58 |
-| /zone-intervention/pantin/ | 31 / 10 | 12 | 58 |
-| /zone-intervention/romainville/ | 31 / 14 | 12 | 57 |
+| / | 32 / 2 | 24 | 72 |
+| /a-propos/ | 32 / 1 | 10 | 51 |
+| /blog/ | 32 / 2 | 7 | 46 |
+| /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 57 |
+| /blog/meuble-sur-mesure-prix-devis/ | 5 / 5 | 5 | 58 |
+| /blog/reparer-ou-remplacer-meuble-abime/ | 6 / 6 | 4 | 57 |
+| /cgu/ | 32 / 1 | 2 | 42 |
+| /devis/ | 32 / 29 | 1 | 42 |
+| /devis/merci/ | 0 / 0 | 2 | 43 |
+| /mentions-legales/ | 32 / 5 | 1 | 41 |
+| /plan-du-site/ | 32 / 0 | 31 | 70 |
+| /politique-confidentialite/ | 32 / 4 | 1 | 43 |
+| /realisations/ | 32 / 9 | 7 | 47 |
+| /realisations/meuble-tv-sur-mesure-romainville/ | 6 / 6 | 5 | 48 |
+| /realisations/montage-armoire-kit-pantin/ | 7 / 7 | 5 | 48 |
+| /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ | 7 / 7 | 5 | 48 |
+| /realisations/remplacement-tableau-electrique-les-lilas/ | 7 / 7 | 5 | 48 |
+| /realisations/renovation-studio-bagnolet/ | 6 / 6 | 5 | 48 |
+| /realisations/restauration-buffet-chene-montreuil/ | 6 / 6 | 5 | 48 |
+| /services/ | 32 / 9 | 7 | 53 |
+| /services/electricite/ | 32 / 16 | 13 | 57 |
+| /services/meubles-sur-mesure/ | 32 / 18 | 16 | 59 |
+| /services/montage-meubles/ | 32 / 16 | 13 | 57 |
+| /services/plomberie/ | 32 / 17 | 14 | 57 |
+| /services/renovation-interieure/ | 32 / 18 | 14 | 59 |
+| /services/reparation-meubles/ | 32 / 17 | 14 | 59 |
+| /zone-intervention/ | 32 / 15 | 13 | 59 |
+| /zone-intervention/bagnolet/ | 32 / 12 | 12 | 60 |
+| /zone-intervention/les-lilas/ | 32 / 12 | 12 | 60 |
+| /zone-intervention/montreuil/ | 32 / 13 | 12 | 60 |
+| /zone-intervention/noisy-le-sec/ | 32 / 11 | 12 | 60 |
+| /zone-intervention/pantin/ | 32 / 10 | 12 | 60 |
+| /zone-intervention/romainville/ | 32 / 14 | 12 | 59 |
 
 ## Détail par page
 
@@ -73,12 +74,13 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /blog/meuble-sur-mesure-prix-devis/ — « Meuble sur mesure : ce qui fait varier le prix d’un devis »
 - → /blog/ — « Tous nos conseils et guides pratiques »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← /a-propos/ — « ACS ACS Multiservices »
 - ← /blog/ — « ACS ACS Multiservices »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « ACS ACS Multiservices »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « ACS ACS Multiservices »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « ACS ACS Multiservices »
+- ← /cgu/ — « ACS ACS Multiservices »
 - ← /devis/ — « ACS ACS Multiservices »
 - ← /devis/merci/ (contextuel) — « ACS ACS Multiservices »
 - ← /mentions-legales/ — « ACS ACS Multiservices »
@@ -120,12 +122,13 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /realisations/ — « nos réalisations »
 - → /devis/ — « Demander un devis »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / — « À propos »
 - ← /blog/ — « À propos »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « À propos »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « À propos »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « À propos »
+- ← /cgu/ — « À propos »
 - ← /devis/ — « À propos »
 - ← /devis/merci/ — « À propos »
 - ← /mentions-legales/ — « À propos »
@@ -164,12 +167,13 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /blog/meuble-sur-mesure-prix-devis/ — « Meuble sur mesure : ce qui fait varier le prix d’un devis »
 - → /devis/ — « Demander un devis »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Conseils »
 - ← /a-propos/ — « Conseils »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Conseils »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Conseils »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Conseils »
+- ← /cgu/ — « Conseils »
 - ← /devis/ — « Conseils »
 - ← /devis/merci/ — « Conseils »
 - ← /mentions-legales/ — « Conseils »
@@ -243,18 +247,59 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - ← /plan-du-site/ (contextuel) — « Réparer ou remplacer un meuble abîmé : comment décider »
 - ← /services/reparation-meubles/ (contextuel) — « « Réparer ou remplacer un meuble abîmé : comment décider » »
 
+### /cgu/
+
+**Sortants contextuels (2)** :
+- → /mentions-legales/ — « mentions légales »
+- → /politique-confidentialite/ — « politique de confidentialité »
+
+**Entrants (32)** :
+- ← / — « Conditions d’utilisation »
+- ← /a-propos/ — « Conditions d’utilisation »
+- ← /blog/ — « Conditions d’utilisation »
+- ← /blog/fuite-sous-evier-bons-reflexes/ — « Conditions d’utilisation »
+- ← /blog/meuble-sur-mesure-prix-devis/ — « Conditions d’utilisation »
+- ← /blog/reparer-ou-remplacer-meuble-abime/ — « Conditions d’utilisation »
+- ← /devis/ — « Conditions d’utilisation »
+- ← /devis/merci/ — « Conditions d’utilisation »
+- ← /mentions-legales/ — « Conditions d’utilisation »
+- ← /plan-du-site/ (contextuel) — « Conditions générales d’utilisation »
+- ← /politique-confidentialite/ — « Conditions d’utilisation »
+- ← /realisations/ — « Conditions d’utilisation »
+- ← /realisations/meuble-tv-sur-mesure-romainville/ — « Conditions d’utilisation »
+- ← /realisations/montage-armoire-kit-pantin/ — « Conditions d’utilisation »
+- ← /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Conditions d’utilisation »
+- ← /realisations/remplacement-tableau-electrique-les-lilas/ — « Conditions d’utilisation »
+- ← /realisations/renovation-studio-bagnolet/ — « Conditions d’utilisation »
+- ← /realisations/restauration-buffet-chene-montreuil/ — « Conditions d’utilisation »
+- ← /services/ — « Conditions d’utilisation »
+- ← /services/electricite/ — « Conditions d’utilisation »
+- ← /services/meubles-sur-mesure/ — « Conditions d’utilisation »
+- ← /services/montage-meubles/ — « Conditions d’utilisation »
+- ← /services/plomberie/ — « Conditions d’utilisation »
+- ← /services/renovation-interieure/ — « Conditions d’utilisation »
+- ← /services/reparation-meubles/ — « Conditions d’utilisation »
+- ← /zone-intervention/ — « Conditions d’utilisation »
+- ← /zone-intervention/bagnolet/ — « Conditions d’utilisation »
+- ← /zone-intervention/les-lilas/ — « Conditions d’utilisation »
+- ← /zone-intervention/montreuil/ — « Conditions d’utilisation »
+- ← /zone-intervention/noisy-le-sec/ — « Conditions d’utilisation »
+- ← /zone-intervention/pantin/ — « Conditions d’utilisation »
+- ← /zone-intervention/romainville/ — « Conditions d’utilisation »
+
 ### /devis/
 
 **Sortants contextuels (1)** :
 - → /politique-confidentialite/ — « politique de confidentialité »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Demander un devis »
 - ← /a-propos/ (contextuel) — « Demander un devis »
 - ← /blog/ (contextuel) — « Demander un devis »
 - ← /blog/fuite-sous-evier-bons-reflexes/ (contextuel) — « Demander un devis »
 - ← /blog/meuble-sur-mesure-prix-devis/ (contextuel) — « Demander un devis »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ (contextuel) — « Demander un devis »
+- ← /cgu/ — « Demander un devis »
 - ← /devis/merci/ — « Demander un devis »
 - ← /mentions-legales/ — « Demander un devis »
 - ← /plan-du-site/ (contextuel) — « Demander un devis »
@@ -294,13 +339,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (1)** :
 - → /politique-confidentialite/ — « politique de confidentialité »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « mentions légales »
 - ← /a-propos/ (contextuel) — « mentions légales »
 - ← /blog/ — « Mentions légales »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Mentions légales »
 - ← /blog/meuble-sur-mesure-prix-devis/ (contextuel) — « mentions légales »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Mentions légales »
+- ← /cgu/ (contextuel) — « mentions légales »
 - ← /devis/ — « Mentions légales »
 - ← /devis/merci/ — « Mentions légales »
 - ← /plan-du-site/ (contextuel) — « Mentions légales »
@@ -329,7 +375,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 ### /plan-du-site/
 
-**Sortants contextuels (30)** :
+**Sortants contextuels (31)** :
 - → / — « Accueil »
 - → /a-propos/ — « À propos de Seydou Traoré »
 - → /devis/ — « Demande de devis et contact »
@@ -348,26 +394,28 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/noisy-le-sec/ — « Artisan multiservices à Noisy-le-Sec »
 - → /zone-intervention/pantin/ — « Artisan multiservices à Pantin »
 - → /realisations/ — « Galerie des réalisations »
-- → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
-- → /realisations/renovation-studio-bagnolet/ — « Rénovation complète d’un studio en location à Bagnolet »
 - → /realisations/meuble-tv-sur-mesure-romainville/ — « Meuble TV sur mesure sur toute la largeur d’un salon à Romainville »
-- → /realisations/remplacement-tableau-electrique-les-lilas/ — « Remplacement d’un tableau électrique vétuste aux Lilas »
 - → /realisations/montage-armoire-kit-pantin/ — « Montage d’une armoire en kit à miroir dans une chambre à Pantin »
+- → /realisations/remplacement-tableau-electrique-les-lilas/ — « Remplacement d’un tableau électrique vétuste aux Lilas »
 - → /realisations/restauration-buffet-chene-montreuil/ — « Restauration d’un buffet en chêne au vernis écaillé à Montreuil »
+- → /realisations/renovation-studio-bagnolet/ — « Rénovation complète d’un studio en location à Bagnolet »
+- → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Remplacement d’un mitigeur qui fuyait sous l’évier à Noisy-le-Sec »
 - → /blog/ — « Tous les articles »
-- → /blog/fuite-sous-evier-bons-reflexes/ — « Fuite sous l’évier : les bons réflexes avant l’arrivée du plombier »
 - → /blog/meuble-sur-mesure-prix-devis/ — « Meuble sur mesure : ce qui fait varier le prix d’un devis »
+- → /blog/fuite-sous-evier-bons-reflexes/ — « Fuite sous l’évier : les bons réflexes avant l’arrivée du plombier »
 - → /blog/reparer-ou-remplacer-meuble-abime/ — « Réparer ou remplacer un meuble abîmé : comment décider »
 - → /mentions-legales/ — « Mentions légales »
 - → /politique-confidentialite/ — « Politique de confidentialité »
+- → /cgu/ — « Conditions générales d’utilisation »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / — « Plan du site »
 - ← /a-propos/ — « Plan du site »
 - ← /blog/ — « Plan du site »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Plan du site »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Plan du site »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Plan du site »
+- ← /cgu/ — « Plan du site »
 - ← /devis/ — « Plan du site »
 - ← /devis/merci/ — « Plan du site »
 - ← /mentions-legales/ — « Plan du site »
@@ -399,13 +447,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 **Sortants contextuels (1)** :
 - → /devis/ — « formulaire de demande de devis »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / — « Politique de confidentialité »
 - ← /a-propos/ — « Politique de confidentialité »
 - ← /blog/ — « Politique de confidentialité »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Politique de confidentialité »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Politique de confidentialité »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Politique de confidentialité »
+- ← /cgu/ (contextuel) — « politique de confidentialité »
 - ← /devis/ (contextuel) — « politique de confidentialité »
 - ← /devis/merci/ — « Politique de confidentialité »
 - ← /mentions-legales/ (contextuel) — « politique de confidentialité »
@@ -443,13 +492,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /realisations/restauration-buffet-chene-montreuil/ — « Buffet en chêne restauré à Montreuil »
 - → /devis/ — « Décrivez votre projet »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Réalisations »
 - ← /a-propos/ (contextuel) — « Réalisations »
 - ← /blog/ — « Réalisations »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Réalisations »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Réalisations »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Réalisations »
+- ← /cgu/ — « Réalisations »
 - ← /devis/ — « Réalisations »
 - ← /devis/merci/ — « Réalisations »
 - ← /mentions-legales/ — « Réalisations »
@@ -592,13 +642,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Services »
 - ← /a-propos/ — « Services »
 - ← /blog/ — « Services »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Services »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Services »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Services »
+- ← /cgu/ — « Services »
 - ← /devis/ — « Services »
 - ← /devis/merci/ (contextuel) — « Services »
 - ← /mentions-legales/ — « Services »
@@ -642,13 +693,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/pantin/ — « Électricien à Pantin »
 - → /zone-intervention/ — « Toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Électricité »
 - ← /a-propos/ (contextuel) — « Électricité »
 - ← /blog/ — « Électricité »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Électricité »
 - ← /blog/meuble-sur-mesure-prix-devis/ (contextuel) — « Électricité »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Électricité »
+- ← /cgu/ — « Électricité »
 - ← /devis/ — « Électricité »
 - ← /devis/merci/ — « Électricité »
 - ← /mentions-legales/ — « Électricité »
@@ -695,13 +747,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/ — « Toute la zone d’intervention »
 - → /devis/ — « Demander un devis »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Création de meubles sur mesure »
 - ← /a-propos/ (contextuel) — « Création de meubles sur mesure »
 - ← /blog/ (contextuel) — « Création de meubles sur mesure »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Création de meubles sur mesure »
 - ← /blog/meuble-sur-mesure-prix-devis/ (contextuel) — « Création de meubles sur mesure »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ (contextuel) — « Création de meubles sur mesure »
+- ← /cgu/ — « Création de meubles sur mesure »
 - ← /devis/ — « Création de meubles sur mesure »
 - ← /devis/merci/ — « Création de meubles sur mesure »
 - ← /mentions-legales/ — « Création de meubles sur mesure »
@@ -745,13 +798,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/pantin/ — « Montage de meubles à Pantin »
 - → /zone-intervention/ — « Toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Montage de meubles »
 - ← /a-propos/ (contextuel) — « Montage de meubles »
 - ← /blog/ — « Montage de meubles »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Montage de meubles »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Montage de meubles »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Montage de meubles »
+- ← /cgu/ — « Montage de meubles »
 - ← /devis/ — « Montage de meubles »
 - ← /devis/merci/ — « Montage de meubles »
 - ← /mentions-legales/ — « Montage de meubles »
@@ -796,13 +850,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/pantin/ — « Plombier à Pantin »
 - → /zone-intervention/ — « Toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Plomberie »
 - ← /a-propos/ (contextuel) — « Plomberie »
 - ← /blog/ (contextuel) — « Plomberie »
 - ← /blog/fuite-sous-evier-bons-reflexes/ (contextuel) — « Plomberie »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Plomberie »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Plomberie »
+- ← /cgu/ — « Plomberie »
 - ← /devis/ — « Plomberie »
 - ← /devis/merci/ — « Plomberie »
 - ← /mentions-legales/ — « Plomberie »
@@ -847,13 +902,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/pantin/ — « Rénovation intérieure à Pantin »
 - → /zone-intervention/ — « Toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Rénovation intérieure »
 - ← /a-propos/ (contextuel) — « Rénovation intérieure »
 - ← /blog/ — « Rénovation intérieure »
 - ← /blog/fuite-sous-evier-bons-reflexes/ (contextuel) — « Rénovation intérieure »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Rénovation intérieure »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Rénovation intérieure »
+- ← /cgu/ — « Rénovation intérieure »
 - ← /devis/ — « Rénovation intérieure »
 - ← /devis/merci/ — « Rénovation intérieure »
 - ← /mentions-legales/ — « Rénovation intérieure »
@@ -898,13 +954,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/pantin/ — « Réparation de meubles à Pantin »
 - → /zone-intervention/ — « Toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Réparation et restauration de meubles »
 - ← /a-propos/ (contextuel) — « Réparation et restauration de meubles »
 - ← /blog/ (contextuel) — « Réparation et restauration de meubles »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Réparation et restauration de meubles »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Réparation et restauration de meubles »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ (contextuel) — « Réparation et restauration de meubles »
+- ← /cgu/ — « Réparation et restauration de meubles »
 - ← /devis/ — « Réparation et restauration de meubles »
 - ← /devis/merci/ — « Réparation et restauration de meubles »
 - ← /mentions-legales/ — « Réparation et restauration de meubles »
@@ -948,13 +1005,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Zone d’intervention »
 - ← /a-propos/ (contextuel) — « Zone d’intervention »
 - ← /blog/ — « Zone d’intervention »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Zone d’intervention »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Zone d’intervention »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Zone d’intervention »
+- ← /cgu/ — « Zone d’intervention »
 - ← /devis/ — « Zone d’intervention »
 - ← /devis/merci/ — « Zone d’intervention »
 - ← /mentions-legales/ — « Zone d’intervention »
@@ -997,13 +1055,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/les-lilas/ — « Artisan multiservices aux Lilas »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Artisan à Bagnolet »
 - ← /a-propos/ — « Artisan à Bagnolet »
 - ← /blog/ — « Artisan à Bagnolet »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Artisan à Bagnolet »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Artisan à Bagnolet »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Artisan à Bagnolet »
+- ← /cgu/ — « Artisan à Bagnolet »
 - ← /devis/ — « Artisan à Bagnolet »
 - ← /devis/merci/ — « Artisan à Bagnolet »
 - ← /mentions-legales/ — « Artisan à Bagnolet »
@@ -1046,13 +1105,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/bagnolet/ — « Artisan multiservices à Bagnolet »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Artisan aux Lilas »
 - ← /a-propos/ — « Artisan aux Lilas »
 - ← /blog/ — « Artisan aux Lilas »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Artisan aux Lilas »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Artisan aux Lilas »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Artisan aux Lilas »
+- ← /cgu/ — « Artisan aux Lilas »
 - ← /devis/ — « Artisan aux Lilas »
 - ← /devis/merci/ — « Artisan aux Lilas »
 - ← /mentions-legales/ — « Artisan aux Lilas »
@@ -1095,13 +1155,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/romainville/ — « Artisan multiservices à Romainville »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Artisan à Montreuil »
 - ← /a-propos/ — « Artisan à Montreuil »
 - ← /blog/ — « Artisan à Montreuil »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Artisan à Montreuil »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Artisan à Montreuil »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Artisan à Montreuil »
+- ← /cgu/ — « Artisan à Montreuil »
 - ← /devis/ — « Artisan à Montreuil »
 - ← /devis/merci/ — « Artisan à Montreuil »
 - ← /mentions-legales/ — « Artisan à Montreuil »
@@ -1144,13 +1205,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/montreuil/ — « Artisan multiservices à Montreuil »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Artisan à Noisy-le-Sec »
 - ← /a-propos/ — « Artisan à Noisy-le-Sec »
 - ← /blog/ — « Artisan à Noisy-le-Sec »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Artisan à Noisy-le-Sec »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Artisan à Noisy-le-Sec »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Artisan à Noisy-le-Sec »
+- ← /cgu/ — « Artisan à Noisy-le-Sec »
 - ← /devis/ — « Artisan à Noisy-le-Sec »
 - ← /devis/merci/ — « Artisan à Noisy-le-Sec »
 - ← /mentions-legales/ — « Artisan à Noisy-le-Sec »
@@ -1193,13 +1255,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/romainville/ — « Artisan multiservices à Romainville »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Artisan à Pantin »
 - ← /a-propos/ — « Artisan à Pantin »
 - ← /blog/ — « Artisan à Pantin »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Artisan à Pantin »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Artisan à Pantin »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Artisan à Pantin »
+- ← /cgu/ — « Artisan à Pantin »
 - ← /devis/ — « Artisan à Pantin »
 - ← /devis/merci/ — « Artisan à Pantin »
 - ← /mentions-legales/ — « Artisan à Pantin »
@@ -1242,13 +1305,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /zone-intervention/noisy-le-sec/ — « Artisan multiservices à Noisy-le-Sec »
 - → /zone-intervention/ — « Voir toute la zone d’intervention »
 
-**Entrants (31)** :
+**Entrants (32)** :
 - ← / (contextuel) — « Artisan à Romainville »
 - ← /a-propos/ — « Artisan à Romainville »
 - ← /blog/ — « Artisan à Romainville »
 - ← /blog/fuite-sous-evier-bons-reflexes/ — « Artisan à Romainville »
 - ← /blog/meuble-sur-mesure-prix-devis/ — « Artisan à Romainville »
 - ← /blog/reparer-ou-remplacer-meuble-abime/ — « Artisan à Romainville »
+- ← /cgu/ — « Artisan à Romainville »
 - ← /devis/ — « Artisan à Romainville »
 - ← /devis/merci/ — « Artisan à Romainville »
 - ← /mentions-legales/ — « Artisan à Romainville »

@@ -27,13 +27,13 @@ Le build enchaîne automatiquement :
 
 Commandes séparées : `npm run check`, `npm run docs`, `npm run images`, `npm run preview`.
 
-## Déploiement sur le VPS (acs.nairox.fr)
+## Déploiement sur le VPS (acsms.fr)
 
-Le site est hébergé sur le VPS `217.65.144.174` et servi par Nginx depuis `/var/www/acs.nairox.fr/html`.
+Le site est hébergé sur le VPS `217.65.144.174` et servi par Nginx depuis `/var/www/acsms.fr/html` (l'ancienne adresse acs.nairox.fr redirige en 301).
 
 - **Installation initiale** : `deploy/vps-setup.sh` (à lancer en root sur le VPS) installe Nginx, Certbot, Node.js, crée l'utilisateur `deploy` et sa clé SSH, clone le dépôt, construit le site, configure Nginx (`deploy/nginx-acs.nairox.fr.conf`), le pare-feu et le certificat HTTPS.
 - **Mises à jour** : chaque `git push` sur `main` déclenche `.github/workflows/deploy.yml`, qui construit le site sur GitHub Actions et envoie `dist/` sur le VPS par rsync. Secrets GitHub nécessaires : `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY` (affichée à la fin du script d'installation), et `PUBLIC_FORM_WEBHOOK` (facultatif).
-- **Déploiement manuel** depuis le VPS : `cd /opt/acs && git pull && npm ci && PUBLIC_SITE_URL=https://acs.nairox.fr npm run build && rsync -az --delete dist/ /var/www/acs.nairox.fr/html/`.
+- **Déploiement manuel** depuis le VPS : `cd /opt/acs && git pull && npm ci && PUBLIC_SITE_URL=https://acsms.fr npm run build && rsync -az --delete dist/ /var/www/acsms.fr/html/`.
 
 ## Déploiement générique
 
@@ -153,7 +153,7 @@ Depuis le **10 octobre 2026**, le blog se publie seul : **2 articles par semaine
 
 - **La routine Claude** (rédaction) tourne dans le cloud, clone ce dépôt, prend le premier sujet `pending` de
   `src/data/blog-calendrier.json`, écrit `src/content/blog/<slug>.md`, lance `npm run build` (le check post-build doit
-  passer), pousse sur `main`, puis vérifie que `https://acs.nairox.fr/blog/<slug>/` répond. Elle se voit, se met en pause ou
+  passer), pousse sur `main`, puis vérifie que `https://acsms.fr/blog/<slug>/` répond. Elle se voit, se met en pause ou
   se modifie ici : **https://claude.ai/code/routines**
 - **Le calendrier éditorial** : `src/data/blog-calendrier.json`. Pour imposer un sujet, l'ajouter en tête du tableau
   `sujets` ; pour en interdire un, passer son `status` à `skipped`. Quand il reste moins de 4 sujets, la routine en ajoute.

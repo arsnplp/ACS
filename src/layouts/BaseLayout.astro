@@ -27,6 +27,8 @@ const preloadHref = preload && fs.existsSync(path.join(process.cwd(), 'public', 
 const preloadAvif = preloadHref && fs.existsSync(path.join(process.cwd(), 'public', preloadHref.replace(/\.(jpe?g|png)$/, '.avif')));
 const preloadFinal = preloadAvif ? preloadHref!.replace(/\.(jpe?g|png)$/, '.avif') : preloadHref;
 const preloadType = preloadAvif ? 'image/avif' : undefined;
+// Variante mobile ({nom}-mobile.avif) : on précharge la bonne image selon la largeur d'écran
+const preloadMobile = preloadFinal && fs.existsSync(path.join(process.cwd(), 'public', preloadFinal.replace(/\.(avif|jpe?g|png)$/, '-mobile.$1'))) ? preloadFinal.replace(/\.(avif|jpe?g|png)$/, '-mobile.$1') : undefined;
 const graph: Record<string, unknown>[] = [organisationNode()];
 if (accueil) graph.push(websiteNode());
 if (ariane.length) graph.push(breadcrumbNode([{ nom: 'Accueil', url: '/' }, ...ariane]));
@@ -44,11 +46,14 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content="#0f3d6e" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
     {accueil && <link rel="preload" href="/fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin />}
-    {preloadFinal && <link rel="preload" as="image" href={preloadFinal} type={preloadType} fetchpriority="high" />}
+    {preloadFinal && <link rel="preload" as="image" href={preloadFinal} type={preloadType} fetchpriority="high" media={preloadMobile ? '(min-width: 48rem)' : undefined} />}
+    {preloadMobile && <link rel="preload" as="image" href={preloadMobile} type={preloadType} fetchpriority="high" media="(max-width: 47.99rem)" />}
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="ACS Multiservices" />

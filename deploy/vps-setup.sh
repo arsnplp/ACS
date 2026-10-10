@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Installation initiale du VPS pour acs.nairox.fr (Ubuntu/Debian, à lancer en root).
+# Installation initiale du VPS pour acsms.fr (Ubuntu/Debian, à lancer en root).
 # Usage : bash vps-setup.sh
 set -euo pipefail
 
-DOMAIN="acs.nairox.fr"
+DOMAIN="acsms.fr"
 WEBROOT="/var/www/$DOMAIN/html"
 REPO="https://github.com/arsnplp/ACS.git"
 
@@ -54,7 +54,7 @@ ufw allow 'Nginx Full'
 ufw --force enable
 
 echo "== 8. HTTPS (Let's Encrypt)"
-certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos --redirect -m "${CERTBOT_EMAIL:-rosco-75@hotmail.com}"
+certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" --non-interactive --agree-tos --redirect -m "${CERTBOT_EMAIL:-rosco-75@hotmail.com}"
 systemctl enable --now certbot.timer 2>/dev/null || true
 
 echo
