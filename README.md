@@ -146,3 +146,20 @@ Tout le NAP (nom, adresse, téléphone, email, horaires, assurance, médiateur, 
 - Le formulaire et l'email restent au même niveau que l'appel (`ContactOptions.astro`).
 - Jamais de texte jaune sur fond clair ; utiliser les classes `.btn--jaune` (texte bleu foncé) ou les sections `.section--bleu`.
 - Conserver le lien d'évitement, les `aria-label` des `nav`, les `label` de formulaire et les messages d'erreur textuels.
+
+## Publication automatique du blog
+
+Depuis le **10 octobre 2026**, le blog se publie seul : **2 articles par semaine, le mardi et le vendredi matin**.
+
+- **La routine Claude** (rédaction) tourne dans le cloud, clone ce dépôt, prend le premier sujet `pending` de
+  `src/data/blog-calendrier.json`, écrit `src/content/blog/<slug>.md`, lance `npm run build` (le check post-build doit
+  passer), pousse sur `main`, puis vérifie que `https://acs.nairox.fr/blog/<slug>/` répond. Elle se voit, se met en pause ou
+  se modifie ici : **https://claude.ai/code/routines**
+- **Le calendrier éditorial** : `src/data/blog-calendrier.json`. Pour imposer un sujet, l'ajouter en tête du tableau
+  `sujets` ; pour en interdire un, passer son `status` à `skipped`. Quand il reste moins de 4 sujets, la routine en ajoute.
+- **La mise en ligne** : le push sur `main` déclenche le workflow GitHub `deploy.yml` (build + rsync vers le VPS), comme
+  pour toute modification. Conséquence : chaque article part en production sans relecture ; pour le relire avant, mettre la
+  routine en pause ou passer le sujet en `skipped`.
+- **Règles imposées à la routine** : mêmes règles que le site (aucun prix en euros, aucune statistique, aucun label, avis ou
+  délai chiffré inventé ; NAP uniquement depuis `src/data/entreprise.ts` ; liens internes uniquement vers des pages
+  existantes ; 1 200 à 1 800 mots ; pas de champ `image` tant qu'aucune photo n'est fournie).

@@ -1,0 +1,117 @@
+{
+  "_doc": "File de sujets pour la publication automatique du blog (routine Claude, mardi et vendredi). La routine prend le premier sujet « pending », écrit l'article dans src/content/blog/<slug>.md, puis passe le statut à « published » avec la date. Pour imposer un sujet : l'ajouter en tête. Pour en interdire un : statut « skipped ». Jamais de prix en euros, de statistiques, de labels, d'avis clients ni de délais chiffrés dans les articles.",
+  "sujets": [
+    {
+      "slug": "monter-un-meuble-en-kit-les-erreurs-a-eviter",
+      "titre": "Monter un meuble en kit : les erreurs qui coûtent une porte de travers",
+      "service": "montage-meubles",
+      "brief": "Guide pratique pour un particulier qui monte lui-même un meuble en kit (IKEA, Conforama, But, Leroy Merlin). Erreurs fréquentes : ne pas trier la quincaillerie, serrer les excentriques avant d'avoir vérifié l'équerrage, monter debout un meuble prévu à plat, oublier le fond, forcer une cheville, ne pas régler les pieds. Terminer par les cas où il vaut mieux appeler un artisan (meuble haut, miroir, fixation murale obligatoire).",
+      "status": "pending"
+    },
+    {
+      "slug": "fixer-une-armoire-au-mur-selon-le-support",
+      "titre": "Fixer une armoire au mur : plaque de plâtre, brique ou béton, ce qui change",
+      "service": "montage-meubles",
+      "brief": "Pourquoi la fixation anti-basculement est indispensable (enfants, meubles hauts). Reconnaître son mur (son creux, poussière rouge, poussière grise), chevilles adaptées à chaque support, erreurs classiques (cheville trop courte, trou trop large, fixation dans un joint). Mentionner les immeubles anciens de Montreuil et des Lilas (murs en plâtre épais, cloisons en carreaux de plâtre).",
+      "status": "pending"
+    },
+    {
+      "slug": "monter-une-cuisine-en-kit-ce-qu-il-faut-prevoir",
+      "titre": "Monter une cuisine en kit : ce qu'il faut prévoir avant le premier caisson",
+      "service": "montage-meubles",
+      "brief": "Ordre des opérations : vérifier la livraison, repérer les arrivées d'eau et prises, tracer le niveau, poser les caissons hauts puis bas, plan de travail, façades, réglages. Points de vigilance : murs pas droits, sol en pente, découpe de l'évier, raccordement (à laisser au plombier et à l'électricien). Lier vers les services plomberie et électricité.",
+      "status": "pending"
+    },
+    {
+      "slug": "wc-qui-coule-en-continu-que-faire",
+      "titre": "WC qui coule en continu : d'où ça vient et que faire en attendant le plombier",
+      "service": "plomberie",
+      "brief": "Diagnostic simple : flotteur, joint de cloche, robinet flotteur entartré, chasse à double commande bloquée. Gestes sans risque (couper le robinet d'arrêt, régler le flotteur), ce qu'il ne faut pas forcer. Conséquence : eau gaspillée, bruit, traces dans la cuvette. Quand remplacer le mécanisme complet.",
+      "status": "pending"
+    },
+    {
+      "slug": "tableau-electrique-ancien-faut-il-le-remplacer",
+      "titre": "Tableau électrique ancien : les signes qui indiquent qu'il faut le remplacer",
+      "service": "electricite",
+      "brief": "Fusibles à porcelaine, absence de différentiel 30 mA, absence de terre, disjoncteur qui chauffe, circuits non repérés. Expliquer ce qu'apporte un tableau modulaire aux normes (norme NF C 15-100 citée sans détail chiffré). Ce que fait l'électricien lors d'un remplacement, préparation côté client (couper l'eau chaude, prévoir une coupure). Pas de prix.",
+      "status": "pending"
+    },
+    {
+      "slug": "tiroir-qui-coince-comment-le-reparer",
+      "titre": "Tiroir qui coince ou qui déraille : causes et réparations possibles",
+      "service": "reparation-meubles",
+      "brief": "Coulisses à galets usées, coulisses à billes désalignées, fond de tiroir gonflé par l'humidité, façade dévissée, meuble qui n'est plus d'équerre. Réparations à la portée de tous (nettoyage, cire, resserrage) et celles qui demandent un atelier (remplacement de coulisses, recollage). Message : réparer plutôt que jeter.",
+      "status": "pending"
+    },
+    {
+      "slug": "dressing-sous-pente-chambre-mansardee",
+      "titre": "Dressing sous pente : tirer parti d'une chambre mansardée",
+      "service": "meubles-sur-mesure",
+      "brief": "Pourquoi le kit ne convient pas sous les pentes (hauteur variable, chevrons). Solutions sur mesure : modules de hauteur dégressive, penderie côté haut, tiroirs côté bas, portes coulissantes ou rideaux. Prise de cotes : hauteur tous les 30 cm, position des chevrons, trappes. Cas des combles aménagés des pavillons de Romainville et Noisy-le-Sec.",
+      "status": "pending"
+    },
+    {
+      "slug": "disjoncteur-qui-saute-les-causes-frequentes",
+      "titre": "Disjoncteur qui saute : les causes fréquentes et comment les isoler",
+      "service": "electricite",
+      "brief": "Méthode d'isolement : tout débrancher, réarmer, rebrancher un à un. Causes : surcharge (plusieurs appareils de chauffe sur un circuit), appareil défectueux, défaut d'isolement détecté par le différentiel, humidité dans une boîte, vieux circuit. Ce qu'il ne faut jamais faire (ponter, remplacer un fusible par un plus gros). Quand appeler.",
+      "status": "pending"
+    },
+    {
+      "slug": "charniere-de-placard-cassee-reparer-ou-remplacer",
+      "titre": "Charnière de placard cassée ou porte qui ferme mal : réparer ou remplacer ?",
+      "service": "reparation-meubles",
+      "brief": "Types de charnières (invisible à clip, à piano, à lames), réglages en trois dimensions, vis qui tournent dans le vide (chevilles bois, pâte à bois), charnière tordue, passage à une charnière amortie. Cas des portes de cuisine IKEA et des meubles anciens.",
+      "status": "pending"
+    },
+    {
+      "slug": "preparer-son-appartement-avant-des-travaux-de-peinture",
+      "titre": "Préparer son appartement avant des travaux de peinture : la liste complète",
+      "service": "renovation-interieure",
+      "brief": "Ce que le client fait avant l'arrivée de l'artisan : vider, protéger, décrocher, déplacer les meubles, prévoir le stationnement et l'accès (immeubles sans ascenseur de Pantin et Montreuil), prévenir les voisins et la copropriété. Ce que fait l'artisan : rebouchage, ponçage, sous-couche. Ordre des pièces, séchage, aération.",
+      "status": "pending"
+    },
+    {
+      "slug": "ajouter-une-prise-electrique-dans-une-piece",
+      "titre": "Ajouter une prise électrique dans une pièce : les solutions possibles",
+      "service": "electricite",
+      "brief": "Repiquage sur une prise existante (limites), goulotte, encastrement avec saignée, nouvelle ligne depuis le tableau pour les gros appareils. Nombre de prises recommandé par pièce selon la norme (sans chiffres précis si incertain), prises dans la salle de bain et la cuisine. Lien avec le montage de meuble TV et de bureau.",
+      "status": "pending"
+    },
+    {
+      "slug": "bibliotheque-sur-mesure-mur-irregulier",
+      "titre": "Bibliothèque sur mesure sur un mur qui n'est pas droit",
+      "service": "meubles-sur-mesure",
+      "brief": "Murs faux d'équerre, plinthes, tuyaux, radiateur, angles : comment le sur mesure absorbe les irrégularités (bandeau de finition, fond ajusté, modules). Charge des étagères (livres lourds, portée, épaisseur). Matériaux : mélaminé, contreplaqué, bois massif, chacun décrit sans prix. Pose fixée au mur.",
+      "status": "pending"
+    },
+    {
+      "slug": "chauffe-eau-plus-d-eau-chaude-que-verifier",
+      "titre": "Plus d'eau chaude : les vérifications avant d'appeler le plombier",
+      "service": "plomberie",
+      "brief": "Disjoncteur du chauffe-eau, contacteur heures creuses (position auto), thermostat de sécurité, résistance entartrée, groupe de sécurité qui goutte. Ce que le client peut vérifier sans danger, ce qui demande un professionnel. Entretien : vidange, remplacement du groupe de sécurité.",
+      "status": "pending"
+    },
+    {
+      "slug": "rayures-et-taches-sur-un-meuble-en-bois",
+      "titre": "Rayures, taches et auréoles sur un meuble en bois : que faire ?",
+      "service": "reparation-meubles",
+      "brief": "Distinguer finition vernie, huilée, cirée, mélaminée. Rayure superficielle vs profonde, auréole blanche de chaleur, tache d'eau noire dans le chêne. Solutions maison prudentes, puis atelier : ponçage, teinte, rebouchage, nouvelle finition. Exemple du buffet en chêne de Montreuil (lien vers la réalisation).",
+      "status": "pending"
+    },
+    {
+      "slug": "remplacer-un-sol-stratifie-ou-parquet-flottant",
+      "titre": "Remplacer un sol stratifié ou un parquet flottant : étapes et pièges",
+      "service": "renovation-interieure",
+      "brief": "Dépose de l'ancien sol, état de la chape, sous-couche, sens de pose, joints de dilatation, plinthes, seuils de porte, portes à raboter. Stratifié vs parquet contrecollé (sans prix). Durée indicative en jours à éviter ; parler plutôt d'ordre des opérations.",
+      "status": "pending"
+    },
+    {
+      "slug": "meuble-tv-sur-mesure-ou-en-kit-comment-choisir",
+      "titre": "Meuble TV : sur mesure ou en kit, comment choisir ?",
+      "service": "meubles-sur-mesure",
+      "brief": "Critères : largeur du mur, passage des câbles, niche, rangement fermé, radiateur, box et consoles à ventiler. Quand le kit suffit, quand le sur mesure s'impose. Lien vers le service montage de meubles (kit) et vers la réalisation meuble TV de Romainville.",
+      "status": "pending"
+    }
+  ]
+}
