@@ -28,18 +28,15 @@ const dateTexte = d.date.toLocaleDateString('fr-FR', { month: 'long', year: 'num
   ogImage={`/images/realisations/${d.apres.src}.jpg`}
 >
   <article class="conteneur section">
-    {d.brouillon && (
-      <div class="encadre encadre--jaune" role="note">
-        <p><strong>Exemple fictif (brouillon, non indexé)</strong> — à remplacer par un vrai chantier.</p>
-      </div>
-    )}
     <p class="surtitre"><a href={serviceUrl(service.slug)}>{service.nomLong}</a> · <a href={villeUrl(ville.slug)}>{ville.nom}</a> · <time datetime={d.date.toISOString().slice(0, 7)}>{dateTexte}</time></p>
     <h1>{d.titre}</h1>
     <p class="chapo">{d.resume}</p>
-    <BeforeAfter avant={d.avant} apres={d.apres} descriptionAvant={d.descriptionAvant} descriptionApres={d.descriptionApres} />
+    <BeforeAfter avant={d.avant} apres={d.apres} descriptionAvant={d.descriptionAvant} descriptionApres={d.descriptionApres} paire={false} />
     <div class="prose" style="margin-top:2rem">
       <Content />
     </div>
+    <h2>Avant et après en détail</h2>
+    <BeforeAfter avant={d.avant} apres={d.apres} descriptionAvant={d.descriptionAvant} descriptionApres={d.descriptionApres} comparateur={false} id="comparateur-detail" />
     <div class="encadre">
       <p>Un projet similaire {ville.prep} ? Voir <a href={serviceUrl(service.slug)}>{service.nomLong.toLowerCase()}</a> ou <a href={`/devis/?service=${service.slug}`}>demander un devis</a>.</p>
     </div>

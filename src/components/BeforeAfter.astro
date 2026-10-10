@@ -7,10 +7,11 @@
  */
 import ImageSlot from './ImageSlot.astro';
 interface Photo { src: string; alt: string; width: number; height: number }
-interface Props { avant: Photo; apres: Photo; descriptionAvant: string; descriptionApres: string; id?: string; dossier?: string }
-const { avant, apres, descriptionAvant, descriptionApres, id = 'comparateur', dossier = 'realisations' } = Astro.props;
+interface Props { avant: Photo; apres: Photo; descriptionAvant: string; descriptionApres: string; id?: string; dossier?: string; comparateur?: boolean; paire?: boolean }
+const { avant, apres, descriptionAvant, descriptionApres, id = 'comparateur', dossier = 'realisations', comparateur = true, paire = true } = Astro.props;
 ---
 <div class="avant-apres" data-avant-apres>
+  {comparateur && <>
   <div class="avant-apres__cadre" aria-hidden="true">
     <div class="avant-apres__avant"><ImageSlot nom={avant.src} dossier={dossier} alt="" width={avant.width} height={avant.height} /></div>
     <div class="avant-apres__apres"><ImageSlot nom={apres.src} dossier={dossier} alt="" width={apres.width} height={apres.height} /></div>
@@ -20,7 +21,8 @@ const { avant, apres, descriptionAvant, descriptionApres, id = 'comparateur', do
   </div>
   <label for={id}>Glissez le curseur (ou faites glisser la photo) pour découvrir l’après</label>
   <input type="range" id={id} min="0" max="100" value="50" step="1" aria-valuetext="50 % avant, 50 % après" />
-  <div class="avant-apres__paire">
+  </>}
+  {paire && <div class="avant-apres__paire">
     <figure>
       <ImageSlot nom={avant.src} dossier={dossier} alt={avant.alt} width={avant.width} height={avant.height} />
       <figcaption><strong>Avant.</strong> {descriptionAvant}</figcaption>
@@ -29,7 +31,7 @@ const { avant, apres, descriptionAvant, descriptionApres, id = 'comparateur', do
       <ImageSlot nom={apres.src} dossier={dossier} alt={apres.alt} width={apres.width} height={apres.height} />
       <figcaption><strong>Après.</strong> {descriptionApres}</figcaption>
     </figure>
-  </div>
+  </div>}
 </div>
 <script>
   document.querySelectorAll<HTMLElement>('[data-avant-apres]').forEach((bloc) => {

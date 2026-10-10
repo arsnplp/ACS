@@ -50,11 +50,5 @@ const mobileMedia = '(max-width: 47.99rem)';
     />
   </picture>
 ) : (
-  <div class:list={['img-slot', cls, { 'img-slot--hero': variante === 'hero' }]} role="img" aria-label={alt} style={`aspect-ratio:${width}/${height}`}>
-    <div aria-hidden="true">
-      <strong>{'{{PHOTO À FOURNIR}}'}</strong>
-      <code>{base}.jpg — {width}×{height}</code>
-      <span>Alt : {alt}</span>
-    </div>
-  </div>
+  <Fragment set:html={`<!-- image à fournir : ${base}.jpg (${width}×${height}) — ${alt} -->`} />
 )}

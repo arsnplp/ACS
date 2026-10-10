@@ -17,7 +17,7 @@ import { entreprise, adresseLigne } from '@/data/entreprise';
     <p>Ces données servent uniquement à répondre à votre demande de devis, à préparer une éventuelle intervention et à assurer le suivi de la relation commerciale. La base légale est l’exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD) et votre consentement pour l’envoi du formulaire.</p>
 
     <h2>Destinataires</h2>
-    <p>Les données sont reçues par {entreprise.denominationSociale} uniquement. Elles transitent par notre outil d’automatisation de formulaires (n8n, hébergé chez {'{{HÉBERGEUR N8N}}'}) et par notre messagerie. Elles ne sont ni vendues ni transmises à des tiers à des fins commerciales.</p>
+    <p>Les données sont reçues par {entreprise.denominationSociale} uniquement. Elles transitent par notre outil d’automatisation de formulaires (n8n) et par notre messagerie. Elles ne sont ni vendues ni transmises à des tiers à des fins commerciales.</p>
 
     <h2>Durée de conservation</h2>
     <p>Les données d’une demande de devis sont conservées <strong>3 ans après le dernier contact</strong>. Si un devis est accepté, les données de facturation sont conservées pendant la durée légale (10 ans pour les pièces comptables).</p>
@@ -27,12 +27,12 @@ import { entreprise, adresseLigne } from '@/data/entreprise';
     <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL : <a href="https://www.cnil.fr/fr/plaintes">www.cnil.fr/fr/plaintes</a>, ou par courrier à CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris CEDEX 07.</p>
 
     <h2>Cookies et mesure d’audience</h2>
-    <p>Ce site ne dépose aucun cookie publicitaire ni traceur tiers. La mesure d’audience, si elle est activée, utilise un outil sans cookie et sans donnée personnelle ({'{{OUTIL D’AUDIENCE : Plausible / Umami / aucun}}'}), exempté de bandeau de consentement. Si un outil déposant des cookies (par exemple Google Analytics) devait être ajouté, un bandeau de consentement avec un bouton « Refuser » aussi visible que « Accepter » serait mis en place au préalable.</p>
+    <p>Ce site ne dépose aucun cookie publicitaire ni traceur tiers. La mesure d’audience, si elle est activée, utilise un outil sans cookie et sans donnée personnelle, exempté de bandeau de consentement. Si un outil déposant des cookies (par exemple Google Analytics) devait être ajouté, un bandeau de consentement avec un bouton « Refuser » aussi visible que « Accepter » serait mis en place au préalable.</p>
 
     <h2>Sécurité</h2>
     <p>Le site est servi en HTTPS. Les données du formulaire sont transmises de façon chiffrée à notre outil de traitement. L’accès à la messagerie est protégé par mot de passe.</p>
 
     <h2>Mise à jour</h2>
-    <p>Dernière mise à jour : {'{{DATE DE MISE À JOUR}}'}. Cette politique peut évoluer ; la version en ligne fait foi.</p>
+    <p>Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}. Cette politique peut évoluer ; la version en ligne fait foi.</p>
   </section>
 </BaseLayout>

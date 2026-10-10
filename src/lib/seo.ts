@@ -1,4 +1,4 @@
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, estPlaceholder, ou } from '@/data/entreprise';
 import { villes } from '@/data/villes';
 
 export const SITE_URL = (import.meta.env.SITE || 'https://acs.nairox.fr').replace(/\/$/, '');
@@ -6,7 +6,7 @@ export const abs = (path: string) => `${SITE_URL}${path.startsWith('/') ? path :
 export const ORG_ID = `${SITE_URL}/#organisation`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
-const phoneOrPlaceholder = entreprise.telephoneHref || entreprise.telephone;
+const telephone = entreprise.telephoneHref || (estPlaceholder(entreprise.telephone) ? undefined : entreprise.telephone);
 
 /** Nœud LocalBusiness commun à toutes les pages (NAP identique partout). */
 export const organisationNode = () => ({
@@ -18,7 +18,7 @@ export const organisationNode = () => ({
   url: `${SITE_URL}/`,
   logo: abs('/images/logo-acs-multiservices.png'),
   image: abs('/images/og-default.jpg'),
-  telephone: phoneOrPlaceholder,
+  ...(telephone ? { telephone } : {}),
   email: entreprise.email,
   founder: { '@type': 'Person', name: entreprise.president },
   foundingDate: entreprise.dateCreation,
@@ -26,17 +26,16 @@ export const organisationNode = () => ({
   taxID: entreprise.sirenCompact,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: `${entreprise.adresse.numero} ${entreprise.adresse.rue}`,
+    streetAddress: `${ou(entreprise.adresse.numero)} ${entreprise.adresse.rue}`.trim(),
     postalCode: entreprise.adresse.codePostal,
     addressLocality: entreprise.adresse.ville,
     addressRegion: entreprise.adresse.region,
     addressCountry: entreprise.adresse.pays,
   },
   geo: { '@type': 'GeoCoordinates', latitude: entreprise.geo.latitude, longitude: entreprise.geo.longitude },
-  openingHours: entreprise.horaires,
+  ...(estPlaceholder(entreprise.horaires) ? {} : { openingHours: entreprise.horaires }),
   areaServed: villes.map((v) => ({ '@type': 'City', name: v.nom, postalCode: v.codePostal })),
-  sameAs: entreprise.sameAs,
-  priceRange: '{{FOURCHETTE DE PRIX}}',
+  ...(entreprise.sameAs.some((u) => !estPlaceholder(u)) ? { sameAs: entreprise.sameAs.filter((u) => !estPlaceholder(u)) } : {}),
 });
 
 export const websiteNode = () => ({

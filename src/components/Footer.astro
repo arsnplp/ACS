@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, estPlaceholder } from '@/data/entreprise';
 import { services, serviceUrl } from '@/data/services';
 import { villesPrioritaires, villeUrl } from '@/data/villes';
 ---
@@ -11,9 +11,9 @@ import { villesPrioritaires, villeUrl } from '@/data/villes';
         <Logo surBleu />
         <address class="pied__nap">
           <p><strong>{entreprise.denominationSociale}</strong><br />{adresseLigne}</p>
-          <p>Téléphone : {entreprise.telephoneHref ? <a href={`tel:${entreprise.telephoneHref}`}>{entreprise.telephone}</a> : entreprise.telephone}<br />
+          <p>{!estPlaceholder(entreprise.telephone) && <>Téléphone : {entreprise.telephoneHref ? <a href={`tel:${entreprise.telephoneHref}`}>{entreprise.telephone}</a> : entreprise.telephone}<br /></>}
             Email : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a></p>
-          <p>Horaires : {entreprise.horaires}</p>
+          {!estPlaceholder(entreprise.horaires) && <p>Horaires : {entreprise.horaires}</p>}
         </address>
       </div>
       <nav aria-label="Services (pied de page)">

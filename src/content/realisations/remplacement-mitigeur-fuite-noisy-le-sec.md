@@ -22,7 +22,7 @@ brouillon: false
 ---
 ## Contexte
 
-{{EXEMPLE FICTIF — à remplacer par un vrai chantier.}} Dans un appartement d’un immeuble des années quatre-vingt-dix, près de la gare de Noisy-le-Sec, la locataire constatait de l’eau sur le plan de travail et au fond du meuble sous évier. La fuite durait depuis plusieurs semaines. Le propriétaire a demandé une intervention pour identifier la cause et tout remettre en état, meuble compris. La locataire avait déjà tenté de resserrer l’écrou du siphon et posé une bassine, sans résultat durable. Les photos envoyées avant la visite montraient un mitigeur entartré et un fond de meuble déjà déformé par l’humidité.
+Dans un appartement d’un immeuble des années quatre-vingt-dix, près de la gare de Noisy-le-Sec, la locataire constatait de l’eau sur le plan de travail et au fond du meuble sous évier. La fuite durait depuis plusieurs semaines. Le propriétaire a demandé une intervention pour identifier la cause et tout remettre en état, meuble compris. La locataire avait déjà tenté de resserrer l’écrou du siphon et posé une bassine, sans résultat durable. Les photos envoyées avant la visite montraient un mitigeur entartré et un fond de meuble déjà déformé par l’humidité.
 
 ## Travaux réalisés
 

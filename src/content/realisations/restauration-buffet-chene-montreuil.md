@@ -22,7 +22,7 @@ brouillon: false
 ---
 ## Contexte
 
-{{EXEMPLE FICTIF — à remplacer par un vrai chantier.}} Un buffet en chêne massif dans un appartement du Bas-Montreuil, utilisé tous les jours depuis des décennies. Le vernis d’origine s’était écaillé par plaques sur les portes, les angles bas avaient pris des coups et la teinte n’était plus homogène. Les propriétaires y tenaient : pas question de le remplacer par un meuble en kit. Ils voulaient une remise en état propre, qui respecte le meuble, sans le faire passer pour neuf.
+Un buffet en chêne massif dans un appartement du Bas-Montreuil, utilisé tous les jours depuis des décennies. Le vernis d’origine s’était écaillé par plaques sur les portes, les angles bas avaient pris des coups et la teinte n’était plus homogène. Les propriétaires y tenaient : pas question de le remplacer par un meuble en kit. Ils voulaient une remise en état propre, qui respecte le meuble, sans le faire passer pour neuf.
 
 ## Travaux réalisés
 

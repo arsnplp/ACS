@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, estPlaceholder } from '@/data/entreprise';
 ---
 <BaseLayout title="Mentions légales du site | ACS Multiservices, Romainville" description="Mentions légales du site ACS Multiservices : identification de l’entreprise, directeur de publication, hébergeur, assurance professionnelle et médiateur." ariane={[{ nom: 'Mentions légales', url: '/mentions-legales/' }]} noindex>
   <section class="section conteneur prose">
@@ -19,25 +19,29 @@ import { entreprise, adresseLigne } from '@/data/entreprise';
         <tr><th scope="row">Date de création</th><td>{entreprise.dateCreationTexte}</td></tr>
         <tr><th scope="row">Président et directeur de la publication</th><td>{entreprise.president}</td></tr>
         <tr><th scope="row">Email</th><td><a href={`mailto:${entreprise.email}`}>{entreprise.email}</a></td></tr>
-        <tr><th scope="row">Téléphone</th><td>{entreprise.telephone}</td></tr>
+        {!estPlaceholder(entreprise.telephone) && <tr><th scope="row">Téléphone</th><td>{entreprise.telephone}</td></tr>}
       </tbody>
     </table>
 
+    {!estPlaceholder(entreprise.hebergeur.nom) && <>
     <h2>Hébergeur</h2>
-    <p>{entreprise.hebergeur.nom}<br />{entreprise.hebergeur.adresse}<br />Téléphone : {entreprise.hebergeur.telephone}</p>
+    <p>{entreprise.hebergeur.nom}{!estPlaceholder(entreprise.hebergeur.adresse) && <><br />{entreprise.hebergeur.adresse}</>}{!estPlaceholder(entreprise.hebergeur.telephone) && <><br />Téléphone : {entreprise.hebergeur.telephone}</>}</p>
+    </>}
 
+    {!estPlaceholder(entreprise.assurance.assureur) && <>
     <h2>Assurance professionnelle</h2>
-    <p>Assureur : {entreprise.assurance.assureur}<br />N° de police : {entreprise.assurance.police}<br />Couverture géographique : {entreprise.assurance.zone}</p>
+    <p>Assureur : {entreprise.assurance.assureur}{!estPlaceholder(entreprise.assurance.police) && <><br />N° de police : {entreprise.assurance.police}</>}{!estPlaceholder(entreprise.assurance.zone) && <><br />Couverture géographique : {entreprise.assurance.zone}</>}</p>
+    </>}
 
     <h2>Médiateur de la consommation</h2>
     <p>Conformément aux articles L.611-1 et suivants du Code de la consommation, tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d’un litige avec un professionnel. Après démarche écrite préalable auprès de {entreprise.denominationSociale}, vous pouvez saisir :</p>
-    <p>{entreprise.mediateur.nom}<br />{entreprise.mediateur.coordonnees}</p>
+    {!estPlaceholder(entreprise.mediateur.nom) && <p>{entreprise.mediateur.nom}{!estPlaceholder(entreprise.mediateur.coordonnees) && <><br />{entreprise.mediateur.coordonnees}</>}</p>}
 
     <h2>Propriété intellectuelle</h2>
     <p>L’ensemble du site (textes, photographies, illustrations, logo, structure) est la propriété de {entreprise.denominationSociale} ou de ses partenaires, et protégé par le Code de la propriété intellectuelle. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.</p>
 
     <h2>Crédits</h2>
-    <p>Conception et développement du site : {'{{CRÉDIT CONCEPTION}}'}. Photographies : {'{{CRÉDIT PHOTOS}}'}. Polices : Archivo et Source Sans 3 (licence SIL Open Font License), hébergées sur ce site.</p>
+    <p>Polices : Archivo et Source Sans 3 (licence SIL Open Font License), hébergées sur ce site.</p>
 
     <h2>Données personnelles et cookies</h2>
     <p>Le traitement des données du formulaire et l’absence de cookies de suivi sont décrits dans la <a href="/politique-confidentialite/">politique de confidentialité</a>.</p>

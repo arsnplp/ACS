@@ -32,15 +32,6 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
             </div>
           </article>
         ); })}
-        {Array.from({ length: Math.max(0, 6 - articles.length) }).map((_, i) => (
-          <article class="carte carte--a-venir" aria-label="Article à venir">
-            <div class="carte__corps">
-              <p class="meta">Prochainement</p>
-              <h3>{'{{TITRE DU PROCHAIN ARTICLE}}'}</h3>
-              <p>Un nouveau guide pratique est en préparation. Revenez bientôt, ou <a href="/devis/">posez-nous directement votre question</a>.</p>
-            </div>
-          </article>
-        ))}
       </div>
     </div>
   </section>

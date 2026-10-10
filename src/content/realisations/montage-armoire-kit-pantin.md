@@ -22,7 +22,7 @@ brouillon: false
 ---
 ## Contexte
 
-{{EXEMPLE FICTIF — à remplacer par un vrai chantier.}} Un couple venait d’emménager dans un appartement proche du canal de l’Ourcq, à Pantin. L’armoire achetée en kit dans une grande enseigne était arrivée en six cartons. Montage annoncé à deux personnes et quatre heures ; ils n’avaient ni le temps ni les outils, et le mur n’était pas parfaitement droit, ce qui aurait compliqué l’alignement des portes.
+Un couple venait d’emménager dans un appartement proche du canal de l’Ourcq, à Pantin. L’armoire achetée en kit dans une grande enseigne était arrivée en six cartons. Montage annoncé à deux personnes et quatre heures ; ils n’avaient ni le temps ni les outils, et le mur n’était pas parfaitement droit, ce qui aurait compliqué l’alignement des portes.
 
 ## Travaux réalisés
 

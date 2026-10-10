@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import ImageSlot from '@/components/ImageSlot.astro';
 import CtaDevis from '@/components/CtaDevis.astro';
 import ContactOptions from '@/components/ContactOptions.astro';
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, estPlaceholder } from '@/data/entreprise';
 import { services, serviceUrl } from '@/data/services';
 ---
 <BaseLayout
@@ -48,7 +48,7 @@ import { services, serviceUrl } from '@/data/services';
         <ImageSlot nom="portrait-seydou" alt="Portrait de Seydou Traoré, fondateur d’ACS Multiservices" width={800} height={1000} sizes="(min-width: 48rem) 16rem, 60vw" />
       </div>
       <address>
-        <p><strong>{entreprise.denominationSociale}</strong><br />{adresseLigne}<br />Email : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a><br />Téléphone : {entreprise.telephone}<br />Horaires : {entreprise.horaires}</p>
+        <p><strong>{entreprise.denominationSociale}</strong><br />{adresseLigne}<br />Email : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a>{!estPlaceholder(entreprise.telephone) && <><br />Téléphone : {entreprise.telephone}</>}{!estPlaceholder(entreprise.horaires) && <><br />Horaires : {entreprise.horaires}</>}</p>
       </address>
       <p>Nous intervenons dans toute la <a href="/zone-intervention/">zone Romainville, Seine-Saint-Denis et Est parisien</a>. Voir aussi <a href="/realisations/">nos réalisations</a>.</p>
       <p><CtaDevis /></p>

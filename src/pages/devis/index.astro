@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ContactOptions from '@/components/ContactOptions.astro';
 import ImageSlot from '@/components/ImageSlot.astro';
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, delaiTexte, estPlaceholder } from '@/data/entreprise';
 import { services } from '@/data/services';
 import { villes } from '@/data/villes';
 const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
@@ -23,9 +23,9 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
 
   <section class="section" aria-labelledby="canaux-titre">
     <div class="conteneur">
-      <h2 id="canaux-titre">Deux façons de nous joindre</h2>
+      <h2 id="canaux-titre">{estPlaceholder(entreprise.telephone) ? 'Nous joindre' : 'Deux façons de nous joindre'}</h2>
       <ContactOptions />
-      <p class="meta" style="margin-top:1rem">Atelier : {adresseLigne}. Délai de réponse habituel : {entreprise.delaiReponse}.</p>
+      <p class="meta" style="margin-top:1rem">Atelier : {adresseLigne}.{!estPlaceholder(entreprise.delaiReponse) && ` Délai de réponse habituel : ${entreprise.delaiReponse}.`}</p>
     </div>
   </section>
 
@@ -36,7 +36,7 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
 
       <div id="message-form" class="message-form" role="status" aria-live="polite" aria-atomic="true"></div>
 
-      <form id="formulaire" class="form-devis" method="post" action={webhook || '#'} enctype="multipart/form-data" novalidate data-webhook={webhook} data-delai={entreprise.delaiReponse}>
+      <form id="formulaire" class="form-devis" method="post" action={webhook || '#'} enctype="multipart/form-data" novalidate data-webhook={webhook} data-delai={delaiTexte}>
         <div class="champ">
           <label for="nom">Nom et prénom <span class="obligatoire">(obligatoire)</span></label>
           <input id="nom" name="nom" type="text" required autocomplete="name" aria-describedby="err-nom" />
@@ -112,7 +112,7 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
         <input type="hidden" name="horodatage" id="horodatage" value="" />
         <input type="hidden" name="page" value="/devis/" />
         <button class="btn btn--jaune" type="submit">Envoyer ma demande</button>
-        <p class="meta" style="margin-top:1rem">Après envoi, vous verrez un message de confirmation sur cette page. Nous vous répondons ensuite par le canal choisi, sous {entreprise.delaiReponse}.</p>
+        <p class="meta" style="margin-top:1rem">Après envoi, vous verrez un message de confirmation sur cette page. Nous vous répondons ensuite par le canal choisi, {delaiTexte}.</p>
       </form>
     </div>
   </section>
@@ -186,7 +186,7 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
       const res = await fetch(webhook, { method: 'POST', body: data });
       if (!res.ok) throw new Error(String(res.status));
       form.hidden = true;
-      afficher(`Votre demande a bien été envoyée. Merci ! Nous vous répondons ${data.get('recontact') === 'appel' ? 'par téléphone' : 'par email'} sous ${form.dataset.delai ?? '{{DÉLAI DE RÉPONSE}}'}. Si vous n’avez pas de nouvelles passé ce délai, vérifiez vos courriers indésirables ou écrivez-nous directement par email.`, 'succes');
+      afficher(`Votre demande a bien été envoyée. Merci ! Nous vous répondons ${data.get('recontact') === 'appel' ? 'par téléphone' : 'par email'} ${form.dataset.delai ?? 'rapidement'}. Si vous n’avez pas de nouvelles passé ce délai, vérifiez vos courriers indésirables ou écrivez-nous directement par email.`, 'succes');
       history.replaceState(null, '', '/devis/merci/');
     } catch {
       afficher('L’envoi a échoué. Vous pouvez réessayer, ou nous écrire directement par email (voir les moyens de contact plus haut). Vos réponses sont conservées dans le formulaire.', 'erreur');

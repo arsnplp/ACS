@@ -22,7 +22,7 @@ brouillon: false
 ---
 ## Contexte
 
-{{EXEMPLE FICTIF — à remplacer par un vrai chantier.}} Les propriétaires d’un appartement du centre de Romainville voulaient un vrai meuble TV sur mesure pour le mur principal de leur salon, sans rien de standard : le mur faisait 3,5 m entre la baie vitrée et la porte, et les meubles du commerce laissaient soit un vide disgracieux, soit un dépassement. Ils souhaitaient aussi cacher les câbles, intégrer une box et une barre de son, et avoir des rangements fermés pour les jeux des enfants.
+Les propriétaires d’un appartement du centre de Romainville voulaient un vrai meuble TV sur mesure pour le mur principal de leur salon, sans rien de standard : le mur faisait 3,5 m entre la baie vitrée et la porte, et les meubles du commerce laissaient soit un vide disgracieux, soit un dépassement. Ils souhaitaient aussi cacher les câbles, intégrer une box et une barre de son, et avoir des rangements fermés pour les jeux des enfants.
 
 ## Travaux réalisés
 

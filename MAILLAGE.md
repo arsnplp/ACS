@@ -12,7 +12,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 |---|---|---|---|
 | / | 31 / 2 | 24 | 70 |
 | /a-propos/ | 31 / 1 | 10 | 49 |
-| /blog/ | 31 / 2 | 7 | 47 |
+| /blog/ | 31 / 2 | 7 | 44 |
 | /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 55 |
 | /blog/meuble-sur-mesure-prix-devis/ | 5 / 5 | 5 | 56 |
 | /blog/reparer-ou-remplacer-meuble-abime/ | 6 / 6 | 4 | 55 |
@@ -162,7 +162,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 - → /blog/reparer-ou-remplacer-meuble-abime/ — « Réparer ou remplacer un meuble abîmé : comment décider »
 - → /services/meubles-sur-mesure/ — « Meubles sur mesure »
 - → /blog/meuble-sur-mesure-prix-devis/ — « Meuble sur mesure : ce qui fait varier le prix d’un devis »
-- → /devis/ — « posez-nous directement votre question »
+- → /devis/ — « Demander un devis »
 
 **Entrants (31)** :
 - ← / (contextuel) — « Conseils »

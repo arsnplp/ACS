@@ -50,11 +50,15 @@ export const entreprise = {
   ],
   geo: { latitude: 48.884, longitude: 2.435 }, // centre de Romainville — à affiner avec l'adresse exacte
 };
-
-export const adresseLigne = `${entreprise.adresse.numero} ${entreprise.adresse.rue}, ${entreprise.adresse.codePostal} ${entreprise.adresse.ville}`;
+/** Valeur si renseignée, sinon chaîne vide (les placeholders ne sont jamais affichés au public). */
+/** Vrai si une valeur est un placeholder non complété. */
+export const estPlaceholder = (v: string) => /\{\{.*\}\}/.test(v);
+/** Valeur si renseignée, sinon chaîne vide (les placeholders ne sont jamais affichés au public). */
+export const ou = (v: string, defaut = '') => (estPlaceholder(v) ? defaut : v);
+/** Adresse postale sans le numéro tant qu'il n'est pas fourni. */
+export const adresseLigne = `${ou(entreprise.adresse.numero)} ${entreprise.adresse.rue}, ${entreprise.adresse.codePostal} ${entreprise.adresse.ville}`.trim();
+/** Délai de réponse en toutes lettres (« sous 48 h » ou « rapidement »). */
+export const delaiTexte = estPlaceholder(entreprise.delaiReponse) ? 'rapidement' : `sous ${entreprise.delaiReponse}`;
 
 /** Libellé du bouton principal : « Devis gratuit » uniquement si confirmé. */
 export const libelleDevis = entreprise.devisGratuit ? 'Devis gratuit' : 'Demander un devis';
-
-/** Vrai si une valeur est un placeholder non complété. */
-export const estPlaceholder = (v: string) => /\{\{.*\}\}/.test(v);

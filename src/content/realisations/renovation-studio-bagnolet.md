@@ -22,7 +22,7 @@ brouillon: false
 ---
 ## Contexte
 
-{{EXEMPLE FICTIF — à remplacer par un vrai chantier.}} Un propriétaire bailleur souhaitait remettre en état un studio dans une résidence des années soixante-dix, près de la place de la Mairie, entre deux locataires. Le logement n’avait pas été rénové depuis longtemps. Il voulait un rendu simple, résistant et facile d’entretien, avec un maximum de rangement dans un petit volume. Le studio présentait un renfoncement dans l’entrée, inutilisé jusque-là, et une salle d’eau exiguë dont le carrelage se fissurait. Le tout devait être traité par un seul intervenant pour limiter la période de vacance du logement.
+Un propriétaire bailleur souhaitait remettre en état un studio dans une résidence des années soixante-dix, près de la place de la Mairie, entre deux locataires. Le logement n’avait pas été rénové depuis longtemps. Il voulait un rendu simple, résistant et facile d’entretien, avec un maximum de rangement dans un petit volume. Le studio présentait un renfoncement dans l’entrée, inutilisé jusque-là, et une salle d’eau exiguë dont le carrelage se fissurait. Le tout devait être traité par un seul intervenant pour limiter la période de vacance du logement.
 
 ## Travaux réalisés
 

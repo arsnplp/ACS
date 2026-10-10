@@ -3,10 +3,12 @@
  * Les deux moyens de contact, au même niveau visuel : email et téléphone.
  * Le téléphone n'est jamais le seul canal : l'email reste au même niveau.
  */
-import { entreprise } from '@/data/entreprise';
+import { entreprise, estPlaceholder } from '@/data/entreprise';
 interface Props { titre?: string }
 const { titre } = Astro.props;
 const telHref = entreprise.telephoneHref ? `tel:${entreprise.telephoneHref}` : '';
+const telConnu = !estPlaceholder(entreprise.telephone);
+const horairesTexte = estPlaceholder(entreprise.horaires) ? '' : `Horaires : ${entreprise.horaires}. `;
 ---
 {titre && <p class="surtitre">{titre}</p>}
 <ul class="contact-cartes">
@@ -23,7 +25,7 @@ const telHref = entreprise.telephoneHref ? `tel:${entreprise.telephoneHref}` : '
       <span class="contact-carte__fleche" aria-hidden="true">→</span>
     </a>
   </li>
-  <li>
+  {telConnu && <li>
     {telHref ? (
       <a class="contact-carte" href={telHref}>
         <span class="contact-carte__picto" aria-hidden="true">
@@ -32,7 +34,7 @@ const telHref = entreprise.telephoneHref ? `tel:${entreprise.telephoneHref}` : '
         <span class="contact-carte__texte">
           <span class="contact-carte__titre">Par téléphone</span>
           <span class="contact-carte__valeur">{entreprise.telephone}</span>
-          <span class="contact-carte__detail">Horaires : {entreprise.horaires}. Pas de réponse ? Laissez un message, nous rappelons.</span>
+          <span class="contact-carte__detail">{horairesTexte}Pas de réponse ? Laissez un message, nous rappelons.</span>
         </span>
         <span class="contact-carte__fleche" aria-hidden="true">→</span>
       </a>
@@ -44,11 +46,11 @@ const telHref = entreprise.telephoneHref ? `tel:${entreprise.telephoneHref}` : '
         <span class="contact-carte__texte">
           <span class="contact-carte__titre">Par téléphone</span>
           <span class="contact-carte__valeur">{entreprise.telephone}</span>
-          <span class="contact-carte__detail">Horaires : {entreprise.horaires}. Pas de réponse ? Laissez un message, nous rappelons.</span>
+          <span class="contact-carte__detail">{horairesTexte}Pas de réponse ? Laissez un message, nous rappelons.</span>
         </span>
       </span>
     )}
-  </li>
+  </li>}
 </ul>
 <style>
   .contact-cartes { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }

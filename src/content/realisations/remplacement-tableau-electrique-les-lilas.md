@@ -22,7 +22,7 @@ brouillon: false
 ---
 ## Contexte
 
-{{EXEMPLE FICTIF — à remplacer par un vrai chantier.}} Une maison de ville du centre des Lilas, achetée par une famille, avait conservé son tableau électrique d’origine à fusibles à cartouche. Aucune protection différentielle, des circuits non identifiés, des dominos apparents. Le diagnostic électrique remis lors de la vente pointait plusieurs anomalies. Les propriétaires voulaient sécuriser l’installation avant d’emménager, sans engager tout de suite une rénovation électrique complète. L’objectif était donc de remplacer le tableau, de protéger chaque circuit et de documenter l’existant, en laissant la possibilité de reprendre les lignes anciennes plus tard.
+Une maison de ville du centre des Lilas, achetée par une famille, avait conservé son tableau électrique d’origine à fusibles à cartouche. Aucune protection différentielle, des circuits non identifiés, des dominos apparents. Le diagnostic électrique remis lors de la vente pointait plusieurs anomalies. Les propriétaires voulaient sécuriser l’installation avant d’emménager, sans engager tout de suite une rénovation électrique complète. L’objectif était donc de remplacer le tableau, de protéger chaque circuit et de documenter l’existant, en laissant la possibilité de reprendre les lignes anciennes plus tard.
 
 ## Travaux réalisés
 
