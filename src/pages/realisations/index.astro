@@ -23,8 +23,9 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
   <section class="section" aria-labelledby="galerie-titre">
     <div class="conteneur">
       <h2 id="galerie-titre" class="visually-hidden">Galerie filtrable</h2>
+      <p class="filtres__label" data-filtres-label hidden>Filtrer par service</p>
       <div class="filtres" role="group" aria-label="Filtrer par service" data-filtres hidden>
-        <button type="button" aria-pressed="true" data-filtre="tous">Tous les chantiers</button>
+        <button type="button" aria-pressed="true" data-filtre="tous">Tous</button>
         {services.map((s) => <button type="button" aria-pressed="false" data-filtre={s.slug}>{s.nom}</button>)}
       </div>
       <p class="visually-hidden" aria-live="polite" data-filtre-statut></p>
@@ -50,6 +51,7 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
   const vide = document.querySelector<HTMLElement>('[data-galerie-vide]');
   if (filtres) {
     filtres.hidden = false;
+    const label = document.querySelector<HTMLElement>('[data-filtres-label]'); if (label) label.hidden = false;
     const boutons = filtres.querySelectorAll<HTMLButtonElement>('button');
     const appliquer = (slug: string) => {
       boutons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filtre === slug)));
@@ -65,7 +67,14 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
 </script>
 <style>
   .banniere-realisations { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  .filtres__label { font-family: var(--police-titre); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--texte-doux); margin: 0 0 0.6rem; }
   .filtres { margin-bottom: 2rem; }
+  @media (max-width: 47.99rem) {
+    /* Mobile : une seule ligne de pastilles qui défile horizontalement */
+    .filtres { flex-wrap: nowrap; overflow-x: auto; gap: 0.4rem; margin: 0 -1rem 1.5rem; padding: 0.15rem 1rem 0.5rem; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 1rem, #000 calc(100% - 1.5rem), transparent); mask-image: linear-gradient(90deg, transparent, #000 1rem, #000 calc(100% - 1.5rem), transparent); }
+    .filtres::-webkit-scrollbar { display: none; }
+    .filtres button { flex: none; scroll-snap-align: start; min-height: 40px; padding: 0.4rem 0.9rem; font-size: 0.92rem; border-width: 1.5px; white-space: nowrap; }
+  }
   .grille--realisations { grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
   @media (min-width: 64rem) { .grille--realisations { grid-template-columns: repeat(3, 1fr); } }
   .grille--realisations :global(.carte__corps h3) { font-size: 1.15rem; line-height: 1.3; }
