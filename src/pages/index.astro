@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import ImageSlot from '@/components/ImageSlot.astro';
 import CtaDevis from '@/components/CtaDevis.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
+import Icon from '@/components/Icon.astro';
 import RealisationCard from '@/components/RealisationCard.astro';
 import ContactOptions from '@/components/ContactOptions.astro';
 import { services } from '@/data/services';
@@ -26,7 +27,12 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
     <div class="hero-pro__voile" aria-hidden="true"></div>
     <div class="conteneur hero-pro__contenu">
       <p class="hero-pro__surtitre">Menuisier · Électricien · Plombier — Seine-Saint-Denis</p>
-      <h1 class="hero-pro__titre">Artisan multiservices à Romainville<span class="hero-pro__sous">Montage de meubles, sur mesure, rénovation, électricité et plomberie</span></h1>
+      <h1 class="hero-pro__titre">Artisan multiservices <span class="hero-pro__ville">à Romainville</span><span class="hero-pro__sous">Montage de meubles, sur mesure, rénovation, électricité et plomberie</span></h1>
+      <ul class="hero-pro__pictos" aria-label="Nos services">
+        {services.filter((x) => ['montage-meubles', 'renovation-interieure', 'electricite', 'plomberie'].includes(x.slug)).map((x) => (
+          <li><a href={`/services/${x.slug}/`}><span class="hero-pro__picto" aria-hidden="true"><Icon path={x.icone} /></span><span>{x.nom}</span></a></li>
+        ))}
+      </ul>
       <p class="hero-pro__texte">Un seul interlocuteur pour concevoir, réparer, monter et rénover. Devis écrit et détaillé, atelier à Romainville, interventions dans tout l’Est parisien.</p>
       <div class="hero__actions">
         <CtaDevis />
@@ -163,15 +169,32 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   .hero-pro__preuves { list-style: none; padding: 0; margin: 2.25rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem 1.75rem; }
   .hero-pro__preuves li { margin: 0; position: relative; padding-left: 1.6rem; font-family: var(--police-titre); font-weight: 600; font-size: 0.98rem; color: var(--blanc); }
   .hero-pro__preuves li::before { content: ''; position: absolute; left: 0; top: 0.2em; width: 1.05rem; height: 1.05rem; border-radius: 50%; background: var(--jaune); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 70% no-repeat, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 70% no-repeat, linear-gradient(#000 0 0); mask-composite: exclude; }
+  .hero-pro__pictos { display: none; }
   @media (max-width: 47.99rem) {
-    /* Mobile : photo nette en haut, texte sur fond bleu en dessous */
+    /* Mobile : la photo se fond dans le bleu, le titre vient par-dessus */
     .hero-pro { min-height: auto; display: block; }
-    .hero-pro__media { position: static; aspect-ratio: 1 / 1; background: var(--bleu-fonce); }
+    .hero-pro__media { position: relative; z-index: 0; aspect-ratio: 4 / 5; background: var(--bleu-fonce); }
     .hero-pro__media picture { display: block; height: 100%; }
-    .hero-pro__media img, .hero-pro__media .img-slot { object-position: 50% 20%; }
+    .hero-pro__media img, .hero-pro__media .img-slot { object-position: 50% 0%; }
+    .hero-pro__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(10 42 77 / 0) 38%, rgb(10 42 77 / 0.55) 62%, rgb(10 42 77 / 0.92) 82%, var(--bleu-fonce) 100%); }
     .hero-pro__voile { display: none; }
-    .hero-pro__contenu { padding-block: 2rem 2.25rem; }
-    .hero-pro .hero__actions .btn { width: 100%; }
+    .hero-pro__contenu { position: relative; z-index: 1; margin-top: -42%; padding-block: 0 2rem; }
+    .hero-pro__surtitre { font-size: 0.72rem; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+    .hero-pro__titre { font-size: clamp(2.5rem, 12vw, 3.2rem); line-height: 0.98; text-shadow: 0 2px 14px rgb(10 42 77 / 0.6); }
+    .hero-pro__ville { color: var(--jaune); }
+    .hero-pro__sous { font-size: 1.05rem; color: var(--blanc); font-weight: 500; margin-top: 0.7rem; text-shadow: 0 1px 8px rgb(10 42 77 / 0.6); }
+    .hero-pro__texte { display: none; }
+    .hero-pro__pictos { list-style: none; padding: 0; margin: 1.25rem 0 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; }
+    .hero-pro__pictos li { margin: 0; }
+    .hero-pro__pictos li + li { border-left: 1px solid rgb(255 255 255 / 0.18); }
+    .hero-pro__pictos a { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; text-decoration: none; color: var(--blanc); font-family: var(--police-titre); font-weight: 600; font-size: 0.8rem; line-height: 1.15; text-align: center; padding: 0.25rem 0.2rem; }
+    .hero-pro__picto { width: 3.4rem; height: 3.4rem; border-radius: 50%; background: #fdf0c2; color: var(--bleu-fonce); display: grid; place-items: center; }
+    .hero-pro__picto :global(svg) { width: 1.6rem; height: 1.6rem; }
+    .hero-pro .hero__actions :global(.btn) { width: 100%; }
+    .hero-pro__preuves { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .hero-pro__preuves li { font-size: 0.85rem; padding-left: 1.45rem; }
+    .hero-pro__preuves li + li { border-left: 1px solid rgb(255 255 255 / 0.18); padding-left: calc(1.45rem + 0.5rem); }
+    .hero-pro__preuves li + li::before { left: 0.5rem; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .hero-pro__contenu > * { animation: hero-in 0.6s ease both; }

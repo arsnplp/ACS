@@ -10,7 +10,7 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 | Page | Liens entrants (total / contextuels) | Liens contextuels sortants | Liens totaux |
 |---|---|---|---|
-| / | 32 / 2 | 24 | 74 |
+| / | 32 / 2 | 24 | 78 |
 | /a-propos/ | 32 / 1 | 10 | 53 |
 | /blog/ | 32 / 2 | 7 | 48 |
 | /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 59 |
@@ -49,14 +49,14 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 ### /
 
 **Sortants contextuels (24)** :
-- → /devis/ — « Demander un devis »
-- → /services/ — « Découvrir nos services »
 - → /services/montage-meubles/ — « Montage de meubles »
-- → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
-- → /services/reparation-meubles/ — « Réparation et restauration de meubles »
 - → /services/renovation-interieure/ — « Rénovation intérieure »
 - → /services/electricite/ — « Électricité »
 - → /services/plomberie/ — « Plomberie »
+- → /devis/ — « Demander un devis »
+- → /services/ — « Découvrir nos services »
+- → /services/meubles-sur-mesure/ — « Création de meubles sur mesure »
+- → /services/reparation-meubles/ — « Réparation et restauration de meubles »
 - → /mentions-legales/ — « mentions légales »
 - → /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ — « Fuite sous évier réparée à Noisy-le-Sec »
 - → /realisations/remplacement-tableau-electrique-les-lilas/ — « Tableau électrique remplacé aux Lilas »
