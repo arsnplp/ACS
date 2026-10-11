@@ -377,5 +377,10 @@ pre { overflow-x: auto; }
   .banniere-page { background: var(--blanc); }
   .banniere-page__titre { position: static !important; width: auto; height: auto; margin: 0; padding: 1.25rem 1rem 0.9rem; overflow: visible; clip: auto; white-space: normal; text-align: center; font-size: clamp(1.45rem, 6.2vw, 1.9rem); line-height: 1.2; text-wrap: balance; }
   .banniere-page__titre::after { content: ''; display: block; width: 4rem; height: 5px; background: var(--jaune); border-radius: 999px; margin: 0.6rem auto 0; }
-  .banniere-page img { aspect-ratio: 4 / 5; height: auto; width: 100%; object-fit: cover; object-position: 50% 15%; }
+  .banniere-page img { aspect-ratio: 4 / 5; height: auto; width: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
+  /* La photo se fond dans la page (plus « en-tête », moins « image collée ») */
+  .banniere-page { background: var(--fond); border-bottom: 0 !important; }
+  .banniere-page > div:has(img) { position: relative; }
+  .banniere-page > div:has(img)::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgb(250 250 247 / 0) 60%, rgb(250 250 247 / 0.7) 85%, var(--fond) 100%); }
+  .banniere-page + * { padding-top: 0.5rem; }
 }
