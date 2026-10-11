@@ -97,3 +97,10 @@ const actif = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
   body.menu-ouvert { overflow: hidden; }
   @media (min-width: 64rem) { body.menu-ouvert { overflow: auto; } }
 </style>
+<script>
+  // Hauteur réelle de l'en-tête collant, utilisée par les titres de bannière (sticky sous l'en-tête)
+  const entete = document.querySelector<HTMLElement>('.entete');
+  const majHauteur = () => { if (entete) document.documentElement.style.setProperty('--entete-h', `${entete.offsetHeight}px`); };
+  majHauteur();
+  addEventListener('resize', majHauteur);
+</script>
