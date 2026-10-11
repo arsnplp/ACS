@@ -198,6 +198,11 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
   .banniere-devis { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
   .banniere-devis__inner { max-width: 1983px; margin-inline: auto; }
   .banniere-devis img, .banniere-devis .img-slot { width: 100%; height: auto; display: block; }
+  /* Mobile : pas de photo sur la page devis, on va droit au formulaire ; le titre n'est plus collant */
+  @media (max-width: 47.99rem) {
+    .banniere-devis__inner { display: none; }
+    .banniere-devis .banniere-page__titre { position: static !important; box-shadow: none; }
+  }
   .obligatoire { font-weight: 400; color: var(--texte-doux); font-size: 0.95rem; }
   .facultatif { font-weight: 400; color: var(--texte-doux); font-size: 0.95rem; }
   .form-devis { max-width: var(--largeur-texte); }
