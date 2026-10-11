@@ -18,9 +18,10 @@ interface Props {
   jsonLd?: Record<string, unknown>[]; // nœuds supplémentaires (@graph)
   faq?: FaqItem[];            // génère FAQPage
   preload?: string;           // image LCP à précharger
+  preloadDesktopSeulement?: boolean; // la bannière est masquée sur mobile : ne précharger que sur grand écran
   accueil?: boolean;
 }
-const { title, description, ariane = [], noindex = false, ogImage = '/images/og-default.jpg', ogType = 'website', jsonLd = [], faq, preload, accueil = false } = Astro.props;
+const { title, description, ariane = [], noindex = false, ogImage = '/images/og-default.jpg', ogType = 'website', jsonLd = [], faq, preload, preloadDesktopSeulement = false, accueil = false } = Astro.props;
 const canonical = abs(Astro.url.pathname);
 // Précharge l'image LCP seulement si le fichier existe (évite un 404 tant que la photo n'est pas fournie)
 const preloadHref = preload && fs.existsSync(path.join(process.cwd(), 'public', preload)) ? preload : undefined;
@@ -53,8 +54,8 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
     {accueil && <link rel="preload" href="/fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin />}
-    {preloadFinal && <link rel="preload" as="image" href={preloadFinal} type={preloadType} fetchpriority="high" media={preloadMobile ? '(min-width: 48rem)' : undefined} />}
-    {preloadMobile && <link rel="preload" as="image" href={preloadMobile} type={preloadType} fetchpriority="high" media="(max-width: 47.99rem)" />}
+    {preloadFinal && <link rel="preload" as="image" href={preloadFinal} type={preloadType} fetchpriority="high" media={preloadMobile || preloadDesktopSeulement ? '(min-width: 48rem)' : undefined} />}
+    {preloadMobile && !preloadDesktopSeulement && <link rel="preload" as="image" href={preloadMobile} type={preloadType} fetchpriority="high" media="(max-width: 47.99rem)" />}
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="ACS Multiservices" />
