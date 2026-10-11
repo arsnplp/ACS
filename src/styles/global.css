@@ -212,6 +212,17 @@ th { font-family: var(--police-titre); color: var(--bleu); }
 .carte__corps p { margin-bottom: 0; flex: 1; }
 .carte__corps a.carte__lien { font-weight: 700; margin-top: 0.5rem; }
 .carte--phare { border: 2px solid var(--jaune); }
+/* Carte entièrement cliquable : le lien du titre s'étend sur toute la carte (pseudo-élément),
+   les autres liens de la carte restent cliquables au-dessus. */
+.carte { position: relative; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.carte .carte__corps :is(h2, h3) > a::after { content: ''; position: absolute; inset: 0; z-index: 0; }
+.carte .carte__corps :is(h2, h3) > a { text-decoration: none; }
+.carte :is(a, button):not(.carte__corps :is(h2, h3) > a) { position: relative; z-index: 1; }
+.carte:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgb(15 61 110 / 0.1), 0 10px 28px rgb(15 61 110 / 0.14); }
+.carte:hover .carte__corps :is(h2, h3) > a { text-decoration: underline; }
+.carte:has(.carte__corps :is(h2, h3) > a:focus-visible) { outline: 3px solid var(--jaune-fonce); outline-offset: 2px; }
+.carte .carte__corps :is(h2, h3) > a:focus-visible { outline: none; }
+@media (prefers-reduced-motion: reduce) { .carte { transition: none; } .carte:hover { transform: none; } }
 
 /* Pictos */
 .picto { width: 3rem; height: 3rem; background: var(--bleu); color: var(--jaune); border-radius: var(--rayon); display: grid; place-items: center; flex: none; }
