@@ -4,7 +4,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import ImageSlot from '@/components/ImageSlot.astro';
 import CtaDevis from '@/components/CtaDevis.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
-import Icon from '@/components/Icon.astro';
 import RealisationCard from '@/components/RealisationCard.astro';
 import ContactOptions from '@/components/ContactOptions.astro';
 import { services } from '@/data/services';
@@ -12,6 +11,8 @@ import { villesPrioritaires, villesSecondaires, villeUrl } from '@/data/villes';
 import { entreprise } from '@/data/entreprise';
 
 const realisations = (await getCollection('realisations')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+// Pictos repris du logo ACS (cercles marteau / éclair / rouleau / goutte)
+const pictosLogo: Record<string, string> = { 'montage-meubles': 'marteau', 'renovation-interieure': 'rouleau', 'electricite': 'eclair', 'plomberie': 'goutte' };
 const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 ---
 <BaseLayout
@@ -30,7 +31,7 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
       <h1 class="hero-pro__titre">Artisan multiservices <span class="hero-pro__ville">à Romainville</span><span class="hero-pro__sous">Montage de meubles, sur mesure, rénovation, électricité et plomberie</span></h1>
       <ul class="hero-pro__pictos" aria-label="Nos services">
         {services.filter((x) => ['montage-meubles', 'renovation-interieure', 'electricite', 'plomberie'].includes(x.slug)).map((x) => (
-          <li><a href={`/services/${x.slug}/`}><span class="hero-pro__picto" aria-hidden="true"><Icon path={x.icone} /></span><span>{x.nom}</span></a></li>
+          <li><a href={`/services/${x.slug}/`}><span class="hero-pro__picto" aria-hidden="true"><img src={`/images/picto-${pictosLogo[x.slug]}.png`} alt="" width="160" height="160" loading="eager" decoding="async" /></span><span>{x.nom}</span></a></li>
         ))}
       </ul>
       <p class="hero-pro__texte">Un seul interlocuteur pour concevoir, réparer, monter et rénover. Devis écrit et détaillé, atelier à Romainville, interventions dans tout l’Est parisien.</p>
@@ -188,8 +189,8 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
     .hero-pro__pictos li { margin: 0; }
     .hero-pro__pictos li + li { border-left: 1px solid rgb(255 255 255 / 0.18); }
     .hero-pro__pictos a { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; text-decoration: none; color: var(--blanc); font-family: var(--police-titre); font-weight: 600; font-size: 0.8rem; line-height: 1.15; text-align: center; padding: 0.25rem 0.2rem; }
-    .hero-pro__picto { width: 3.4rem; height: 3.4rem; border-radius: 50%; background: #fdf0c2; color: var(--bleu-fonce); display: grid; place-items: center; }
-    .hero-pro__picto :global(svg) { width: 1.6rem; height: 1.6rem; }
+    .hero-pro__picto { width: 3.4rem; height: 3.4rem; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 0 0 2px rgb(255 255 255 / 0.4), 0 4px 12px rgb(0 0 0 / 0.25); }
+    .hero-pro__picto img { width: 100%; height: 100%; display: block; }
     .hero-pro .hero__actions :global(.btn) { width: 100%; }
     .hero-pro__preuves { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
     .hero-pro__preuves li { font-size: 0.85rem; padding-left: 1.45rem; }
