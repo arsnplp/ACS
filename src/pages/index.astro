@@ -31,7 +31,7 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
       <h1 class="hero-pro__titre">Artisan multiservices <span class="hero-pro__ville">à Romainville</span><span class="hero-pro__sous">Montage de meubles, sur mesure, rénovation, électricité et plomberie</span></h1>
       <ul class="hero-pro__pictos" aria-label="Nos services">
         {services.filter((x) => ['montage-meubles', 'renovation-interieure', 'electricite', 'plomberie'].includes(x.slug)).map((x) => (
-          <li><a href={`/services/${x.slug}/`}><span class="hero-pro__picto" aria-hidden="true"><img src={`/images/picto-${pictosLogo[x.slug]}.png`} alt="" width="240" height="240" loading="eager" decoding="async" /></span><span>{x.nom}</span></a></li>
+          <li><a href={`/services/${x.slug}/`}><span class="hero-pro__picto" aria-hidden="true"><img src={`/images/picto-${pictosLogo[x.slug]}-hd.png`} alt="" width="316" height="316" loading="eager" decoding="async" /></span><span>{x.nom}</span></a></li>
         ))}
       </ul>
       <p class="hero-pro__texte">Un seul interlocuteur pour concevoir, réparer, monter et rénover. Devis écrit et détaillé, atelier à Romainville, interventions dans tout l’Est parisien.</p>
