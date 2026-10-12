@@ -36,8 +36,7 @@ const generer = async (svg, sortie, opts = {}) => {
   console.log('généré', path.relative(process.cwd(), sortie));
 };
 await generer(svgOg, path.join(racine, 'og-default.jpg'));
-await generer(svgLogo, path.join(racine, 'logo-acs-multiservices.png'));
-await generer(svgLogo, path.resolve('public/apple-touch-icon.png'), { resize: 180 });
+// Logo et icônes : fichiers définitifs fournis par le client (public/images/logo-acs-multiservices.*, public/favicon*, public/icon-*.png)
 
 const walk = (d) => fs.readdirSync(d).flatMap((f) => { const p = path.join(d, f); return fs.statSync(p).isDirectory() ? walk(p) : [p]; });
 for (const fichier of walk(racine)) {
