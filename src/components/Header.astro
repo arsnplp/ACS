@@ -87,11 +87,22 @@ const actif = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
   .entete__cta .btn { width: 100%; }
   @media (min-width: 64rem) {
     .entete__burger { display: none; }
-    .entete__nav { display: block; width: auto; padding: 0; margin-left: auto; }
-    .entete__nav > ul { flex-direction: row; align-items: center; gap: 0.6rem; }
+    /* Une seule ligne : logo à gauche, menu à droite, sans retour à la ligne */
+    .entete__inner { flex-wrap: nowrap; }
+    .entete__nav { display: block; width: auto; padding: 0; margin-left: auto; min-width: 0; }
+    .entete__nav > ul { flex-direction: row; align-items: center; gap: 0.15rem; flex-wrap: nowrap; }
+    .entete__nav a:not(.btn) { font-size: 0.95rem; padding: 0.5rem 0.55rem; white-space: nowrap; }
+    .a-sous-menu { flex-wrap: nowrap; }
+  }
+  /* Écrans moyens (1024–1151 px) : menu un peu plus compact pour tenir sur une ligne */
+  @media (min-width: 64rem) and (max-width: 71.99rem) {
+    .entete__nav a:not(.btn) { font-size: 0.88rem; padding: 0.45rem 0.45rem; }
+    .entete__cta .btn { padding-inline: 0.8rem; font-size: 0.92rem; }
+    .entete__logo :global(.logo img) { height: 2.6rem; }
+    .entete__cta .btn { padding-inline: 1rem; white-space: nowrap; }
     .sous-menu { position: absolute; top: 100%; left: 0; min-width: 18rem; background: var(--blanc); border: 1px solid var(--bordure); border-top: 3px solid var(--jaune); box-shadow: var(--ombre); padding: 0.5rem; z-index: 50; }
     .a-sous-menu:hover .sous-menu, .a-sous-menu:focus-within .sous-menu { display: block; }
-    .entete__cta { margin: 0 0 0 0.75rem; }
+    .entete__cta { margin: 0 0 0 0.5rem; }
     .entete__cta .btn { width: auto; }
   }
   body.menu-ouvert { overflow: hidden; }
