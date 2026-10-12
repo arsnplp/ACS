@@ -25,8 +25,8 @@ export const entreprise = {
     pays: 'FR',
   },
   email: 'rosco-75@hotmail.com', // provisoire — prévoir contact@{{domaine}}
-  telephone: '{{TÉLÉPHONE}}',
-  telephoneHref: '', // ex. "+33612345678" — vide tant que non fourni
+  telephone: '06 51 16 58 15',
+  telephoneHref: '+33651165815',
   horaires: '{{HORAIRES}}',
   assurance: {
     assureur: '{{ASSUREUR}}',

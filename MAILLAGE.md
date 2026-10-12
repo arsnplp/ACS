@@ -10,39 +10,39 @@ Généré automatiquement par `npm run docs`. « Contextuels » = liens dans le 
 
 | Page | Liens entrants (total / contextuels) | Liens contextuels sortants | Liens totaux |
 |---|---|---|---|
-| / | 32 / 2 | 24 | 78 |
-| /a-propos/ | 32 / 1 | 10 | 53 |
-| /blog/ | 32 / 2 | 7 | 48 |
-| /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 59 |
-| /blog/meuble-sur-mesure-prix-devis/ | 5 / 5 | 5 | 60 |
-| /blog/reparer-ou-remplacer-meuble-abime/ | 6 / 6 | 4 | 59 |
-| /cgu/ | 32 / 1 | 2 | 44 |
-| /devis/ | 32 / 29 | 1 | 42 |
-| /devis/merci/ | 0 / 0 | 2 | 43 |
-| /mentions-legales/ | 32 / 5 | 1 | 43 |
-| /plan-du-site/ | 32 / 0 | 31 | 72 |
-| /politique-confidentialite/ | 32 / 4 | 1 | 45 |
-| /realisations/ | 32 / 9 | 7 | 49 |
-| /realisations/meuble-tv-sur-mesure-romainville/ | 6 / 6 | 5 | 50 |
-| /realisations/montage-armoire-kit-pantin/ | 7 / 7 | 5 | 50 |
-| /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ | 7 / 7 | 5 | 50 |
-| /realisations/remplacement-tableau-electrique-les-lilas/ | 7 / 7 | 5 | 50 |
-| /realisations/renovation-studio-bagnolet/ | 6 / 6 | 5 | 50 |
-| /realisations/restauration-buffet-chene-montreuil/ | 6 / 6 | 5 | 50 |
-| /services/ | 32 / 9 | 7 | 55 |
-| /services/electricite/ | 32 / 16 | 13 | 59 |
-| /services/meubles-sur-mesure/ | 32 / 18 | 16 | 61 |
-| /services/montage-meubles/ | 32 / 16 | 13 | 59 |
-| /services/plomberie/ | 32 / 17 | 14 | 59 |
-| /services/renovation-interieure/ | 32 / 18 | 14 | 61 |
-| /services/reparation-meubles/ | 32 / 17 | 14 | 61 |
-| /zone-intervention/ | 32 / 15 | 13 | 61 |
-| /zone-intervention/bagnolet/ | 32 / 12 | 12 | 62 |
-| /zone-intervention/les-lilas/ | 32 / 12 | 12 | 62 |
-| /zone-intervention/montreuil/ | 32 / 13 | 12 | 62 |
-| /zone-intervention/noisy-le-sec/ | 32 / 11 | 12 | 62 |
-| /zone-intervention/pantin/ | 32 / 10 | 12 | 62 |
-| /zone-intervention/romainville/ | 32 / 14 | 12 | 61 |
+| / | 32 / 2 | 24 | 80 |
+| /a-propos/ | 32 / 1 | 10 | 55 |
+| /blog/ | 32 / 2 | 7 | 49 |
+| /blog/fuite-sous-evier-bons-reflexes/ | 4 / 4 | 4 | 60 |
+| /blog/meuble-sur-mesure-prix-devis/ | 5 / 5 | 5 | 61 |
+| /blog/reparer-ou-remplacer-meuble-abime/ | 6 / 6 | 4 | 60 |
+| /cgu/ | 32 / 1 | 2 | 45 |
+| /devis/ | 32 / 29 | 1 | 44 |
+| /devis/merci/ | 0 / 0 | 2 | 45 |
+| /mentions-legales/ | 32 / 5 | 1 | 44 |
+| /plan-du-site/ | 32 / 0 | 31 | 73 |
+| /politique-confidentialite/ | 32 / 4 | 1 | 46 |
+| /realisations/ | 32 / 9 | 7 | 50 |
+| /realisations/meuble-tv-sur-mesure-romainville/ | 6 / 6 | 5 | 51 |
+| /realisations/montage-armoire-kit-pantin/ | 7 / 7 | 5 | 51 |
+| /realisations/remplacement-mitigeur-fuite-noisy-le-sec/ | 7 / 7 | 5 | 51 |
+| /realisations/remplacement-tableau-electrique-les-lilas/ | 7 / 7 | 5 | 51 |
+| /realisations/renovation-studio-bagnolet/ | 6 / 6 | 5 | 51 |
+| /realisations/restauration-buffet-chene-montreuil/ | 6 / 6 | 5 | 51 |
+| /services/ | 32 / 9 | 7 | 56 |
+| /services/electricite/ | 32 / 16 | 13 | 60 |
+| /services/meubles-sur-mesure/ | 32 / 18 | 16 | 62 |
+| /services/montage-meubles/ | 32 / 16 | 13 | 60 |
+| /services/plomberie/ | 32 / 17 | 14 | 60 |
+| /services/renovation-interieure/ | 32 / 18 | 14 | 62 |
+| /services/reparation-meubles/ | 32 / 17 | 14 | 62 |
+| /zone-intervention/ | 32 / 15 | 13 | 62 |
+| /zone-intervention/bagnolet/ | 32 / 12 | 12 | 63 |
+| /zone-intervention/les-lilas/ | 32 / 12 | 12 | 63 |
+| /zone-intervention/montreuil/ | 32 / 13 | 12 | 63 |
+| /zone-intervention/noisy-le-sec/ | 32 / 11 | 12 | 63 |
+| /zone-intervention/pantin/ | 32 / 10 | 12 | 63 |
+| /zone-intervention/romainville/ | 32 / 14 | 12 | 62 |
 
 ## Détail par page
 

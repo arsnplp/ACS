@@ -7,7 +7,6 @@ Tout ce qui apparaît entre `{{ }}` sur le site est un **placeholder visible** q
 | Information | Placeholder actuel | Où la renseigner |
 |---|---|---|
 | Numéro de rue du siège (avenue Youri Gagarine) | `{{NUMÉRO}}` | `src/data/entreprise.ts` → `adresse.numero` |
-| Téléphone (affiché) et version internationale pour le lien `tel:` | `{{TÉLÉPHONE}}` / `telephoneHref` vide | `entreprise.telephone`, `entreprise.telephoneHref` (ex. `+33612345678`) |
 | Horaires | `{{HORAIRES}}` | `entreprise.horaires` (format lisible, ex. « Lundi–vendredi 8h–19h, samedi 9h–13h ») |
 | Email définitif (contact@domaine) — actuellement rosco-75@hotmail.com | — | `entreprise.email` |
 | Délai de réponse annoncé | `{{DÉLAI DE RÉPONSE}}` | `entreprise.delaiReponse` (ex. « 48 h ouvrées ») |
