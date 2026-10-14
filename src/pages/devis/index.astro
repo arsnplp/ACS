@@ -114,6 +114,7 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
         <input type="hidden" name="page" value="/devis/" />
         <button class="btn btn--jaune" type="submit">Envoyer ma demande</button>
         <p class="meta" style="margin-top:1rem">Après envoi, vous verrez un message de confirmation sur cette page. Nous vous répondons ensuite par le canal choisi, {delaiTexte}.</p>
+        <p class="meta mention-rgpd">Les informations saisies sont utilisées par {entreprise.denominationSociale} uniquement pour traiter votre demande de devis et vous recontacter. Elles ne sont transmises à aucun tiers à des fins commerciales et sont conservées 3 ans après notre dernier contact. Vous pouvez y accéder, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a>. En savoir plus : <a href="/politique-confidentialite/">politique de confidentialité</a>.</p>
       </form>
     </div>
   </section>

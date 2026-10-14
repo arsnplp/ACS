@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, estPlaceholder } from '@/data/entreprise';
 ---
 <BaseLayout title="Politique de confidentialité | ACS Multiservices Romainville" description="Comment ACS Multiservices traite les données du formulaire de devis : finalité, conservation, destinataires, droits RGPD, cookies et réclamation auprès de la CNIL." ariane={[{ nom: 'Politique de confidentialité', url: '/politique-confidentialite/' }]} noindex>
   <section class="section conteneur prose">
@@ -8,31 +8,40 @@ import { entreprise, adresseLigne } from '@/data/entreprise';
     <p class="chapo">Cette page explique quelles données nous collectons sur ce site, pourquoi, combien de temps nous les gardons et quels sont vos droits.</p>
 
     <h2>Responsable du traitement</h2>
-    <p>{entreprise.denominationSociale}, {entreprise.formeJuridique}, {adresseLigne}. Représentée par {entreprise.president}. Contact : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a>.</p>
+    <p>{entreprise.denominationSociale}, {entreprise.formeJuridique}, {adresseLigne}, SIREN {entreprise.siren}. Représentée par {entreprise.president}, président. Contact : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a>{!estPlaceholder(entreprise.telephone) && <> ou {entreprise.telephone}</>}.</p>
 
-    <h2>Données collectées par le formulaire de devis</h2>
-    <p>Lorsque vous remplissez le <a href="/devis/">formulaire de demande de devis</a>, nous collectons : nom et prénom, adresse email, numéro de téléphone (facultatif), ville du chantier, type de prestation, description de votre besoin, photos (facultatives), moyen de recontact préféré, et la date d’envoi.</p>
+    <h2>Données collectées</h2>
+    <h3>Formulaire de demande de devis</h3>
+    <p>Lorsque vous remplissez le <a href="/devis/">formulaire de demande de devis</a>, nous collectons : nom et prénom, adresse email, numéro de téléphone (facultatif), ville du chantier, type de prestation, description de votre besoin, photos (facultatives), moyen de recontact préféré, ainsi que des données techniques d’envoi (date et heure, page d’envoi, durée de remplissage servant à filtrer les envois automatisés). Merci de ne pas joindre de photos sur lesquelles des personnes sont reconnaissables.</p>
+    <h3>Contact par téléphone ou par email</h3>
+    <p>Si vous nous appelez ou nous écrivez directement, nous utilisons votre numéro, votre adresse email et le contenu de vos échanges pour vous répondre.</p>
 
-    <h2>Finalité et base légale</h2>
-    <p>Ces données servent uniquement à répondre à votre demande de devis, à préparer une éventuelle intervention et à assurer le suivi de la relation commerciale. La base légale est l’exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD) et votre consentement pour l’envoi du formulaire.</p>
+    <h2>Finalités et base légale</h2>
+    <p>Ces données servent uniquement à répondre à votre demande, à établir un devis, à préparer une éventuelle intervention et à assurer le suivi de la relation commerciale. La base légale est l’exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD), puis l’exécution du contrat si un devis est accepté, et le respect de nos obligations légales (comptabilité, facturation) pour les données de facturation (article 6.1.c).</p>
 
-    <h2>Destinataires</h2>
-    <p>Les données sont reçues par {entreprise.denominationSociale} uniquement. Elles transitent par notre outil d’automatisation de formulaires (n8n) et par notre messagerie. Elles ne sont ni vendues ni transmises à des tiers à des fins commerciales.</p>
+    <h2>Destinataires et sous-traitants</h2>
+    <p>Les données sont destinées à {entreprise.denominationSociale} uniquement. Elles ne sont ni vendues ni transmises à des tiers à des fins commerciales. Pour fonctionner, le site et nos outils font appel aux prestataires techniques suivants :</p>
+    <ul>
+      <li><strong>Hébergement du site</strong> : {entreprise.hebergeur.nom}, {entreprise.hebergeur.adresse}.</li>
+      <li><strong>Traitement automatisé du formulaire</strong> : outil n8n qui reçoit le formulaire et le transmet à notre messagerie.</li>
+      <li><strong>Messagerie électronique</strong> : Microsoft (service Outlook.com), qui stocke les emails reçus ; Microsoft est certifié au cadre de protection des données UE-États-Unis (Data Privacy Framework).</li>
+    </ul>
 
     <h2>Durée de conservation</h2>
-    <p>Les données d’une demande de devis sont conservées <strong>3 ans après le dernier contact</strong>. Si un devis est accepté, les données de facturation sont conservées pendant la durée légale (10 ans pour les pièces comptables).</p>
+    <p>Les données d’une demande de devis ou d’un échange sans suite sont conservées <strong>3 ans après le dernier contact</strong>, puis supprimées. Si un devis est accepté, les données du client sont conservées pendant la durée de la relation commerciale, puis archivées pendant les délais de prescription légaux ; les pièces comptables (devis signés, factures) sont conservées 10 ans.</p>
 
     <h2>Vos droits</h2>
-    <p>Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité de vos données. Vous pouvez retirer votre consentement à tout moment. Pour exercer ces droits, écrivez-nous à <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a> ou par courrier à l’adresse ci-dessus. Nous répondons dans un délai d’un mois.</p>
+    <p>Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation du traitement, d’opposition et de portabilité de vos données, ainsi que du droit de définir des directives relatives au sort de vos données après votre décès. Pour exercer ces droits, écrivez-nous à <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a> ou par courrier à l’adresse ci-dessus. Nous répondons dans un délai d’un mois.</p>
     <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL : <a href="https://www.cnil.fr/fr/plaintes">www.cnil.fr/fr/plaintes</a>, ou par courrier à CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris CEDEX 07.</p>
 
-    <h2>Cookies et mesure d’audience</h2>
-    <p>Ce site ne dépose aucun cookie publicitaire ni traceur tiers. La mesure d’audience, si elle est activée, utilise un outil sans cookie et sans donnée personnelle, exempté de bandeau de consentement. Si un outil déposant des cookies (par exemple Google Analytics) devait être ajouté, un bandeau de consentement avec un bouton « Refuser » aussi visible que « Accepter » serait mis en place au préalable.</p>
+    <h2>Cookies et traceurs</h2>
+    <p>Ce site ne dépose <strong>aucun cookie</strong> et n’utilise aucun traceur : pas d’outil de mesure d’audience, pas de pixel publicitaire, pas de contenu tiers intégré (vidéo, carte, réseau social). Les polices de caractères sont hébergées sur notre propre serveur : aucune donnée n’est transmise à Google ou à un autre service lors de votre visite. C’est pourquoi aucun bandeau de consentement n’est affiché.</p>
+    <p>Comme tout serveur web, notre hébergeur enregistre des journaux techniques (adresse IP, page demandée, date et heure) à des fins de sécurité et de bon fonctionnement du site.</p>
 
     <h2>Sécurité</h2>
     <p>Le site est servi en HTTPS. Les données du formulaire sont transmises de façon chiffrée à notre outil de traitement. L’accès à la messagerie est protégé par mot de passe.</p>
 
     <h2>Mise à jour</h2>
-    <p>Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}. Cette politique peut évoluer ; la version en ligne fait foi.</p>
+    <p>Dernière mise à jour : octobre 2026. Cette politique peut évoluer ; la version en ligne fait foi.</p>
   </section>
 </BaseLayout>

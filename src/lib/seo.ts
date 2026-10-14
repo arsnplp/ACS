@@ -22,7 +22,7 @@ export const organisationNode = () => ({
   email: entreprise.email,
   founder: { '@type': 'Person', name: entreprise.president },
   foundingDate: entreprise.dateCreation,
-  vatID: entreprise.tva,
+  ...(estPlaceholder(entreprise.tva) ? {} : { vatID: entreprise.tva }),
   taxID: entreprise.sirenCompact,
   address: {
     '@type': 'PostalAddress',

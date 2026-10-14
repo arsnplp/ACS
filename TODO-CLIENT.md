@@ -6,15 +6,15 @@ Tout ce qui apparaît entre `{{ }}` sur le site est un **placeholder visible** q
 
 | Information | Placeholder actuel | Où la renseigner |
 |---|---|---|
-| Numéro de rue du siège (avenue Youri Gagarine) | `{{NUMÉRO}}` | `src/data/entreprise.ts` → `adresse.numero` |
+| ~~Numéro de rue du siège~~ — fait (octobre 2026) : 4 rue Youri Gagarine d'après le registre SIRENE/RNE ; **le site disait « avenue » : à confirmer** | — | `src/data/entreprise.ts` → `adresse` |
 | Horaires | `{{HORAIRES}}` | `entreprise.horaires` (format lisible, ex. « Lundi–vendredi 8h–19h, samedi 9h–13h ») |
 | Email définitif (contact@domaine) — actuellement rosco-75@hotmail.com | — | `entreprise.email` |
 | Délai de réponse annoncé | `{{DÉLAI DE RÉPONSE}}` | `entreprise.delaiReponse` (ex. « 48 h ouvrées ») |
 | Devis gratuit : oui / non | `devisGratuit: null` | `entreprise.devisGratuit` → `true` change le bouton en « Devis gratuit » |
 | Assureur, n° de police, zone couverte (obligatoire artisan) | `{{ASSUREUR}}` `{{N° POLICE}}` `{{ZONE COUVERTE}}` | `entreprise.assurance` |
 | Médiateur de la consommation (obligatoire B2C) : nom + coordonnées | `{{MÉDIATEUR — …}}` | `entreprise.mediateur` |
-| Hébergeur : nom, adresse, téléphone | `{{HÉBERGEUR — …}}` | `entreprise.hebergeur` |
-| N° TVA intracommunautaire (calculé FR05100730068, à confirmer) | — | `entreprise.tva` |
+| ~~Hébergeur~~ — fait : Hostinger International Ltd (VPS 217.65.144.174) | — | `entreprise.hebergeur` |
+| N° TVA intracommunautaire : **masqué** tant que le client n'a pas confirmé ne pas être en franchise de TVA (calculé FR05100730068) | `{{N° TVA — …}}` | `entreprise.tva` |
 | Fourchette de prix (facultatif, pour le JSON-LD `priceRange`, ex. « €€ ») | `{{FOURCHETTE DE PRIX}}` | `src/lib/seo.ts` |
 | URL fiche Google Business Profile, réseaux sociaux | `{{URL FICHE GOOGLE…}}` | `entreprise.sameAs` |
 | Coordonnées GPS exactes de l'atelier | approximatives (centre de Romainville) | `entreprise.geo` |

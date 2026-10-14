@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { entreprise, adresseLigne } from '@/data/entreprise';
+import { entreprise, adresseLigne, estPlaceholder } from '@/data/entreprise';
 import { SITE_URL } from '@/lib/seo';
 const domaine = SITE_URL.replace(/^https?:\/\//, '');
 ---
-<BaseLayout title="Conditions générales d’utilisation | ACS Multiservices" description="Conditions d’utilisation du site ACS Multiservices : accès, formulaire de devis, contenus, propriété intellectuelle, responsabilité et droit applicable." ariane={[{ nom: 'Conditions d’utilisation', url: '/cgu/' }]}>
+<BaseLayout title="Conditions générales d’utilisation | ACS Multiservices" description="Conditions d’utilisation du site ACS Multiservices : accès, formulaire de devis, contenus, propriété intellectuelle, responsabilité et droit applicable." ariane={[{ nom: 'Conditions d’utilisation', url: '/cgu/' }]} noindex>
   <section class="section conteneur prose">
     <h1>Conditions générales d’utilisation</h1>
     <p class="chapo">Les présentes conditions encadrent l’accès et l’utilisation du site <strong>{domaine}</strong>, édité par {entreprise.denominationSociale}. En naviguant sur le site, vous les acceptez.</p>
@@ -33,7 +33,7 @@ const domaine = SITE_URL.replace(/^https?:\/\//, '');
     <p>Le site peut contenir des liens vers des sites tiers. Nous n’exerçons aucun contrôle sur leur contenu et déclinons toute responsabilité à leur égard.</p>
 
     <h2>8. Données personnelles et cookies</h2>
-    <p>Le traitement des données transmises par le formulaire, vos droits et les cookies utilisés sont décrits dans la <a href="/politique-confidentialite/">politique de confidentialité</a>. Le site ne dépose aucun cookie publicitaire ni traceur tiers.</p>
+    <p>Le traitement des données transmises par le formulaire, vos droits et les cookies utilisés sont décrits dans la <a href="/politique-confidentialite/">politique de confidentialité</a>. Le site ne dépose aucun cookie ni traceur.</p>
 
     <h2>9. Responsabilité</h2>
     <p>Nous mettons tout en œuvre pour que les informations publiées soient exactes et à jour, sans pouvoir garantir l’absence d’erreur ou d’omission. Nous ne pouvons être tenus responsables des dommages indirects liés à l’utilisation du site, ni des interruptions d’accès, ni des dysfonctionnements liés à votre équipement ou à votre connexion.</p>
@@ -42,6 +42,9 @@ const domaine = SITE_URL.replace(/^https?:\/\//, '');
     <p>Nous pouvons modifier les présentes conditions à tout moment. La version en ligne au moment de votre navigation fait foi.</p>
 
     <h2>11. Droit applicable</h2>
-    <p>Les présentes conditions sont soumises au droit français. En cas de litige et à défaut de solution amiable, les tribunaux français sont compétents. Pour un litige de consommation, vous pouvez recourir gratuitement à un médiateur de la consommation (voir la page <a href="/mentions-legales/">mentions légales</a>).</p>
+    <p>Les présentes conditions sont soumises au droit français. En cas de litige et à défaut de solution amiable, les tribunaux français sont compétents. Pour un litige de consommation, vous pouvez recourir gratuitement à un médiateur de la consommation{!estPlaceholder(entreprise.mediateur.nom) && <> (voir la page <a href="/mentions-legales/">mentions légales</a>)</>}.</p>
+
+    <h2>12. Contact</h2>
+    <p>Pour toute question sur le site ou sur ces conditions : <a href={`mailto:${entreprise.email}`}>{entreprise.email}</a>{!estPlaceholder(entreprise.telephone) && <> ou {entreprise.telephone}</>}.</p>
   </section>
 </BaseLayout>

@@ -6,18 +6,21 @@
 export const entreprise = {
   nomCommercial: 'ACS Multiservices',
   denominationSociale: 'ACS MULTISERVICES',
-  formeJuridique: 'SAS au capital de 100 €',
+  formeJuridique: 'SASU au capital de 100 €',
   president: 'Seydou Traoré',
   siren: '100 730 068',
   sirenCompact: '100730068',
-  tva: 'FR05100730068', // calculé depuis le SIREN — à confirmer avec le client
-  immatriculation: 'Registre national des entreprises (RNE), activité artisanale',
+  siret: '100 730 068 00010', // siège — source : registre (Pappers / Societe.com, données SIRENE), octobre 2026
+  // Non affiché tant que le client n'a pas confirmé être assujetti à la TVA (pas de franchise en base).
+  // Si confirmé, remplacer par 'FR05100730068' (calculé depuis le SIREN).
+  tva: '{{N° TVA — À CONFIRMER : FR05100730068}}',
+  immatriculation: 'RCS Bobigny 100 730 068 — inscrite au Registre national des entreprises (RNE)',
   naf: '95.24Z — Réparation de meubles et d’équipements du foyer',
   dateCreation: '2026-03-25',
   dateCreationTexte: '25 mars 2026',
   adresse: {
-    numero: '{{NUMÉRO}}',
-    rue: 'avenue Youri Gagarine',
+    numero: '4',
+    rue: 'rue Youri Gagarine', // adresse du siège au registre (SIRENE / RNE)
     codePostal: '93230',
     ville: 'Romainville',
     departement: 'Seine-Saint-Denis',
@@ -38,9 +41,10 @@ export const entreprise = {
     coordonnees: '{{MÉDIATEUR — ADRESSE / SITE}}',
   },
   hebergeur: {
-    nom: '{{HÉBERGEUR — NOM}}',
-    adresse: '{{HÉBERGEUR — ADRESSE}}',
+    nom: 'Hostinger International Ltd',
+    adresse: '61 Lordou Vyronos, Lumiel Building, 4e étage, 6023 Larnaca, Chypre',
     telephone: '{{HÉBERGEUR — TÉLÉPHONE}}',
+    contact: 'https://www.hostinger.fr/contact',
   },
   delaiReponse: '{{DÉLAI DE RÉPONSE}}',
   devisGratuit: null as boolean | null, // null = non confirmé → libellé « Demander un devis »

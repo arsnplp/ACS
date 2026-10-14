@@ -22,6 +22,7 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/mentions-legales/') &&
         !page.includes('/politique-confidentialite/') &&
+        !page.includes('/cgu/') &&
         !page.includes('/devis/merci/') &&
         !page.includes('/404') &&
         !brouillons.some((b) => page.endsWith(b)),
