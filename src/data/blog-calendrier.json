@@ -22,7 +22,8 @@
       "titre": "Monter une cuisine en kit : ce qu'il faut prévoir avant le premier caisson",
       "service": "montage-meubles",
       "brief": "Ordre des opérations : vérifier la livraison, repérer les arrivées d'eau et prises, tracer le niveau, poser les caissons hauts puis bas, plan de travail, façades, réglages. Points de vigilance : murs pas droits, sol en pente, découpe de l'évier, raccordement (à laisser au plombier et à l'électricien). Lier vers les services plomberie et électricité.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-10-20"
     },
     {
       "slug": "wc-qui-coule-en-continu-que-faire",
