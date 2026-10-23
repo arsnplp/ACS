@@ -30,7 +30,8 @@
       "titre": "WC qui coule en continu : d'où ça vient et que faire en attendant le plombier",
       "service": "plomberie",
       "brief": "Diagnostic simple : flotteur, joint de cloche, robinet flotteur entartré, chasse à double commande bloquée. Gestes sans risque (couper le robinet d'arrêt, régler le flotteur), ce qu'il ne faut pas forcer. Conséquence : eau gaspillée, bruit, traces dans la cuvette. Quand remplacer le mécanisme complet.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-10-23"
     },
     {
       "slug": "tableau-electrique-ancien-faut-il-le-remplacer",
