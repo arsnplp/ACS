@@ -38,7 +38,8 @@
       "titre": "Tableau électrique ancien : les signes qui indiquent qu'il faut le remplacer",
       "service": "electricite",
       "brief": "Fusibles à porcelaine, absence de différentiel 30 mA, absence de terre, disjoncteur qui chauffe, circuits non repérés. Expliquer ce qu'apporte un tableau modulaire aux normes (norme NF C 15-100 citée sans détail chiffré). Ce que fait l'électricien lors d'un remplacement, préparation côté client (couper l'eau chaude, prévoir une coupure). Pas de prix.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-10-27"
     },
     {
       "slug": "tiroir-qui-coince-comment-le-reparer",
