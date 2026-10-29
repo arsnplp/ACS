@@ -30,22 +30,29 @@ const { slug, title, description, h1, faq, articles = [] } = Astro.props;
 const service = getService(slug)!;
 const complementaires = service.complementaires.map((s) => getService(s)!);
 const realisations = (await getCollection('realisations', (r) => r.data.service === slug)).slice(0, 3);
+// Titre de bannière : « Métier à Romainville » en blanc, le détail après les deux-points en jaune (comme l'accueil)
+const coupe = h1.indexOf(' : ');
+const h1Debut = coupe > -1 ? h1.slice(0, coupe) : h1;
+const h1Detail = coupe > -1 ? h1.slice(coupe + 3).replace(/^./, (c) => c.toUpperCase()) : '';
 ---
 <BaseLayout
   title={title}
   description={description}
   ariane={[{ nom: 'Services', url: '/services/' }, { nom: service.nomLong, url: serviceUrl(slug) }]}
-  ogImage={`/images/hero-${slug}.jpg`}
-  preload={`/images/hero-${slug}.jpg`}
+  ogImage="/images/hero-service.jpg"
+  preload="/images/hero-service.jpg"
   faq={faq}
   jsonLd={[serviceNode({ nom: service.nomLong, serviceType: service.serviceType, url: serviceUrl(slug), description })]}
 >
-  <div class="banniere-service banniere-page">
-    <h1 class="banniere-page__titre">{h1}</h1>
-    <div class="banniere-service__inner">
-      <ImageSlot nom={`hero-${slug}`} alt={`${h1}. ${service.imageAlt}.`} width={2048} height={768} lcp variante="hero" sizes="(min-width: 2048px) 2048px, 100vw" />
+  <section class="banniere-service" aria-labelledby="titre-service">
+    <div class="banniere-service__media">
+      <ImageSlot nom="hero-service" alt="Seydou Traoré, artisan en casquette et salopette, visse une charnière sur un meuble en cours de montage dans un salon lumineux" width={1672} height={941} lcp variante="hero" sizes="100vw" />
     </div>
-  </div>
+    <div class="conteneur banniere-service__contenu">
+      <h1 id="titre-service" class="banniere-service__titre">{h1Debut}{h1Detail && <span class="banniere-service__detail">{h1Detail}</span>}</h1>
+      <p class="banniere-service__sous">{service.description}</p>
+    </div>
+  </section>
 
   <div class="conteneur section contenu-service">
     <slot />
@@ -100,9 +107,27 @@ const realisations = (await getCollection('realisations', (r) => r.data.service 
   </section>
 </BaseLayout>
 <style is:global>
-  .banniere-service { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
-  .banniere-service__inner { max-width: 2048px; margin-inline: auto; }
-  .banniere-service img, .banniere-service .img-slot { width: 100%; height: auto; display: block; }
+  /* Bannière : même direction artistique que l'accueil (photo + dégradé bleu + titre blanc/jaune) */
+  .banniere-service { position: relative; isolation: isolate; overflow: hidden; background: var(--bleu-fonce); color: var(--blanc); border-bottom: 4px solid var(--jaune); min-height: clamp(19rem, 42vh, 27rem); display: flex; align-items: center; }
+  .banniere-service__media { position: absolute; inset: 0; z-index: -2; }
+  .banniere-service__media picture, .banniere-service__media img, .banniere-service__media .img-slot { width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%; display: block; }
+  .banniere-service::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 42 77 / 0.95) 0%, rgb(10 42 77 / 0.88) 38%, rgb(10 42 77 / 0.45) 62%, rgb(10 42 77 / 0.12) 100%); }
+  .banniere-service__contenu { padding-block: clamp(2.5rem, 6vw, 4rem); }
+  .banniere-service__titre { color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; margin: 0; max-width: 36rem; text-wrap: balance; }
+  .banniere-service__detail { display: block; margin-top: 0.5rem; font-size: clamp(1.15rem, 0.9rem + 1vw, 1.6rem); font-weight: 600; color: var(--jaune); line-height: 1.3; }
+  .banniere-service__sous { margin: 0.9rem 0 0; max-width: 34rem; font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); line-height: 1.5; color: #e6edf6; }
+  @media (max-width: 47.99rem) {
+    .banniere-service { min-height: auto; display: block; }
+    .banniere-service::before { display: none; }
+    .banniere-service__media { position: relative; z-index: 0; aspect-ratio: 4 / 5; overflow: hidden; }
+    .banniere-service__media picture { position: absolute; inset: 0; display: block; }
+    .banniere-service__media img, .banniere-service__media .img-slot { object-position: 50% 40%; }
+    .banniere-service__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(10 42 77 / 0) 38%, rgb(10 42 77 / 0.55) 62%, rgb(10 42 77 / 0.92) 82%, var(--bleu-fonce) 100%); }
+    .banniere-service__contenu { position: relative; z-index: 1; margin-top: -50%; padding-block: 0 1.5rem; }
+    .banniere-service__titre { font-size: clamp(2.1rem, 10vw, 2.8rem); line-height: 0.98; text-shadow: 0 2px 14px rgb(10 42 77 / 0.6); }
+    .banniere-service__detail { margin-top: 0.45rem; font-size: 1.2rem; text-shadow: 0 1px 8px rgb(10 42 77 / 0.6); }
+    .banniere-service__sous { display: none; }
+  }
   /* Contenu des pages service : toute la largeur, listes sur deux colonnes */
   .contenu-service > * { max-width: none; }
   /* Chaque H2 ouvre une sous-section : filet de séparation + accent jaune */
