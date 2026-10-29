@@ -3,13 +3,15 @@
  * Barre de contact fixe en bas d'écran, sur mobile uniquement :
  * « Demander un devis » + « M’appeler » (ou « Email » tant que le téléphone n'est pas renseigné).
  * Masquée sur la page devis (le formulaire est déjà là) et à l'impression.
+ * Si la page contient un bloc d'appels à l'action marqué `data-cta-page` (ex. le haut de l'accueil),
+ * la barre reste cachée tant que ce bloc n'a pas défilé hors de l'écran, pour éviter le doublon.
  */
 import { entreprise, libelleDevis, estPlaceholder } from '@/data/entreprise';
 const telHref = entreprise.telephoneHref && !estPlaceholder(entreprise.telephone) ? `tel:${entreprise.telephoneHref}` : '';
 const surDevis = Astro.url.pathname.startsWith('/devis/');
 ---
 {!surDevis && (
-  <nav class="barre-contact" aria-label="Contact rapide">
+  <nav class="barre-contact" aria-label="Contact rapide" data-barre-contact>
     <a class="barre-contact__btn barre-contact__btn--devis" href="/devis/">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></svg>
       <span>{libelleDevis}</span>
@@ -47,8 +49,24 @@ const surDevis = Astro.url.pathname.startsWith('/devis/');
     .barre-contact__btn--devis { background: var(--jaune); color: var(--bleu-fonce); border-color: var(--jaune); }
     .barre-contact__btn svg { width: 1.2rem; height: 1.2rem; flex: none; }
     .barre-contact__btn:focus-visible { outline: 3px solid var(--jaune-fonce); outline-offset: 2px; }
+    /* Cachée (glissée sous l'écran) tant que les boutons de la page sont encore visibles */
+    .barre-contact { transition: transform 0.25s ease, visibility 0.25s; }
+    .barre-contact--cachee { transform: translateY(110%); visibility: hidden; }
+    @media (prefers-reduced-motion: reduce) { .barre-contact { transition: none; } }
     /* Laisse la place à la barre pour que le pied de page reste lisible */
     :global(body:has(.barre-contact)) { padding-bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px)); }
   }
   @media print { .barre-contact { display: none !important; } }
 </style>
+<script>
+  const barre = document.querySelector<HTMLElement>('[data-barre-contact]');
+  const repere = document.querySelector<HTMLElement>('[data-cta-page]');
+  if (barre && repere && 'IntersectionObserver' in window) {
+    // Visible uniquement une fois le bloc de boutons passé au-dessus de l'écran.
+    barre.classList.add('barre-contact--cachee');
+    const maj = (rect: DOMRect) => barre.classList.toggle('barre-contact--cachee', rect.bottom > 0);
+    const obs = new IntersectionObserver((entrees) => { for (const e of entrees) maj(e.boundingClientRect); }, { threshold: 0 });
+    obs.observe(repere);
+    maj(repere.getBoundingClientRect());
+  }
+</script>

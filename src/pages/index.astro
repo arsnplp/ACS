@@ -35,7 +35,7 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
         ))}
       </ul>
       <p class="hero-pro__texte">Un seul interlocuteur pour concevoir, réparer, monter et rénover. Devis écrit et détaillé, atelier à Romainville, interventions dans tout l’Est parisien.</p>
-      <div class="hero__actions">
+      <div class="hero__actions" data-cta-page>
         <CtaDevis />
         <a class="btn btn--contour" href="/services/">Découvrir nos services</a>
       </div>
