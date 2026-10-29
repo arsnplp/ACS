@@ -15,7 +15,7 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
 >
   <section class="banniere-blog" aria-labelledby="titre-blog">
     <div class="banniere-blog__media">
-      <ImageSlot nom="hero-blog" alt="Seydou Traoré, artisan en casque jaune et salopette, pointe du doigt vers les conseils, dans un atelier lumineux" width={1983} height={793} lcp variante="hero" sizes="100vw" />
+      <ImageSlot nom="hero-blog" alt="Seydou Traoré, artisan en casque jaune et chemise à carreaux, le menton sur la main, accoudé à un établi avec un mètre et un carnet" width={2048} height={768} lcp variante="hero" sizes="100vw" />
     </div>
     <div class="conteneur banniere-blog__contenu">
       <h1 id="titre-blog" class="banniere-blog__titre">Conseils et guides pratiques <span class="banniere-blog__detail">pour vos meubles et vos travaux</span></h1>
@@ -50,7 +50,7 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   /* Bannière : même direction artistique que l'accueil (photo + dégradé bleu + titre blanc/jaune) */
   .banniere-blog { position: relative; isolation: isolate; overflow: hidden; background: var(--bleu-fonce); color: var(--blanc); border-bottom: 4px solid var(--jaune); min-height: clamp(19rem, 42vh, 27rem); display: flex; align-items: center; }
   .banniere-blog__media { position: absolute; inset: 0; z-index: -2; }
-  .banniere-blog__media :global(picture), .banniere-blog__media :global(img), .banniere-blog__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 75% 25%; display: block; }
+  .banniere-blog__media :global(picture), .banniere-blog__media :global(img), .banniere-blog__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 78% 30%; display: block; }
   .banniere-blog::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 42 77 / 0.95) 0%, rgb(10 42 77 / 0.88) 38%, rgb(10 42 77 / 0.45) 62%, rgb(10 42 77 / 0.12) 100%); }
   .banniere-blog__contenu { padding-block: clamp(2.5rem, 6vw, 4rem); }
   .banniere-blog__titre { color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; margin: 0; max-width: 36rem; text-wrap: balance; }
