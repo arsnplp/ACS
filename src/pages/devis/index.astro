@@ -11,12 +11,12 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
   title="Devis artisan à Romainville (93) | ACS Multiservices"
   description="Demandez un devis à ACS Multiservices, artisan à Romainville : meubles, rénovation, électricité, plomberie. Réponse par email ou appel téléphonique."
   ariane={[{ nom: 'Demande de devis', url: '/devis/' }]}
-  preload="/images/hero-devis.jpg"
-  ogImage="/images/hero-devis.jpg"
+  preload="/images/hero-artisan.jpg"
+  ogImage="/images/hero-artisan.jpg"
 >
   <section class="banniere-devis" aria-labelledby="titre-devis">
     <div class="banniere-devis__media">
-      <ImageSlot nom="hero-devis" alt="Seydou Traoré, artisan en casque jaune et salopette, pointe du doigt vers le formulaire de demande de devis, dans un atelier lumineux" width={1983} height={793} lcp variante="hero" sizes="100vw" />
+      <ImageSlot nom="hero-artisan" alt="Seydou Traoré, artisan multiservices à Romainville, souriant en polo noir et salopette de travail" width={1672} height={700} lcp variante="hero" sizes="100vw" />
     </div>
     <div class="conteneur banniere-devis__contenu">
       <h1 id="titre-devis" class="banniere-devis__titre">Demande de devis et contact <span class="banniere-devis__detail">Artisan à Romainville et en <span class="nowrap">Seine-Saint-Denis</span></span></h1>
@@ -202,7 +202,7 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
   /* Bannière : même direction artistique que l'accueil (photo + dégradé bleu + titre blanc/jaune) */
   .banniere-devis { position: relative; isolation: isolate; overflow: hidden; background: var(--bleu-fonce); color: var(--blanc); border-bottom: 4px solid var(--jaune); min-height: clamp(19rem, 42vh, 27rem); display: flex; align-items: center; }
   .banniere-devis__media { position: absolute; inset: 0; z-index: -2; }
-  .banniere-devis__media :global(picture), .banniere-devis__media :global(img), .banniere-devis__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 75% 25%; display: block; }
+  .banniere-devis__media :global(picture), .banniere-devis__media :global(img), .banniere-devis__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 80% 12%; display: block; }
   .banniere-devis::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 42 77 / 0.95) 0%, rgb(10 42 77 / 0.88) 38%, rgb(10 42 77 / 0.45) 62%, rgb(10 42 77 / 0.12) 100%); }
   .banniere-devis__contenu { padding-block: clamp(2.5rem, 6vw, 4rem); }
   .banniere-devis__titre { color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; margin: 0; max-width: 36rem; text-wrap: balance; }
@@ -214,7 +214,7 @@ const webhook = import.meta.env.PUBLIC_FORM_WEBHOOK ?? '';
     .banniere-devis::before { display: none; }
     .banniere-devis__media { position: relative; z-index: 0; aspect-ratio: 4 / 5; overflow: hidden; }
     .banniere-devis__media :global(picture) { position: absolute; inset: 0; display: block; }
-    .banniere-devis__media :global(img), .banniere-devis__media :global(.img-slot) { object-position: 50% 30%; }
+    .banniere-devis__media :global(img), .banniere-devis__media :global(.img-slot) { object-position: 50% 50%; }
     .banniere-devis__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(10 42 77 / 0) 38%, rgb(10 42 77 / 0.55) 62%, rgb(10 42 77 / 0.92) 82%, var(--bleu-fonce) 100%); }
     .banniere-devis__contenu { position: relative; z-index: 1; margin-top: -50%; padding-block: 0 1.5rem; }
     .banniere-devis__titre { font-size: clamp(2.1rem, 10vw, 2.8rem); line-height: 0.98; text-shadow: 0 2px 14px rgb(10 42 77 / 0.6); }
