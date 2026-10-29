@@ -64,6 +64,14 @@ const actif = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
   .entete { background: var(--blanc); border-bottom: 3px solid var(--jaune); position: sticky; top: 0; z-index: 100; }
   .entete__inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem 1rem; min-height: 4.25rem; flex-wrap: wrap; padding-block: 0.75rem; }
   .entete__logo { text-decoration: none; padding: 0.5rem 0; display: inline-flex; min-height: 44px; align-items: center; }
+  /* Petits écrans : logo et bouton Menu restent sur une ligne, le logo se réduit si besoin */
+  @media (max-width: 47.99rem) {
+    .entete__inner { flex-wrap: nowrap; }
+    .entete__logo { min-width: 0; flex: 0 1 auto; }
+    .entete__logo :global(.logo), .entete__logo :global(picture) { max-width: 100%; }
+    .entete__logo :global(.logo img) { max-width: 100%; height: auto; max-height: 2.75rem; }
+    .entete__burger { flex: none; }
+  }
   .entete__burger { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; min-width: 44px; padding: 0.4rem 0.75rem; background: var(--bleu); color: var(--blanc); border: 0; border-radius: var(--rayon); font: inherit; font-weight: 700; cursor: pointer; }
   .entete__burger svg { width: 1.5rem; height: 1.5rem; }
   .burger-fermer { display: none; }
