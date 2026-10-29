@@ -47,8 +47,8 @@ for (const fichier of walk(racine)) {
   const taches = [];
   const srcTime = fs.statSync(fichier).mtimeMs;
   const perime = (f) => !fs.existsSync(f) || fs.statSync(f).mtimeMs < srcTime;
-  if (perime(`${base}.avif`)) taches.push(sharp(fichier).avif({ quality: 55 }).toFile(`${base}.avif`));
-  if (perime(`${base}.webp`)) taches.push(sharp(fichier).webp({ quality: 78 }).toFile(`${base}.webp`));
+  if (perime(`${base}.avif`)) taches.push(sharp(fichier).avif({ quality: 70 }).toFile(`${base}.avif`));
+  if (perime(`${base}.webp`)) taches.push(sharp(fichier).webp({ quality: 86 }).toFile(`${base}.webp`));
   if (perime(`${base}-800.${ext}`) && (meta.width ?? 0) > 800) taches.push(sharp(fichier).resize(800).toFile(`${base}-800.${ext}`));
   if (taches.length) { await Promise.all(taches); console.log('déclinaisons', path.relative(process.cwd(), fichier)); }
 }
