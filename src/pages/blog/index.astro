@@ -13,12 +13,15 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   preload="/images/hero-blog.jpg"
   ogImage="/images/hero-blog.jpg"
 >
-  <div class="banniere-blog banniere-page">
-    <h1 class="banniere-page__titre">Conseils et guides pratiques pour vos meubles et vos travaux</h1>
-    <div class="banniere-blog__inner">
-      <ImageSlot nom="hero-blog" alt="Blog : conseils, astuces, inspirations. Des idées pour vos projets de demain. Un artisan souriant en salopette, le menton sur la main, accoudé à un établi avec des livres sur la rénovation et un carnet." width={2048} height={768} lcp variante="hero" sizes="(min-width: 2048px) 2048px, 100vw" />
+  <section class="banniere-blog" aria-labelledby="titre-blog">
+    <div class="banniere-blog__media">
+      <ImageSlot nom="hero-blog" alt="Seydou Traoré, artisan en casque jaune et chemise à carreaux, le menton sur la main, accoudé à un établi avec un mètre et un carnet" width={2048} height={768} lcp variante="hero" sizes="100vw" />
     </div>
-  </div>
+    <div class="conteneur banniere-blog__contenu">
+      <h1 id="titre-blog" class="banniere-blog__titre">Conseils et guides pratiques <span class="banniere-blog__detail">pour vos meubles et vos travaux</span></h1>
+      <p class="banniere-blog__sous">Astuces d’artisan, prix, erreurs à éviter : de quoi préparer vos projets avant de nous écrire.</p>
+    </div>
+  </section>
   <section class="section" aria-labelledby="liste-titre">
     <div class="conteneur">
       <h2 id="liste-titre">Tous les articles</h2>
@@ -44,9 +47,27 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   </section>
 </BaseLayout>
 <style>
-  .banniere-blog { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
-  .banniere-blog__inner { max-width: 2048px; margin-inline: auto; }
-  .banniere-blog img, .banniere-blog .img-slot { width: 100%; height: auto; display: block; }
+  /* Bannière : même direction artistique que l'accueil (photo + dégradé bleu + titre blanc/jaune) */
+  .banniere-blog { position: relative; isolation: isolate; overflow: hidden; background: var(--bleu-fonce); color: var(--blanc); border-bottom: 4px solid var(--jaune); min-height: clamp(19rem, 42vh, 27rem); display: flex; align-items: center; }
+  .banniere-blog__media { position: absolute; inset: 0; z-index: -2; }
+  .banniere-blog__media :global(picture), .banniere-blog__media :global(img), .banniere-blog__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 78% 30%; display: block; }
+  .banniere-blog::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 42 77 / 0.95) 0%, rgb(10 42 77 / 0.88) 38%, rgb(10 42 77 / 0.45) 62%, rgb(10 42 77 / 0.12) 100%); }
+  .banniere-blog__contenu { padding-block: clamp(2.5rem, 6vw, 4rem); }
+  .banniere-blog__titre { color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; margin: 0; max-width: 36rem; text-wrap: balance; }
+  .banniere-blog__detail { display: block; margin-top: 0.5rem; font-size: clamp(1.15rem, 0.9rem + 1vw, 1.6rem); font-weight: 600; color: var(--jaune); line-height: 1.3; }
+  .banniere-blog__sous { margin: 0.9rem 0 0; max-width: 34rem; font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); line-height: 1.5; color: #e6edf6; }
+  @media (max-width: 47.99rem) {
+    .banniere-blog { min-height: auto; display: block; }
+    .banniere-blog::before { display: none; }
+    .banniere-blog__media { position: relative; z-index: 0; aspect-ratio: 4 / 5; overflow: hidden; }
+    .banniere-blog__media :global(picture) { position: absolute; inset: 0; display: block; }
+    .banniere-blog__media :global(img), .banniere-blog__media :global(.img-slot) { object-position: 50% 30%; }
+    .banniere-blog__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(10 42 77 / 0) 38%, rgb(10 42 77 / 0.55) 62%, rgb(10 42 77 / 0.92) 82%, var(--bleu-fonce) 100%); }
+    .banniere-blog__contenu { position: relative; z-index: 1; margin-top: -50%; padding-block: 0 1.5rem; }
+    .banniere-blog__titre { font-size: clamp(2.1rem, 10vw, 2.8rem); line-height: 0.98; text-shadow: 0 2px 14px rgb(10 42 77 / 0.6); }
+    .banniere-blog__detail { margin-top: 0.45rem; font-size: 1.2rem; text-shadow: 0 1px 8px rgb(10 42 77 / 0.6); }
+    .banniere-blog__sous { display: none; }
+  }
   .grille--blog { grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
   @media (min-width: 64rem) { .grille--blog { grid-template-columns: repeat(3, 1fr); } }
   .carte--a-venir { border-style: dashed; opacity: 0.85; }
