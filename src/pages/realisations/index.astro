@@ -97,9 +97,10 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
   .filtres { margin-bottom: 2rem; }
   @media (max-width: 47.99rem) {
     /* Mobile : une seule ligne de pastilles qui défile horizontalement */
-    .filtres { flex-wrap: nowrap; overflow-x: auto; gap: 0.4rem; margin: 0 -1rem 1.5rem; padding: 0.15rem 1rem 0.5rem; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 1rem, #000 calc(100% - 1.5rem), transparent); mask-image: linear-gradient(90deg, transparent, #000 1rem, #000 calc(100% - 1.5rem), transparent); }
+    .filtres { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; gap: 0.4rem; margin: 0 -1rem 1.5rem; padding: 0.15rem 1rem 0.5rem; -webkit-overflow-scrolling: touch; scrollbar-width: none; touch-action: pan-x pan-y; overscroll-behavior-x: contain; scroll-padding-inline: 1rem; }
+    .filtres::after { content: ''; flex: none; width: 0.5rem; } /* respiration après le dernier bouton */
     .filtres::-webkit-scrollbar { display: none; }
-    .filtres button { flex: none; scroll-snap-align: start; min-height: 40px; padding: 0.4rem 0.9rem; font-size: 0.92rem; border-width: 1.5px; white-space: nowrap; }
+    .filtres button { flex: none; min-height: 40px; padding: 0.4rem 0.9rem; font-size: 0.92rem; border-width: 1.5px; white-space: nowrap; }
   }
   .grille--realisations { grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
   @media (min-width: 64rem) { .grille--realisations { grid-template-columns: repeat(3, 1fr); } }
