@@ -11,13 +11,14 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
   title="Réalisations artisan à Romainville (93) | ACS Multiservices"
   description="Avant / après de nos chantiers : meubles sur mesure, réparation, montage, rénovation, électricité, plomberie à Romainville et dans le 93. Filtre service."
   ariane={[{ nom: 'Réalisations', url: '/realisations/' }]}
-  preload="/images/hero-realisations.jpg"
-  ogImage="/images/hero-realisations.jpg"
+  preload="/images/hero-accueil.jpg"
+  ogImage="/images/hero-accueil.jpg"
 >
   <div class="banniere-realisations banniere-page">
-    <h1 class="banniere-page__titre">Réalisations d’artisan à Romainville et en Seine-Saint-Denis</h1>
+    <h1 class="banniere-page__titre"><span>Réalisations d’artisan à Romainville et en <span class="nowrap">Seine-Saint-Denis</span></span></h1>
+    <p class="banniere-realisations__sous">Des projets concrets, des clients satisfaits : avant / après de nos chantiers.</p>
     <div class="banniere-realisations__inner">
-      <ImageSlot nom="hero-realisations" alt="Réalisations d’artisan à Romainville et en Seine-Saint-Denis : cuisine, salle de bain, rénovation complète, aménagement extérieur, façade. Un artisan souriant en salopette, bras croisés, et une carte de la Seine-Saint-Denis centrée sur Romainville." width={2048} height={768} lcp variante="hero" sizes="(min-width: 2048px) 2048px, 100vw" />
+      <ImageSlot nom="hero-accueil" alt="Seydou Traoré, artisan souriant en salopette de travail, mètre en main sur un chantier de rénovation lumineux" width={1672} height={941} lcp variante="hero" sizes="100vw" />
     </div>
   </div>
   <section class="section" aria-labelledby="galerie-titre">
@@ -66,7 +67,20 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
   }
 </script>
 <style>
-  .banniere-realisations { background: #f6f3ee; border-bottom: 4px solid var(--jaune); }
+  .banniere-realisations { background: var(--bleu-fonce); border-bottom: 4px solid var(--jaune); }
+  .banniere-realisations__sous { display: none; }
+  /* Grand écran : même photo que l'accueil en fond, titre et sous-titre posés dessus */
+  @media (min-width: 48rem) {
+    .banniere-realisations { position: relative; isolation: isolate; overflow: hidden; color: var(--blanc); min-height: clamp(19rem, 42vh, 27rem); display: flex; flex-direction: column; justify-content: center; padding-block: clamp(2.5rem, 6vw, 4rem); }
+    .banniere-realisations__inner { position: absolute; inset: 0; z-index: -2; max-width: none; margin: 0; }
+    .banniere-realisations::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 42 77 / 0.95) 0%, rgb(10 42 77 / 0.88) 38%, rgb(10 42 77 / 0.45) 62%, rgb(10 42 77 / 0.12) 100%); }
+    .banniere-realisations :global(picture), .banniere-realisations :global(img), .banniere-realisations :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 62% 22%; display: block; }
+    .banniere-realisations .banniere-page__titre { position: static !important; width: 100%; height: auto; max-width: var(--largeur); margin: 0 auto; padding: 0 clamp(1rem, 3vw, 2rem); overflow: visible; clip: auto; white-space: normal; color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; text-wrap: balance; }
+    .banniere-realisations .banniere-page__titre > span { display: block; max-width: 36rem; }
+    .banniere-realisations .banniere-page__titre { box-sizing: border-box; }
+    .banniere-realisations .banniere-page__titre::after { content: none; }
+    .banniere-realisations__sous { display: block; width: 100%; max-width: var(--largeur); margin: 0.9rem auto 0; padding: 0 clamp(1rem, 3vw, 2rem); font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); color: #e6edf6; }
+  }
   .filtres__label { font-family: var(--police-titre); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--texte-doux); margin: 0 0 0.6rem; }
   .filtres { margin-bottom: 2rem; }
   @media (max-width: 47.99rem) {
@@ -82,7 +96,8 @@ const toutes = (await getCollection('realisations')).sort((a, b) => b.data.date.
   .grille--realisations :global(article[hidden]) { display: none; }
   .grille--realisations :global(.carte > picture img), .grille--realisations :global(.carte > .img-slot) { aspect-ratio: 3 / 2; width: 100%; height: auto; object-fit: cover; }
   .banniere-realisations__inner { max-width: 2048px; margin-inline: auto; }
-  .banniere-realisations img, .banniere-realisations .img-slot { width: 100%; height: auto; display: block; }
+  .banniere-realisations :global(img), .banniere-realisations :global(.img-slot) { width: 100%; height: auto; display: block; }
+  .nowrap { white-space: nowrap; }
   .groupe { margin-bottom: 2.5rem; }
   .groupe h2 a { text-decoration: none; }
   .groupe h2 a:hover { text-decoration: underline; }
