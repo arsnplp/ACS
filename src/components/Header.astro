@@ -101,17 +101,29 @@ const actif = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
     .entete__nav > ul { flex-direction: row; align-items: center; gap: 0.15rem; flex-wrap: nowrap; }
     .entete__nav a:not(.btn) { font-size: 0.95rem; padding: 0.5rem 0.55rem; white-space: nowrap; }
     .a-sous-menu { flex-wrap: nowrap; }
+    .a-sous-menu > button { min-width: 36px; min-height: 36px; margin-left: -0.25rem; }
+    /* Sous-menu « Services » : panneau superposé sous le lien, jamais inséré dans la ligne du menu */
+    .sous-menu {
+      position: absolute; top: calc(100% + 0.5rem); left: 0; z-index: 50;
+      min-width: 20rem; width: max-content; padding: 0.5rem;
+      background: var(--blanc); border: 1px solid var(--bordure); border-top: 3px solid var(--jaune);
+      border-radius: 0 0 var(--rayon) var(--rayon); box-shadow: 0 12px 32px rgb(10 42 77 / 0.16);
+    }
+    /* Zone tampon invisible entre le lien et le panneau pour ne pas le refermer en déplaçant la souris */
+    .sous-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -0.6rem; height: 0.6rem; }
+    .sous-menu li + li { border-top: 1px solid var(--bordure); }
+    .sous-menu a:not(.btn) { min-height: 40px; padding: 0.55rem 0.75rem; font-size: 0.92rem; border-radius: 6px; }
+    .sous-menu a:not(.btn):hover { background: var(--bleu-clair); }
+    .a-sous-menu:hover .sous-menu, .a-sous-menu:focus-within .sous-menu, .a-sous-menu.est-ouvert .sous-menu { display: block; }
+    .a-sous-menu:hover > button svg { transform: rotate(180deg); }
+    .entete__cta { margin: 0 0 0 0.5rem; }
+    .entete__cta .btn { width: auto; white-space: nowrap; }
   }
   /* Écrans moyens (1024–1151 px) : menu un peu plus compact pour tenir sur une ligne */
   @media (min-width: 64rem) and (max-width: 71.99rem) {
     .entete__nav a:not(.btn) { font-size: 0.88rem; padding: 0.45rem 0.45rem; }
-    .entete__cta .btn { padding-inline: 0.8rem; font-size: 0.92rem; }
     .entete__logo :global(.logo img) { height: 2.6rem; }
-    .entete__cta .btn { padding-inline: 1rem; white-space: nowrap; }
-    .sous-menu { position: absolute; top: 100%; left: 0; min-width: 18rem; background: var(--blanc); border: 1px solid var(--bordure); border-top: 3px solid var(--jaune); box-shadow: var(--ombre); padding: 0.5rem; z-index: 50; }
-    .a-sous-menu:hover .sous-menu, .a-sous-menu:focus-within .sous-menu { display: block; }
-    .entete__cta { margin: 0 0 0 0.5rem; }
-    .entete__cta .btn { width: auto; }
+    .entete__cta .btn { padding-inline: 1rem; font-size: 0.92rem; }
   }
   body.menu-ouvert { overflow: hidden; }
   @media (min-width: 64rem) { body.menu-ouvert { overflow: auto; } }
