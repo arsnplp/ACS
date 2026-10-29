@@ -10,12 +10,12 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   title="Conseils travaux et meubles dans le 93 | ACS Multiservices"
   description="Guides pratiques d’un artisan de Romainville : prix d’un meuble sur mesure, réparer ou remplacer un meuble, fuite sous l’évier. Préparez vos travaux."
   ariane={[{ nom: 'Conseils', url: '/blog/' }]}
-  preload="/images/hero-artisan.jpg"
-  ogImage="/images/hero-artisan.jpg"
+  preload="/images/hero-blog.jpg"
+  ogImage="/images/hero-blog.jpg"
 >
   <section class="banniere-blog" aria-labelledby="titre-blog">
     <div class="banniere-blog__media">
-      <ImageSlot nom="hero-artisan" alt="Seydou Traoré, artisan multiservices à Romainville, souriant en polo noir et salopette de travail" width={1672} height={700} lcp variante="hero" sizes="100vw" />
+      <ImageSlot nom="hero-blog" alt="Bureau d'artisan en plein chantier : ordinateur portable, carnet, mètre, nuancier et plan de rénovation posés sur une table en bois" width={2048} height={768} lcp variante="hero" sizes="100vw" />
     </div>
     <div class="conteneur banniere-blog__contenu">
       <h1 id="titre-blog" class="banniere-blog__titre">Conseils et guides pratiques <span class="banniere-blog__detail">pour vos meubles et vos travaux</span></h1>
@@ -50,14 +50,15 @@ const articles = (await getCollection('blog', (a) => !a.data.brouillon)).sort((a
   /* Bannière : même direction artistique que l'accueil (photo + dégradé bleu + titre blanc/jaune) */
   .banniere-blog { position: relative; isolation: isolate; overflow: hidden; background: var(--bleu-fonce); color: var(--blanc); border-bottom: 4px solid var(--jaune); min-height: clamp(19rem, 42vh, 27rem); display: flex; align-items: center; }
   .banniere-blog__media { position: absolute; inset: 0; z-index: -2; }
-  .banniere-blog__media :global(picture), .banniere-blog__media :global(img), .banniere-blog__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 80% 12%; display: block; }
-  .banniere-blog::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 42 77 / 0.95) 0%, rgb(10 42 77 / 0.88) 38%, rgb(10 42 77 / 0.45) 62%, rgb(10 42 77 / 0.12) 100%); }
-  .banniere-blog__contenu { padding-block: clamp(2.5rem, 6vw, 4rem); }
-  .banniere-blog__titre { color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; margin: 0; max-width: 36rem; text-wrap: balance; }
-  .banniere-blog__detail { display: block; margin-top: 0.5rem; font-size: clamp(1.15rem, 0.9rem + 1vw, 1.6rem); font-weight: 600; color: var(--jaune); line-height: 1.3; }
-  .banniere-blog__sous { margin: 0.9rem 0 0; max-width: 34rem; font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); line-height: 1.5; color: #e6edf6; }
+  .banniere-blog__media :global(picture), .banniere-blog__media :global(img), .banniere-blog__media :global(.img-slot) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block; }
+  .banniere-blog::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(10 42 77 / 0.78) 0%, rgb(10 42 77 / 0.7) 50%, rgb(10 42 77 / 0.82) 100%); }
+  .banniere-blog__contenu { padding-block: clamp(2.5rem, 6vw, 4rem); text-align: center; }
+  .banniere-blog__titre { color: var(--blanc); font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; margin: 0; max-width: 36rem; margin-inline: auto; text-shadow: 0 2px 18px rgb(10 42 77 / 0.7); text-wrap: balance; }
+  .banniere-blog__detail { display: block; text-shadow: 0 1px 10px rgb(10 42 77 / 0.7); margin-top: 0.5rem; font-size: clamp(1.15rem, 0.9rem + 1vw, 1.6rem); font-weight: 600; color: var(--jaune); line-height: 1.3; }
+  .banniere-blog__sous { margin: 0.9rem 0 0; max-width: 34rem; margin-inline: auto; text-shadow: 0 1px 10px rgb(10 42 77 / 0.7); font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); line-height: 1.5; color: #e6edf6; }
   @media (max-width: 47.99rem) {
     .banniere-blog { min-height: auto; display: block; }
+    .banniere-blog__contenu { text-align: left; }
     .banniere-blog::before { display: none; }
     .banniere-blog__media { position: relative; z-index: 0; aspect-ratio: 4 / 5; overflow: hidden; }
     .banniere-blog__media :global(picture) { position: absolute; inset: 0; display: block; }
