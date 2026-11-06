@@ -62,7 +62,8 @@
       "titre": "Disjoncteur qui saute : les causes fréquentes et comment les isoler",
       "service": "electricite",
       "brief": "Méthode d'isolement : tout débrancher, réarmer, rebrancher un à un. Causes : surcharge (plusieurs appareils de chauffe sur un circuit), appareil défectueux, défaut d'isolement détecté par le différentiel, humidité dans une boîte, vieux circuit. Ce qu'il ne faut jamais faire (ponter, remplacer un fusible par un plus gros). Quand appeler.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-11-06"
     },
     {
       "slug": "charniere-de-placard-cassee-reparer-ou-remplacer",
