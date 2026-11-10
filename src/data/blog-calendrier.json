@@ -70,7 +70,8 @@
       "titre": "Charnière de placard cassée ou porte qui ferme mal : réparer ou remplacer ?",
       "service": "reparation-meubles",
       "brief": "Types de charnières (invisible à clip, à piano, à lames), réglages en trois dimensions, vis qui tournent dans le vide (chevilles bois, pâte à bois), charnière tordue, passage à une charnière amortie. Cas des portes de cuisine IKEA et des meubles anciens.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-11-10"
     },
     {
       "slug": "preparer-son-appartement-avant-des-travaux-de-peinture",
