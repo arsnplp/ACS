@@ -78,7 +78,8 @@
       "titre": "Préparer son appartement avant des travaux de peinture : la liste complète",
       "service": "renovation-interieure",
       "brief": "Ce que le client fait avant l'arrivée de l'artisan : vider, protéger, décrocher, déplacer les meubles, prévoir le stationnement et l'accès (immeubles sans ascenseur de Pantin et Montreuil), prévenir les voisins et la copropriété. Ce que fait l'artisan : rebouchage, ponçage, sous-couche. Ordre des pièces, séchage, aération.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-11-13"
     },
     {
       "slug": "ajouter-une-prise-electrique-dans-une-piece",
