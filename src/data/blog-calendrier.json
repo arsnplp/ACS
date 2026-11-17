@@ -86,7 +86,8 @@
       "titre": "Ajouter une prise électrique dans une pièce : les solutions possibles",
       "service": "electricite",
       "brief": "Repiquage sur une prise existante (limites), goulotte, encastrement avec saignée, nouvelle ligne depuis le tableau pour les gros appareils. Nombre de prises recommandé par pièce selon la norme (sans chiffres précis si incertain), prises dans la salle de bain et la cuisine. Lien avec le montage de meuble TV et de bureau.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-11-17"
     },
     {
       "slug": "bibliotheque-sur-mesure-mur-irregulier",
