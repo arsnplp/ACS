@@ -102,7 +102,8 @@
       "titre": "Plus d'eau chaude : les vérifications avant d'appeler le plombier",
       "service": "plomberie",
       "brief": "Disjoncteur du chauffe-eau, contacteur heures creuses (position auto), thermostat de sécurité, résistance entartrée, groupe de sécurité qui goutte. Ce que le client peut vérifier sans danger, ce qui demande un professionnel. Entretien : vidange, remplacement du groupe de sécurité.",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-11-24"
     },
     {
       "slug": "rayures-et-taches-sur-un-meuble-en-bois",
@@ -123,6 +124,48 @@
       "titre": "Meuble TV : sur mesure ou en kit, comment choisir ?",
       "service": "meubles-sur-mesure",
       "brief": "Critères : largeur du mur, passage des câbles, niche, rangement fermé, radiateur, box et consoles à ventiler. Quand le kit suffit, quand le sur mesure s'impose. Lien vers le service montage de meubles (kit) et vers la réalisation meuble TV de Romainville.",
+      "status": "pending"
+    },
+    {
+      "slug": "monter-un-lit-mezzanine-ou-superpose",
+      "titre": "Monter un lit mezzanine ou superposé : stabilité et sécurité avant tout",
+      "service": "montage-meubles",
+      "brief": "Vérifier le contenu du colis et la notice, ordre de montage, serrage progressif, fixation au mur selon le support (plâtre, brique, béton), garde-corps et échelle, hauteur sous plafond dans les chambres d'immeubles anciens, contrôle du serrage après les premières semaines d'usage. Lien vers le service montage de meubles et l'article sur la fixation d'une armoire au mur.",
+      "status": "pending"
+    },
+    {
+      "slug": "placard-sur-mesure-dans-une-entree",
+      "titre": "Placard sur mesure dans une entrée : gagner du rangement sans encombrer",
+      "service": "meubles-sur-mesure",
+      "brief": "Entrées étroites des appartements anciens, compteurs et tableau électrique à laisser accessibles, faible profondeur, portes coulissantes ou battantes, banc et vide-poches intégrés, murs et sols pas d'équerre. Ce qu'apporte le sur mesure face au kit. Lien vers le service meubles sur mesure et une page ville.",
+      "status": "pending"
+    },
+    {
+      "slug": "porte-de-meuble-gondolee-ou-placage-decolle",
+      "titre": "Porte de meuble gondolée ou placage décollé : ce qui se répare",
+      "service": "reparation-meubles",
+      "brief": "Causes (humidité, chaleur d'un four ou d'un radiateur, colle vieillie), différence entre bois massif, plaqué et panneau mélaminé, recollage du placage, redressage, remplacement d'une porte seule, quand la réparation ne vaut plus la peine. Lien vers le service réparation de meubles et l'article réparer ou remplacer un meuble abîmé.",
+      "status": "pending"
+    },
+    {
+      "slug": "rafraichir-une-salle-de-bains-sans-tout-casser",
+      "titre": "Rafraîchir une salle de bains sans tout casser : les options",
+      "service": "renovation-interieure",
+      "brief": "Joints de carrelage à refaire, silicone autour de la baignoire, peinture adaptée aux pièces humides, remplacement du meuble vasque, de la robinetterie et des accessoires, ventilation à vérifier. Ce qui reste possible sans dépose du carrelage, ce qui impose de plus gros travaux. Ordre des opérations. Lien vers rénovation intérieure et plomberie.",
+      "status": "pending"
+    },
+    {
+      "slug": "installer-un-luminaire-au-plafond",
+      "titre": "Installer un luminaire au plafond : ce qu'il faut savoir avant de commencer",
+      "service": "electricite",
+      "brief": "Couper le bon circuit et vérifier l'absence de tension, identifier les fils, boîte DCL, poids du luminaire et fixation selon le plafond (plâtre, béton, ancien plafond en lattis), plafonniers anciens sans terre. Ce qu'un particulier peut faire, ce qui relève de l'électricien. Lien vers le service électricité et l'article sur le disjoncteur qui saute.",
+      "status": "pending"
+    },
+    {
+      "slug": "canalisation-bouchee-lavabo-douche-que-faire",
+      "titre": "Lavabo ou douche qui se vide mal : déboucher sans abîmer les canalisations",
+      "service": "plomberie",
+      "brief": "Cheveux, savon, calcaire : causes fréquentes. Nettoyer le siphon et la bonde, ventouse, furet manuel, pourquoi éviter les produits chimiques agressifs sur des canalisations anciennes, odeurs, bouchon sur la colonne commune en copropriété. Quand appeler le plombier. Lien vers le service plomberie et l'article fuite sous l'évier.",
       "status": "pending"
     }
   ]
