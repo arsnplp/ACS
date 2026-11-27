@@ -110,7 +110,8 @@
       "titre": "Rayures, taches et auréoles sur un meuble en bois : que faire ?",
       "service": "reparation-meubles",
       "brief": "Distinguer finition vernie, huilée, cirée, mélaminée. Rayure superficielle vs profonde, auréole blanche de chaleur, tache d'eau noire dans le chêne. Solutions maison prudentes, puis atelier : ponçage, teinte, rebouchage, nouvelle finition. Exemple du buffet en chêne de Montreuil (lien vers la réalisation).",
-      "status": "pending"
+      "status": "published",
+      "publie_le": "2026-11-27"
     },
     {
       "slug": "remplacer-un-sol-stratifie-ou-parquet-flottant",
